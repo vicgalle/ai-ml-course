@@ -1,0 +1,1172 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Zero-shot object detection &#8212; AI: ML &amp; Analytics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 's14_more_vision_tasks_object_detection/s14.2-zero-shot_object_detection';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Exercise 1: Hate Spech Detection in X (aka Twitter) 🤬" href="../s15_exercises_solved/s15.1-text-classification-solved.html" />
+    <link rel="prev" title="Object Detection" href="s14.1-intro-object-detection.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-neon.png" class="logo__image only-light" alt="AI: ML & Analytics - Home"/>
+    <script>document.write(`<img src="../_static/logo-neon.png" class="logo__image only-dark" alt="AI: ML & Analytics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    A course on Machine Learning and Deep Learning
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">1. Our first Generative AI application</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/example_genAI.html">Our first Generative AI application</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2. Matrix Algebra with NumPy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.1-numpy.html">Matrix operations with Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.2-numpy-exercises-solutions.html">Numpy exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.3-image-blending.html">Working with images in Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Optimization and Automatic Differentiation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s03_optimization_automatic_differentiation/s03.1_notebook-solutions.html">Review of Optimization</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Review of Machine Learning with scikit-learn</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s04_review_ML_sklearn/s04.1-supervised-learning-sklearn-solutions.html">Scikit-learn</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../s04_review_ML_sklearn/s04.2-cost-benefit-analysis.html">Cost-Benefit Analysis of a ML classifier.</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">5. Unsupervised Learning with UMAP</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s05_unsupervised-learning-umap/s05.1-dimensionality-reduction.html">Dimensionality Reduction. UMAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s05_unsupervised-learning-umap/s05.2-text-analysis-solutions.html">Text Analysis with UMAP</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">6. Text Processing with scikit-learn</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s06_text-processing-sklearn/s06.1-text-classification-solved.html">Session 6: More on working with text data in scikit-learn</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">7. Intro to Deep Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s07_intro_deep_learning/s07.1-neural_network-solved.html">07: Introduction to Neural Networks</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">9. Deep Learning in Computer Vision</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.1-examples.html">Session 9. More on Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.2-examples-2.html">Introduction to Computer Vision with Deep Learning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.3-intro-to-convolutions_solved.html">Intro to convolutional neural networks (CNNs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.4-convolutional-networks_solved.html">Convolutional Neural Networks (CNNs)</a></li>
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">11. Transfer Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s11_transfer_learning/s11.1-transfer-learning-examples.html">Transfer Learning</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">12. Zero-Shot Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s12_zero-shot-learning/s12.1_intro-zero-shot-classification.html">Zero-Shot Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">13. Semantic Search</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s13_semantic_search_and_biases/s13.1_semantic_search_solved.html">Semantic Search</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">14. Object Detection</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="s14.1-intro-object-detection.html">Object Detection</a></li>
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Zero-shot object detection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">15. Exercises I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.1-text-classification-solved.html">Exercise 1: Hate Spech Detection in X (aka Twitter) 🤬</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.2-transfer-learning-solved.html">Exercise: Plant Disease App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.3-semantic-search-solved2.html">Exercise: Product Item Recommender 🧥</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">16. Exercises II</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s16_exercises_2_solved/s16.1-umap-solved.html">Exercise 1: Eurovision Song Lyrics Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s16_exercises_2_solved/s16.2-zero-shot-classification-solved.html">Exercise 2: Photo Sorting Application 📸</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">19. Intro to Transformers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s19_intro_to_transformers/s19.1_pipelines_solved.html">Introduction to the Transformers Library for NLP: pipelines</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s19_intro_to_transformers/s19.2_zero-shot-classification.html">Zero-Shot Classification in NLP</a></li>
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">20. Transformers Architecture &amp; Transfer Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.1_transformers_architecture.html">Fundamentals of the Transformer Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.2-transfer-intro.html">Transfer Learning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.3-transfer-learning-example.html">Transfer Learning example: Legal Text Classification</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fs14_more_vision_tasks_object_detection/s14.2-zero-shot_object_detection.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/s14_more_vision_tasks_object_detection/s14.2-zero-shot_object_detection.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Zero-shot object detection</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">Use cases</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#object-search">Object Search</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#object-counting">Object Counting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#object-tracking">Object Tracking</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-it-from-python">Using it from Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-processing">Batch processing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-guided-object-detection">Image-guided object detection</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="zero-shot-object-detection">
+<h1>Zero-shot object detection<a class="headerlink" href="#zero-shot-object-detection" title="Link to this heading">#</a></h1>
+<p>Traditionally, models used for object detection require labeled image datasets for training, and are limited to detecting the set of classes from the training data.</p>
+<p>Zero-shot object detection is supported by the <strong>OWL-ViT model (Google, 2022)</strong> which uses a different approach. <strong>OWL-ViT is an open-vocabulary object detector</strong>. It means that it can detect objects in images based on free-text queries without the need to fine-tune the model on labeled datasets.</p>
+<p>OWL-ViT leverages multi-modal representations to perform open-vocabulary detection. It <strong>combines CLIP with a general object detector</strong>. Open-vocabulary detection is achieved by embedding free-text queries with the text encoder of CLIP and using them as input to the object classification part:</p>
+<p>With this approach, the model can detect objects based on textual descriptions without prior training on labeled datasets:</p>
+<p><img alt="image" src="../_images/zs.png" /></p>
+<p>References:</p>
+<ul class="simple">
+<li><p>Base OWL-ViT model on Huggingface: <a class="reference external" href="https://huggingface.co/google/owlvit-base-patch32">https://huggingface.co/google/owlvit-base-patch32</a></p></li>
+<li><p>Article: <a class="reference external" href="https://arxiv.org/abs/2205.06230">https://arxiv.org/abs/2205.06230</a></p></li>
+</ul>
+<p>As usual, in huggingface there are different sizes and versions of the OWL-ViT architecture for zero-shot object detection. You can check all the compatible models here: <a class="reference external" href="https://huggingface.co/models?pipeline_tag=zero-shot-object-detection">https://huggingface.co/models?pipeline_tag=zero-shot-object-detection</a></p>
+<section id="use-cases">
+<h2>Use cases<a class="headerlink" href="#use-cases" title="Link to this heading">#</a></h2>
+<p>Zero-shot object detection models can be used in any object detection application where the detection involves text queries for objects of interest.</p>
+<section id="object-search">
+<h3>Object Search<a class="headerlink" href="#object-search" title="Link to this heading">#</a></h3>
+<p>Zero-shot object detection models can be used in image search. Smartphones, for example, use zero-shot object detection models to detect entities (such as specific places or objects) and allow the user to search for the entity on the internet.</p>
+</section>
+<section id="object-counting">
+<h3>Object Counting<a class="headerlink" href="#object-counting" title="Link to this heading">#</a></h3>
+<p>Zero-shot object detection models are used to count instances of objects in a given image. This can include counting the objects in warehouses or stores or the number of visitors in a store. They are also used to manage crowds at events to prevent disasters.</p>
+</section>
+<section id="object-tracking">
+<h3>Object Tracking<a class="headerlink" href="#object-tracking" title="Link to this heading">#</a></h3>
+<p>Zero-shot object detectors can track objects in videos.</p>
+</section>
+</section>
+<section id="using-it-from-python">
+<h2>Using it from Python<a class="headerlink" href="#using-it-from-python" title="Link to this heading">#</a></h2>
+<p>The simplest way to try out inference with OWL-ViT is to use it in a <code class="docutils literal notranslate"><span class="pre">pipeline()</span></code>. Instantiate a pipeline for zero-shot object detection</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">pipeline</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_name</span> <span class="o">=</span> <span class="s2">&quot;google/owlvit-base-patch32&quot;</span>
+<span class="n">detector</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model_name</span><span class="p">,</span> <span class="n">task</span><span class="o">=</span><span class="s2">&quot;zero-shot-object-detection&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Could not find image processor class in the image processor config or the model config. Loading based on pattern matching with the model&#39;s feature extractor configuration. Please open a PR/issue to update `preprocessor_config.json` to use `image_processor_type` instead of `feature_extractor_type`. This warning will be removed in v4.40.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, choose an image you’d like to detect objects in. Here we’ll use the image of astronaut Eileen Collins that is a part of the NASA Great Images dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;images/astro.jpg&#39;</span><span class="p">)</span>
+<span class="n">image</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/9791b9f1a11802502ae61ff5fd9f79583b7f7ed5a53f8de6680709a9af44fc29.png" src="../_images/9791b9f1a11802502ae61ff5fd9f79583b7f7ed5a53f8de6680709a9af44fc29.png" />
+</div>
+</div>
+<p>Pass the image and the candidate object labels to look for to the pipeline. Here we pass the image directly; other suitable options include a local path to an image or an image url. We also pass text descriptions for all items we want to query the image for.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictions</span> <span class="o">=</span> <span class="n">detector</span><span class="p">(</span>
+    <span class="n">image</span><span class="p">,</span>
+    <span class="n">candidate_labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;human face&quot;</span><span class="p">,</span> <span class="s2">&quot;rocket&quot;</span><span class="p">,</span> <span class="s2">&quot;nasa badge&quot;</span><span class="p">,</span> <span class="s2">&quot;star-spangled banner&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+<span class="n">predictions</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;score&#39;: 0.34625643491744995,
+  &#39;label&#39;: &#39;human face&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 179, &#39;ymin&#39;: 72, &#39;xmax&#39;: 270, &#39;ymax&#39;: 178}},
+ {&#39;score&#39;: 0.24999374151229858,
+  &#39;label&#39;: &#39;nasa badge&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 132, &#39;ymin&#39;: 343, &#39;xmax&#39;: 209, &#39;ymax&#39;: 424}},
+ {&#39;score&#39;: 0.1938963234424591,
+  &#39;label&#39;: &#39;rocket&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 350, &#39;ymin&#39;: 0, &#39;xmax&#39;: 469, &#39;ymax&#39;: 288}},
+ {&#39;score&#39;: 0.13655103743076324,
+  &#39;label&#39;: &#39;star-spangled banner&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 1, &#39;ymin&#39;: 0, &#39;xmax&#39;: 105, &#39;ymax&#39;: 509}},
+ {&#39;score&#39;: 0.12111852318048477,
+  &#39;label&#39;: &#39;nasa badge&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 277, &#39;ymin&#39;: 339, &#39;xmax&#39;: 327, &#39;ymax&#39;: 380}}]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s visualize the predictions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">ImageDraw</span>
+
+<span class="k">def</span> <span class="nf">build_image_with_predictions</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">predictions</span><span class="p">):</span>
+
+    <span class="n">draw</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">prediction</span> <span class="ow">in</span> <span class="n">predictions</span><span class="p">:</span>
+        <span class="n">box</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">[</span><span class="s2">&quot;box&quot;</span><span class="p">]</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="n">prediction</span><span class="p">[</span><span class="s2">&quot;score&quot;</span><span class="p">]</span>
+
+        <span class="n">xmin</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymax</span> <span class="o">=</span> <span class="n">box</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+        <span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymax</span><span class="p">),</span> <span class="n">outline</span><span class="o">=</span><span class="s2">&quot;magenta&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+        <span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">((</span><span class="n">xmin</span><span class="p">,</span> <span class="n">ymin</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">score</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">image</span>
+
+<span class="n">build_image_with_predictions</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2616c1495b16e485ff85b8bd5f60bc7cbbe01c86470355e04608baa5e2e8e046.png" src="../_images/2616c1495b16e485ff85b8bd5f60bc7cbbe01c86470355e04608baa5e2e8e046.png" />
+</div>
+</div>
+<p>Of course, we can easily change the labels to detect other objects.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;images/astro.jpg&#39;</span><span class="p">)</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">detector</span><span class="p">(</span>
+    <span class="n">image</span><span class="p">,</span>
+    <span class="n">candidate_labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;human eye&quot;</span><span class="p">,</span> <span class="s2">&quot;helmet&quot;</span><span class="p">,],</span>
+<span class="p">)</span>
+<span class="n">predictions</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;score&#39;: 0.134079247713089,
+  &#39;label&#39;: &#39;human eye&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 189, &#39;ymin&#39;: 92, &#39;xmax&#39;: 215, &#39;ymax&#39;: 108}},
+ {&#39;score&#39;: 0.13324084877967834,
+  &#39;label&#39;: &#39;human eye&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 234, &#39;ymin&#39;: 94, &#39;xmax&#39;: 260, &#39;ymax&#39;: 110}},
+ {&#39;score&#39;: 0.12515266239643097,
+  &#39;label&#39;: &#39;helmet&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 270, &#39;ymin&#39;: 339, &#39;xmax&#39;: 508, &#39;ymax&#39;: 513}}]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">build_image_with_predictions</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/758d873bcce3db5b06d303cfe9316000bcf17904ad5c92cd01c64d31c09639a6.png" src="../_images/758d873bcce3db5b06d303cfe9316000bcf17904ad5c92cd01c64d31c09639a6.png" />
+</div>
+</div>
+<p>Testing with another image…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://unsplash.com/photos/oj0zeY2Ltk4/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MTR8fHBpY25pY3xlbnwwfHx8fDE2Nzc0OTE1NDk&amp;force=true&amp;w=640&quot;</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">raw</span><span class="p">)</span>
+<span class="n">im</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7c7020c8cf6c7b33db023bb47f20a50790a18f323373519240f916534b98ec0f.png" src="../_images/7c7020c8cf6c7b33db023bb47f20a50790a18f323373519240f916534b98ec0f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictions</span> <span class="o">=</span> <span class="n">detector</span><span class="p">(</span>
+    <span class="n">im</span><span class="p">,</span>
+    <span class="n">candidate_labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;hat&quot;</span><span class="p">,</span> <span class="s2">&quot;book&quot;</span><span class="p">,</span> <span class="s2">&quot;sunglasses&quot;</span><span class="p">,</span> <span class="s2">&quot;camera&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+<span class="n">predictions</span>
+
+<span class="n">build_image_with_predictions</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/07bc34b3caf6843edf9e16c0e356ba2b64e78f34572776f247d423318f86c18e.png" src="../_images/07bc34b3caf6843edf9e16c0e356ba2b64e78f34572776f247d423318f86c18e.png" />
+</div>
+</div>
+<p>Notice it hasn’t detected the camera, because the default confidence threshold is quite high. To change it, we need to use the model differently, not with the <code class="docutils literal notranslate"><span class="pre">pipeline</span></code> construction.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoProcessor</span><span class="p">,</span> <span class="n">AutoModelForZeroShotObjectDetection</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForZeroShotObjectDetection</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
+<span class="n">processor</span> <span class="o">=</span> <span class="n">AutoProcessor</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://unsplash.com/photos/oj0zeY2Ltk4/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MTR8fHBpY25pY3xlbnwwfHx8fDE2Nzc0OTE1NDk&amp;force=true&amp;w=640&quot;</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">raw</span><span class="p">)</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="mi">512</span><span class="p">,</span> <span class="mi">512</span><span class="p">))</span>
+<span class="n">im</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/8875fc863a6f711d2031c1f48e12e8e82037d3353fdc764f766a3e9770213e4b.png" src="../_images/8875fc863a6f711d2031c1f48e12e8e82037d3353fdc764f766a3e9770213e4b.png" />
+</div>
+</div>
+<p>Let’s change the confidence threshold to 0.25, to get more detections and hopefully catch the camera</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text_queries</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hat&quot;</span><span class="p">,</span> <span class="s2">&quot;book&quot;</span><span class="p">,</span> <span class="s2">&quot;sunglasses&quot;</span><span class="p">,</span> <span class="s2">&quot;camera&quot;</span><span class="p">]</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">processor</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">text_queries</span><span class="p">,</span> <span class="n">images</span><span class="o">=</span><span class="n">im</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s2">&quot;pt&quot;</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">)</span>
+    <span class="n">target_sizes</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">im</span><span class="o">.</span><span class="n">size</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">processor</span><span class="o">.</span><span class="n">post_process_object_detection</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">target_sizes</span><span class="o">=</span><span class="n">target_sizes</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">draw</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">im</span><span class="p">)</span>
+
+<span class="n">scores</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s2">&quot;scores&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s2">&quot;labels&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">boxes</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s2">&quot;boxes&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">box</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">boxes</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">labels</span><span class="p">):</span>
+    <span class="n">xmin</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymax</span> <span class="o">=</span> <span class="n">box</span>
+    <span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">((</span><span class="n">xmin</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymax</span><span class="p">),</span> <span class="n">outline</span><span class="o">=</span><span class="s2">&quot;magenta&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">((</span><span class="n">xmin</span><span class="p">,</span> <span class="n">ymin</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">text_queries</span><span class="p">[</span><span class="n">label</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">score</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+
+<span class="n">im</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/8875fc863a6f711d2031c1f48e12e8e82037d3353fdc764f766a3e9770213e4b.png" src="../_images/8875fc863a6f711d2031c1f48e12e8e82037d3353fdc764f766a3e9770213e4b.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">im</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/8875fc863a6f711d2031c1f48e12e8e82037d3353fdc764f766a3e9770213e4b.png" src="../_images/8875fc863a6f711d2031c1f48e12e8e82037d3353fdc764f766a3e9770213e4b.png" />
+</div>
+</div>
+<p>Bash shortcuts
+Check this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">transformers</span>
+
+<span class="n">transformers</span><span class="o">.</span><span class="n">__version__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;4.38.1&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="batch-processing">
+<h3>Batch processing<a class="headerlink" href="#batch-processing" title="Link to this heading">#</a></h3>
+<p>You can pass multiple sets of images and text queries to search for different (or same) objects in several images. Let’s use both an astronaut image and the beach image together. For batch processing, you should pass text queries as a nested list to the processor and images as lists of PIL images, PyTorch tensors, or NumPy arrays.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">images</span> <span class="o">=</span> <span class="p">[</span><span class="n">image</span><span class="p">,</span> <span class="n">im</span><span class="p">]</span>
+<span class="n">text_queries</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;human face&quot;</span><span class="p">,</span> <span class="s2">&quot;rocket&quot;</span><span class="p">,</span> <span class="s2">&quot;nasa badge&quot;</span><span class="p">,</span> <span class="s2">&quot;star-spangled banner&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;hat&quot;</span><span class="p">,</span> <span class="s2">&quot;book&quot;</span><span class="p">,</span> <span class="s2">&quot;sunglasses&quot;</span><span class="p">,</span> <span class="s2">&quot;camera&quot;</span><span class="p">],</span>
+<span class="p">]</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">processor</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">text_queries</span><span class="p">,</span> <span class="n">images</span><span class="o">=</span><span class="n">images</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s2">&quot;pt&quot;</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">)</span>
+    <span class="n">target_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">images</span><span class="p">]</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">processor</span><span class="o">.</span><span class="n">post_process_object_detection</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">target_sizes</span><span class="o">=</span><span class="n">target_sizes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now results is a list of length 2, with each element containing the predictions for the corresponding image.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="image-guided-object-detection">
+<h3>Image-guided object detection<a class="headerlink" href="#image-guided-object-detection" title="Link to this heading">#</a></h3>
+<p>In addition to zero-shot object detection with text queries, OWL-ViT offers image-guided object detection. This means you can use an image query to find similar objects in the target image. Unlike text queries, only a single example image is allowed.</p>
+<p>Let’s take an image with two cats on a couch, and two remote controllers, as a target image, and an image of a remote controller as a query:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://images.cocodataset.org/val2017/000000039769.jpg&quot;</span>
+<span class="n">image_target</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">raw</span><span class="p">)</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="mi">512</span><span class="p">,</span> <span class="mi">512</span><span class="p">))</span>
+
+<span class="c1">#query_url = &quot;http://images.cocodataset.org/val2017/000000524280.jpg&quot;</span>
+<span class="n">query_url</span> <span class="o">=</span> <span class="s2">&quot;https://i.guim.co.uk/img/media/8459da1aab3ef116fd75f344ce9650e8e32a365f/693_897_4699_2819/master/4699.jpg?width=1200&amp;height=900&amp;quality=85&amp;auto=format&amp;fit=crop&amp;s=ab3cccacc75e2cd047d8ca9b9d65be67&quot;</span>
+<span class="n">query_image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">query_url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">raw</span><span class="p">)</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image_target</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">query_image</span><span class="p">)</span>
+
+<span class="c1"># write titles</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Target Image&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Query Image&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We are going to use the newer version of OWL, OWLv2, as it works better with this use case:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoProcessor</span><span class="p">,</span> <span class="n">AutoModelForZeroShotObjectDetection</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForZeroShotObjectDetection</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;google/owlv2-base-patch16&quot;</span><span class="p">)</span>
+<span class="n">processor</span> <span class="o">=</span> <span class="n">AutoProcessor</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;google/owlv2-base-patch16&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the preprocessing step, instead of text queries, you now need to use query_images:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">processor</span><span class="p">(</span><span class="n">images</span><span class="o">=</span><span class="n">image_target</span><span class="p">,</span> <span class="n">query_images</span><span class="o">=</span><span class="n">query_image</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s2">&quot;pt&quot;</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">image_guided_detection</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">)</span>
+    <span class="n">target_sizes</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">image_target</span><span class="o">.</span><span class="n">size</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">processor</span><span class="o">.</span><span class="n">post_process_image_guided_detection</span><span class="p">(</span><span class="n">outputs</span><span class="o">=</span><span class="n">outputs</span><span class="p">,</span> <span class="n">target_sizes</span><span class="o">=</span><span class="n">target_sizes</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For predictions, instead of passing the inputs to the model, pass them to <code class="docutils literal notranslate"><span class="pre">image_guided_detection()</span></code>. Draw the predictions as before except now there are no labels.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image_to_draw</span> <span class="o">=</span> <span class="n">image_target</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">draw</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">image_to_draw</span><span class="p">)</span>
+
+<span class="n">scores</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s2">&quot;scores&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">boxes</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s2">&quot;boxes&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">box</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">boxes</span><span class="p">,</span> <span class="n">scores</span><span class="p">):</span>
+    <span class="n">xmin</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymax</span> <span class="o">=</span> <span class="n">box</span>
+    <span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">((</span><span class="n">xmin</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymax</span><span class="p">),</span> <span class="n">outline</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">image_to_draw</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image_target</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise</strong>: Pick a few photos displaying several products of popular consumer brands, such as KitKat, Pringles, Coca-Cola, etc.</p>
+<p>Test the model to see if it can detect the corresponding object in the images.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">pipeline</span>
+
+<span class="n">model_name</span> <span class="o">=</span> <span class="s2">&quot;google/owlvit-large-patch14&quot;</span>
+
+<span class="n">detector</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model_name</span><span class="p">,</span> <span class="n">task</span><span class="o">=</span><span class="s2">&quot;zero-shot-object-detection&quot;</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;images/supermarket2.jpeg&#39;</span><span class="p">)</span>
+
+<span class="n">image</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Could not find image processor class in the image processor config or the model config. Loading based on pattern matching with the model&#39;s feature extractor configuration. Please open a PR/issue to update `preprocessor_config.json` to use `image_processor_type` instead of `feature_extractor_type`. This warning will be removed in v4.40.
+</pre></div>
+</div>
+<img alt="../_images/e93d3490f4815dc7bbba9b8f011aa5ba0df0a39e2ac8ea8d97b04186e5b560df.png" src="../_images/e93d3490f4815dc7bbba9b8f011aa5ba0df0a39e2ac8ea8d97b04186e5b560df.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictions</span> <span class="o">=</span> <span class="n">detector</span><span class="p">(</span>
+    <span class="n">image</span><span class="p">,</span>
+    <span class="n">candidate_labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;orange fruit&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+<span class="n">predictions</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;score&#39;: 0.2248387336730957,
+  &#39;label&#39;: &#39;orange fruit&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 335, &#39;ymin&#39;: 737, &#39;xmax&#39;: 416, &#39;ymax&#39;: 814}},
+ {&#39;score&#39;: 0.20191901922225952,
+  &#39;label&#39;: &#39;orange fruit&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 160, &#39;ymin&#39;: 463, &#39;xmax&#39;: 263, &#39;ymax&#39;: 547}},
+ {&#39;score&#39;: 0.14493323862552643,
+  &#39;label&#39;: &#39;orange fruit&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 178, &#39;ymin&#39;: 809, &#39;xmax&#39;: 285, &#39;ymax&#39;: 889}},
+ {&#39;score&#39;: 0.14432859420776367,
+  &#39;label&#39;: &#39;a lemon&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 352, &#39;ymin&#39;: 256, &#39;xmax&#39;: 418, &#39;ymax&#39;: 320}},
+ {&#39;score&#39;: 0.1417725682258606,
+  &#39;label&#39;: &#39;orange fruit&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 168, &#39;ymin&#39;: 702, &#39;xmax&#39;: 251, &#39;ymax&#39;: 765}},
+ {&#39;score&#39;: 0.13738302886486053,
+  &#39;label&#39;: &#39;orange fruit&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 305, &#39;ymin&#39;: 202, &#39;xmax&#39;: 380, &#39;ymax&#39;: 274}},
+ {&#39;score&#39;: 0.13653160631656647,
+  &#39;label&#39;: &#39;orange fruit&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 259, &#39;ymin&#39;: 467, &#39;xmax&#39;: 328, &#39;ymax&#39;: 536}},
+ {&#39;score&#39;: 0.1351265162229538,
+  &#39;label&#39;: &#39;orange fruit&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 333, &#39;ymin&#39;: 735, &#39;xmax&#39;: 419, &#39;ymax&#39;: 812}},
+ {&#39;score&#39;: 0.1348145604133606,
+  &#39;label&#39;: &#39;orange fruit&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 141, &#39;ymin&#39;: 180, &#39;xmax&#39;: 229, &#39;ymax&#39;: 257}},
+ {&#39;score&#39;: 0.12859103083610535,
+  &#39;label&#39;: &#39;orange fruit&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 231, &#39;ymin&#39;: 197, &#39;xmax&#39;: 315, &#39;ymax&#39;: 263}},
+ {&#39;score&#39;: 0.1253933310508728,
+  &#39;label&#39;: &#39;orange fruit&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 252, &#39;ymin&#39;: 763, &#39;xmax&#39;: 339, &#39;ymax&#39;: 839}},
+ {&#39;score&#39;: 0.1251986175775528,
+  &#39;label&#39;: &#39;a lemon&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 310, &#39;ymin&#39;: 815, &#39;xmax&#39;: 388, &#39;ymax&#39;: 891}},
+ {&#39;score&#39;: 0.12222826480865479,
+  &#39;label&#39;: &#39;orange fruit&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 177, &#39;ymin&#39;: 805, &#39;xmax&#39;: 296, &#39;ymax&#39;: 893}},
+ {&#39;score&#39;: 0.12194252759218216,
+  &#39;label&#39;: &#39;orange fruit&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: -11, &#39;ymin&#39;: 128, &#39;xmax&#39;: 427, &#39;ymax&#39;: 326}},
+ {&#39;score&#39;: 0.12080925703048706,
+  &#39;label&#39;: &#39;a lemon&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 224, &#39;ymin&#39;: 537, &#39;xmax&#39;: 314, &#39;ymax&#39;: 605}},
+ {&#39;score&#39;: 0.11660738289356232,
+  &#39;label&#39;: &#39;orange fruit&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 321, &#39;ymin&#39;: 465, &#39;xmax&#39;: 393, &#39;ymax&#39;: 534}},
+ {&#39;score&#39;: 0.11233988404273987,
+  &#39;label&#39;: &#39;orange fruit&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 839, &#39;ymin&#39;: 762, &#39;xmax&#39;: 1066, &#39;ymax&#39;: 981}},
+ {&#39;score&#39;: 0.1122438907623291,
+  &#39;label&#39;: &#39;orange fruit&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 861, &#39;ymin&#39;: 883, &#39;xmax&#39;: 937, &#39;ymax&#39;: 942}},
+ {&#39;score&#39;: 0.11012091487646103,
+  &#39;label&#39;: &#39;orange fruit&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 277, &#39;ymin&#39;: 700, &#39;xmax&#39;: 364, &#39;ymax&#39;: 756}},
+ {&#39;score&#39;: 0.1080109030008316,
+  &#39;label&#39;: &#39;orange fruit&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 115, &#39;ymin&#39;: 686, &#39;xmax&#39;: 444, &#39;ymax&#39;: 923}},
+ {&#39;score&#39;: 0.10759588330984116,
+  &#39;label&#39;: &#39;orange fruit&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 232, &#39;ymin&#39;: 194, &#39;xmax&#39;: 317, &#39;ymax&#39;: 263}},
+ {&#39;score&#39;: 0.10709948092699051,
+  &#39;label&#39;: &#39;orange fruit&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 314, &#39;ymin&#39;: 429, &#39;xmax&#39;: 387, &#39;ymax&#39;: 466}},
+ {&#39;score&#39;: 0.10702415555715561,
+  &#39;label&#39;: &#39;a lemon&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 141, &#39;ymin&#39;: 180, &#39;xmax&#39;: 229, &#39;ymax&#39;: 257}},
+ {&#39;score&#39;: 0.10501638799905777,
+  &#39;label&#39;: &#39;orange fruit&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 259, &#39;ymin&#39;: 131, &#39;xmax&#39;: 334, &#39;ymax&#39;: 194}},
+ {&#39;score&#39;: 0.10429706424474716,
+  &#39;label&#39;: &#39;orange fruit&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 749, &#39;ymin&#39;: 943, &#39;xmax&#39;: 811, &#39;ymax&#39;: 1013}},
+ {&#39;score&#39;: 0.10184995085000992,
+  &#39;label&#39;: &#39;orange fruit&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 915, &#39;ymin&#39;: 917, &#39;xmax&#39;: 980, &#39;ymax&#39;: 975}},
+ {&#39;score&#39;: 0.10131363570690155,
+  &#39;label&#39;: &#39;a lemon&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 9, &#39;ymin&#39;: 765, &#39;xmax&#39;: 89, &#39;ymax&#39;: 851}},
+ {&#39;score&#39;: 0.10128820687532425,
+  &#39;label&#39;: &#39;orange fruit&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 145, &#39;ymin&#39;: 766, &#39;xmax&#39;: 228, &#39;ymax&#39;: 846}},
+ {&#39;score&#39;: 0.10116291791200638,
+  &#39;label&#39;: &#39;orange fruit&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 1028, &#39;ymin&#39;: 280, &#39;xmax&#39;: 1071, &#39;ymax&#39;: 317}},
+ {&#39;score&#39;: 0.1002100259065628,
+  &#39;label&#39;: &#39;orange fruit&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 205, &#39;ymin&#39;: 250, &#39;xmax&#39;: 293, &#39;ymax&#39;: 316}},
+ {&#39;score&#39;: 0.1001313105225563,
+  &#39;label&#39;: &#39;a lemon&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 305, &#39;ymin&#39;: 202, &#39;xmax&#39;: 380, &#39;ymax&#39;: 274}},
+ {&#39;score&#39;: 0.10005459934473038,
+  &#39;label&#39;: &#39;a lemon&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 697, &#39;ymin&#39;: 471, &#39;xmax&#39;: 746, &#39;ymax&#39;: 512}},
+ {&#39;score&#39;: 0.10001298040151596,
+  &#39;label&#39;: &#39;orange fruit&#39;,
+  &#39;box&#39;: {&#39;xmin&#39;: 657, &#39;ymin&#39;: 961, &#39;xmax&#39;: 745, &#39;ymax&#39;: 1023}}]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">build_image_with_predictions</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/82dfd9f18d5659c0f994ada9325a15692acebd54b8075b8781eb43a0f211b7f8.png" src="../_images/82dfd9f18d5659c0f994ada9325a15692acebd54b8075b8781eb43a0f211b7f8.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./s14_more_vision_tasks_object_detection"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="s14.1-intro-object-detection.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Object Detection</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../s15_exercises_solved/s15.1-text-classification-solved.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercise 1: Hate Spech Detection in X (aka Twitter) 🤬</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">Use cases</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#object-search">Object Search</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#object-counting">Object Counting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#object-tracking">Object Tracking</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-it-from-python">Using it from Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-processing">Batch processing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-guided-object-detection">Image-guided object detection</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Víctor Gallego
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

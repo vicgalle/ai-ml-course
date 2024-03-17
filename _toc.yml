@@ -1,0 +1,69 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: 1. Our first Generative AI application
+    chapters:
+      - file: 01/example_genAI.ipynb
+  - caption: 2. Matrix Algebra with NumPy
+    chapters:
+      - file: 02_matrix_algebra_numpy/s02.1-numpy.ipynb
+      - file: 02_matrix_algebra_numpy/s02.2-numpy-exercises-solutions.ipynb
+      - file: 02_matrix_algebra_numpy/s02.3-image-blending.ipynb
+  - caption: 3. Optimization and Automatic Differentiation
+    chapters:
+      - file: s03_optimization_automatic_differentiation/s03.1_notebook-solutions.ipynb
+  - caption: 4. Review of Machine Learning with scikit-learn
+    chapters:
+      - file: s04_review_ML_sklearn/s04.1-supervised-learning-sklearn-solutions.ipynb
+      - file: s04_review_ML_sklearn/s04.2-cost-benefit-analysis.ipynb
+  - caption: 5. Unsupervised Learning with UMAP
+    chapters:
+      - file: s05_unsupervised-learning-umap/s05.1-dimensionality-reduction.ipynb
+      - file: s05_unsupervised-learning-umap/s05.2-text-analysis-solutions.ipynb
+  - caption: 6. Text Processing with scikit-learn
+    chapters:
+      - file: s06_text-processing-sklearn/s06.1-text-classification-solved.ipynb
+  - caption: 7. Intro to Deep Learning
+    chapters:
+      - file: s07_intro_deep_learning/s07.1-neural_network-solved.ipynb
+  - caption: 9. Deep Learning in Computer Vision
+    chapters:
+      - file: s09_intro_deep_learning_computer_vision/s09.1-examples.ipynb
+      - file: s09_intro_deep_learning_computer_vision/s09.2-examples-2.ipynb
+      - file: s09_intro_deep_learning_computer_vision/s09.3-intro-to-convolutions_solved.ipynb
+      - file: s09_intro_deep_learning_computer_vision/s09.4-convolutional-networks_solved.ipynb
+  - caption: 11. Transfer Learning
+    chapters:
+      - file: s11_transfer_learning/s11.1-transfer-learning-examples.ipynb
+  - caption: 12. Zero-Shot Learning
+    chapters:
+      - file: s12_zero-shot-learning/s12.1_intro-zero-shot-classification.ipynb
+  - caption: 13. Semantic Search 
+    chapters:
+      - file: s13_semantic_search_and_biases/s13.1_semantic_search_solved.ipynb
+  - caption: 14. Object Detection 
+    chapters:
+      - file: s14_more_vision_tasks_object_detection/s14.1-intro-object-detection.ipynb
+      - file: s14_more_vision_tasks_object_detection/s14.2-zero-shot_object_detection.ipynb
+  - caption: 15. Exercises I 
+    chapters:
+      - file: s15_exercises_solved/s15.1-text-classification-solved.ipynb
+      - file: s15_exercises_solved/s15.2-transfer-learning-solved.ipynb
+      - file: s15_exercises_solved/s15.3-semantic-search-solved2.ipynb
+  - caption: 16. Exercises II 
+    chapters:
+      - file: s16_exercises_2_solved/s16.1-umap-solved.ipynb
+      - file: s16_exercises_2_solved/s16.2-zero-shot-classification-solved.ipynb
+  - caption: 19. Intro to Transformers
+    chapters:
+      - file: s19_intro_to_transformers/s19.1_pipelines_solved.ipynb
+      - file: s19_intro_to_transformers/s19.2_zero-shot-classification.ipynb
+  - caption: 20. Transformers Architecture & Transfer Learning
+    chapters:
+      - file: s20_transfer-learning-and-transformers-architecture/s20.1_transformers_architecture.ipynb
+      - file: s20_transfer-learning-and-transformers-architecture/s20.2-transfer-intro.ipynb
+      - file: s20_transfer-learning-and-transformers-architecture/s20.3-transfer-learning-example.ipynb
+  

@@ -1,0 +1,69 @@
+Traceback (most recent call last):
+  File "/Users/victorgallego/miniforge3/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/victorgallego/miniforge3/lib/python3.9/site-packages/nbclient/client.py", line 1093, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/victorgallego/miniforge3/lib/python3.9/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/victorgallego/miniforge3/lib/python3.9/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/victorgallego/miniforge3/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "/Users/victorgallego/miniforge3/lib/python3.9/site-packages/nbclient/client.py", line 559, in async_execute
+    await self.async_execute_cell(
+  File "/Users/victorgallego/miniforge3/lib/python3.9/site-packages/nbclient/client.py", line 854, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/Users/victorgallego/miniforge3/lib/python3.9/site-packages/nbclient/client.py", line 756, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Convert coordinates to meters using Haversine formula
+lon,lat = np.meshgrid(np.linspace(-0.4,0.4,1000), np.linspace(51.4,51.7,1000))
+x = np.cos(lat) * np.cos(lon) * earth_radius * 1000
+y = np.cos(lat) * np.sin(lon) * earth_radius * 1000
+
+# Calculate the distances
+thames_line = LineString(thames_coordinates)
+bank_of_england_point = Point(bank_of_england_coordinates)
+satellite_path_line = LineString(satellite_path_coordinates)
+
+# Convert the shapely 'Point' to its coordinates
+bank_of_england_point = np.array([bank_of_england_coordinates])
+
+# Now, you can apply the cdist function
+dist_bank = cdist(np.vstack((x.ravel(), y.ravel())).T, bank_of_england_point).reshape(x.shape)
+
+dist_thames = np.array([thames_line.distance(Point(p)) for p in zip(x.ravel(), y.ravel())]).reshape(x.shape)
+#dist_bank = cdist(np.vstack((x.ravel(), y.ravel())).T, [bank_of_england_point]).reshape(x.shape)
+dist_satellite = np.array([satellite_path_line.distance(Point(p)) for p in zip(x.ravel(), y.ravel())]).reshape(x.shape)
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mKeyboardInterrupt[0m                         Traceback (most recent call last)
+[0;32m/var/folders/l_/k13w4mhd5hv4bddxwqz8qdfw0000gn/T/ipykernel_4598/3761511037.py[0m in [0;36m<module>[0;34m[0m
+[1;32m     17[0m [0mdist_thames[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0marray[0m[0;34m([0m[0;34m[[0m[0mthames_line[0m[0;34m.[0m[0mdistance[0m[0;34m([0m[0mPoint[0m[0;34m([0m[0mp[0m[0;34m)[0m[0;34m)[0m [0;32mfor[0m [0mp[0m [0;32min[0m [0mzip[0m[0;34m([0m[0mx[0m[0;34m.[0m[0mravel[0m[0;34m([0m[0;34m)[0m[0;34m,[0m [0my[0m[0;34m.[0m[0mravel[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m][0m[0;34m)[0m[0;34m.[0m[0mreshape[0m[0;34m([0m[0mx[0m[0;34m.[0m[0mshape[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     18[0m [0;31m#dist_bank = cdist(np.vstack((x.ravel(), y.ravel())).T, [bank_of_england_point]).reshape(x.shape)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 19[0;31m [0mdist_satellite[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0marray[0m[0;34m([0m[0;34m[[0m[0msatellite_path_line[0m[0;34m.[0m[0mdistance[0m[0;34m([0m[0mPoint[0m[0;34m([0m[0mp[0m[0;34m)[0m[0;34m)[0m [0;32mfor[0m [0mp[0m [0;32min[0m [0mzip[0m[0;34m([0m[0mx[0m[0;34m.[0m[0mravel[0m[0;34m([0m[0;34m)[0m[0;34m,[0m [0my[0m[0;34m.[0m[0mravel[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m][0m[0;34m)[0m[0;34m.[0m[0mreshape[0m[0;34m([0m[0mx[0m[0;34m.[0m[0mshape[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;32m/var/folders/l_/k13w4mhd5hv4bddxwqz8qdfw0000gn/T/ipykernel_4598/3761511037.py[0m in [0;36m<listcomp>[0;34m(.0)[0m
+[1;32m     17[0m [0mdist_thames[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0marray[0m[0;34m([0m[0;34m[[0m[0mthames_line[0m[0;34m.[0m[0mdistance[0m[0;34m([0m[0mPoint[0m[0;34m([0m[0mp[0m[0;34m)[0m[0;34m)[0m [0;32mfor[0m [0mp[0m [0;32min[0m [0mzip[0m[0;34m([0m[0mx[0m[0;34m.[0m[0mravel[0m[0;34m([0m[0;34m)[0m[0;34m,[0m [0my[0m[0;34m.[0m[0mravel[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m][0m[0;34m)[0m[0;34m.[0m[0mreshape[0m[0;34m([0m[0mx[0m[0;34m.[0m[0mshape[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     18[0m [0;31m#dist_bank = cdist(np.vstack((x.ravel(), y.ravel())).T, [bank_of_england_point]).reshape(x.shape)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 19[0;31m [0mdist_satellite[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0marray[0m[0;34m([0m[0;34m[[0m[0msatellite_path_line[0m[0;34m.[0m[0mdistance[0m[0;34m([0m[0mPoint[0m[0;34m([0m[0mp[0m[0;34m)[0m[0;34m)[0m [0;32mfor[0m [0mp[0m [0;32min[0m [0mzip[0m[0;34m([0m[0mx[0m[0;34m.[0m[0mravel[0m[0;34m([0m[0;34m)[0m[0;34m,[0m [0my[0m[0;34m.[0m[0mravel[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m][0m[0;34m)[0m[0;34m.[0m[0mreshape[0m[0;34m([0m[0mx[0m[0;34m.[0m[0mshape[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;32m~/miniforge3/lib/python3.9/site-packages/shapely/geometry/base.py[0m in [0;36mdistance[0;34m(self, other)[0m
+[1;32m    332[0m     [0;32mdef[0m [0mdistance[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mother[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    333[0m         [0;34m"""Unitless distance to other geometry (float)"""[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 334[0;31m         [0;32mreturn[0m [0m_maybe_unpack[0m[0;34m([0m[0mshapely[0m[0;34m.[0m[0mdistance[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mother[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    335[0m [0;34m[0m[0m
+[1;32m    336[0m     [0;32mdef[0m [0mhausdorff_distance[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mother[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/miniforge3/lib/python3.9/site-packages/shapely/geometry/base.py[0m in [0;36m_maybe_unpack[0;34m(result)[0m
+[1;32m     68[0m [0;34m[0m[0m
+[1;32m     69[0m [0;32mdef[0m [0m_maybe_unpack[0m[0;34m([0m[0mresult[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 70[0;31m     [0;32mif[0m [0mresult[0m[0;34m.[0m[0mndim[0m [0;34m==[0m [0;36m0[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     71[0m         [0;31m# convert numpy 0-d array / scalar to python scalar[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     72[0m         [0;32mreturn[0m [0mresult[0m[0;34m.[0m[0mitem[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mKeyboardInterrupt[0m: 
+KeyboardInterrupt: 
+

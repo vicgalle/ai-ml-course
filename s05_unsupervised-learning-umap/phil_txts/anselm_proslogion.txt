@@ -1,0 +1,1085 @@
+COMPLETE PHILOSOPHICAL AND
+  THEOLOGICAL TREATISES
+            of
+  ANSELM of CANTERBURY
+
+
+
+          Translated
+              by
+     JASPER HOPKINS
+           and
+   HERBERT RICHARDSON
+
+
+
+
+  The Arthur J. Banning Press
+          Minneapolis
+      In the notes to the translations the numbering of the Psalms
+      accords with the Douay version and, in parentheses, with the
+      King James (Authorized) version. A reference such as “S II,
+      264:18” indicates “F. S. Schmitt’s edition of the Latin texts, Vol.
+      II, p. 264, line 18.” This online translation of the Proslogion is
+      taken from A New, Interpretive Translation of St. Anselm’s Monolo-
+      gion and Proslogion (Minneapolis: Banning Press, 1986). The
+      Latin text, collated by Hopkins and published in the foregoing
+      work, is not here reprinted.
+
+
+
+
+Library of Congress Control Number: 00-133229
+
+ISBN 0-938060-37-6
+
+Printed in the United States of America
+
+Copyright © 2000 by The Arthur J. Banning Press, Minneapolis,
+Minnesota 55402. All rights reserved.
+                         PROSLOGION
+
+                             PREFACE 1
+
+Upon the insistent adjurations of certain brothers I wrote a work—
+as an example of meditating about the rational basis of faith—in
+the role of someone who by arguing silently with himself investi-
+gates what he does not yet know. Afterwards, considering this
+[work] to be composed of a chain of many arguments, I began to
+ask myself whether perhaps a single consideration could be found
+which would require nothing other than itself for proving itself
+and which would suffice by itself to demonstrate (1) that God truly
+[i.e., really] exists and (2) that He is the Supreme Good (needing
+no one else, yet needed by all [else] in order to exist and to fare
+well) and whatever [else] we believe about the Divine Substance.
+I often and eagerly directed my thinking to this [goal]. At times
+what I was in quest of seemed to me to be apprehensible; at times
+it completely eluded the acute gaze of my mind. At last, despair-
+ing, I wanted to desist, as though from pursuit of a thing which
+was not possible to be found. But just when I wanted completely
+to exclude from myself this thinking—lest by occupying my mind
+in vain, it would keep [me] from other [projects] in which I could
+make headway—just then it began more and more to force itself
+insistently upon me, unwilling and resisting [as I was]. Then one
+day when I was tired as a result of vigorously resisting its en-
+treaties, what I had despaired of [finding] appeared in my strife-
+torn mind in such way that I eagerly embraced the [line-of-]think-
+ing which I, as one who was anxious, had been warding off. Sup-
+posing, then, that if what I rejoiced to have discovered were writ-
+ten down it would please its readers, I wrote the following work
+on this [subject], and on various others, in the role of someone en-
+deavoring to elevate his mind toward contemplating God and in
+the role of someone seeking to understand what he believes. And
+I deemed neither this present [writing] nor the one mentioned
+above to be worthy to be called a treatise or to be something to
+which the name of the author should be prefixed; and, neverthe-
+less, I thought that they should not be circulated without titles, by
+1
+The Proslogion was composed at the Monastery of Bec around 1077-1078.
+
+                                  88
+                          Proslogion Preface                        89
+
+
+which in some way they would issue to anyone into whose hands
+they came an invitation to read them. Hence, I gave a title to each,
+so that the first was called An Example of Meditating about the Ra-
+tional Basis of Faith and the second was called Faith Seeking Un-
+derstanding. But after several people had already copied both
+[works] under these [respective] titles, I was urged by several to
+prefix my name to these [writings—urged] especially by Hugh, the
+reverend archbishop of Lyon, who was serving as apostolic legate
+in Gaul and who on the basis of his apostolic authority directed
+me to do this. In order for the [affixing of my name] to be done
+more fittingly, I retitled the former [writing] Monologion, i.e., a so-
+liloquy, and the present [writing] Proslogion, i.e., an address.
+
+                        CHAPTER-TITLES
+
+1. Arousal of the mind for contemplating God.
+2. God truly [i.e., really] exists.
+3. [God] cannot be thought not to exist.
+4. How the Fool said in his heart that which cannot be thought.
+5. God is whatever it is better to be than not to be. Alone exist-
+   ing through Himself, He makes all other things from nothing.
+6. How God is able to perceive even though He is not something
+   corporeal.
+7. How He is omnipotent even though He cannot do many things.
+8. How He is merciful and impassible.
+9. How He who is completely and supremely just spares those who
+   are evil. He is justly merciful to them.
+10. How He justly punishes and justly spares those who are evil.
+11. How “all the ways of the Lord are mercy and truth,” and yet,
+    “the Lord is just in all His ways.”
+12. God is the life by which He lives, and similarly for similar
+    [attributes].
+13. How He alone is unlimited and eternal, although other spir-
+    its are [also] unlimited and eternal.
+14. How and why God is both seen and not seen by those who
+    seek Him.
+15. He is greater than can be thought.
+16. This is the inaccessible light in which He dwells.
+17. Harmony, fragrance, succulence, softness, and beauty are
+90                               Proslogion 1
+
+
+    present in God in their own ineffable manner.
+18. There are no parts in God or in the eternity which He is.
+19. He is not in place or in time; but all things are in Him.
+20. He is before and beyond all things—even eternal things.
+21. Whether this [eternity] is one aeon or more than one.
+22 He alone is what He is and who He is.
+23. The Father, the Son, and the Holy Spirit are equally this
+    [supreme] good. It is the one necessary [Being], which is every
+    good, complete good, and the only good.
+24. A conjecture about what kind of good this is and about how
+    great it is.
+25. The kinds and the quantity of goods for those who enjoy this
+    [Good].
+26. Whether this is the full joy which the Lord promises.
+
+                          PROSLOGION
+
+                         CHAPTER ONE
+           Arousal of the mind for contemplating God.
+Come now, insignificant man, leave behind for a time your pre-
+occupations; seclude yourself for a while from your disquieting
+thoughts. Turn aside now from heavy cares, and set aside your
+wearisome tasks. Make time for God, and rest a while in Him.
+Enter into the inner chamber of your mind; shut out everything
+except God and what is of aid to you in seeking Him; after clos-
+ing the chamber door, seek Him out.1 Speak now, my whole heart;
+speak now to God: I seek Your countenance; Your countenance, 0
+Lord, do I seek.2 So come now, Lord my God, teach my heart
+where and how to seek You, where and how to find You. If You
+are not here, 0 Lord, where shall I seek You who are absent? But
+if You are everywhere, why do I not behold You as present? But
+surely You dwell in light inaccessible.3 Yet, where is light inacces-
+sible? Or how shall I approach unto light inaccessible? Or who will
+lead me to and into this [light] so that in it I may behold You?
+Furthermore, by what signs, by what facial appearance shall I seek
+You? Never have I seen You, 0 Lord my God; I am not acquaint-
+ed with Your face. What shall this Your distant exile do? What shall
+1                                 2                      3
+See Matthew 6:6. Isaiah 26:20.     Psalms 26:8 (27:8).   I Timothy 6:16.
+                              Proslogion 1                               91
+
+
+he do, 0 most exalted Lord? What shall Your servant do, an-
+guished out of love for You and cast far away from Your face? 1He
+pants to see You, but Your face is too far removed from him. He
+desires to approach You, but Your dwelling place is inaccessible.
+He desires to find You but does not know Your abode. He longs
+to seek You but does not know Your countenance. 0 Lord, You are
+my God, and You are my Lord; yet, never have I seen You. You
+have created me and created me anew and have bestowed upon
+me whatever goods I have; but I am not yet acquainted with You.
+Indeed, I was made for seeing You; but not yet have I done that
+for which I was made.
+   0 the unhappy fate of man when he lost that [end] for which
+he was made! 0 that hard and ominous fall! Alas, what he lost and
+what he found, what vanished and what remained! He lost the hap-
+piness for which he was made and found an unhappiness for which
+he was not made. That without which nothing is happy vanished,
+and there remained what through itself is only unhappy. Man then
+ate the bread-of-angels 2 for which he now hungers; and now he
+eats the bread-of-sorrows,3 which then he did not know. Alas, the
+common mourning of men, the universal lament of the sons of
+Adam! Adam burped with satiety; we sigh with hunger. He
+abounded; we go begging. He happily possessed and unhappily de-
+serted; we unhappily lack and unhappily desire, while, alas, re-
+maining empty. Why did he not, when easily able, keep for us that
+of which we were so gravely deprived? Why did he block off from
+us the light and enshroud us in darkness? Why did he take away
+from us life and inf lict death? Wretched [creatures that we are],
+expelled from that home, impelled to this one!, cast down from
+that abode, sunken to this one! [We have been banished] from our
+homeland into exile, from the vision of God into our own blind-
+ness, from the delight of immortality into the bitterness and hor-
+ror of death. 0 miserable transformation from such great good
+into such great evil! What a grievous loss, a heavy sorrow, an un-
+mitigated plight!
+   But, alas, unhappy me, one of the other unhappy sons of Eve
+who are far removed from God: what did I set out to do?, what
+have I achieved? For what was I striving?, where have I arrived?
+
+1                       2                       3
+Psalms 50:13 (51:11).   Psalms 77:25 (78:25).   Psalms 126: 2 (127:2).
+
+                                   91
+92                            Proslogion 1
+
+
+To what was I aspiring?, for what do I sigh? I sought after good
+things1 and, behold, [here is] turmoil.2 I was striving unto God but
+collided with myself. I was seeking rest in my inner recesses but
+found tribulation and grief 3 in my inmost being. I wanted to laugh
+from joy of mind but am constrained to cry out from groaning
+of heart.4 I hoped for gladness, but, lo, as a result, my sighs in-
+crease! 0 Lord, how long? How long, 0 Lord, will You forget us?
+How long will You turn away Your face from us? 5 When will You
+look upon us and hear us? When will You enlighten our eyes6 and
+show us Your face?7 When will You restore Yourself to us? Look
+upon us, 0 Lord; hear us, enlighten us, reveal Yourself unto us.
+Restore unto us Yourself—without whom we fare so badly—so that
+we may fare well. Have compassion upon the efforts and attempts
+which we, who can do nothing without You, direct toward You. [As]
+You summon us, [so] aid us,8 I beseech [You], 0 Lord, that I may
+not despair with sighing but may revive in hoping. I beseech You,
+0 Lord: my heart is made bitter by its own desolation; sweeten it
+by Your consolation. I beseech You, 0 Lord, that having begun in
+hunger to seek You, I may not finish without partaking of You. I
+set out famished; let me not return still unfed. I came as one who
+is poor to one who is rich, as one who is unhappy to one who is
+merciful; let me not return empty and spurned. And if before I
+eat I sigh,9 grant at least after the sighs that which I may eat. 0
+Lord, bent over [as I am] I can look only downwards; straighten
+me so that I can look upwards. Having mounted above my head,
+my iniquities cover me over; and as a heavy burden they weigh
+me down.10 Deliver me [from them]; unburden me, so that the
+abyss of iniquities does not engulf me.11 Permit me, at least from
+afar or from the deep, to look upwards toward Your light. Teach
+me to seek You, and reveal Yourself to me as I seek; for unless
+You teach [me] I cannot seek You, and unless You reveal Yourself
+I cannot find You. Let me seek You in desiring You; let me desire
+You in seeking You. Let me find [You] in loving [You]; let me love
+[You] in finding [You].
+   0 Lord, I acknowledge and give thanks that You created in me
+1
+  Psalms 121:9 (122:9). 2Jeremiah 14:19. 3Psalms 114:3 (116:3). 4Psalms
+37:9 (38:8). 5Psalms 6:4 & 12:1 (6:3 & 13:1). 6Psalms 12:4 (13:3). 7Psalms
+79:4 & 8 (80:3 & 7). 8Psalms 78:9 (79:9). 9Job 3:24. 10Psalms 37:5 (38:4).
+11
+   Psalms 68:16 (69:15).
+                             Proslogion 1 & 2                                93
+
+
+Your image so that I may remember, contemplate, and love You.
+But [this image] has been so effaced by the abrasion of trans-
+gressions, so hidden from sight by the dark billows of sins, that un-
+less You renew and refashion it, it cannot do what it was created
+to do. 0 Lord, I do not attempt to gain access to Your loftiness,
+because I do not at all consider my intellect to be equal to this
+[task]. But I yearn to understand some measure of Your truth,
+which my heart believes and loves. For I do not seek to understand
+in order to believe, but I believe in order to understand. For I be-
+lieve even this: that unless I believe, I shall not understand.1
+
+                           CHAPTER TWO
+                      God truly [i.e., really] exists.
+Therefore, 0 Lord, You who give understanding to faith, grant me
+to understand—to the degree You know to be advantageous—that
+You exist, as we believe, and that You are what we believe [You to
+be]. Indeed, we believe You to be something than which nothing
+greater can be thought. Or is there, then, no such nature [as You],
+for the Fool has said in his heart that God does not exist? 2 But
+surely when this very same Fool hears my words “something than
+which nothing greater can be thought,” he understands what he
+hears. And what he understands is in his understanding, even if
+he does not understand [i.e., judge] it to exist. For that a thing is
+in the understanding is distinct from understanding that [this]
+thing exists. For example, when a painter envisions what he is
+about to paint: he indeed has in his understanding that which he
+has not yet made, but he does not yet understand that it exists. But
+after he has painted [it]: he has in his understanding that which
+he has made, and he understands that it exists. So even the Fool
+is convinced that something than which nothing greater can be
+thought is at least in his understanding; for when he hears of this
+[being], he understands [what he hears], and whatever is under-
+stood is in the understanding. But surely that than which a greater
+cannot be thought cannot be only in the understanding. For if it
+were only in the understanding, it could be thought to exist also
+in reality—something which is greater [than existing only in the
+1                                                         2
+  Isaiah 7:9 (Old Latin translation of the Septuagint).       Psalms 13:1 & 52:1
+(14:1 & 53:1).
+94                           Proslogion 2 - 4
+
+
+understanding]. Therefore, if that than which a greater cannot be
+thought were only in the understanding, then that than which a
+greater cannot be thought would be that than which a greater can
+be thought! But surely this [conclusion] is impossible. Hence, with-
+out doubt, something than which a greater cannot be thought ex-
+ists both in the understanding and in reality.
+
+                        CHAPTER THREE
+                [God] cannot be thought not to exist.
+Assuredly, this [being] exists so truly [i.e., really] that it cannot
+even be thought not to exist. For there can be thought to exist
+something which cannot be thought not to exist; and this thing is
+greater than that which can be thought not to exist. Therefore, if
+that than which a greater cannot be thought could be thought not
+to exist, then that than which a greater cannot be thought would
+not be that than which a greater cannot be thought—[a conse-
+quence] which is contradictory. Hence, something than which a
+greater cannot be thought exists so truly that it cannot even be
+thought not to exist. And You are this [being], 0 Lord our God.
+Therefore, 0 Lord my God, You exist so truly that You cannot even
+be thought not to exist. And this is rightly the case. For if any
+mind could think of something better than You, the creature
+would rise above the Creator and would sit in judgment over the
+Creator—something which is utterly absurd. Indeed, except for
+You alone, whatever else exists can be thought not to exist. There-
+fore, You alone exist most truly of all and thus most greatly of all;
+for whatever else exists does not exist as truly [as do You] and thus
+exists less greatly [than do You]. Since, then, it is so readily clear
+to a rational mind that You exist most greatly of all, why did the
+Fool say in his heart that God does not exist?1—why [indeed] ex-
+cept because [he is] foolish and a fool!
+
+                         CHAPTER FOUR
+    How the Fool said in his heart that which cannot be thought.
+Yet, since to speak in one's heart and to think are the same thing,
+how did [the Fool] say in his heart that which he was unable to think,
+
+1
+ Psalms 13:1 & 52:1 (14:1 & 53:1).
+                          Proslogion 4 & 5                          95
+
+
+or how was he unable to think that which he did say in his heart?
+Now, if he truly [i.e., really]—rather, since he truly—both thought
+[what he did] because he said [it] in his heart and did not say [it] in
+his heart because he was unable to think [it], then it is not the case
+that something is said in the heart, or is thought, in only one way.
+For in one way a thing is thought when the word signifying it is
+thought, and in another way [it is thought] when that which the
+thing is is understood. Thus, in the first way but not at all in the
+second, God can be thought not to exist. Indeed, no one who un-
+derstands that which God is can think that God does not exist, even
+though he says these words [viz., “God does not exist”] in his heart
+either without any signification or with some strange signification.
+For God is that than which a greater cannot be thought. Anyone
+who rightly understands this, surely understands that that [than
+which a greater cannot be thought] exists in such way that it can-
+not even conceivably not exist. Therefore, anyone who understands
+that God is such [a being] cannot think that He does not exist.
+   Thanks to You, good Lord, thanks to You—because what at first
+I believed through Your giving, now by Your enlightening I un-
+derstand to such an extent that [even] if I did not want to believe
+that You exist, I could not fail to understand [that You exist].
+
+                         CHAPTER FIVE
+              God is whatever it is better to be than
+            not to be. Alone existing through Himself,
+             He makes all other things from nothing.
+What, then, are You, 0 Lord God, than whom nothing greater can
+be thought? What indeed are You except that which—as highest of
+all things, alone existing through Himself—made all other things
+from nothing? For whatever is not this is less great than can be
+thought. But this [less greatness] cannot be thought of You. There-
+fore, what good is lacking to the Supreme Good, through whom
+every good exists? Consequently, You are just, truthful, blessed,
+and whatever it is better to be than not to be. For it is better to
+be just than not-just, blessed than not-blessed.
+
+                        CHAPTER SIX
+                   How God is able to perceive
+           even though He is not something corporeal.
+96                        Proslogion 6 & 7
+
+
+Now, since to be able to perceive and to be omnipotent, merciful,
+and impassible is better than not to be [any of these], how are You
+able to perceive if You are not something corporeal, or how are
+You omnipotent if You cannot do all things, or how are You both
+merciful and impassible? For if only corporeal things are able to
+perceive (inasmuch as the senses have to do with a body and are
+in a body), how are You able to perceive, since You are not some-
+thing corporeal but are Supreme Spirit, which is better than what
+is corporeal? But if perceiving is only knowing or only for the sake
+of knowing (for anyone who perceives knows in accordance with
+the characteristic capabilities of the respective senses—e.g., colors
+[are known] through sight, f lavors through taste), then whatever
+in some way knows is not unsuitably said in some way to perceive.
+Therefore, 0 Lord, even though You are not something corpore-
+al, truly You are supremely able to perceive in the sense that You
+know supremely all things—not [in the sense that You know] in
+the way that an animal does, by means of bodily senses.
+
+                     CHAPTER SEVEN
+               How He is omnipotent even though
+                  He cannot do many things.
+But how are You also omnipotent if You cannot do all things? Or
+how can You do all things if You are not able to be corrupted or
+to tell a lie or to make what is true be false—for example, [to
+make] what has already happened not to have happened—and,
+likewise, many [other] things? Or is the “ability” to do these things
+not power but lack of power? For anyone who is able to do these
+things is able to do what is disadvantageous to himself and what
+he ought not to do. And the more he is able to do these things,
+the more powerful are adversity and perversity over him and the
+less powerful he is against them. Therefore, anyone who in this
+way is able, is able not by a power but by a lack of power. For it
+is not the case that he is said to be able because he himself is able;
+rather, [he is said to be able] because his own lack of power caus-
+es something else to be powerful over him—or [for some other
+reason coinciding] with some other way of speaking (even as we
+say many things improperly—for example, when we substitute “to
+be” for “not to be” and substitute “to do” for “not to do” or for
+                          Proslogion 7 - 9                        97
+
+
+“to do nothing”). For we often say to someone who denies that
+something is the case, “It's as you say [it] is,” although we would
+say more properly, “It's not, as you say it's not.” Likewise, we say,
+“This man is sitting even as that man is [also] doing” or “ This man
+is resting even as that man is [also] doing”—although sitting is
+not doing anything and resting is doing nothing. So, then, when
+someone is said to have the power to do or to experience what is
+not advantageous to himself or what he ought not [to do or to ex-
+perience], by “power” a powerlessness is understood. For the more
+he has the [alleged] ability, the more powerful are adversity and
+perversity over him and the more powerless he is against them.
+Therefore, 0 Lord God, You are more truly omnipotent because
+You are not at all powerful through powerlessness and because
+nothing is powerful over You.
+
+                     CHAPTER EIGHT
+               How He is merciful and impassible.
+But how are you both merciful and impassible? For if You are im-
+passible You have no compassion. And if You do not have com-
+passion, You do not have a heart sorrowful out of compassion for
+the wretched—the very thing which being merciful is. And if You
+are not merciful, from where is there such great consolation for
+the wretched? How, then, are You and are You not merciful, 0
+Lord, except because You are merciful from our point of view but
+are not merciful in Yourself ? Indeed, You are [merciful] accord-
+ing to our experience but are not [merciful] according to Your ex-
+perience. For when You behold us in our wretched condition, we
+experience the effect of Your mercy; but You do not experience
+any emotion. And so, You are merciful because You save [us]
+wretched [creatures] and spare [us] who have sinned against You;
+and You are not merciful, because You do not experience com-
+passion for wretchedness.
+
+                      CHAPTER NINE
+         How He who is completely and supremely just
+    spares those who are evil. He is justly merciful to them.
+But how is it that You spare those who are evil if You are com-
+pletely and supremely just? For how is it that He who is completely
+98                         Proslogion 9
+
+
+and supremely just does something which is not just? Or what jus-
+tice is there in giving eternal life to one deserving eternal death?
+Why, then, good God—good to those who are good and to those
+who are evil—why do You save those who are evil, if [to do] this
+is not just and if You do not do anything that is not just? Inas-
+much as Your goodness is incomprehensible, is this [reason] hid-
+den in the inaccessible light in which You dwell? 1 Truly, in the
+deepest and inmost seat of Your goodness is hidden a fount from
+which the stream of Your mercy f lows. For although You are com-
+pletely and supremely just, nevertheless because You are com-
+pletely and supremely good You are also beneficent to those who
+are evil. For You would be less good if You were beneficent to none
+of those who are evil. For someone who is good both to those who
+are good and to those who are evil is better than someone who is
+good only to those who are good. And someone who is good by
+virtue of both punishing and sparing those who are evil is better
+than someone who is good by virtue merely of punishing [them].
+Therefore, You are merciful because You are completely and
+supremely good. Now, although we do perhaps discern why You
+reward with good things those who are good and with evil things
+those who are evil, surely we are completely baff led as to why You,
+who are completely just and in need of no one else, give good
+things to those who are evil and guilty in Your sight. 0 God, the
+depth of Your goodness! We see why You are merciful, and yet we
+do not fully see why. We see from where the stream [of Your
+mercy] f lows, and yet we do not see the Fount itself from which
+it f lows. For that You are gracious to those who sin against You
+comes from the abundance of Your goodness; and in the depth
+of Your goodness lies hidden the reason why You are this. For al-
+though out of goodness You reward with good things those who
+are good and with evil things those who are evil, the principle of
+justice seems to require this. But when You give good things to
+those who are evil, we know that He who is supremely good willed
+to do this, but we wonder why He who is supremely just was able
+to will this.
+    0 mercy, from what rich sweetness and sweet richness You f low
+forth unto us! 0 immensity of divine goodness, with what affection
+
+1
+I Timothy 6:16.
+                             Proslogion 9                           99
+
+
+sinners ought to love You! For You save those-who-are-just, since
+justice accompanies [them]; but You free those-who-are-evil, even
+though justice condemns [them]. Those who are just [You save]
+through the aid of their merits; those who are evil [You free] in
+spite of their demerits. [You save] the just by taking account of
+the good things, which You have given them; [You free] those-who-
+are-evil by overlooking the evil things, which You hate. 0 immense
+goodness, which so exceeds all understanding, let there come
+upon me that mercy which proceeds from Your so great richness!
+Let there f low into me [the mercy] which f lows out of You! Spare
+[me] out of mercy; do not punish [me] out of justice! For although
+it is difficult to understand how Your mercy is compatible with
+Your justice, it is necessary to believe that what f lows forth from
+goodness is not at all opposed to justice. (Without justice, good-
+ness is not goodness—indeed, [goodness] is truly concordant with
+justice.) Assuredly, if you are merciful because You are supremely
+good, and if You are supremely good only because You are
+supremely just, then truly You are merciful because You are
+supremely just. Help me, 0 just and merciful God, whose light I
+seek; help me to understand what I am saying. Truly, then, You
+are merciful because You are just.
+    Is Your mercy, then, begotten from Your justice? Do You, then,
+spare evil ones out of justice? If so, 0 Lord, if so, then teach me
+how so. Is it because it is just for You to be so good that You can-
+not be understood to be any better and [because it is just for You]
+to work so powerfully that You cannot be thought [to work] more
+powerfully? For what is more just than this? But surely this would
+not be the case if You were good only by way of retributing and
+not [also] by way of sparing—and if You were to make good men
+only from those who are not good instead of also from those who
+are evil. And so, in this way, it is just that You spare those who
+are evil and that You make good men from evil ones. Finally, that
+which is not done justly ought not to be done; and what ought
+not to be done is done unjustly. Therefore, if You were not justly
+merciful to those who are evil, it would be the case that You ought
+not to be merciful [to them]; and if You ought not to be merciful,
+then You are unjustly merciful. Now, if it is blasphemous to say
+this, then it is right to believe that You are justly merciful to those
+who are evil.
+100                      Proslogion 10 & 11
+
+
+                        CHAPTER TEN
+                How He justly punishes and justly
+                   spares those who are evil.
+Yet, it is also just that You punish those who are evil. For what is
+more just than for those who are good to receive good things and
+for those who are evil to receive bad things? But, then, how is it
+just for You to punish those who are evil and likewise just for You
+to spare them? Do You justly punish them in one respect and just-
+ly spare them in another? For when You punish those who are evil,
+it is just [for You to do so] because [punishment] besuits their mer-
+its. But when You spare them, it is just [for You to do so], not be-
+cause [sparing them] besuits their merits but because it befits Your
+goodness. For in sparing them, You are just in Yourself but are not
+just from our viewpoint, even as You are merciful from our view-
+point but are not merciful in Yourself. For in saving us whom You
+could justly damn, You are just not because You requite us as we
+deserve but because You do what befits You as supremely good,
+even as You are merciful not because You experience any emotion
+but because we experience the effect [of Your mercy]. So, then,
+without inconsistency, You both punish justly and spare justly.
+
+                     CHAPTER ELEVEN
+      How “all the ways of the Lord are mercy and truth,”
+          and yet, “the Lord is just in all His ways.”
+But, 0 Lord, is it not also just, in accordance with Yourself, for
+You to punish those who are evil? To be sure, it is just that You
+be so just that You cannot be thought to be more just. But You
+would not at all be this if You rewarded only those who are good
+with good things but not those who are evil with bad things. For
+someone who rewards according to their merits both those who
+are good and those who are evil is more just than someone who
+rewards only those who are good. Thus, 0 just and beneficent God,
+in accordance with Yourself it is just both when You punish and
+when You spare. Truly, then, "all the ways of the Lord are mercy
+and truth,” and yet, “the Lord is just in all His ways.”1 And, as-
+suredly, [these two statements hold true] without inconsistency, be-
+cause it is not just that those whom You will to punish should be
+1
+Psalms 24:10 & 144:17 (25:10 & 145:17).
+                         Proslogion 11 - 13                        101
+
+
+saved nor just that those whom You will to spare should be con-
+demned. For only what You will is just, and only what You do not
+will is not just. So, then, Your mercy is begotten from Your jus-
+tice, because it is just for You to be good to such an extent that
+You are good even in sparing. And perhaps this is why He who is
+supremely just can will good things for those who are evil. But if
+we can somehow grasp why You can will to save those who are evil,
+surely we cannot at all comprehend why from among those who
+are similarly evil You save some and not others because of Your
+supreme goodness, and condemn some and not others because of
+Your supreme justice.
+   So, then, truly You are able to perceive and are omnipotent,
+merciful, and impassible—as well as living, wise, good, blessed,
+eternal, and what-ever it is better to be than not to be.
+
+                      CHAPTER TWELVE
+                God is the life by which He lives,
+               and similarly for similar [attributes].
+But, surely, whatever You are You are through no other than
+through Yourself. Therefore, You are the life by which You live,
+the wisdom by which You are wise, the goodness by which You are
+good both to those who are good and to those who are evil, and
+similarly for similar [attributes].
+
+                     CHAPTER THIRTEEN
+        How He alone is unlimited and eternal, although
+         other spirits are [also] unlimited and eternal.
+Now, anything which is at all confined by place or by time is less
+great than that which is not at all subject to the law of place or of
+time. Therefore, since it is not the case that anything is greater than
+You, no place or time restricts You, but You exist everywhere and
+always. Because this can be said of You alone, You alone are un-
+limited and eternal. How, then, are other spirits, as well, said to
+be unlimited and eternal? To be sure, You alone are eternal because
+You alone of all things do not begin to exist, even as You do not
+cease to exist. Yet, how are You alone unlimited? Is a created spir-
+it, although unlimited in comparison with something corporeal,
+limited in comparison with You? Assuredly, that which while exist-
+102                        Proslogion 13 & 14
+
+
+ing somewhere as a whole is not able at the same time to exist else-
+where is limited in every respect—something which is seen to be
+the case with corporeal objects only. And what exists at once every-
+where as a whole is unlimited—something which is understood to
+be the case with You alone. But that which while existing some-
+where as a whole is able at the same time to exist as a whole else-
+where, but not everywhere, is both limited and unlimited—some-
+thing which is known to be the case with created spirits. For ex-
+ample, if the soul were not present as a whole in each of the mem-
+bers of its body, the soul as a whole would not experience feeling
+in each of them. Therefore, 0 Lord, You are uniquely unlimited and
+eternal; and yet, other spirits are also unlimited and eternal.
+
+                       CHAPTER FOURTEEN
+                 How and why God is both seen and
+                  not seen by those who seek Him.
+My soul, have you found that which You were seeking? You were
+seeking God, and you have found that He is something highest of
+all—than which nothing better can be thought. [And you have
+found that] this [Being] is life itself, light, wisdom, goodness, eter-
+nal blessedness, and blessed eternity and that this [Being] exists
+everywhere and always. Now, if you have not found your God, then
+how is He this [Being] which you have found and which with such
+certain truth and true certainty you have understood Him to be?
+On the other hand, if you have found [Him], then why is it that
+you do not experience what you have found? 0 Lord God, why
+does my soul not experience You if it has found You? Has it not
+found Him whom it has found to be light and truth? For how has
+it understood this except by seeing light and truth? Was it able to
+understand anything at all about You except through Your light
+and Your truth? 1 Therefore, if [my soul] saw light and truth, it
+saw You. If it did not see You, it did not see light and truth. Or
+[is it rather the case that] light and truth are what it saw but [that]
+it has not yet seen You, because it saw You to some extent but did
+not see You as You are? 2
+    0 Lord my God, my Creator and Renewer, tell my yearning soul
+
+1                      2
+ Psalms 42:3 (43:3).   See I John 3:2.
+                            Proslogion 14 - 16                     103
+
+
+what else You are other than what it has seen, so that it may see
+clearly what it longs [to see. My soul] strains to see more; but be-
+yond what it has already seen it sees only darkness. Or better, it
+does not see darkness, which is not present in You;1 rather, it sees
+that it can see no farther because of its own darkness. Why is this,
+0 Lord? Why is this? Is the eye of the soul darkened as a result of
+its own weakness, or is it dazzled by Your brilliance? Surely, the
+soul's eye is both darkened within itself and dazzled by You. Sure-
+ly, it is darkened because of its own shortness of vision and is over-
+whelmed by Your immensity; truly, it is restricted because of its
+own narrowness and is overcome by Your vastness. For how great
+that Light is from which shines everything true that illumines the
+rational mind! How vast that Truth is in which resides everything
+that is true and outside of which there is only nothing and what is
+false! How immense [that Truth] is which beholds in one spectrum
+all created things and beholds by whom, through whom, and in
+what manner [all things] were created from nothing! What purity,
+what simplicity, what assurance and splendor are present there!
+Surely, [these] surpass what can be understood by any creature.
+
+                          CHAPTER FIFTEEN
+                   He is greater than can be thought.
+Therefore, 0 Lord, not only are You that than which a greater can-
+not be thought, but You are also something greater than can be
+thought. For since there can be thought to exist something of this
+kind, if You were not this [Being] then something greater than You
+could be thought—[a consequence] which is impossible.
+
+                       CHAPTER SIXTEEN
+         This is the inaccessible light in which He dwells.
+Truly, 0 Lord, this is the inaccessible light in which You dwell.2 For,
+truly, there is not anything else which can penetrate this [light],
+so that it sees You therein. Truly, the reason I cannot stand to look
+at this [light] is that it is too resplendent for me. Nevertheless,
+whatever I see I see by means of this [light]—even as a frail eye
+sees what it does by means of sunlight, which it cannot stand to
+
+1                  2
+ See I John 1:5.    I Timothy 6:16.
+104                       Proslogion 16 - 18
+
+
+look at in the sun itself. My understanding is not able to com-
+prehend this light, which shines forth too brilliantly. [My under-
+standing] does not grasp it; and the eye of my soul cannot bear
+to gaze at length upon it. [My soul's eye] is dazzled by its splen-
+dor, overcome by its vastness, overwhelmed by its immensity, con-
+founded by its capacity. 0 supreme and inaccessible Light, 0 com-
+plete and blessed Truth, how distant You are from me, who am
+so near for You! How far removed You are from my sight, though
+I am so present to Yours! You are everywhere present as a whole;
+and yet, I do not see You. In You I move, and in You I exist;1 and
+yet, I cannot approach You. You are within me and round about
+me; and yet, I do not experience You.
+
+                    CHAPTER SEVENTEEN
+      Harmony, fragrance, succulence, softness, and beauty
+       are present in God in their own ineffable manner.
+Amidst Your blessedness and light, 0 Lord, You are still hidden
+from my soul. Therefore, my soul still dwells in darkness and in
+its own unhappiness. For it looks in all directions but does not
+see Your beauty. It listens but does not hear Your harmony. It fills
+its nostrils but does not smell Your fragrance. It tastes but does
+not savor Your succulence. It feels but does not detect Your soft-
+ness. For in Your ineffable manner, 0 Lord God, You have these
+[features] within You; and You have bestowed them, in their own
+perceptible manner, upon the things created by You. But the sens-
+es of my soul have been stiffened and deadened and impaired by
+the oldtime infirmity of sin.
+
+                    CHAPTER EIGHTEEN
+    There are no parts in God or in the eternity which He is.
+And, behold, once again confusion! 2 Behold, once again sorrow
+and grief beset me as I seek joy and gladness.3 My soul hoped for
+fullness; and, lo, once again it is overwhelmed with need. I de-
+sired to eat; and, lo, the more I hunger! I tried to mount upward
+to the divine light, but I lapsed downward into my own darkness.
+Indeed, not only did I fall into darkness but I feel enshrouded by
+
+1             2                 3
+Acts 17:28.   Jeremiah 14:19.   See Psalms 50:10 (51:8).
+                             Proslogion 18                          105
+
+
+it. I fell before my mother conceived me.1 Surely, I was conceived
+in darkness and born surrounded by it. Surely, once long ago we
+all fell in him 2 in whom we all sinned. In him (who easily pos-
+sessed but evilly lost for himself and for us) we all lost that which
+when we desire we do not know how to seek, when we seek we do
+not find, when we find is not what we are seeking. Help me, 0
+Lord, because of Your goodness.3 “I have sought Your counte-
+nance; Your countenance, 0 Lord, will I seek. Do not turn Your
+face from me.” 4 Raise me out of myself and unto You. Cleanse,
+heal, focus, illumine 5 the eye of my mind so that it may behold
+You.6 Let my soul muster its strength and with all its understand-
+ing strive once more unto You, 0 Lord. What are You, 0 Lord?
+    What are You? What shall my heart understand You to be? Sure-
+ly, You are life, wisdom, truth, goodness, blessedness, eternity—
+You are every true good. These are many things; and my limited
+understanding cannot in a single view behold so many at one time
+in order to delight in all together. How is it, then, 0 Lord, that
+You are all these things? Are they Your parts, or, instead, is each
+one of them the whole of what You are? For whatever is composed
+of parts is not absolutely one but is in a way many and is differ-
+ent from itself and can be divided actually or conceivably (intel-
+lectu). But these [consequences] are foreign to You, than whom
+nothing better can be thought. Hence, there are no parts in You,
+0 Lord. Nor are You more than one thing. Rather, You are some-
+thing so one and the same with Yourself that in no respect are
+You dissimilar to Yourself. Indeed, You are Oneness itself, divisi-
+ble in no respect (nullo intellectu). Therefore, life and wisdom and
+the other [characteristics] are not parts of You but are all one
+thing; and each one of them is the whole of what You are and the
+whole of what all the others are. Thus, since neither You nor the
+eternity which You are has any parts, nowhere and never is there
+a part of You or of Your eternity; rather, You exist everywhere as
+a whole, and Your eternity exists always as a whole.
+
+                     CHAPTER NINETEEN
+     He is not in place or in time; but all things are in Him.
+
+1
+ Psalms 50:7 (51:5). 2Romans 5:12. 3See Psalms 24:7 (25:7).   4
+                                                              Psalms 26:9
+(27:9). 5Psalms 12:4 (13:3). 6Canticle of Canticles 6:12.
+106                     Proslogion 19 & 20
+
+
+But if through Your eternity You were, You are, and You will be,
+and if (1) being past is not being future and (2) being present
+is not being past or being future, how is it that Your eternity
+exists always as a whole? Or does none of Your eternity pass
+away, so that it no longer is? And is none of it going to be—as
+if it not yet were? Then, in no case were You yesterday or will
+You be tomorrow; instead, yesterday, today, and tomorrow You
+are. Or better, You do not exist yesterday or today or tomorrow,
+but You simply are—[existing] beyond all time. For yesterday,
+today, and tomorrow are nothing other than [distinctions] in
+time. Now, although without You nothing would exist, You are
+not in place or in time, but all things are in You. For You are
+not contained by anything, but, rather, You contain all [other]
+things.
+
+                       CHAPTER TWENTY
+      He is before and beyond all things—even eternal things.
+Therefore, You fill and encompass all things; You are before and
+beyond all things. Indeed, You are before all things because before
+they were made You already are.1 But how is it that You are be-
+yond all things? For how are You beyond those things which will
+have no end? Is it because they cannot at all exist without You,
+whereas You would not at all be less great even if they returned
+to nothing? For in this way You are beyond them in a certain re-
+spect. Is it also because they can be thought to have an end, where-
+as You [can] not at all [be thought to have an end]? For, indeed,
+they do in this respect have a kind of end, whereas You [do] not
+in any respect [have an end]. Now, surely what in no respect has
+an end is beyond that which in some respect has an end. Do You
+also surpass all things—even eternal things—in that both Your
+eternity and theirs is present to You as a whole, whereas they do
+not yet have that [part] of their eternity which is yet to come, even
+as they no longer have that [part] which is already past? Indeed,
+then, You are always beyond them because You are always [whol-
+ly] present to Yourself and because there is always present to You
+that [part of their eternity] to which they have not yet come.
+
+1
+Psalms 89:2 (90:2).
+                         Proslogion 21 - 23                      107
+
+
+                  CHAPTER TWENTY-ONE
+     Whether this [eternity] is one aeon or more than one.
+
+Is, then, this [eternity of Yours] one aeon or more than one? For
+just as the aeon of times contains all things temporal, so Your eter-
+nity contains even the aeons of times. Indeed, Your eternity is one
+aeon on account of its indivisible oneness, but it is more than one
+aeon on account of its endless immensity. Moreover, although You
+are so great, 0 Lord, that all things are filled with Your presence
+and exist in You, nevertheless You are so free from all spatial de-
+termination that in You there is neither center nor half nor any
+part.
+                     CHAPTER TWENTY-TWO
+               He alone is what He is and who He is.
+Therefore, 0 Lord, You alone are what You are, and You are who
+You are. For anything having parts distinct from its whole, and any-
+thing in which there is something mutable, is not altogether what
+it is. And what (1) began to exist from not-being, (2) can be
+thought not to exist, (3) returns to not-being unless it exists
+through something else, (4) has a past which it no longer is, and
+(5) has a future which it not yet is—this does not exist in the prop-
+er and unqualified sense [of "existing"] But You are what You are,
+because whatever You once or in any respect are, this You are al-
+ways and as a whole.
+    And in a proper and unqualified sense You are who You are,1
+because You have neither a past nor a future, but only a present,
+and because You cannot be thought ever not to exist. And You are
+life and light and wisdom and blessedness and eternity and many
+such good things. Nevertheless, You are only one supreme good,
+altogether sufficient unto Yourself, needing no one [else] but need-
+ed by all [other] things in order to exist and to fare well.
+
+                 CHAPTER TWENTY-THREE
+     The Father, the Son, and the Holy Spirit are equally
+     this [supreme] good. It is the one necessary [Being],
+    which is every good, complete good, and the only good.
+You, God the Father, are this [supreme] good; and Your Word,
+1
+Exodus 3:14.
+108                      Proslogion 23 & 24
+
+
+i.e., Your Son, is this [supreme good]. For in the Word by which
+You speak of Yourself there cannot be anything other than what
+You are or anything greater or lesser than You. For Your Word is
+as true as You are truthful; and so, just as are You, it is Truth it-
+self—not [a truth that is] other than You. You are so simple [in
+nature] that from You cannot be begotten anything other than
+what You are. The one Love common to You and to Your Son,
+viz., the Holy Spirit who proceeds from You both, is [also] this
+[same supreme good]. For this Love is not unequal to You or to
+Your Son; for You love Yourself and Your Son, and He loves Him-
+self and You, in proportion to Your greatness and His. And what
+is not unequal to You and to Him is not something other than
+You and Him; nor can there proceed from Supreme Simplicity any-
+thing which is other than what the one from whom it proceeds
+is. But that which each of them (considered distinctly) is, this the
+Trinity—Father, Son, and Holy Spirit—is as a whole and all to-
+gether. For each, considered distinctly, is nothing other than a
+supremely simple oneness and a supremely singular simplicity
+which cannot be made multiple and cannot be different things.
+    Now, one thing is necessary,1 viz., the one necessary [Being] in
+which there is every good—yea, which is every good, one good,
+complete good, and the only good.
+
+                    CHAPTER TWENTY-FOUR
+               A conjecture about what kind of good
+                  this is and about how great it is.
+And now, my soul, arouse and elevate your whole understanding;
+ponder as best you can what kind of good this is and how great
+it is. For if the individual good things are enjoyable, ref lect at-
+tentively upon how enjoyable is that Good which contains the joy-
+fulness of all good things. [This is] not the kind [of joyfulness] that
+we have experienced in created things but rather is as different
+[therefrom] as the Creator is different from the creature. For if
+created life is good, how good is that Life which creates! If creat-
+ed security (salus) is enjoyable, how enjoyable is the Salvation
+(salus) which creates all security! If wisdom in regard to the knowl-
+edge of created things is lovable, how lovable is the Wisdom which
+1
+ Luke 10:42.
+                          Proslogion 24 & 25                        109
+
+
+created all things from nothing! In short, if there are many great
+joys in enjoyable things, how rich and how great is the joy [to be
+found] in Him who made these enjoyable things!
+
+                   CHAPTER TWENTY-FIVE
+               The kinds and the quantity of goods
+                for those who enjoy this [Good].
+0 what he shall have who will enjoy this Good, and what he shall
+not have! Surely, he shall have whatever he shall want and shall not
+have what he shall not want. Indeed, he shall there possess the
+goods of the body and of the soul—[goods] of such kind as the
+eye has not seen nor the ear heard nor the human heart con-
+ceived.1 0 insignificant man, why then do you go from one good
+to another in quest of what is good for your soul and good for your
+body? Love the one Good in which are all goods, and it shall suf-
+fice [you]. Desire the simple Good which itself is every good, and
+it shall be enough [for you]. For what do you love, 0 my f lesh?
+What do you desire, 0 my soul? It is there; all that both of you
+love is there, all that you desire. If beauty delights [you]: the just
+shall shine forth as the sun.2 If [you take delight in] the swiftness,
+strength, or freedom of a body which nothing can resist: [the just] shall
+be like the angels of God 3 because their bodies are sown as f lesh-
+ly but will arise as spiritual 4—[bodies spiritual], of course, in
+power not in nature. If a long and sound life [delights you]: a sound
+eternity and an eternal soundness is there, because the just shall
+live forever 5 and the salvation of the just comes from the Lord.6
+If [you delight in] fullness: [the just] shall be filled when the glory
+of God is manifested.7 If intoxication: they shall be intoxicated from
+the abundance of the house of God.8 If melody: there choirs of an-
+gels sing to God without end. If any pleasure whatsoever that is
+not impure: God shall grant to them to drink from the torrent of
+His pleasure.9 If wisdom: the wisdom of God shall manifest itself
+unto them.10 If friendship: they shall love God more than them-
+selves and shall love one another as themselves;11 and God [shall
+love] them more than they [love] themselves. For through Him
+
+1
+ I Corinthians 2:9. 2Matthew 13:43 3Matthew 22:30. 4I Corinthains 15:44.
+5
+ Wisdom 5:16. 6Psalms 36:39 (37:39). 7Psalms 16:15 (17:15). 8Psalms 35:9
+(36:8). 9Psalms 35:9 (36:8). 10See John 14:21. 11See Matthew 22:37-39.
+110                            Proslogion 25
+
+
+they [shall love] Him and themselves and one another; but He
+[loves] Himself and them through Himself. If [you delight in] uni-
+son: they shall all have one will, because they shall have no will
+except the will of God. If power: they shall be all-powerful in will,
+even as God is all-powerful in will. For just as God is able to do
+through Himself that which He wills, so they shall be able to do
+through Him that which they shall will. For just as they shall will
+nothing other than what He [shall will], so He shall will whatever
+they shall will. And what He shall will cannot fail to occur. If honor
+and riches [delight you]: God shall set His good and faithful ser-
+vants over many things;1 indeed, they shall be, as well as be called,
+sons of God 2 and gods.3 And where His Son shall be, there they
+too shall be; indeed, [they are] heirs of God and joint-heirs with
+Christ.4 If true security: surely, they shall be certain that they shall
+never in any way lack these many goods—or, rather, this [one]
+Good—even as they shall be certain (1) that they shall not lose it
+of their own free wills, (2) that God, who loves them, shall not
+rend it away from them against their wills while they are loving
+Him, and (3) that nothing more powerful than God shall separate
+them from God against their wills.5
+   But where a good of such quality and of such magnitude is pre-
+sent, how rich and how intense is the [corresponding] joy! 0
+human heart, heart beset with need, heart versed in tribulations—
+yea, overwhelmed with tribulations—how much you would rejoice
+were you to abound in all these [goods]! Ask your inmost self
+whether it can contain its own joy over its own so great happi-
+ness. Now, surely, if someone else whom you loved in every respect
+as you do yourself were also to have the same [kind of] happiness,
+then your own joy would be doubled; for you would rejoice for him
+no less than for yourself. And if two or three or many more [per-
+sons] were to have the same [kind of joy], you would rejoice for
+each of them as much as for yourself—assuming that you loved
+each as you do yourself Therefore, in the case of that perfect love
+on the part of countless blessed angels and men, where no one
+[of them] will love the other less than himself, each [of them] will
+rejoice for each of the others no differently than for himself. If,
+then, the heart of man shall scarcely [be able to] contain its own
+1                          2              3                  4
+ See Matthew 25:21 & 23.   Matthew 5:9.    See John 10:34.   Romans 8:17.
+5
+ Romans 8:38-39.
+                         Proslogion 25 & 26                           111
+
+
+joy over its own so great good, how shall it be able to contain so
+many [other] very great joys?
+    Surely, each person rejoices in another's good [fortune] to the
+extent that he loves this other. Therefore, in that perfect happi-
+ness, just as each [person] will love God incomparably more than
+himself and all those who are with himself, so [each] will rejoice
+inestimably more over the blessedness of God than over either his
+own blessedness or that of all the others who are with himself. But
+if [each of the just] shall love God—with all his heart, all his mind,
+and all his soul,1 but in such way that his whole heart, whole mind,
+and whole soul will not suffice [to fill up the measure of God's]
+worthiness to be loved—surely, with all his heart, all his mind, and
+all his soul [each] shall so rejoice that his whole heart, whole mind,
+and whole soul will not be able to contain the fullness of [that]
+joy.
+                       CHAPTER TWENTY-SIX
+       Whether this is the full joy which the Lord promises.
+My Lord and my God, my hope and my heart's joy, tell my soul
+whether this is the joy about which You speak to us through Your
+Son, [who said]: ask and you shall receive, so that your joy may
+be full.2 For I have found an abundant joy—even a superabundant
+joy. Indeed, when the heart, the mind, the soul—when the whole
+man—is filled with that joy, there will still remain joy without limit.
+Therefore, the whole of that joy will not enter into those who are
+rejoicing; instead, all those who are rejoicing will enter into Your
+joy. Speak, 0 Lord, and tell Your servant in his heart whether this
+is the joy into which Your servants will enter when they will enter
+into the joy of their Lord.3 Now, surely, no eye has seen, no ear
+has heard—nor has there entered into the heart of man—that joy
+with which Your elect ones will rejoice.4 Therefore, I have not yet
+said or thought, 0 Lord, how much Your blessed ones will rejoice.
+Surely, they will rejoice in the degree that they will love. And they
+will love in the degree that they will know. How much will they
+know You in that day, 0 Lord? How much will they love You? Sure-
+ly, in this life no eye has seen, no ear has heard, nor has there en-
+tered into the heart of man how much they will know and love You
+
+1                 2             3                4
+ Matthew 22:37.   John 16:24.   Matthew 25:21.   I Corinthians 2:9.
+112                              Proslogion 26
+
+
+in the next life.
+    0 God, I pray, let me know and love You, so that I may rejoice
+in You. And if I cannot in this life [know, love, and rejoice in You]
+fully, at least let me advance day by day until the point of fullness
+comes. Let knowledge of You progress in me here and be made
+full [in me] there. Let love for You grow [in me here] and be
+[made] full [in me] there, so that here my joy may be great with
+expectancy and there may be full in realization. 0 Lord, You com-
+mand—or, rather, You counsel—[us] to ask through Your Son; and
+You promise [that we shall] receive, so that our joy may be full.1
+0 Lord, I ask for what You counsel through our marvelous Coun-
+selor; 2 may I receive what You promise through Your Truth, so that
+my joy may be full. 0 God of Truth, I ask; may I receive, so that
+my joy may be full. Until then, may my mind meditate upon [what
+You have promised]; may my tongue speak of it. May my heart love
+it; may my mouth proclaim it. May my soul hunger for it; may my
+f lesh thirst for [it];3 may my whole substance desire [it] until such
+time as I enter into the joy of my Lord,4 the trine and one God,
+blessed forever.5 Amen.
+
+
+
+
+1              2             3                         4                5
+ John 16:24.   Isaiah 9:6.   See Psalms 62:2 (63:1).   Matthew 25:21.   Ro-
+mans 1:25.
+

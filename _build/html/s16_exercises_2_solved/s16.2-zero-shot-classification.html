@@ -1,0 +1,1488 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Exercise 2: Photo Sorting Application 📸 &#8212; AI: ML &amp; Analytics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 's16_exercises_2_solved/s16.2-zero-shot-classification';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-neon.png" class="logo__image only-light" alt="AI: ML & Analytics - Home"/>
+    <script>document.write(`<img src="../_static/logo-neon.png" class="logo__image only-dark" alt="AI: ML & Analytics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    A course on Machine Learning and Deep Learning
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">1. Our first Generative AI application</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/example_genAI.html">Our first Generative AI application</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2. Matrix Algebra with NumPy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.1-numpy.html">Matrix operations with Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.2-numpy-exercises-solutions.html">Numpy exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.3-image-blending.html">Working with images in Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Optimization and Automatic Differentiation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s03_optimization_automatic_differentiation/s03.1_notebook-solutions.html">Review of Optimization</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Review of Machine Learning with scikit-learn</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s04_review_ML_sklearn/s04.1-supervised-learning-sklearn-solutions.html">Scikit-learn</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../s04_review_ML_sklearn/s04.2-cost-benefit-analysis.html">Cost-Benefit Analysis of a ML classifier.</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">5. Unsupervised Learning with UMAP</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s05_unsupervised-learning-umap/s05.1-dimensionality-reduction.html">Dimensionality Reduction. UMAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s05_unsupervised-learning-umap/s05.2-text-analysis-solutions.html">Text Analysis with UMAP</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">6. Text Processing with scikit-learn</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s06_text-processing-sklearn/s06.1-text-classification-solved.html">Session 6: More on working with text data in scikit-learn</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">7. Intro to Deep Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s07_intro_deep_learning/s07.1-neural_network-solved.html">07: Introduction to Neural Networks</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">9. Deep Learning in Computer Vision</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.1-examples.html">Session 9. More on Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.2-examples-2.html">Introduction to Computer Vision with Deep Learning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.3-intro-to-convolutions_solved.html">Intro to convolutional neural networks (CNNs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.4-convolutional-networks_solved.html">Convolutional Neural Networks (CNNs)</a></li>
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">11. Transfer Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s11_transfer_learning/s11.1-transfer-learning-examples.html">Transfer Learning</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">12. Zero-Shot Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s12_zero-shot-learning/s12.1_intro-zero-shot-classification.html">Zero-Shot Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">13. Semantic Search</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s13_semantic_search_and_biases/s13.1_semantic_search_solved.html">Semantic Search</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">14. Object Detection</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s14_more_vision_tasks_object_detection/s14.1-intro-object-detection.html">Object Detection</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../s14_more_vision_tasks_object_detection/s14.2-zero-shot_object_detection.html">Zero-shot object detection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">15. Exercises I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.1-text-classification-solved.html">Exercise 1: Hate Spech Detection in X (aka Twitter) 🤬</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.2-transfer-learning-solved.html">Exercise: Plant Disease App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.3-semantic-search-solved2.html">Exercise: Product Item Recommender 🧥</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">16. Exercises II</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="s16.1-umap-solved.html">Exercise 1: Eurovision Song Lyrics Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="s16.2-zero-shot-classification-solved.html">Exercise 2: Photo Sorting Application 📸</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">19. Intro to Transformers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s19_intro_to_transformers/s19.1_pipelines_solved.html">Introduction to the Transformers Library for NLP: pipelines</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s19_intro_to_transformers/s19.2_zero-shot-classification.html">Zero-Shot Classification in NLP</a></li>
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">20. Transformers Architecture &amp; Transfer Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.1_transformers_architecture.html">Fundamentals of the Transformer Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.2-transfer-intro.html">Transfer Learning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.3-transfer-learning-example.html">Transfer Learning example: Legal Text Classification</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fs16_exercises_2_solved/s16.2-zero-shot-classification.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/s16_exercises_2_solved/s16.2-zero-shot-classification.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exercise 2: Photo Sorting Application 📸</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="exercise-2-photo-sorting-application">
+<h1>Exercise 2: Photo Sorting Application 📸<a class="headerlink" href="#exercise-2-photo-sorting-application" title="Link to this heading">#</a></h1>
+<p>In this exercise, we want to use a model for classifying photos in the <code class="docutils literal notranslate"><span class="pre">exercise2_images</span></code> folder.</p>
+<p>Assume the photos are not tagged/labeled, and you cannot use labeled data.</p>
+<p>First, let’s load and print some images.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image_paths</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;exercise2_images/*&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">image_paths</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>47
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># display grid of images</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">image_paths</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/3dd394526243a2eeb7e764e95ea6312bc235984cff5c161271940915ae42d4c3.png" src="../_images/3dd394526243a2eeb7e764e95ea6312bc235984cff5c161271940915ae42d4c3.png" />
+</div>
+</div>
+<p><strong>a)</strong> First, we want to classify the images into three groups:</p>
+<ul class="simple">
+<li><p>Photos of roses.</p></li>
+<li><p>Photos of sunflowers.</p></li>
+<li><p>Photos of other things.</p></li>
+</ul>
+<p>For each of the photos, compute its vector representation into a matrix.
+After that, print each photo, and its corresponding classification into the three groups.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">clip</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="n">device</span> <span class="o">=</span> <span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span>
+<span class="n">model</span><span class="p">,</span> <span class="n">preprocess</span> <span class="o">=</span> <span class="n">clip</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;ViT-B/32&quot;</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># compute the image embeddings</span>
+<span class="n">image_features</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">image_path</span> <span class="ow">in</span> <span class="n">image_paths</span><span class="p">:</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">preprocess</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">))</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+        <span class="n">image_feature</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">encode_image</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+        <span class="n">image_feature</span> <span class="o">=</span> <span class="n">image_feature</span> <span class="o">/</span> <span class="n">image_feature</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">image_features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">image_feature</span><span class="p">)</span>
+
+<span class="n">image_features</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="n">image_features</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image_features</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch.Size([47, 512])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A photo of a rose&quot;</span><span class="p">,</span> <span class="s2">&quot;A photo of a sunflower&quot;</span><span class="p">,</span> <span class="s2">&quot;A photo&quot;</span><span class="p">]</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">clip</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+<span class="c1"># Calculate features (only for the text, since we have the same image)</span>
+<span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="n">text_features</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">encode_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+<span class="n">text_features</span> <span class="o">/=</span> <span class="n">text_features</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Compute similarity</span>
+<span class="n">similarity</span> <span class="o">=</span> <span class="n">image_features</span> <span class="o">@</span> <span class="n">text_features</span><span class="o">.</span><span class="n">T</span>
+
+<span class="n">probabilities</span> <span class="o">=</span> <span class="p">(</span><span class="mf">100.</span><span class="o">*</span><span class="n">similarity</span><span class="p">)</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">image_path</span> <span class="ow">in</span> <span class="n">image_paths</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">image_path</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="mi">100</span><span class="o">*</span><span class="w"> </span><span class="n">probabilities</span><span class="p">[</span><span class="n">image_paths</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">image_path</span><span class="p">),</span><span class="w"> </span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">image_path</span> <span class="ow">in</span> <span class="n">image_paths</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">image_path</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="mi">100</span><span class="o">*</span><span class="w"> </span><span class="n">probabilities</span><span class="p">[</span><span class="n">image_paths</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">image_path</span><span class="p">),</span><span class="w"> </span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>exercise2_images/imagen100.jpg
+</pre></div>
+</div>
+<img alt="../_images/363293a88aae8602df1e8dd116563117466ca7e72bc001ce1fd44e9801419486.png" src="../_images/363293a88aae8602df1e8dd116563117466ca7e72bc001ce1fd44e9801419486.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 0.02%
+A photo of a sunflower: 99.94%
+A photo: 0.05%
+
+exercise2_images/imagen101.jpg
+</pre></div>
+</div>
+<img alt="../_images/0f9d2da250aa8a410fe1359ed0b6d33d76365227b032ee78280f07dc8db1f45d.png" src="../_images/0f9d2da250aa8a410fe1359ed0b6d33d76365227b032ee78280f07dc8db1f45d.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 0.01%
+A photo of a sunflower: 99.63%
+A photo: 0.35%
+
+exercise2_images/imagen124.jpg
+</pre></div>
+</div>
+<img alt="../_images/5adb293227a79db98b6e618e3bf27c542e7fc524852bbff52536bd496b2c95ed.png" src="../_images/5adb293227a79db98b6e618e3bf27c542e7fc524852bbff52536bd496b2c95ed.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 99.87%
+A photo of a sunflower: 0.00%
+A photo: 0.13%
+
+exercise2_images/imagen139.jpg
+</pre></div>
+</div>
+<img alt="../_images/41d570eb61cfea6b83d8df03a68d6a6b95120a7a29bbbbe7637a564578a4ce40.png" src="../_images/41d570eb61cfea6b83d8df03a68d6a6b95120a7a29bbbbe7637a564578a4ce40.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 0.05%
+A photo of a sunflower: 99.91%
+A photo: 0.04%
+
+exercise2_images/imagen140.jpg
+</pre></div>
+</div>
+<img alt="../_images/d0c2e343853a0acfa667095bccdada9f6c55a3cd912ea2b2c9936f835c948085.png" src="../_images/d0c2e343853a0acfa667095bccdada9f6c55a3cd912ea2b2c9936f835c948085.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 99.76%
+A photo of a sunflower: 0.05%
+A photo: 0.19%
+
+exercise2_images/imagen152.jpg
+</pre></div>
+</div>
+<img alt="../_images/6bf7566018ef7d624889486a2736dd615b381a14181500755935a6e1b30ea5fe.png" src="../_images/6bf7566018ef7d624889486a2736dd615b381a14181500755935a6e1b30ea5fe.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 99.73%
+A photo of a sunflower: 0.00%
+A photo: 0.26%
+
+exercise2_images/imagen155.jpg
+</pre></div>
+</div>
+<img alt="../_images/2ff9c07915b837d709d575a7fa857015160f74bd5c9b2edf026f6c14ae951fc7.png" src="../_images/2ff9c07915b837d709d575a7fa857015160f74bd5c9b2edf026f6c14ae951fc7.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 0.02%
+A photo of a sunflower: 99.95%
+A photo: 0.04%
+
+exercise2_images/imagen158.jpg
+</pre></div>
+</div>
+<img alt="../_images/b0ee1be6f2f5fbb76ea2ab09a009f9898b105f8072f65b9c7309aa15ed75dba4.png" src="../_images/b0ee1be6f2f5fbb76ea2ab09a009f9898b105f8072f65b9c7309aa15ed75dba4.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 99.95%
+A photo of a sunflower: 0.00%
+A photo: 0.05%
+
+exercise2_images/imagen159.jpg
+</pre></div>
+</div>
+<img alt="../_images/f38c487cc7dc33a80c2bc78c8b293a77ef9bcdc0efa38518c534b896dbf1f6d8.png" src="../_images/f38c487cc7dc33a80c2bc78c8b293a77ef9bcdc0efa38518c534b896dbf1f6d8.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 0.01%
+A photo of a sunflower: 99.91%
+A photo: 0.09%
+
+exercise2_images/imagen177.jpg
+</pre></div>
+</div>
+<img alt="../_images/6f97ce6f47c20d1e3084fbac3c0e58aa6f4c8b02861668b2157e51439c5b2633.png" src="../_images/6f97ce6f47c20d1e3084fbac3c0e58aa6f4c8b02861668b2157e51439c5b2633.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 1.65%
+A photo of a sunflower: 2.13%
+A photo: 96.22%
+
+exercise2_images/imagen18.jpg
+</pre></div>
+</div>
+<img alt="../_images/66fa60bb08011443a558288fb748bad9a5c81e63a05f6784dbd5d49460de3698.png" src="../_images/66fa60bb08011443a558288fb748bad9a5c81e63a05f6784dbd5d49460de3698.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 1.39%
+A photo of a sunflower: 0.78%
+A photo: 97.83%
+
+exercise2_images/imagen181.jpg
+</pre></div>
+</div>
+<img alt="../_images/a22e04f1f013492ccac73388c8e19f731bf47ab179bbaed0cbbefbb654e01bf1.png" src="../_images/a22e04f1f013492ccac73388c8e19f731bf47ab179bbaed0cbbefbb654e01bf1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 99.81%
+A photo of a sunflower: 0.02%
+A photo: 0.17%
+
+exercise2_images/imagen182.jpg
+</pre></div>
+</div>
+<img alt="../_images/42419b970c8f9bb384150a2c3ee7ac45b3fa033b66aa9fc83beeb381f8e6947b.png" src="../_images/42419b970c8f9bb384150a2c3ee7ac45b3fa033b66aa9fc83beeb381f8e6947b.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 0.08%
+A photo of a sunflower: 99.52%
+A photo: 0.40%
+
+exercise2_images/imagen183.jpg
+</pre></div>
+</div>
+<img alt="../_images/0ba52b218e94b7911fcbfce5c0540648dc0e237704c8dfc7a296208889b9e665.png" src="../_images/0ba52b218e94b7911fcbfce5c0540648dc0e237704c8dfc7a296208889b9e665.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 0.01%
+A photo of a sunflower: 99.93%
+A photo: 0.05%
+
+exercise2_images/imagen184.jpg
+</pre></div>
+</div>
+<img alt="../_images/63def858d6d131d30b354161f47e34f5c4da8bbea6c9ab174edeb0d1874759a4.png" src="../_images/63def858d6d131d30b354161f47e34f5c4da8bbea6c9ab174edeb0d1874759a4.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 99.51%
+A photo of a sunflower: 0.04%
+A photo: 0.45%
+
+exercise2_images/imagen185.jpg
+</pre></div>
+</div>
+<img alt="../_images/32687bdf13e85093082e1801d1c5dcdc64a01447b16c38d68d7c3a4e949e6c96.png" src="../_images/32687bdf13e85093082e1801d1c5dcdc64a01447b16c38d68d7c3a4e949e6c96.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 98.66%
+A photo of a sunflower: 0.01%
+A photo: 1.33%
+
+exercise2_images/imagen186.jpg
+</pre></div>
+</div>
+<img alt="../_images/950779e61adeabf987eb4b0b09f386427f6029a4b0bbbfc59c45a03614eefde6.png" src="../_images/950779e61adeabf987eb4b0b09f386427f6029a4b0bbbfc59c45a03614eefde6.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 95.25%
+A photo of a sunflower: 0.68%
+A photo: 4.07%
+
+exercise2_images/imagen196.jpg
+</pre></div>
+</div>
+<img alt="../_images/748872f28346a6166e111556972bb29af4337b80bc0513075ed41b307a4b2106.png" src="../_images/748872f28346a6166e111556972bb29af4337b80bc0513075ed41b307a4b2106.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 0.07%
+A photo of a sunflower: 99.72%
+A photo: 0.21%
+
+exercise2_images/imagen197.jpg
+</pre></div>
+</div>
+<img alt="../_images/34e524b9051d2989e87078fd5b9744ae34b56078679700b5076f7123351f216b.png" src="../_images/34e524b9051d2989e87078fd5b9744ae34b56078679700b5076f7123351f216b.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 99.32%
+A photo of a sunflower: 0.02%
+A photo: 0.65%
+
+exercise2_images/imagen200.jpg
+</pre></div>
+</div>
+<img alt="../_images/5cd55270929e46af42359534df53fee9ba846a5536e5f9b170e8a9f3a869e6f1.png" src="../_images/5cd55270929e46af42359534df53fee9ba846a5536e5f9b170e8a9f3a869e6f1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 3.77%
+A photo of a sunflower: 0.82%
+A photo: 95.40%
+
+exercise2_images/imagen201.jpg
+</pre></div>
+</div>
+<img alt="../_images/2922269700f2973aa558dc6273fd76cc3fa9d2118b107fd6af106482ffe4d29c.png" src="../_images/2922269700f2973aa558dc6273fd76cc3fa9d2118b107fd6af106482ffe4d29c.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 0.64%
+A photo of a sunflower: 0.78%
+A photo: 98.58%
+
+exercise2_images/imagen203.jpg
+</pre></div>
+</div>
+<img alt="../_images/9b9aa658464be81e9ac355f6a1a94a331ed77f960959bd369d633ece585e241e.png" src="../_images/9b9aa658464be81e9ac355f6a1a94a331ed77f960959bd369d633ece585e241e.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 0.01%
+A photo of a sunflower: 99.98%
+A photo: 0.01%
+
+exercise2_images/imagen204.jpg
+</pre></div>
+</div>
+<img alt="../_images/2a40586002889b3d5cfebfb846953f1b9868ab95264bd2ed01a4b14853636ba1.png" src="../_images/2a40586002889b3d5cfebfb846953f1b9868ab95264bd2ed01a4b14853636ba1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 0.01%
+A photo of a sunflower: 99.94%
+A photo: 0.05%
+
+exercise2_images/imagen213.jpg
+</pre></div>
+</div>
+<img alt="../_images/307a5e0c79d9b6c6e36cb0f2d70479c117d875327f9ad708c89625b51214fa90.png" src="../_images/307a5e0c79d9b6c6e36cb0f2d70479c117d875327f9ad708c89625b51214fa90.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 99.89%
+A photo of a sunflower: 0.00%
+A photo: 0.11%
+
+exercise2_images/imagen220.jpg
+</pre></div>
+</div>
+<img alt="../_images/7fac3faaf91c641ef1b57a89a848624d5ac724406a54792886ab7be9676d2fb6.png" src="../_images/7fac3faaf91c641ef1b57a89a848624d5ac724406a54792886ab7be9676d2fb6.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 0.05%
+A photo of a sunflower: 99.92%
+A photo: 0.02%
+
+exercise2_images/imagen260.jpg
+</pre></div>
+</div>
+<img alt="../_images/36fb50cbe7de872f2130fca0864868c3180ac37772eddfadee39216347efe222.png" src="../_images/36fb50cbe7de872f2130fca0864868c3180ac37772eddfadee39216347efe222.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 99.43%
+A photo of a sunflower: 0.01%
+A photo: 0.57%
+
+exercise2_images/imagen261.jpg
+</pre></div>
+</div>
+<img alt="../_images/bcc684b970138da1c79acf51b32176df295dc02719eb7e71aa994ca590f2cb44.png" src="../_images/bcc684b970138da1c79acf51b32176df295dc02719eb7e71aa994ca590f2cb44.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 98.11%
+A photo of a sunflower: 0.02%
+A photo: 1.87%
+
+exercise2_images/imagen266.jpg
+</pre></div>
+</div>
+<img alt="../_images/363ef0b1a5318732aea72d5bab63687ce0efdf073545ef16c88e983dab90b9dc.png" src="../_images/363ef0b1a5318732aea72d5bab63687ce0efdf073545ef16c88e983dab90b9dc.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 0.05%
+A photo of a sunflower: 98.95%
+A photo: 0.99%
+
+exercise2_images/imagen270.jpg
+</pre></div>
+</div>
+<img alt="../_images/536420442182513ce42a71e8bebbacc1e0416e2d5caa305d885cd7d56ceacf07.png" src="../_images/536420442182513ce42a71e8bebbacc1e0416e2d5caa305d885cd7d56ceacf07.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 0.00%
+A photo of a sunflower: 99.97%
+A photo: 0.03%
+
+exercise2_images/imagen292.jpeg
+</pre></div>
+</div>
+<img alt="../_images/cfd27ecb448cff2c583cd060647084be98c20663c53d5c7f0b720dbf089d1288.png" src="../_images/cfd27ecb448cff2c583cd060647084be98c20663c53d5c7f0b720dbf089d1288.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 3.55%
+A photo of a sunflower: 5.16%
+A photo: 91.29%
+
+exercise2_images/imagen376.jpg
+</pre></div>
+</div>
+<img alt="../_images/a0fe57a6230b763c771549cd59612f1098928dbd57f51801a9141de9ca00e9e2.png" src="../_images/a0fe57a6230b763c771549cd59612f1098928dbd57f51801a9141de9ca00e9e2.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 97.36%
+A photo of a sunflower: 0.01%
+A photo: 2.63%
+
+exercise2_images/imagen379.jpg
+</pre></div>
+</div>
+<img alt="../_images/3aa2efc821e5a82432191cadb2243d4c2466cc81aa887a1b9e454c3593832eed.png" src="../_images/3aa2efc821e5a82432191cadb2243d4c2466cc81aa887a1b9e454c3593832eed.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 0.00%
+A photo of a sunflower: 99.99%
+A photo: 0.01%
+
+exercise2_images/imagen382.jpg
+</pre></div>
+</div>
+<img alt="../_images/022bdcb446d1af9a092b31d7751abc5e4856e7ef255965c3c034cc99c44c7f73.png" src="../_images/022bdcb446d1af9a092b31d7751abc5e4856e7ef255965c3c034cc99c44c7f73.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 99.59%
+A photo of a sunflower: 0.02%
+A photo: 0.39%
+
+exercise2_images/imagen484.jpg
+</pre></div>
+</div>
+<img alt="../_images/86ba8db1f3f365fdb57daa74f1d65ec1f03e3df75d4c50e33f90d653ee8d3302.png" src="../_images/86ba8db1f3f365fdb57daa74f1d65ec1f03e3df75d4c50e33f90d653ee8d3302.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 95.86%
+A photo of a sunflower: 0.02%
+A photo: 4.12%
+
+exercise2_images/imagen558.jpg
+</pre></div>
+</div>
+<img alt="../_images/98c40b502bc6d9f196d4f8a77218d9cc74bfa6a2ce77512b526b746b7fe5f5ca.png" src="../_images/98c40b502bc6d9f196d4f8a77218d9cc74bfa6a2ce77512b526b746b7fe5f5ca.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 90.88%
+A photo of a sunflower: 0.14%
+A photo: 8.98%
+
+exercise2_images/imagen594.jpg
+</pre></div>
+</div>
+<img alt="../_images/ed636a19ddb1bafae075efe962d25ff7a303827b064d3518cea4c664eb7d0d72.png" src="../_images/ed636a19ddb1bafae075efe962d25ff7a303827b064d3518cea4c664eb7d0d72.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 0.72%
+A photo of a sunflower: 0.86%
+A photo: 98.43%
+
+exercise2_images/imagen748.jpg
+</pre></div>
+</div>
+<img alt="../_images/f409023919d169540674340048baee7e3bf24dcd7f271afd9599f362c8826b86.png" src="../_images/f409023919d169540674340048baee7e3bf24dcd7f271afd9599f362c8826b86.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 0.00%
+A photo of a sunflower: 99.99%
+A photo: 0.01%
+
+exercise2_images/imagen750.jpg
+</pre></div>
+</div>
+<img alt="../_images/043b29238bf7a434b87f7516c87ae167dee1b079e4eff496e48f916ef44bb75f.png" src="../_images/043b29238bf7a434b87f7516c87ae167dee1b079e4eff496e48f916ef44bb75f.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 99.77%
+A photo of a sunflower: 0.00%
+A photo: 0.22%
+
+exercise2_images/imagen754.jpg
+</pre></div>
+</div>
+<img alt="../_images/3eb8446707eaf454f62668ff3669c2102768a39ea1500730086801ed4f76bea2.png" src="../_images/3eb8446707eaf454f62668ff3669c2102768a39ea1500730086801ed4f76bea2.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 0.00%
+A photo of a sunflower: 99.94%
+A photo: 0.06%
+
+exercise2_images/imagen755.jpg
+</pre></div>
+</div>
+<img alt="../_images/569f487292539c1e6d5075fea1fb3edcbd3560514c37b0890eed4fc707c0eabf.png" src="../_images/569f487292539c1e6d5075fea1fb3edcbd3560514c37b0890eed4fc707c0eabf.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 0.00%
+A photo of a sunflower: 99.96%
+A photo: 0.04%
+
+exercise2_images/imagen763.jpg
+</pre></div>
+</div>
+<img alt="../_images/ad7c7cc6f47885698cfc07fd79425282fc95ef961ea9ef80c6375dc63e95cd13.png" src="../_images/ad7c7cc6f47885698cfc07fd79425282fc95ef961ea9ef80c6375dc63e95cd13.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 99.18%
+A photo of a sunflower: 0.01%
+A photo: 0.81%
+
+exercise2_images/imagen911.jpg
+</pre></div>
+</div>
+<img alt="../_images/048dcf3bb838320f02abb215d1cffd716d808d1cdef482c55231dc7ebf03d61e.png" src="../_images/048dcf3bb838320f02abb215d1cffd716d808d1cdef482c55231dc7ebf03d61e.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 0.76%
+A photo of a sunflower: 0.13%
+A photo: 99.12%
+
+exercise2_images/imagen941.jpg
+</pre></div>
+</div>
+<img alt="../_images/362fa250db7655d5f4116052106ea8a227042375e5187e003ac2ec8c10e58e52.png" src="../_images/362fa250db7655d5f4116052106ea8a227042375e5187e003ac2ec8c10e58e52.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 8.11%
+A photo of a sunflower: 30.35%
+A photo: 61.54%
+
+exercise2_images/imagen993.jpg
+</pre></div>
+</div>
+<img alt="../_images/1a46e8fbd45eb081197c64acb0f8acd44e1737b7900261278610efce153fe6fd.png" src="../_images/1a46e8fbd45eb081197c64acb0f8acd44e1737b7900261278610efce153fe6fd.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 0.00%
+A photo of a sunflower: 99.87%
+A photo: 0.13%
+
+exercise2_images/imagen994.jpg
+</pre></div>
+</div>
+<img alt="../_images/fd9180c5e6c161a15d06ba1c51770763333da25c65b1dce6a54cc7555b52dd1e.png" src="../_images/fd9180c5e6c161a15d06ba1c51770763333da25c65b1dce6a54cc7555b52dd1e.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 0.03%
+A photo of a sunflower: 99.86%
+A photo: 0.11%
+
+exercise2_images/imagen995.jpeg
+</pre></div>
+</div>
+<img alt="../_images/ec6131d83c1abfb44eb84276c01ecc9ddd4ca9e5542834a73c72dcc0a06e2109.png" src="../_images/ec6131d83c1abfb44eb84276c01ecc9ddd4ca9e5542834a73c72dcc0a06e2109.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 1.87%
+A photo of a sunflower: 1.34%
+A photo: 96.79%
+
+exercise2_images/imagen996.jpg
+</pre></div>
+</div>
+<img alt="../_images/46e5d1e86b0feb6001e3b1193344a56190b39c12fb391c1ef1f61ee7d14b34aa.png" src="../_images/46e5d1e86b0feb6001e3b1193344a56190b39c12fb391c1ef1f61ee7d14b34aa.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a rose: 93.82%
+A photo of a sunflower: 1.64%
+A photo: 4.54%
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>b)</strong> Let’s say now we want to classify the same images into two groups:</p>
+<ul class="simple">
+<li><p>Photos of cars.</p></li>
+<li><p>The rest of the photos.</p></li>
+</ul>
+<p>Do only the minimum changes to the previous code, and again, for each photo print the new classification.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A photo of a car&quot;</span><span class="p">,</span> <span class="s2">&quot;A photo&quot;</span><span class="p">]</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">clip</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+<span class="c1"># Calculate features (only for the text, since we have the same image)</span>
+<span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="n">text_features</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">encode_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+<span class="n">text_features</span> <span class="o">/=</span> <span class="n">text_features</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Compute similarity</span>
+<span class="n">similarity</span> <span class="o">=</span> <span class="n">image_features</span> <span class="o">@</span> <span class="n">text_features</span><span class="o">.</span><span class="n">T</span>
+
+<span class="n">probabilities</span> <span class="o">=</span> <span class="p">(</span><span class="mf">100.</span><span class="o">*</span><span class="n">similarity</span><span class="p">)</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">image_path</span> <span class="ow">in</span> <span class="n">image_paths</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">image_path</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="mi">100</span><span class="o">*</span><span class="w"> </span><span class="n">probabilities</span><span class="p">[</span><span class="n">image_paths</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">image_path</span><span class="p">),</span><span class="w"> </span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>exercise2_images/imagen100.jpg
+</pre></div>
+</div>
+<img alt="../_images/363293a88aae8602df1e8dd116563117466ca7e72bc001ce1fd44e9801419486.png" src="../_images/363293a88aae8602df1e8dd116563117466ca7e72bc001ce1fd44e9801419486.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 1.61%
+A photo: 98.39%
+
+exercise2_images/imagen101.jpg
+</pre></div>
+</div>
+<img alt="../_images/0f9d2da250aa8a410fe1359ed0b6d33d76365227b032ee78280f07dc8db1f45d.png" src="../_images/0f9d2da250aa8a410fe1359ed0b6d33d76365227b032ee78280f07dc8db1f45d.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 0.26%
+A photo: 99.74%
+
+exercise2_images/imagen124.jpg
+</pre></div>
+</div>
+<img alt="../_images/5adb293227a79db98b6e618e3bf27c542e7fc524852bbff52536bd496b2c95ed.png" src="../_images/5adb293227a79db98b6e618e3bf27c542e7fc524852bbff52536bd496b2c95ed.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 0.59%
+A photo: 99.41%
+
+exercise2_images/imagen139.jpg
+</pre></div>
+</div>
+<img alt="../_images/41d570eb61cfea6b83d8df03a68d6a6b95120a7a29bbbbe7637a564578a4ce40.png" src="../_images/41d570eb61cfea6b83d8df03a68d6a6b95120a7a29bbbbe7637a564578a4ce40.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 5.51%
+A photo: 94.49%
+
+exercise2_images/imagen140.jpg
+</pre></div>
+</div>
+<img alt="../_images/d0c2e343853a0acfa667095bccdada9f6c55a3cd912ea2b2c9936f835c948085.png" src="../_images/d0c2e343853a0acfa667095bccdada9f6c55a3cd912ea2b2c9936f835c948085.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 1.51%
+A photo: 98.49%
+
+exercise2_images/imagen152.jpg
+</pre></div>
+</div>
+<img alt="../_images/6bf7566018ef7d624889486a2736dd615b381a14181500755935a6e1b30ea5fe.png" src="../_images/6bf7566018ef7d624889486a2736dd615b381a14181500755935a6e1b30ea5fe.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 0.50%
+A photo: 99.50%
+
+exercise2_images/imagen155.jpg
+</pre></div>
+</div>
+<img alt="../_images/2ff9c07915b837d709d575a7fa857015160f74bd5c9b2edf026f6c14ae951fc7.png" src="../_images/2ff9c07915b837d709d575a7fa857015160f74bd5c9b2edf026f6c14ae951fc7.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 1.91%
+A photo: 98.09%
+
+exercise2_images/imagen158.jpg
+</pre></div>
+</div>
+<img alt="../_images/b0ee1be6f2f5fbb76ea2ab09a009f9898b105f8072f65b9c7309aa15ed75dba4.png" src="../_images/b0ee1be6f2f5fbb76ea2ab09a009f9898b105f8072f65b9c7309aa15ed75dba4.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 2.06%
+A photo: 97.94%
+
+exercise2_images/imagen159.jpg
+</pre></div>
+</div>
+<img alt="../_images/f38c487cc7dc33a80c2bc78c8b293a77ef9bcdc0efa38518c534b896dbf1f6d8.png" src="../_images/f38c487cc7dc33a80c2bc78c8b293a77ef9bcdc0efa38518c534b896dbf1f6d8.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 1.12%
+A photo: 98.88%
+
+exercise2_images/imagen177.jpg
+</pre></div>
+</div>
+<img alt="../_images/6f97ce6f47c20d1e3084fbac3c0e58aa6f4c8b02861668b2157e51439c5b2633.png" src="../_images/6f97ce6f47c20d1e3084fbac3c0e58aa6f4c8b02861668b2157e51439c5b2633.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 0.33%
+A photo: 99.67%
+
+exercise2_images/imagen18.jpg
+</pre></div>
+</div>
+<img alt="../_images/66fa60bb08011443a558288fb748bad9a5c81e63a05f6784dbd5d49460de3698.png" src="../_images/66fa60bb08011443a558288fb748bad9a5c81e63a05f6784dbd5d49460de3698.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 0.42%
+A photo: 99.58%
+
+exercise2_images/imagen181.jpg
+</pre></div>
+</div>
+<img alt="../_images/a22e04f1f013492ccac73388c8e19f731bf47ab179bbaed0cbbefbb654e01bf1.png" src="../_images/a22e04f1f013492ccac73388c8e19f731bf47ab179bbaed0cbbefbb654e01bf1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 0.62%
+A photo: 99.38%
+
+exercise2_images/imagen182.jpg
+</pre></div>
+</div>
+<img alt="../_images/42419b970c8f9bb384150a2c3ee7ac45b3fa033b66aa9fc83beeb381f8e6947b.png" src="../_images/42419b970c8f9bb384150a2c3ee7ac45b3fa033b66aa9fc83beeb381f8e6947b.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 1.42%
+A photo: 98.58%
+
+exercise2_images/imagen183.jpg
+</pre></div>
+</div>
+<img alt="../_images/0ba52b218e94b7911fcbfce5c0540648dc0e237704c8dfc7a296208889b9e665.png" src="../_images/0ba52b218e94b7911fcbfce5c0540648dc0e237704c8dfc7a296208889b9e665.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 0.97%
+A photo: 99.03%
+
+exercise2_images/imagen184.jpg
+</pre></div>
+</div>
+<img alt="../_images/63def858d6d131d30b354161f47e34f5c4da8bbea6c9ab174edeb0d1874759a4.png" src="../_images/63def858d6d131d30b354161f47e34f5c4da8bbea6c9ab174edeb0d1874759a4.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 1.84%
+A photo: 98.16%
+
+exercise2_images/imagen185.jpg
+</pre></div>
+</div>
+<img alt="../_images/32687bdf13e85093082e1801d1c5dcdc64a01447b16c38d68d7c3a4e949e6c96.png" src="../_images/32687bdf13e85093082e1801d1c5dcdc64a01447b16c38d68d7c3a4e949e6c96.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 0.21%
+A photo: 99.79%
+
+exercise2_images/imagen186.jpg
+</pre></div>
+</div>
+<img alt="../_images/950779e61adeabf987eb4b0b09f386427f6029a4b0bbbfc59c45a03614eefde6.png" src="../_images/950779e61adeabf987eb4b0b09f386427f6029a4b0bbbfc59c45a03614eefde6.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 0.40%
+A photo: 99.60%
+
+exercise2_images/imagen196.jpg
+</pre></div>
+</div>
+<img alt="../_images/748872f28346a6166e111556972bb29af4337b80bc0513075ed41b307a4b2106.png" src="../_images/748872f28346a6166e111556972bb29af4337b80bc0513075ed41b307a4b2106.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 1.61%
+A photo: 98.39%
+
+exercise2_images/imagen197.jpg
+</pre></div>
+</div>
+<img alt="../_images/34e524b9051d2989e87078fd5b9744ae34b56078679700b5076f7123351f216b.png" src="../_images/34e524b9051d2989e87078fd5b9744ae34b56078679700b5076f7123351f216b.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 0.59%
+A photo: 99.41%
+
+exercise2_images/imagen200.jpg
+</pre></div>
+</div>
+<img alt="../_images/5cd55270929e46af42359534df53fee9ba846a5536e5f9b170e8a9f3a869e6f1.png" src="../_images/5cd55270929e46af42359534df53fee9ba846a5536e5f9b170e8a9f3a869e6f1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 0.30%
+A photo: 99.70%
+
+exercise2_images/imagen201.jpg
+</pre></div>
+</div>
+<img alt="../_images/2922269700f2973aa558dc6273fd76cc3fa9d2118b107fd6af106482ffe4d29c.png" src="../_images/2922269700f2973aa558dc6273fd76cc3fa9d2118b107fd6af106482ffe4d29c.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 1.42%
+A photo: 98.58%
+
+exercise2_images/imagen203.jpg
+</pre></div>
+</div>
+<img alt="../_images/9b9aa658464be81e9ac355f6a1a94a331ed77f960959bd369d633ece585e241e.png" src="../_images/9b9aa658464be81e9ac355f6a1a94a331ed77f960959bd369d633ece585e241e.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 0.84%
+A photo: 99.16%
+
+exercise2_images/imagen204.jpg
+</pre></div>
+</div>
+<img alt="../_images/2a40586002889b3d5cfebfb846953f1b9868ab95264bd2ed01a4b14853636ba1.png" src="../_images/2a40586002889b3d5cfebfb846953f1b9868ab95264bd2ed01a4b14853636ba1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 0.48%
+A photo: 99.52%
+
+exercise2_images/imagen213.jpg
+</pre></div>
+</div>
+<img alt="../_images/307a5e0c79d9b6c6e36cb0f2d70479c117d875327f9ad708c89625b51214fa90.png" src="../_images/307a5e0c79d9b6c6e36cb0f2d70479c117d875327f9ad708c89625b51214fa90.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 0.97%
+A photo: 99.03%
+
+exercise2_images/imagen220.jpg
+</pre></div>
+</div>
+<img alt="../_images/7fac3faaf91c641ef1b57a89a848624d5ac724406a54792886ab7be9676d2fb6.png" src="../_images/7fac3faaf91c641ef1b57a89a848624d5ac724406a54792886ab7be9676d2fb6.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 1.09%
+A photo: 98.91%
+
+exercise2_images/imagen260.jpg
+</pre></div>
+</div>
+<img alt="../_images/36fb50cbe7de872f2130fca0864868c3180ac37772eddfadee39216347efe222.png" src="../_images/36fb50cbe7de872f2130fca0864868c3180ac37772eddfadee39216347efe222.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 0.40%
+A photo: 99.60%
+
+exercise2_images/imagen261.jpg
+</pre></div>
+</div>
+<img alt="../_images/bcc684b970138da1c79acf51b32176df295dc02719eb7e71aa994ca590f2cb44.png" src="../_images/bcc684b970138da1c79acf51b32176df295dc02719eb7e71aa994ca590f2cb44.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 0.37%
+A photo: 99.63%
+
+exercise2_images/imagen266.jpg
+</pre></div>
+</div>
+<img alt="../_images/363ef0b1a5318732aea72d5bab63687ce0efdf073545ef16c88e983dab90b9dc.png" src="../_images/363ef0b1a5318732aea72d5bab63687ce0efdf073545ef16c88e983dab90b9dc.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 1.61%
+A photo: 98.39%
+
+exercise2_images/imagen270.jpg
+</pre></div>
+</div>
+<img alt="../_images/536420442182513ce42a71e8bebbacc1e0416e2d5caa305d885cd7d56ceacf07.png" src="../_images/536420442182513ce42a71e8bebbacc1e0416e2d5caa305d885cd7d56ceacf07.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 0.81%
+A photo: 99.19%
+
+exercise2_images/imagen292.jpeg
+</pre></div>
+</div>
+<img alt="../_images/cfd27ecb448cff2c583cd060647084be98c20663c53d5c7f0b720dbf089d1288.png" src="../_images/cfd27ecb448cff2c583cd060647084be98c20663c53d5c7f0b720dbf089d1288.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 98.99%
+A photo: 1.01%
+
+exercise2_images/imagen376.jpg
+</pre></div>
+</div>
+<img alt="../_images/a0fe57a6230b763c771549cd59612f1098928dbd57f51801a9141de9ca00e9e2.png" src="../_images/a0fe57a6230b763c771549cd59612f1098928dbd57f51801a9141de9ca00e9e2.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 0.25%
+A photo: 99.75%
+
+exercise2_images/imagen379.jpg
+</pre></div>
+</div>
+<img alt="../_images/3aa2efc821e5a82432191cadb2243d4c2466cc81aa887a1b9e454c3593832eed.png" src="../_images/3aa2efc821e5a82432191cadb2243d4c2466cc81aa887a1b9e454c3593832eed.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 2.81%
+A photo: 97.19%
+
+exercise2_images/imagen382.jpg
+</pre></div>
+</div>
+<img alt="../_images/022bdcb446d1af9a092b31d7751abc5e4856e7ef255965c3c034cc99c44c7f73.png" src="../_images/022bdcb446d1af9a092b31d7751abc5e4856e7ef255965c3c034cc99c44c7f73.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 0.20%
+A photo: 99.80%
+
+exercise2_images/imagen484.jpg
+</pre></div>
+</div>
+<img alt="../_images/86ba8db1f3f365fdb57daa74f1d65ec1f03e3df75d4c50e33f90d653ee8d3302.png" src="../_images/86ba8db1f3f365fdb57daa74f1d65ec1f03e3df75d4c50e33f90d653ee8d3302.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 0.20%
+A photo: 99.80%
+
+exercise2_images/imagen558.jpg
+</pre></div>
+</div>
+<img alt="../_images/98c40b502bc6d9f196d4f8a77218d9cc74bfa6a2ce77512b526b746b7fe5f5ca.png" src="../_images/98c40b502bc6d9f196d4f8a77218d9cc74bfa6a2ce77512b526b746b7fe5f5ca.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 0.87%
+A photo: 99.13%
+
+exercise2_images/imagen594.jpg
+</pre></div>
+</div>
+<img alt="../_images/ed636a19ddb1bafae075efe962d25ff7a303827b064d3518cea4c664eb7d0d72.png" src="../_images/ed636a19ddb1bafae075efe962d25ff7a303827b064d3518cea4c664eb7d0d72.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 97.66%
+A photo: 2.34%
+
+exercise2_images/imagen748.jpg
+</pre></div>
+</div>
+<img alt="../_images/f409023919d169540674340048baee7e3bf24dcd7f271afd9599f362c8826b86.png" src="../_images/f409023919d169540674340048baee7e3bf24dcd7f271afd9599f362c8826b86.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 0.84%
+A photo: 99.16%
+
+exercise2_images/imagen750.jpg
+</pre></div>
+</div>
+<img alt="../_images/043b29238bf7a434b87f7516c87ae167dee1b079e4eff496e48f916ef44bb75f.png" src="../_images/043b29238bf7a434b87f7516c87ae167dee1b079e4eff496e48f916ef44bb75f.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 0.33%
+A photo: 99.67%
+
+exercise2_images/imagen754.jpg
+</pre></div>
+</div>
+<img alt="../_images/3eb8446707eaf454f62668ff3669c2102768a39ea1500730086801ed4f76bea2.png" src="../_images/3eb8446707eaf454f62668ff3669c2102768a39ea1500730086801ed4f76bea2.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 1.25%
+A photo: 98.75%
+
+exercise2_images/imagen755.jpg
+</pre></div>
+</div>
+<img alt="../_images/569f487292539c1e6d5075fea1fb3edcbd3560514c37b0890eed4fc707c0eabf.png" src="../_images/569f487292539c1e6d5075fea1fb3edcbd3560514c37b0890eed4fc707c0eabf.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 1.71%
+A photo: 98.29%
+
+exercise2_images/imagen763.jpg
+</pre></div>
+</div>
+<img alt="../_images/ad7c7cc6f47885698cfc07fd79425282fc95ef961ea9ef80c6375dc63e95cd13.png" src="../_images/ad7c7cc6f47885698cfc07fd79425282fc95ef961ea9ef80c6375dc63e95cd13.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 0.14%
+A photo: 99.86%
+
+exercise2_images/imagen911.jpg
+</pre></div>
+</div>
+<img alt="../_images/048dcf3bb838320f02abb215d1cffd716d808d1cdef482c55231dc7ebf03d61e.png" src="../_images/048dcf3bb838320f02abb215d1cffd716d808d1cdef482c55231dc7ebf03d61e.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 97.82%
+A photo: 2.18%
+
+exercise2_images/imagen941.jpg
+</pre></div>
+</div>
+<img alt="../_images/362fa250db7655d5f4116052106ea8a227042375e5187e003ac2ec8c10e58e52.png" src="../_images/362fa250db7655d5f4116052106ea8a227042375e5187e003ac2ec8c10e58e52.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 0.95%
+A photo: 99.05%
+
+exercise2_images/imagen993.jpg
+</pre></div>
+</div>
+<img alt="../_images/1a46e8fbd45eb081197c64acb0f8acd44e1737b7900261278610efce153fe6fd.png" src="../_images/1a46e8fbd45eb081197c64acb0f8acd44e1737b7900261278610efce153fe6fd.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 0.78%
+A photo: 99.22%
+
+exercise2_images/imagen994.jpg
+</pre></div>
+</div>
+<img alt="../_images/fd9180c5e6c161a15d06ba1c51770763333da25c65b1dce6a54cc7555b52dd1e.png" src="../_images/fd9180c5e6c161a15d06ba1c51770763333da25c65b1dce6a54cc7555b52dd1e.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 1.23%
+A photo: 98.77%
+
+exercise2_images/imagen995.jpeg
+</pre></div>
+</div>
+<img alt="../_images/ec6131d83c1abfb44eb84276c01ecc9ddd4ca9e5542834a73c72dcc0a06e2109.png" src="../_images/ec6131d83c1abfb44eb84276c01ecc9ddd4ca9e5542834a73c72dcc0a06e2109.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 98.03%
+A photo: 1.97%
+
+exercise2_images/imagen996.jpg
+</pre></div>
+</div>
+<img alt="../_images/46e5d1e86b0feb6001e3b1193344a56190b39c12fb391c1ef1f61ee7d14b34aa.png" src="../_images/46e5d1e86b0feb6001e3b1193344a56190b39c12fb391c1ef1f61ee7d14b34aa.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A photo of a car: 0.24%
+A photo: 99.76%
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>c)</strong> Without printing any photo, could you tell if there were any person’s face in the photos?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A photo of a person&#39;s face&quot;</span><span class="p">,</span> <span class="s2">&quot;A photo&quot;</span><span class="p">]</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">clip</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+<span class="c1"># Calculate features (only for the text, since we have the same image)</span>
+<span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="n">text_features</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">encode_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+<span class="n">text_features</span> <span class="o">/=</span> <span class="n">text_features</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Compute similarity</span>
+<span class="n">similarity</span> <span class="o">=</span> <span class="n">image_features</span> <span class="o">@</span> <span class="n">text_features</span><span class="o">.</span><span class="n">T</span>
+
+<span class="n">probabilities</span> <span class="o">=</span> <span class="p">(</span><span class="mf">100.</span><span class="o">*</span><span class="n">similarity</span><span class="p">)</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">probabilities</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./s16_exercises_2_solved"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Víctor Gallego
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
