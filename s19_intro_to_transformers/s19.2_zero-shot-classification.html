@@ -1,0 +1,1079 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Zero-Shot Classification in NLP &#8212; AI: ML &amp; Analytics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 's19_intro_to_transformers/s19.2_zero-shot-classification';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Fundamentals of the Transformer Architecture" href="../s20_transfer-learning-and-transformers-architecture/s20.1_transformers_architecture.html" />
+    <link rel="prev" title="Introduction to the Transformers Library for NLP: pipelines" href="s19.1_pipelines_solved.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-neon.png" class="logo__image only-light" alt="AI: ML & Analytics - Home"/>
+    <script>document.write(`<img src="../_static/logo-neon.png" class="logo__image only-dark" alt="AI: ML & Analytics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    <no title>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">1. Our first Generative AI application</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/example_genAI.html">Our first Generative AI application</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2. Matrix Algebra with NumPy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.1-numpy.html">Matrix operations with Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.2-numpy-exercises-solutions.html">Numpy exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.3-image-blending.html">Working with images in Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Optimization and Automatic Differentiation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s03_optimization_automatic_differentiation/s03.1_notebook-solutions.html">Review of Optimization</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Review of Machine Learning with scikit-learn</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s04_review_ML_sklearn/s04.1-supervised-learning-sklearn-solutions.html">Scikit-learn</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../s04_review_ML_sklearn/s04.2-cost-benefit-analysis.html">Cost-Benefit Analysis of a ML classifier.</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">5. Unsupervised Learning with UMAP</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s05_unsupervised-learning-umap/s05.1-dimensionality-reduction.html">Dimensionality Reduction. UMAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s05_unsupervised-learning-umap/s05.2-text-analysis-solutions.html">Text Analysis with UMAP</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">6. Text Processing with scikit-learn</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s06_text-processing-sklearn/s06.1-text-classification-solved.html">Session 6: More on working with text data in scikit-learn</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">7. Intro to Deep Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s07_intro_deep_learning/s07.1-neural_network-solved.html">07: Introduction to Neural Networks</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">9. Deep Learning in Computer Vision</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.1-examples.html">Session 9. More on Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.2-examples-2.html">Introduction to Computer Vision with Deep Learning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.3-intro-to-convolutions_solved.html">Intro to convolutional neural networks (CNNs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.4-convolutional-networks_solved.html">Convolutional Neural Networks (CNNs)</a></li>
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">11. Transfer Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s11_transfer_learning/s11.1-transfer-learning-examples.html">Transfer Learning</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">12. Zero-Shot Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s12_zero-shot-learning/s12.1_intro-zero-shot-classification.html">Zero-Shot Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">13. Semantic Search</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s13_semantic_search_and_biases/s13.1_semantic_search_solved.html">Semantic Search</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">14. Object Detection</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s14_more_vision_tasks_object_detection/s14.1-intro-object-detection.html">Object Detection</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../s14_more_vision_tasks_object_detection/s14.2-zero-shot_object_detection.html">Zero-shot object detection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">15. Exercises I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.1-text-classification-solved.html">Exercise 1: Hate Spech Detection in X (aka Twitter) 🤬</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.2-transfer-learning-solved.html">Exercise: Plant Disease App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.3-semantic-search-solved2.html">Exercise: Product Item Recommender 🧥</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">16. Exercises II</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s16_exercises_2_solved/s16.1-umap-solved.html">Exercise 1: Eurovision Song Lyrics Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s16_exercises_2_solved/s16.2-zero-shot-classification-solved.html">Exercise 2: Photo Sorting Application 📸</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">19. Intro to Transformers</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="s19.1_pipelines_solved.html">Introduction to the Transformers Library for NLP: pipelines</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Zero-Shot Classification in NLP</a></li>
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">20. Transformers Architecture &amp; Transfer Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.1_transformers_architecture.html">Fundamentals of the Transformer Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.2-transfer-intro.html">Transfer Learning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.3-transfer-learning-example.html">Transfer Learning example: Legal Text Classification</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fs19_intro_to_transformers/s19.2_zero-shot-classification.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/s19_intro_to_transformers/s19.2_zero-shot-classification.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Zero-Shot Classification in NLP</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Zero-Shot Classification in NLP</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-task">About the Task</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#inference-with-pipeline">Inference with pipeline</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-customer-service">Example 1: Customer Service</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-activity-classification">Example 2: Activity classification</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-label-classification">Multi-Label Classification</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#available-zero-shot-classification-models">Available zero-shot classification models</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-lingual-zero-shot-classification">Multi-lingual Zero-Shot Classification 🌍</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topic-classification">Topic classification</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-check-the-number-of-parameters-of-a-transformers-model">How to check the number of parameters of a transformers model?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-brainstorm-an-nlp-application-in-which-you-could-use-zero-shot-classification">Exercise: Brainstorm an NLP application in which you could use zero-shot classification</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-how-does-zero-shot-classification-work-under-the-hood">Extra: how does zero-shot classification work under the hood?</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-turn-this-problem-into-zero-shot-classification">How to turn this problem into zero-shot classification?</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="zero-shot-classification-in-nlp">
+<h1>Zero-Shot Classification in NLP<a class="headerlink" href="#zero-shot-classification-in-nlp" title="Link to this heading">#</a></h1>
+<p><strong>Zero-shot text classification is a task in natural language processing where a model is trained on a set of labeled examples but is then able to classify new examples from previously unseen classes.</strong></p>
+<p>This is similar to the CLIP model in computer vision, but for NLP (text sentences).</p>
+<p><img alt="zsc" src="../_images/zsc.png" /></p>
+<section id="about-the-task">
+<h2>About the Task<a class="headerlink" href="#about-the-task" title="Link to this heading">#</a></h2>
+<p>Zero Shot Classification is the task of predicting a class that wasn’t seen by the model during training. This method, which leverages a pre-trained language model, can be thought of as an instance of transfer learning which generally refers to using a model trained for one task in a different application than what it was originally trained for. This is particularly useful for situations where the amount of labeled data is small.</p>
+<p>In zero shot classification, we provide the model with a prompt and a sequence of text that describes what we want our model to do, in natural language. Zero-shot classification excludes any examples of the desired task being completed. This differs from single or few-shot classification, as these tasks include a single or a few examples of the selected task.</p>
+<p>Zero, single and few-shot classification seem to be an emergent feature of large language models. This feature seems to come about around model sizes of +100M parameters. The effectiveness of a model at a zero, single or few-shot task seems to scale with model size, meaning that larger models (models with more trainable parameters or layers) generally do better at this task.</p>
+</section>
+</section>
+<section id="inference-with-pipeline">
+<h1>Inference with pipeline<a class="headerlink" href="#inference-with-pipeline" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">pipeline</span>
+
+<span class="n">pipe</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;zero-shot-classification&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No model was supplied, defaulted to facebook/bart-large-mnli and revision c626438 (https://huggingface.co/facebook/bart-large-mnli).
+Using a pipeline without specifying a model name and revision in production is not recommended.
+</pre></div>
+</div>
+</div>
+</div>
+<section id="example-1-customer-service">
+<h2>Example 1: Customer Service<a class="headerlink" href="#example-1-customer-service" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">[{</span>
+    <span class="s2">&quot;text&quot;</span> <span class="p">:</span> <span class="s2">&quot;I have a problem with my iphone that needs to be resolved asap!&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;customer&quot;</span> <span class="p">:</span> <span class="s2">&quot;AAAA&quot;</span>
+<span class="p">},</span>
+<span class="p">{</span>
+    <span class="s2">&quot;text&quot;</span> <span class="p">:</span> <span class="s2">&quot;I have a problem with my Mac that is catching fire right now!&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;customer&quot;</span> <span class="p">:</span> <span class="s2">&quot;AA&quot;</span>
+<span class="p">}]</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>text</th>
+      <th>customer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>I have a problem with my iphone that needs to ...</td>
+      <td>AAAA</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>I have a problem with my Mac that is catching ...</td>
+      <td>AA</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipe</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>
+    <span class="n">candidate_labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;urgent&quot;</span><span class="p">,</span> <span class="s2">&quot;not urgent&quot;</span><span class="p">,</span> <span class="s2">&quot;phone&quot;</span><span class="p">,</span> <span class="s2">&quot;tablet&quot;</span><span class="p">,</span> <span class="s2">&quot;computer&quot;</span><span class="p">,</span> <span class="s2">&quot;Mac&quot;</span><span class="p">],</span>
+    <span class="n">multi_class</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The `multi_class` argument has been deprecated and renamed to `multi_label`. `multi_class` will be removed in a future version of Transformers.
+/Users/victorgallego/miniforge3/lib/python3.9/site-packages/torch/utils/data/dataloader.py:643: UserWarning: Length of IterableDataset &lt;transformers.pipelines.pt_utils.PipelineChunkIterator object at 0x110ac7790&gt; was reported to be 2 (when accessing len(dataloader)), but 3 samples have been fetched. 
+  warnings.warn(warn_msg)
+/Users/victorgallego/miniforge3/lib/python3.9/site-packages/torch/utils/data/dataloader.py:643: UserWarning: Length of IterableDataset &lt;transformers.pipelines.pt_utils.PipelineChunkIterator object at 0x110ac7790&gt; was reported to be 2 (when accessing len(dataloader)), but 4 samples have been fetched. 
+  warnings.warn(warn_msg)
+/Users/victorgallego/miniforge3/lib/python3.9/site-packages/torch/utils/data/dataloader.py:643: UserWarning: Length of IterableDataset &lt;transformers.pipelines.pt_utils.PipelineChunkIterator object at 0x110ac7790&gt; was reported to be 2 (when accessing len(dataloader)), but 5 samples have been fetched. 
+  warnings.warn(warn_msg)
+/Users/victorgallego/miniforge3/lib/python3.9/site-packages/torch/utils/data/dataloader.py:643: UserWarning: Length of IterableDataset &lt;transformers.pipelines.pt_utils.PipelineChunkIterator object at 0x110ac7790&gt; was reported to be 2 (when accessing len(dataloader)), but 6 samples have been fetched. 
+  warnings.warn(warn_msg)
+/Users/victorgallego/miniforge3/lib/python3.9/site-packages/torch/utils/data/dataloader.py:643: UserWarning: Length of IterableDataset &lt;transformers.pipelines.pt_utils.PipelineChunkIterator object at 0x110ac7790&gt; was reported to be 2 (when accessing len(dataloader)), but 7 samples have been fetched. 
+  warnings.warn(warn_msg)
+/Users/victorgallego/miniforge3/lib/python3.9/site-packages/torch/utils/data/dataloader.py:643: UserWarning: Length of IterableDataset &lt;transformers.pipelines.pt_utils.PipelineChunkIterator object at 0x110ac7790&gt; was reported to be 2 (when accessing len(dataloader)), but 8 samples have been fetched. 
+  warnings.warn(warn_msg)
+/Users/victorgallego/miniforge3/lib/python3.9/site-packages/torch/utils/data/dataloader.py:643: UserWarning: Length of IterableDataset &lt;transformers.pipelines.pt_utils.PipelineChunkIterator object at 0x110ac7790&gt; was reported to be 2 (when accessing len(dataloader)), but 9 samples have been fetched. 
+  warnings.warn(warn_msg)
+/Users/victorgallego/miniforge3/lib/python3.9/site-packages/torch/utils/data/dataloader.py:643: UserWarning: Length of IterableDataset &lt;transformers.pipelines.pt_utils.PipelineChunkIterator object at 0x110ac7790&gt; was reported to be 2 (when accessing len(dataloader)), but 10 samples have been fetched. 
+  warnings.warn(warn_msg)
+/Users/victorgallego/miniforge3/lib/python3.9/site-packages/torch/utils/data/dataloader.py:643: UserWarning: Length of IterableDataset &lt;transformers.pipelines.pt_utils.PipelineChunkIterator object at 0x110ac7790&gt; was reported to be 2 (when accessing len(dataloader)), but 11 samples have been fetched. 
+  warnings.warn(warn_msg)
+/Users/victorgallego/miniforge3/lib/python3.9/site-packages/torch/utils/data/dataloader.py:643: UserWarning: Length of IterableDataset &lt;transformers.pipelines.pt_utils.PipelineChunkIterator object at 0x110ac7790&gt; was reported to be 2 (when accessing len(dataloader)), but 12 samples have been fetched. 
+  warnings.warn(warn_msg)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;sequence&#39;: &#39;I have a problem with my iphone that needs to be resolved asap!&#39;,
+  &#39;labels&#39;: [&#39;urgent&#39;, &#39;phone&#39;, &#39;computer&#39;, &#39;not urgent&#39;, &#39;tablet&#39;, &#39;Mac&#39;],
+  &#39;scores&#39;: [0.522032618522644,
+   0.4575027823448181,
+   0.014244725927710533,
+   0.002681280020624399,
+   0.0021490638609975576,
+   0.0013895597076043487]},
+ {&#39;sequence&#39;: &#39;I have a problem with my Mac that is catching fire right now!&#39;,
+  &#39;labels&#39;: [&#39;computer&#39;, &#39;Mac&#39;, &#39;urgent&#39;, &#39;not urgent&#39;, &#39;phone&#39;, &#39;tablet&#39;],
+  &#39;scores&#39;: [0.45493218302726746,
+   0.3786928951740265,
+   0.1611764281988144,
+   0.0029544392600655556,
+   0.0011420187074691057,
+   0.0011020548408851027]}]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipe</span><span class="p">(</span><span class="s2">&quot;I have a problem with my iphone that needs to be resolved asap!&quot;</span><span class="p">,</span>
+    <span class="n">candidate_labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;urgent&quot;</span><span class="p">,</span> <span class="s2">&quot;not urgent&quot;</span><span class="p">,</span> <span class="s2">&quot;phone&quot;</span><span class="p">,</span> <span class="s2">&quot;tablet&quot;</span><span class="p">,</span> <span class="s2">&quot;computer&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The `multi_class` argument has been deprecated and renamed to `multi_label`. `multi_class` will be removed in a future version of Transformers.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;sequence&#39;: &#39;I have a problem with my iphone that needs to be resolved asap!&#39;,
+ &#39;labels&#39;: [&#39;urgent&#39;, &#39;phone&#39;, &#39;computer&#39;, &#39;not urgent&#39;, &#39;tablet&#39;],
+ &#39;scores&#39;: [0.9987171292304993,
+  0.9945850372314453,
+  0.18988825380802155,
+  0.0007674169610254467,
+  0.0003826009633485228]}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice all the probabilities (scores) add up to 1.0. This is because the model is trained to output a probability distribution over the classes. The class with the highest probability is “urgent”.</p>
+</section>
+<section id="example-2-activity-classification">
+<h2>Example 2: Activity classification<a class="headerlink" href="#example-2-activity-classification" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sequence_to_classify</span> <span class="o">=</span> <span class="s2">&quot;one day I will see the world&quot;</span>
+<span class="n">candidate_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;travel&#39;</span><span class="p">,</span> <span class="s1">&#39;cooking&#39;</span><span class="p">,</span> <span class="s1">&#39;dancing&#39;</span><span class="p">]</span>
+<span class="n">pipe</span><span class="p">(</span><span class="n">sequence_to_classify</span><span class="p">,</span> <span class="n">candidate_labels</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;sequence&#39;: &#39;one day I will see the world&#39;,
+ &#39;labels&#39;: [&#39;travel&#39;, &#39;dancing&#39;, &#39;cooking&#39;],
+ &#39;scores&#39;: [0.9938651919364929, 0.0032738191075623035, 0.0028610145673155785]}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="multi-label-classification">
+<h1>Multi-Label Classification<a class="headerlink" href="#multi-label-classification" title="Link to this heading">#</a></h1>
+<p>If more than one candidate label can be correct, pass <code class="docutils literal notranslate"><span class="pre">multi_label=True</span></code> to calculate each class independently:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candidate_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;travel&#39;</span><span class="p">,</span> <span class="s1">&#39;cooking&#39;</span><span class="p">,</span> <span class="s1">&#39;dancing&#39;</span><span class="p">,</span> <span class="s1">&#39;exploration&#39;</span><span class="p">]</span>
+<span class="n">pipe</span><span class="p">(</span><span class="n">sequence_to_classify</span><span class="p">,</span> <span class="n">candidate_labels</span><span class="p">,</span> <span class="n">multi_label</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;sequence&#39;: &#39;one day I will see the world&#39;,
+ &#39;labels&#39;: [&#39;travel&#39;, &#39;exploration&#39;, &#39;dancing&#39;, &#39;cooking&#39;],
+ &#39;scores&#39;: [0.994511067867279,
+  0.9383878111839294,
+  0.005706228781491518,
+  0.0018192909192293882]}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice now the probabilities are independent of each other, and the model is able to predict multiple classes at the same time (i.e., they do not add up to 1.0).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipe</span><span class="p">(</span><span class="s2">&quot;I have a problem with my iphone that needs to be resolved asap!&quot;</span><span class="p">,</span>
+    <span class="n">candidate_labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;urgent&quot;</span><span class="p">,</span> <span class="s2">&quot;not urgent&quot;</span><span class="p">,</span> <span class="s2">&quot;phone&quot;</span><span class="p">,</span> <span class="s2">&quot;tablet&quot;</span><span class="p">,</span> <span class="s2">&quot;computer&quot;</span><span class="p">],</span>
+    <span class="n">multi_class</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The `multi_class` argument has been deprecated and renamed to `multi_label`. `multi_class` will be removed in a future version of Transformers.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;sequence&#39;: &#39;I have a problem with my iphone that needs to be resolved asap!&#39;,
+ &#39;labels&#39;: [&#39;urgent&#39;, &#39;phone&#39;, &#39;computer&#39;, &#39;not urgent&#39;, &#39;tablet&#39;],
+ &#39;scores&#39;: [0.9987171292304993,
+  0.9945850372314453,
+  0.18988825380802155,
+  0.0007674169610254467,
+  0.0003826009633485228]}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="available-zero-shot-classification-models">
+<h1>Available zero-shot classification models<a class="headerlink" href="#available-zero-shot-classification-models" title="Link to this heading">#</a></h1>
+<p>All the models can be checked at <a class="reference external" href="https://huggingface.co/models?pipeline_tag=zero-shot-classification&amp;amp;sort=downloads">https://huggingface.co/models?pipeline_tag=zero-shot-classification&amp;sort=downloads</a></p>
+<p>The main differences:</p>
+<ul class="simple">
+<li><p>Size (in number of parameters): bigger models tend to be more accurate, but also slower and more resource-intensive (remember the trade-off from computer vision models, it happens the same in NLP).</p></li>
+<li><p>Languages: most models are trained only in English, but some other are specialized in other languages, or are even multilingual.</p></li>
+</ul>
+</section>
+<section id="multi-lingual-zero-shot-classification">
+<h1>Multi-lingual Zero-Shot Classification 🌍<a class="headerlink" href="#multi-lingual-zero-shot-classification" title="Link to this heading">#</a></h1>
+<p>If a model has the “XLM” as part of its name, it means it is a multi-lingual model. This means it can understand text in multiple languages. This is particularly useful for companies that operate in multiple countries and need to understand and generate text in multiple languages.</p>
+<p>(Apart from “XLM”, there are many more models that are multilingual, the previous is just an example of a popular family of multilingual models).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipe</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s1">&#39;zero-shot-classification&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;vicgalle/xlm-roberta-large-xnli-anli&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sequence_to_classify</span> <span class="o">=</span> <span class="s2">&quot;Algún día iré a ver el mundo&quot;</span>
+<span class="n">candidate_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;viaje&#39;</span><span class="p">,</span> <span class="s1">&#39;cocina&#39;</span><span class="p">,</span> <span class="s1">&#39;danza&#39;</span><span class="p">]</span>
+
+<span class="n">pipe</span><span class="p">(</span><span class="n">sequence_to_classify</span><span class="p">,</span> <span class="n">candidate_labels</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;sequence&#39;: &#39;Algún día iré a ver el mundo&#39;,
+ &#39;labels&#39;: [&#39;viaje&#39;, &#39;danza&#39;, &#39;cocina&#39;],
+ &#39;scores&#39;: [0.9991760849952698, 0.0004178229719400406, 0.00040599776548333466]}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function to plot results</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s2">&quot;notebook&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">plot_output</span><span class="p">(</span><span class="n">output</span><span class="p">):</span>
+    <span class="n">scores</span> <span class="o">=</span> <span class="n">output</span><span class="p">[</span><span class="s2">&quot;scores&quot;</span><span class="p">]</span>
+    <span class="n">colors</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">color</span><span class="p">:</span> <span class="n">sns</span><span class="o">.</span><span class="n">palettes</span><span class="o">.</span><span class="n">light_palette</span><span class="p">(</span><span class="n">color</span><span class="p">)[</span><span class="mi">2</span><span class="p">],[</span><span class="s2">&quot;red&quot;</span> <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="mf">.5</span> <span class="k">else</span> <span class="s2">&quot;blue&quot;</span> <span class="k">for</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">]))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;labels&quot;</span><span class="p">],</span> <span class="n">scores</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">colors</span> <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Labels&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Probability&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;sequence&quot;</span><span class="p">])</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">)))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="mi">100</span><span class="o">*</span><span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="mf">.8</span><span class="p">),</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sequence_to_classify</span> <span class="o">=</span> <span class="s2">&quot;La película empezó bien pero terminó siendo un desastre.&quot;</span>
+<span class="n">candidate_labels</span> <span class="o">=</span> <span class="s2">&quot;positivo negativo neutro&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">pipe</span> <span class="p">(</span><span class="n">sequence_to_classify</span><span class="p">,</span> <span class="n">candidate_labels</span><span class="p">)</span>
+
+<span class="n">plot_output</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/4070d2798c7d272b88688a706d67039da8b85927611a37b6b410df73ff7168cc.png" src="../_images/4070d2798c7d272b88688a706d67039da8b85927611a37b6b410df73ff7168cc.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sequence_to_classify</span> <span class="o">=</span> <span class="s2">&quot;La película empezó fatal pero terminó siendo una maravilla.&quot;</span>
+<span class="n">candidate_labels</span> <span class="o">=</span> <span class="s2">&quot;positivo negativo neutro&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">pipe</span><span class="p">(</span><span class="n">sequence_to_classify</span><span class="p">,</span> <span class="n">candidate_labels</span><span class="p">)</span>
+<span class="n">plot_output</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b4e4f172872658d4eea69352d02f9cfdeaf03e73175f0908b00d82aeb8607b3b.png" src="../_images/b4e4f172872658d4eea69352d02f9cfdeaf03e73175f0908b00d82aeb8607b3b.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sequence_to_classify</span> <span class="o">=</span> <span class="s2">&quot;La película estuvo normal, no me encantó, pero tampoco me aburrió.&quot;</span>
+<span class="n">candidate_labels</span> <span class="o">=</span> <span class="s2">&quot;positivo negativo neutro&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">pipe</span><span class="p">(</span><span class="n">sequence_to_classify</span><span class="p">,</span> <span class="n">candidate_labels</span><span class="p">)</span>
+
+<span class="n">plot_output</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b0316735cf83c885d7a2404ca4afa8f7fb2d4e33aa3113e2fda709dadd6a9f46.png" src="../_images/b0316735cf83c885d7a2404ca4afa8f7fb2d4e33aa3113e2fda709dadd6a9f46.png" />
+</div>
+</div>
+<p>Notice we can even write the class labels in another language. Probabilities shall no change significantly.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sequence_to_classify</span> <span class="o">=</span> <span class="s2">&quot;La película empezó fatal pero terminó siendo una maravilla.&quot;</span>
+<span class="n">candidate_labels</span> <span class="o">=</span> <span class="s2">&quot;positive negative neutral&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">pipe</span><span class="p">(</span><span class="n">sequence_to_classify</span><span class="p">,</span> <span class="n">candidate_labels</span><span class="p">)</span>
+<span class="n">plot_output</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/62a56dc4555d1f0d36c98f67b95b6f9863a69d41adcb4f0923f338347165068c.png" src="../_images/62a56dc4555d1f0d36c98f67b95b6f9863a69d41adcb4f0923f338347165068c.png" />
+</div>
+</div>
+<section id="topic-classification">
+<h2>Topic classification<a class="headerlink" href="#topic-classification" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sequence_to_classify</span> <span class="o">=</span> <span class="s2">&quot;La farmacéutica GAVI, para quien no lo sepa, es propiedad de la fundación BILL &amp; MELINDA GATES, los especialistas en vacunas fallidas que tantas víctimas han causado alrededor del mundo. India les ha expulsado y denunciado. África aún acarrea sus consecuencias.&quot;</span>
+
+<span class="n">candidate_labels</span> <span class="o">=</span> <span class="s2">&quot;music cinema politics science art&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">pipe</span><span class="p">(</span><span class="n">sequence_to_classify</span><span class="p">,</span> <span class="n">candidate_labels</span><span class="p">)</span>
+<span class="n">plot_output</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/815671e6830bc1c8ec947758cd893c990676f83599e0bd9fec08eb2923684f1c.png" src="../_images/815671e6830bc1c8ec947758cd893c990676f83599e0bd9fec08eb2923684f1c.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sequence_to_classify</span> <span class="o">=</span> <span class="s2">&quot;La farmacéutica GAVI, para quien no lo sepa, es propiedad de la fundación BILL &amp; MELINDA GATES, los especialistas en vacunas fallidas que tantas víctimas han causado alrededor del mundo. India les ha expulsado y denunciado. África aún acarrea sus consecuencias.&quot;</span>
+
+<span class="n">candidate_labels</span> <span class="o">=</span> <span class="s2">&quot;music cinema politics science art&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">pipe</span><span class="p">(</span><span class="n">sequence_to_classify</span><span class="p">,</span> <span class="n">candidate_labels</span><span class="p">)</span>
+<span class="n">plot_output</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="how-to-check-the-number-of-parameters-of-a-transformers-model">
+<h1>How to check the number of parameters of a transformers model?<a class="headerlink" href="#how-to-check-the-number-of-parameters-of-a-transformers-model" title="Link to this heading">#</a></h1>
+<p>In its page of the Model Hub, notice the parameter count to the right:</p>
+<p><img alt="params" src="../_images/model_hub.png" /></p>
+</section>
+<section id="exercise-brainstorm-an-nlp-application-in-which-you-could-use-zero-shot-classification">
+<h1>Exercise: Brainstorm an NLP application in which you could use zero-shot classification<a class="headerlink" href="#exercise-brainstorm-an-nlp-application-in-which-you-could-use-zero-shot-classification" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Detecting threats</span>
+
+<span class="n">sequence_to_classify</span> <span class="o">=</span> <span class="s2">&quot;We should give him what he deserves.&quot;</span>
+
+<span class="n">candidate_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;An offensive comment&quot;</span><span class="p">,</span> <span class="s2">&quot;A non-offensive comment&quot;</span><span class="p">]</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">pipe</span><span class="p">(</span><span class="n">sequence_to_classify</span><span class="p">,</span> <span class="n">candidate_labels</span><span class="p">)</span>
+<span class="n">plot_output</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/74db217a42345dc49f6facfdc46b959734887afbc8f98cf3cdc9dd09a346d5dc.png" src="../_images/74db217a42345dc49f6facfdc46b959734887afbc8f98cf3cdc9dd09a346d5dc.png" />
+</div>
+</div>
+</section>
+<section id="extra-how-does-zero-shot-classification-work-under-the-hood">
+<h1>Extra: how does zero-shot classification work under the hood?<a class="headerlink" href="#extra-how-does-zero-shot-classification-work-under-the-hood" title="Link to this heading">#</a></h1>
+<p><strong>The NLP models to do zero-shot classification are pretrained on a generic task that is called “Natural Language Inference”.</strong></p>
+<p>In this task, we consider two sentences as input:</p>
+<ul class="simple">
+<li><p>A premise.</p></li>
+<li><p>An hypothesis.</p></li>
+</ul>
+<p>The task is to classify whether the hypothesis is TRUE (entailment), FALSE (contradiction), or NEUTRAL, given the premise. That is, is a 3-label classification problem. See the table for a few examples:</p>
+<p><img alt="examples" src="https://joeddav.github.io/blog/images/zsl/nli-examples.png" /></p>
+<p>Inside the model, we feed as inputs both the premise and the hypothesis, and then the final NN layer just classifies into contradiction, entailment, or neutral.</p>
+<section id="how-to-turn-this-problem-into-zero-shot-classification">
+<h2>How to turn this problem into zero-shot classification?<a class="headerlink" href="#how-to-turn-this-problem-into-zero-shot-classification" title="Link to this heading">#</a></h2>
+<p>Just take the sentence we want to classify as the premise, and use one different hypothesis for each label we want to classify. Then, the model will output the probabilities of each label being true, given the sentence.</p>
+<p>For example:</p>
+<ul class="simple">
+<li><p>Premise: “I hate this movie, it is so boring.”</p></li>
+</ul>
+<p>Let’s say we want to zero-shot classify into positive or negative sentiment. We can use the following hypotheses:</p>
+<ul class="simple">
+<li><p>Hypothesis 1: “This is positive.”</p></li>
+<li><p>Hypothesis 2: “This is negative.”</p></li>
+</ul>
+<p>Then, the model will output the probabilities of each hypothesis being true (entailment), given the sentence. This is how zero-shot classification works under the hood.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./s19_intro_to_transformers"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="s19.1_pipelines_solved.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction to the Transformers Library for NLP: pipelines</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../s20_transfer-learning-and-transformers-architecture/s20.1_transformers_architecture.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Fundamentals of the Transformer Architecture</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Zero-Shot Classification in NLP</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-task">About the Task</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#inference-with-pipeline">Inference with pipeline</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-customer-service">Example 1: Customer Service</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-activity-classification">Example 2: Activity classification</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-label-classification">Multi-Label Classification</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#available-zero-shot-classification-models">Available zero-shot classification models</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-lingual-zero-shot-classification">Multi-lingual Zero-Shot Classification 🌍</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topic-classification">Topic classification</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-check-the-number-of-parameters-of-a-transformers-model">How to check the number of parameters of a transformers model?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-brainstorm-an-nlp-application-in-which-you-could-use-zero-shot-classification">Exercise: Brainstorm an NLP application in which you could use zero-shot classification</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-how-does-zero-shot-classification-work-under-the-hood">Extra: how does zero-shot classification work under the hood?</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-turn-this-problem-into-zero-shot-classification">How to turn this problem into zero-shot classification?</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Víctor Gallego
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

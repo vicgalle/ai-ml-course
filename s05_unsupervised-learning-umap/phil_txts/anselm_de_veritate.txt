@@ -1,0 +1,1193 @@
+COMPLETE PHILOSOPHICAL AND
+  THEOLOGICAL TREATISES
+            of
+  ANSELM of CANTERBURY
+
+
+
+          Translated
+              by
+     JASPER HOPKINS
+           and
+   HERBERT RICHARDSON
+
+
+
+
+  The Arthur J. Banning Press
+          Minneapolis
+      In the notes to the translations the numbering of the Psalms
+      accords with the Douay version and, in parentheses, with the
+      King James (Authorized) version. A reference such as “S II,
+      264:18” indicates “F. S. Schmitt’s edition of the Latin texts, Vol.
+      II, p. 264, line 18.”
+
+
+
+
+Library of Congress Control Number: 00-133229
+
+ISBN 0-938060-37-6
+
+Printed in the United States of America
+
+Copyright © 2000 by The Arthur J. Banning Press, Minneapolis,
+Minnesota 55402. All rights reserved.
+              Preface [to the Three Dialogues
+               on Truth, Freedom, and Evil]
+At different times in the past I wrote three treatises pertaining to
+the study of Sacred Scripture. They are similar in having been writ-
+ten in dialogue form; the person inquiring is designated “the Stu-
+dent,” and the person answering, “the Teacher.” Because a fourth
+[treatise]—which begins with the words “De Grammatico,” and
+which I also published in dialogue form and regard as not with-
+out use to those who need to be introduced to dialectic—pertains
+to a different study from these three, I do not wish to number it
+with them.
+   One of the three is On Truth: [it asks] what truth is, in what
+things truth is usually said to be, and what justice is. A second trea-
+tise is on Freedom of Choice: [it asks] what freedom of choice is,
+whether a man always has it, and how many distinctions of free-
+dom there are with respect to having or not having uprightness-
+of-will. (Freedom of choice was given to rational creatures in order
+that they might keep uprightness-of-will.) In this treatise I show
+only the natural strength of the will for keeping the uprightness
+which it has received; I do not show how in order to keep up-
+rightness the will needs the accompaniment of grace. But the third
+treatise deals with the question of how, since God did not give
+the Devil the perseverance which he was not able to have without
+God's giving, it could have been sin for the Devil not to stand
+steadfast in the truth. For if God had given him perseverance, he
+would have had it—just as the good angels had it because God
+gave it to them. And although in this work I spoke about the con-
+firmation of the good angels, I entitled the treatise The Fall of the
+Devil; for what I said about the good angels was incidental, but
+what I wrote about the evil angels was essential to the theme.
+   Although these three treatises are not connected through any
+continuation of text, their subject-matter and similarity of discus-
+sion require that they be placed together in the order in which I
+have mentioned them. Thus, although certain rash individuals
+have transcribed them in another order before they were com-
+pleted, I want them ordered as I have listed them here.
+
+                                                             [Anselm]
+
+                                 163
+164                               On Truth 1
+
+
+                           CHAPTER-TITLES
+                                       for
+                              DE VERITATE
+
+1. Truth has no beginning or end.
+2. The truth of signification and the two truths of a statement.
+3. The truth of thought.
+4. The truth of the will.
+5. The truth of natural action and non-natural action.
+6. The truth of the senses.
+7. The truth in the being of things.
+8. The various meanings of “ought” and “ought not,” “to be able”
+   and “not to be able.”
+9. Every action signifies either what is true or what is false.
+10. The Supreme Truth.
+11. The definition of “truth.”
+12. The definition of “justice.”
+13. Truth is one in all true things.
+
+                               ON TRUTH1
+                                 (De Veritate)
+
+                            CHAPTER ONE
+                     Truth has no beginning or end.
+   Student. Since we believe that God is truth,2 and since we say
+that truth is in many other things, I would like to know whether
+in whatever things it is said to be we ought to affirm that truth is
+God. For in your Monologion, by appealing to the truth of a state-
+ment, you too demonstrate that the Supreme Truth has no be-
+ginning and no end:
+        Let anyone who can, try to conceive of when it began to be true,
+      or was ever not true, that something was going to exist. Or [let him
+      try to conceive of] when it will cease being true and will not be true
+      that something has existed in the past. Now, if neither of these things
+      can be conceived, and if both statements can be true only if there is
+      truth, then it is impossible even to think that truth has a beginning
+      or an end. Indeed, suppose that truth had had a beginning, or sup-
+1                                                     2
+ Composed at Bec, probably between 1080-1085.             See John 14:6.
+                              On Truth 1 & 2                                    165
+
+
+    pose that it would at some time come to an end: then even before
+    truth had begun to be, it would have been true that there was no
+    truth; and even after truth had come to an end, it would still be true
+    that there would be no truth. But it could not be true without truth.
+    Hence, there would have been truth before truth came to be, and
+    there would still be truth after truth had ceased to be. But these con-
+    clusions are self-contradictory. Therefore, whether truth is said to have
+    a beginning or an end, or whether it is understood not to have a be-
+    ginning or an end, truth cannot be confined by any beginning or end.
+You make this argument in your Monologion. Therefore, I hope to
+learn from you the definition of “truth.”
+   Teacher. I do not recall having arrived at a definition of “truth”;
+but if you wish, let us inquire as to what truth is by [examining]
+the various things in which we say there is truth.
+   S. If I cannot do anything else, I will at least help by being a
+good listener.
+                        CHAPTER TWO
+  The truth of signification and the two truths of a statement.
+    T. Then, let us first ask what truth in a statement is since quite
+frequently we call a statement true or false.
+    S. You conduct the investigation, and I will heed whatever you
+find out.
+    T. When is a statement true?
+    S. When what it states, whether affirmatively or negatively, is
+the case. I mean what it states even when it denies that what-is-
+not is; for even then it expresses what is the case (quemadmodum
+res est).
+    T. Then, does it seem to you that the thing stated is the truth
+of the statement?
+    S. No.
+    T. Why not?
+    S. Because nothing is true except by participating in truth; and
+so, the truth of something true is in that true thing. But the thing
+stated is not in the true statement, and thus must not be called
+its truth; rather, it must be called the cause of the statement's
+truth. Therefore, it seems to me that the truth of the statement
+must be sought only in the statement itself.
+    T. Consider, then, whether the truth you are looking for is ei-
+ther the statement itself or its signification or something in its def-
+166                          On Truth 2
+
+
+inition.
+    S. I do not think it is.
+    T. What is your reason?
+    S. Because if the truth of the statement were any of these, then
+the statement would always be true. For the statement's definition
+remains the same irrespective of whether what it states is or is not
+the case. In fact, the statement, its signification, and the other
+things remain the same.
+    T. Then, as you see it, what is truth in the statement?
+    S. All I know is that when the statement signifies that what-is
+is, then it is true and truth is in it.
+    T. What is an affirmation designed to do?
+    S. To signify that what-is is.
+    T. Then, this is what an affirmation ought to do?
+    S. Certainly.
+    T. So when an affirmative statement signifies that what-is is, it
+signifies what it ought to.
+    S. Obviously.
+    T. But when it signifies what it ought to, it signifies rightly, or
+correctly.
+    S. That's right.
+    T. And when it signifies correctly, its signification is correct.
+    S. No doubt about it.
+    T. Therefore, when it signifies that what-is is, its signification
+is correct.
+    S. This follows.
+    T. Moreover, when it signifies that what-is is, its signification
+is true.
+    S. Yes, its signification is both correct and true when it signi-
+fies that what-is is.
+    T. So for an affirmation to be correct is the same as for it to
+be true, namely, for it to signify that what-is is.
+    S. Yes, these are the same.
+    T. Therefore, the affirmation's truth is simply its rightness, or
+correctness (rectitudo).
+    S. I now see clearly that truth is this rightness.
+    T. This conclusion also applies when the statement signifies
+that what-is-not is not.
+    S. I understand what you mean. But teach me how to reply, if
+                            On Truth 2                            167
+
+
+someone should maintain that even when a statement signifies that
+what-is-not is, it signifies what it ought to. For the statement has
+received the capability of signifying both that what-is is and that
+what-is-not is. For if it had not received the capability of signify-
+ing that what-is-not is, then it would not signify this. Hence, even
+when it signifies that what-is-not is, it signifies what it ought to.
+But if by signifying what it ought to the statement is correct and
+true, as you have argued, then it is true even when it states that
+what-is-not is.
+    T. Admittedly, we are not accustomed to call the statement true
+when it signifies that what-is-not is; nevertheless it has a truth and
+a correctness because it does what it ought. But when it signifies
+that what-is is, it does what it ought in two respects: for it signi-
+fies (1) what it has received the capability of signifying and (2)
+what it is designed to signify. Now, a statement is usually said to
+be correct and true in accordance with the latter correctness and
+truth, by which it signifies that what-is is; [and we do] not [ordi-
+narily call a statement correct and true] in accordance with the for-
+mer correctness and truth, by which it signifies that even what-is-
+not is. For the statement [does what it] ought more with respect
+to what it is designed to signify than with respect to what it is not
+designed to signify. Indeed, it has received the capability of sig-
+nifying that a thing is, when it is not, or is not, when it is, only
+because it was not able to be restricted to signifying that this thing
+is, when it is, or that it is not, when it is not.
+    Therefore, a statement has one correctness and truth because
+it signifies what it is designed to signify; and it has another cor-
+rectness and truth because it signifies what it has received the ca-
+pability of signifying. The first of these correctnesses, or truths,
+belongs variably to the statement; but the second belongs to it in-
+variably. The statement does not always have the first kind of
+truth; but it always possesses the second. The first kind of truth
+belongs to the statement accidentally and depends upon its usage,
+whereas the second kind of truth belongs to it naturally. For ex-
+ample, when I say “It is day” in order to signify that what-is is, I
+use the signification of this statement correctly because the state-
+ment is designed for this [viz., for signifying that what-is is]; and
+so it is said to signify correctly on this occasion. But when by
+means of the same statement I signify that what-is-not is, I do not
+168                       On Truth 2 & 3
+
+
+use the signification of the statement correctly, because the state-
+ment is not designed for signifying this; and so, its signification
+is said not to be correct on this occasion.
+    Now, in some statements these two truths, or correctnesses, are
+inseparable, as when we say “A man is an animal” or “A man is not
+a stone.” For the affirmative statement always signifies that what-
+is is, and the negative statement always signifies that what-is-not is
+not. Moreover, we cannot use the affirmation to signify that what-
+is-not is (for a man is always an animal); nor can we use the nega-
+tion to signify that what-is is not (because a man is never a stone).
+    We began by inquiring about that truth which a statement has
+in accordance with someone’s using the statement correctly, for
+in accordance with that [truth] our common way of speaking
+judges the statement to be true. Later we shall speak about that
+truth which a statement cannot fail to have.
+    S. Return, then, to the issue with which you began. For you have
+distinguished to my satisfaction the two truths of a statement—
+provided you will show that a statement has a kind of truth when
+it lies, as you maintain.
+    T. For the time being let these things suffice regarding the
+truth of signification, with which we have begun. For the same
+notion of truth which we have examined in spoken statements
+must be examined in all the signs which are formed in order to
+signify that something is or is not—for example, in written char-
+acters or in sign-language with the fingers.
+    S. Proceed, then, to these other topics.
+
+                        CHAPTER THREE
+                       The truth of thought.
+   T. We call a thought true when there is what we—either on the
+basis of reason or on some other basis—suppose there to be. And
+[we call a thought] false when there is not [what we suppose there
+to be].
+   S. This is our custom.
+   T. Then, what does truth in a thought seem to you to be?
+   S. According to the reasoning evidenced in the case of state-
+ments, the truth of thought is best called its rightness, or cor-
+rectness (rectitudo). For to the end that we might think that what-
+                              On Truth 3 - 5                       169
+
+
+is is and that what-is-not is not, we have been given the capability
+of thinking that something is or is not. Thus, whoever thinks that
+what-is is thinks what he ought to; and so, his thinking is correct.
+Accordingly, if our thought is correct and true simply because we
+think that what-is is, or that what-is-not is not, then the truth of
+thought is simply its rightness, or correctness.
+    T. Your thinking is correct.
+
+                          CHAPTER FOUR
+                         The truth of the will.
+    T. But when Truth itself [viz., God] says that the Devil “did not
+stand in the truth,” 1 He declares that truth is also in the will. For
+it was only with respect to his will that the Devil was in the truth
+and deserted the truth.
+    S. I believe this. For he deserted the truth only by sinning; and
+if he had always willed what he ought to have willed, then he never
+would have sinned.
+    T. Tell me, then, what you understand truth in his will to be.
+    S. It is only rightness, or uprightness [rectitudo]. For as long as
+the Devil willed what he ought to have willed—namely, the end for
+which he had received a will—he was in the truth and in up-
+rightness; and when he willed what he ought not to have willed,
+he deserted truth and uprightness. So truth in his will can only
+be understood to be uprightness, since truth and uprightness in
+the Devil's will each consisted only in his willing what he ought
+to have willed.
+    T. You understand well.
+
+                        CHAPTER FIVE
+       The truth of natural action and non-natural action.
+   T. But we must no less believe that truth is also in actions—
+just as the Lord says, “He who does evil hates the light” and “He
+who does the truth comes to the light.” 2
+   S. I see what you mean.
+   T. Then, if you can, consider what truth in actions is.
+   S. Unless I am mistaken, truth in actions must be considered
+
+1             2
+ John 8:44.   John 3:20-21.
+170                              On Truth 5
+
+
+along the same lines as the truth we have already recognized in
+other things.
+    T. That's right. For if to do evil and to do the truth are oppo-
+sites—as the Lord indicates when He says: “He who does evil hates
+the light” and “He who does the truth comes to the light”—then
+doing the truth is the same thing as doing good. For doing good
+and doing evil are opposites. Therefore, if doing the truth and
+doing good have the same opposite, their significations are not dif-
+ferent. But everyone admits that whoever does what he ought does
+what is good and what is right. So it follows that to do what is right
+is to do the truth. For it is evident that to do the truth is to do
+what is good and that to do what is good is to do what is right.
+Therefore, nothing is clearer than that the truth of an action is
+its rightness [rectitudo].
+    S. I see no respect in which your reasoning is shaky.
+    T. Consider whether every action which does what it ought is
+appropriately said to do the truth. For there are rational actions,
+such as giving alms, and there are non-rational actions—such as
+the action of fire, which heats. Now, is it appropriate to say that
+fire does the truth?
+    S. If fire has received the power to heat from Him from whom
+it has its being,1 then when it heats it does what it ought. There-
+fore, I do not see anything inappropriate [in saying] that fire does
+what is true and what is right when it does what it ought.
+    T. That's the way it seems to me too. Hence, we can note that
+there is a necessary and a non-necessary rightness, or truth, of
+action. For of necessity fire does what is right and true when it
+heats; but out of no necessity a man does what is right and true
+when he does what is good. However, when the Lord said, “He
+who does the truth comes to the light,” He wanted us to under-
+stand the verb “to do” not only as standing for what is properly
+called a doing, but also as a substitute for every other verb. For
+He excludes from this truth, or light, neither the man who un-
+dergoes persecution for the sake of justice nor the man who is when
+and where he ought to be, nor the man who is standing or sitting
+when he ought to—and the like. For no one denies that such per-
+
+1
+ Regarding the expression “ab eo a quo habet esse accepit,” see also DLA 10 (S I,
+222:22) and DCD 1 (S I, 235:4-5)
+                                On Truth 5 & 6                     171
+
+
+sons do what is good. And when the apostle says that each man
+shall receive [recompense] “in accordance with what he has
+done,” 1 we must understand this phrase to indicate all that we
+commonly call doing good and doing evil.
+    S. Even our ordinary way of speaking calls enduring and many
+other things doings which are not [properly] doings. So unless I
+am wrong, we can also number among right actions upright will-
+ing, whose truth we discussed before dealing with the truth of ac-
+tion.
+    T. You are not mistaken. For he who wills what he ought is said
+to do what is right and good; and he is included among those who
+do the truth. But since we are speaking of truth by analyzing it,
+and since the Lord seems to be speaking especially of that truth
+which is in the will when He says that the Devil “did not stand in
+the truth,” 2 I wanted to examine separately what truth in the will
+is.
+    S. I am glad you did.
+    T. Since, then, it is evident that there is both a natural and a
+non-natural truth of action, that truth of a statement which (as we
+have seen) cannot be separated from it must be classified as nat-
+ural. For just as when fire heats it does the truth because it has
+received [the power to heat] from Him from whom it has its being,
+so also the statement “It is day” does the truth when it signifies
+that it is day (whether it is daytime or not) since it has received the
+nature to do this.
+    S. Now for the first time I see the truth in a false statement.
+
+                               CHAPTER SIX
+                            The truth of the senses.
+   T. Do you think that we have discovered all the abodes of truth,
+leaving aside consideration of the Supreme Truth?
+   S. I recall now a certain truth which I do not find among those
+you have dealt with.
+   T. What is it?
+   S. There is truth in the bodily senses—but not always, for at
+times they deceive us. For sometimes when I am looking at an ob-
+ject through a glass, my sight deceives me, because sometimes it
+1                       2
+ II Corinthians 5:10.   John 8:44.
+172                          On Truth 6
+
+
+reports to me that the object I see beyond the glass is the same
+color as the glass; yet, it really is a different color. And sometimes
+my sight causes me to believe that the glass is the color of the ob-
+ject on the other side of it, even though it is not that color. And
+there are many other cases in which sight and the other senses
+deceive.
+    T. This truth or falsity, it seems to me, is not in the senses but
+in the judgment (opinione). For the outer sense does not lie to the
+inner sense, but the latter deceives itself. This fact is sometimes
+easy to recognize, at other times difficult. For example, when a
+boy is afraid of the statue of an open-mouthed dragon, we easily
+recognize that sight does not cause this fear (for sight reports to
+the boy nothing other than it reports to aged people); rather, the
+fear is caused by the childish inner sense, which does not yet know
+how to discern well between a real object and its likeness. The
+same thing happens when we see a person who resembles some-
+one else and we mistake him for the one he resembles—or, again,
+when someone who hears what is not a man's voice thinks it to
+be a man's voice. The inner sense also causes these mistakes.
+    Now, what you say about glass happens the way it does because
+when sight passes through a body which has the color of air, it is
+no more prevented from receiving the likeness of the color it sees
+beyond the glass than when it passes through the air. [And this is
+always the case] except insofar as the body it passes through is
+denser or darker than air. For example, [this is the case] when
+sight passes through glass of its own color—i.e., glass which has
+no color admixed to its own—or when it passes through very clear
+water or through a crystal or through something having a similar
+color. But when sight passes through some other color (for ex-
+ample, through glass not of its own color [i.e., not of the natural
+color of glass] but to which another color is added), it receives the
+color which it first encounters. Thus, after sight has received one
+color, then depending upon the extent to which it has been mod-
+ified by this color, it receives either partially or not at all whatev-
+er other color it encounters. Therefore, sight reports the color it
+has apprehended first, and reports it either by itself or in combi-
+nation with the color it meets subsequently. For if sight is modi-
+fied by the first color up to its full capacity for receiving color,
+then it cannot at the same time sense another color. But if sight
+                           On Truth 6 & 7                           173
+
+
+is affected by the first color less than exhausts its capacity to sense
+color, then it can still sense another color.
+    For example, if sight passes through a certain body, say glass,
+which is so perfectly red that sight is fully modified by this red-
+ness, then it is unable to be modified by another color at the same
+time. But if sight finds and first encounters a lesser degree of red-
+ness than exhausts its capacity to sense color, then (being not yet
+full, so to speak) it will be able to receive an additional color, to
+the degree that its capacity has not been exhausted by the first
+color. Accordingly, someone who is unaware of this fact thinks that
+sight reports that all the things it perceives after receiving the first
+color are either partially or entirely the same color as the first.
+Thereby the inner sense imputes its own failure to the outer sense.
+    Similarly, when an unbroken stick, partly in water, partly not,
+is thought to be broken, or when we think that our sight sees our
+real faces in a mirror, and when sight and the other senses seem
+to report to us many things as being other than they really are—
+the fault is not with the senses, which report what they are able
+to, since they have received thus to be able; rather, [the fault] must
+be attributed to the soul's judgment [iudicium], which does not
+clearly discern what the senses can and ought to do. I do not think
+that time need be spent in showing this [in any more detail], since
+for our purposes it would be more tedious than profitable. Let it
+suffice to say only that whatever the senses are seen to report,
+whether they do so as a result of their nature or of some other
+cause [for example, because of a tinted glass], they do what they
+ought. Therefore, they do what is right and true, and their truth
+falls within the classification of truth in actions.
+    S. Your answer has satisfied me. I do not wish for you to dwell
+longer on the topic of the senses.
+
+                       CHAPTER SEVEN
+                 The truth in the being of things.
+   T. Leaving out of consideration the Supreme Truth, consider
+now whether we must understand truth to be in anything other
+than the things we have already examined.
+   S. What could that be?
+   T. Do you think that there is anything, at any time or place,
+174                        On Truth 7 & 8
+
+
+which is not in the Supreme Truth, or has not received from the
+Supreme Truth what it is, insofar as it is, or is able to be other than
+what it is in the Supreme Truth?
+    S. No, we must not think so.
+    T. Therefore, whatever is is truly—insofar as it is what it is in
+the Supreme Truth.
+    S. You can conclude unreservedly that everything which is is
+truly since it is nothing other than what it is there.
+    T. Thus, there is truth in the being of all that exists, because
+all things are what they are in the Supreme Truth.
+    S. I see that in the being of things there is truth to such an ex-
+tent that no falsehood can be there, since what falsely exists does
+not exist.
+    T. That's a good answer. But, tell me, ought anything to be dif-
+ferent from what it is in the Supreme Truth?
+    S. No.
+    T. So if all things are what they are in the Supreme Truth, then
+without doubt they are what they ought to be.
+    S. Yes, all things are what they ought to be.
+    T. But whatever is what it ought to be, is rightly.
+    S. No other conclusion is possible.
+    T. Therefore, everything which is is rightly.
+    S. Nothing follows more consistently.
+    T. So if truth and rightness are in the being of things because
+these things are what they are in the Supreme Truth, then as-
+suredly the truth of things is rightness [rectitudo].
+    S. Nothing is clearer with respect to the logic of the argument.
+
+                      CHAPTER EIGHT
+       The various meanings of “ought” and “ought not,”
+               “to be able” and “not to be able.”
+   S. But how can we say truthfully that whatever is ought to be,
+since there are many evil deeds which certainly ought not to be?
+   T. Why should it be strange that the same thing both ought to
+be and ought not to be?
+   S. How can this be so?
+   T. I know you believe that nothing at all is except by God's caus-
+ing it or permitting it.
+                             On Truth 8                            175
+
+
+    S. Nothing is more certain to me.
+    T. Would you dare to suggest that God unwisely or evilly caus-
+es or permits something?
+    S. I would say, rather, that [He causes or permits] something
+only wisely and well.
+    T. Would you say that what such great Goodness and Wisdom
+causes or permits ought not to be?
+    S. What intelligent person would dare to suppose this?
+    T. Therefore, both what happens by God's causing and what
+happens by His permitting ought to be.
+    S. What you say is evident.
+    T. Tell me also, do you think that the effect of an evil will ought
+to be?
+    S. This is the same as asking whether an evil deed ought to be;
+and no one with any sense would concede this.
+    T. Nevertheless, God permits some men to do evilly what they
+will evilly.
+    S. Would that He permitted it less often!
+    T. So the same thing both ought and ought not to be. It ought
+to be since it is permitted wisely and well by God, without whose
+permission it could not have happened. Yet, with respect to him
+by whose evil will it is committed (concipitur), it ought not to be.
+In this way, then, the Lord Jesus ought not to have undergone
+death because He alone [among men] was innocent; and no one
+ought to have inf licted death upon Him; nevertheless, He ought
+to have undergone death because He wisely and graciously and
+usefully willed to undergo it. For in many ways the same thing ad-
+mits in different respects of opposites. This is frequently the case
+in regard to an action [actio]—for instance, a beating [percussio].
+For “beating” is predicable both of one who gives it [i.e., of an
+agent] and of one who gets it [i.e., of a patient]. Hence, [in dif-
+ferent respects] it can be called both an action and a passion. Nev-
+ertheless, according to their grammatical form “actio” and “per-
+cussio” (and likewise any other words which have passive forms but
+active meanings) seem to pertain more to a patient than to an
+agent. Indeed, with reference to acting, it seems more proper to
+say “agentia” or “percutientia”; and with reference to undergoing,
+it seems more proper to say “actio” and “percussio.” For “agentia”
+and “percutientia” are derived from “agens” and “percutiens,” even
+176                         On Truth 8
+
+
+as “providentia” is derived from “providens,” and as “continentia”
+from “continens”; all of these forms (viz., “agens,” “percutiens,”
+“providens,” and “continens”) are active. But “actio” and “percussio”
+are derived from “actus” and “percussus,” which are passives. Now—
+to take one example that holds true of the other terms as well—
+just as giving a beating (percutiens) always occurs in connection
+with getting a beating [percussus] and getting a beating always oc-
+curs in connection with giving a beating, so giving a beating and
+getting a beating cannot occur separately: one and the same thing
+is signified by different words in accordance with its different as-
+pects. Hence, beating (percussio) is said to consist of both giving a
+beating [percutiens] and getting a beating [percussus].
+    Thus, depending upon whether agent and patient are subject to
+the same or to opposite judgments, the two aspects of the action
+will be judged to be alike or opposite. Therefore, (1) when the one
+who gives a beating does so rightly and the one who gets that beat-
+ing does so rightly—for example, when a sinner is corrected by
+someone whose prerogative it is—both aspects of the action are
+right because in both respects a beating ought to be. And (2)
+when, on the contrary, a just man is beaten by an unjust man, nei-
+ther aspect of the action is right because the just man ought not
+to get a beating nor ought the unjust man to give a beating, for
+in neither respect ought a beating to occur. But (3) when a sin-
+ner is beaten by one whose prerogative it is not, then a beating
+both ought and ought not to be, since the sinner ought to get a
+beating but the other man ought not to give a beating; and so the
+action cannot be denied to be both right and not right. But if you
+consider whether in accordance with the judgment of Supernal
+Wisdom and Goodness there ought not to be a beating in the one
+respect only or in both respects (viz., with respect to the agent
+and with respect to the patient), would you or anyone else dare
+to deny that what such great Wisdom and Goodness permits ought
+to be?
+    S. Let him deny it who dares; but I do not dare.
+    T. If you also consider something from the standpoint of the
+nature of things—for example, the driving of iron nails into the
+body of the Lord—would you say that His frail f lesh ought not to
+have been penetrated or that, once penetrated by sharp iron, it
+ought not to have felt pain?
+177                        On Truth 8 & 9                            177
+
+
+   S. I would be speaking against nature.
+   T. Therefore, it is possible that with respect to nature there
+ought to be either an action or a passion which, with respect to
+the agent or the patient, ought not to be, since neither the agent
+ought to do it nor the patient to undergo it.
+   S. I cannot deny any of this.
+   T. So you see that it very often can happen that the same ac-
+tion both ought and ought not to be, though in different respects.
+   S. You present this so clearly that I cannot help seeing it.
+   T. But I want you to be aware as well that “ought” and “ought
+not” are sometimes said improperly—as , for example, when I say
+that I ought to be loved by you. For if I truly ought, then I am in-
+debted to repay what I owe, and am at fault if I am not loved by
+you.
+   S. It follows.
+   T. But when I ought to be loved by you, then payment should
+be exacted not from me but from you.
+   S. I must concede it.
+   T. So when I say that I ought to be loved by you this means
+not that I owe something but that you owe me love. Likewise, when
+I say that I ought not to be loved by you, what is meant is only
+that you ought not to love me.
+   This same mode of speaking also occurs in conjunction with
+the notions of ability and inability. We say, for instance, “Hector
+was able to be overpowered by Achilles” and “Achilles was not able
+to be overpowered by Hector.” Yet, ability was not in the one who
+was able to be overpowered but was in the one who was able to
+overpower; and inability was not in him who was not able to be
+overpowered but was in him who was not able to overpower.
+   S. What you say pleases me. Indeed, I think it useful to know.
+   T. You think correctly.
+
+                          CHAPTER NINE
+      Every action signifies either what is true or what is false.
+   T. But let us return to [the topic of ] the truth of signification.
+I began with this topic in order to lead you from the more famil-
+iar to the less familiar. For everyone speaks about the truth of sig-
+nification, but few consider the truth which is in the being of
+178                         On Truth 9
+
+
+things.
+    S. I have been aided by your having led me in this sequence.
+    T. Let us see, then, how extensive the truth of signification is.
+For there is a true or a false signification not only in those things
+which we ordinarily call signs but also in all the other things which
+we have discussed. For since someone should do only what he
+ought to do, then by the very fact that someone does something,
+he says and signifies that he ought to do it. Now, if [morally speak-
+ing] he ought to do what he does, he speaks the truth. But if
+[morally speaking] he ought not [to do what he does], he speaks
+a lie.
+    S. Although I seem to understand, show me more clearly what
+you mean, because I have not heard this before.
+    T. Suppose you were in a place where you knew there to be ed-
+ible herbs and poisonous ones, but you did not know how to tell
+them apart; suppose too that with you was another person, whose
+ability to discriminate between the two you trusted. Now, suppose
+that you asked him which ones were edible and which were poi-
+sonous, and that he told you that the one kind was edible but him-
+self ate the other kind. Which would you believe the more: his
+word or his deed?
+    S. I would believe his deed more than his word.
+    T. Therefore, by his action more than by his word he would be
+telling you about which herbs were edible.
+    S. Yes, that's right.
+    T. So, then, if you did not know that one should not lie, and
+if someone lied in your presence, then even were he to say to you
+that he ought not to lie, his telling you by his deed that he ought
+to lie would outweigh his telling you by his word that he ought
+not to lie. Similarly, when someone thinks or wills something: if
+you did not know whether he ought to think or will it, then if you
+could see his thought and will, by his act of thinking and of will-
+ing he would signify to you that he ought to think and will this
+thing. Now if, [morally speaking], this person ought [to be think-
+ing and willing this, then by his thinking and willing] he would
+be telling the truth; and if, [morally speaking], he ought not [to
+be thinking and willing this], then he would be lying.
+    There is also a similarly true or a false signification in the ex-
+istence of things, since by the very fact that they are, they declare
+                         On Truth 9 & 10                          179
+
+
+that they ought to be.
+   S. I now see clearly what I had not noticed before.
+   T. Let us go on to the remaining topics.
+   S. Lead the way. I will follow.
+
+                        CHAPTER TEN
+                       The Supreme Truth.
+   T. You will not deny that the Supreme Truth is rightness [recti-
+tudo], will you?
+   S. Indeed not. I cannot call it anything else.
+   T. Consider the following: Although all the different right-
+nesses which were mentioned earlier are rightnesses because the
+things they are in either are what they ought to be or else do what
+they ought to do, nevertheless it is not the case that the Supreme
+Truth is rightness because it is under any indebtedness. For all other
+things are indebted to it; it does not owe anything to anyone. It
+has no other reason for being what it is except that it is.
+   S. I understand.
+   T. Do you also see how this Rightness is the cause of all other
+truths and rightnesses, and how nothing is the cause of it?
+   S. Yes, I do. And I notice among these other truths and right-
+nesses that some are only effects, whereas some are both causes
+and effects. For example, although the truth which is in the exis-
+tence of things is the effect of the Supreme Truth, it is the cause
+of the truth of thought and of the truth which is in statements; but
+these two truths are not causes of any truth.
+   T. That's a keen observation. On the basis of it you can now
+understand how in my Monologion I proved by means of the truth
+of a statement that the Supreme Truth has neither beginning nor
+end. For when I asked “When was it ever not true that something
+was going to exist?” I did not mean to suggest (1) that the state-
+ment which asserted that something was going to exist was itself
+without a beginning or (2) that the truth of this statement was
+God. I meant to say only that, given the statement, we cannot un-
+derstand there to be a time when truth would not have been in
+it—so that from the fact that we do not understand there to be a
+time when this truth could have failed to be in it (given the state-
+ment in which truth could be), we should understand that that
+180                      On Truth 10 & 11
+
+
+other Truth, which is the first cause of the statement's truth, was
+without beginning. Indeed, the truth of the statement could not
+always be unless its cause always were. For the statement which
+says that something is going to exist is true only if something is,
+in fact, going to exist. And something is going to exist only if it
+exists in the Supreme Truth.
+    We must understand in a similar way the other statement, which
+says that something has existed in the past. For if truth could in
+no respect fail to be in this statement (given the statement), then
+it follows that that Truth which is the supreme cause of this state-
+ment's truth cannot be understood to have an end. For it is true
+to say that something has existed, because thus in fact it has; and
+something has existed because thus it exists in the Supreme Truth.
+    Therefore, if it was never able not to be true that something
+was going to exist, and never will be able not to be true that some-
+thing has existed, then it is impossible that the Supreme Truth had
+a beginning or will have an end.
+S. I do not see any possible objection to your reasoning.
+
+                       CHAPTER ELEVEN
+                     The definition of “truth.”
+   T. Let us return to the investigation of truth which we began.
+   S. All that [we were just discussing] is pertinent to investigat-
+ing truth. But nonetheless, return to whatever you wish.
+   T. Tell me, then, whether you think that there is still another
+rightness in addition to those rightnesses we have examined.
+   S. There are no other rightnesses than those—except for the
+rightness which is in corporeal things, such as the rightness, or
+straightness, (rectitudo) of a stick. But this is quite different from
+the other kinds.
+   T. In what way does this rightness seem to you to differ from
+the others?
+   S. Because it can be apprehended by bodily sight, whereas ra-
+tional ref lection apprehends the others.
+   T. Cannot reason understand and apprehend the straightness
+of material objects separably from the objects? Or if there is doubt
+about whether the surface (linea) of an absent object is straight
+and it can be shown that no part of it is curved, then does not
+                          On Truth 11 & 12                          181
+
+
+reason infer that the surface must be straight?
+    S. Yes. But the same rightness which is thus known by reason
+is perceived in the object by sight, whereas the other kinds of right-
+ness can be perceived only by the mind.
+    T. Therefore, unless I am mistaken we can define “truth” as
+“rightness perceptible only to the mind.”
+    S. I see that he who says this, is in no way mistaken. Without
+doubt, this definition of “truth” contains neither more nor less
+than is appropriate (expediat), since “rightness” distinguishes it
+from everything which is not called rightness, and “perceptible
+only to the mind” distinguishes it from visible rightness.
+
+                       CHAPTER TWELVE
+                     The definition of “justice.”
+   S. But since you have taught me that all truth is rightness and
+since rightness seems to me to be the same thing as justice, teach
+me also what I may understand justice to be. For it seems that
+whatever it is for a thing to be right is also what it is for that thing
+to be just, and that, conversely, whatever it is for a thing to be just
+is what it is for that thing to be right. For example, it seems to be
+both just and right for fire to be hot and for each person to reci-
+procate another's love. For if (as I believe) whatever ought to be,
+rightly and justly is, and if nothing else rightly and justly is except
+what ought to be, then justice can be only rightness. Indeed, al-
+though it is not the case that the Supreme and Simple Nature is
+just or right because it ought [to be or to do] anything, neverthe-
+less rightness and justice are assuredly identical in it.
+   T. Therefore, if justice is nothing other than rightness, you have
+the definition of “justice.” And since we are speaking about the
+rightness which is perceptible only to the mind—“truth,” “right-
+ness,” and “justice” are definable in terms of one another. As a
+result, if someone knows what one of them is but does not know
+what the other two are, he can infer from his knowledge of one
+to a knowledge of the others. In fact, if anyone knows one of them,
+he cannot keep from knowing the other two.
+   S. What then? Shall we call a stone just because it does what it
+ought when it seeks to move downwards—even as we call a man
+just when he does what he ought?
+182                         On Truth 12
+
+
+    T. No, we usually do not call anything just on the basis of this
+kind of justice.
+    S. Why, then, is a man any more just than is a stone, if both
+behave justly?
+    T. Don't you think that the activity of a man differs in some
+respect from the activity of a stone?
+    S. I know that a man acts freely but that a stone acts by nature
+and not freely.
+    T. This is why we do not call a stone just; for if a thing which
+does what it ought does not will what it does, then it is not just.
+    S. Shall we say, then, that a horse is just when it wills to eat,
+because it willingly does what it ought?
+    T. I did not say that something is just which willingly does what
+it ought; rather, I said that whatever does not do willingly what it
+ought is not just.
+    S. Tell me, then, who or what is just.
+    T. As I see it, you are asking for a definition of that justice
+which is praiseworthy, even as its opposite, viz., injustice, is blame-
+worthy.
+    S. That's the justice I am seeking.
+    T. It is evident that this justice is not in any nature which does
+not know rightness. For whatever does not will rightness does not
+merit to be praised for having it, even if it does have it. But that
+which does not know rightness is not able to will it.
+    S. That's true.
+    T. Therefore, the rightness which brings praise to a thing which
+has rightness is present only in a rational nature, which alone per-
+ceives the rightness we are talking about.
+    S. It follows.
+    T. Therefore, since all justice is rightness, the justice which
+makes the one who keeps it worthy of praise is present only in ra-
+tional natures.
+    S. It cannot be otherwise.
+    T. Then where do you think this justice is to be found in man,
+who is rational?
+    S. It is nowhere except either in his will or in his knowledge or
+in his action.
+    T. What if someone understands rightly or acts rightly but does
+not will rightly: will anyone praise him on account of justice?
+                             On Truth 12                            183
+
+
+    S. No.
+    T. Therefore, this justice is not rightness of knowledge or right-
+ness of action but is rightness of will.
+    S. It shall be either this or nothing.
+    T. Do you think that the justice we are seeking has been ade-
+quately defined?
+    S. You decide.
+    T. Do you think that whoever wills what he ought wills rightly
+and has rightness, or uprightness, of will?
+    S. If someone unknowingly wills what he ought—for example,
+if someone wills to lock out another who, without his knowledge,
+wants to kill a third party inside the house—he does not have the
+uprightness-of-will that we are seeking, whether or not he has
+some kind of uprightness-of-will.
+    T. What do you say about a person who knows that he ought
+to will what he does will?
+    S. It can happen that he knowingly wills what he ought [to will]
+and yet does not want to be under the obligation [of so willing].
+For example, when a robber is compelled to return the stolen
+money, it is evident that he does not want [velle] to be under this
+obligation, since he is compelled to will (velle) to return the money
+because he ought to. He is not at all entitled to be praised on ac-
+count of this rightness.
+    T. Anyone who feeds a poor hungry man on account of his own
+vainglory does want to be under the obligation to will what he
+wills. And indeed, he is praised because he wills to do what he
+ought [to will to do]. So what is your judgment about him?
+    S. His rightness must not be praised; and so, it does not mea-
+sure up to the justice we are seeking. But show now what does
+measure up.
+    T. Even as every will wills something, so it also wills for the sake
+of something. And just as we must consider what it wills, so we
+must also notice why it wills. For a will ought to be upright in will-
+ing what it ought and, no less, in willing for the reason it ought.
+Therefore, every will has both a what and a why. Indeed, whatso-
+ever we will, we will for a reason.
+    S. We all recognize this in ourselves.
+    T. But in order for a man's will to be praiseworthy, for what rea-
+son do you think he ought to will what he does will? What he must
+184                          On Truth 12
+
+
+will is clear, since whoever does not will what he ought to will is
+not just.
+    S. And it seems no less clear to me that in order for a man's
+will to be just, he must will for the reason he ought, even as he
+must will what he ought.
+    T. You understand well that these two things are necessary for
+a will to be just: willing what it ought [to will] and willing for the
+reason it ought [to will]. But tell me whether these two things are
+sufficient [for the will's being just].
+    S. Why wouldn't they be?
+    T. When someone wills what he ought to will and does so be-
+cause he is compelled [to will it], and is compelled [to will it] be-
+cause he ought to will it, is he not in a certain sense willing what
+he ought [to will] for the reason he ought [to will]?
+    S. I cannot deny it. But whereas he wills in one manner, a just
+man wills in another manner.
+    T. Distinguish these two manners.
+    S. When a just man wills what he ought [to will], then—inso-
+far as he is to be called just—he keeps uprightness-of-will only for
+its own sake. By contrast, someone who wills what he ought to
+will but does so only if compelled to or only if induced by exter-
+nal rewards, does not keep uprightness-of-will for its own sake but
+keeps it for the sake of something else—if he should at all be said
+to keep it.
+    T. Then, that will is just which keeps its uprightness on account
+of that uprightness itself.
+    S. Either that will is just or no will is.
+    T. Therefore, justice is uprightness (rectitudo)-of-will kept for its
+own sake.
+    S. Yes, this is the definition of “justice” I was seeking.
+    T. See whether something in this definition ought perhaps to
+be amended.
+    S. I do not see anything in it to be improved.
+    T. Nor do I. For there is no justice which is not rightness (rec-
+titudo); and no rightness other than uprightness (rectitudo)-of-will
+is called, in and of itself, justice. For rightness-of-action is called
+justice, but only when that action is performed by means of a just
+will. However, even if what we rightly will is impossible to be
+done, nevertheless uprightness-of-will does not at all lose the
+                            On Truth 12                            185
+
+
+name “justice.”
+    Now, as regards the word “kept,” someone will perhaps say: “If
+uprightness-of-will is to be called justice only when it is kept, then
+uprightness-of-will is not justice from the moment this uprightness
+is possessed; and we do not receive justice when we receive up-
+rightness-of-will, but we make this uprightness become justice by
+keeping it. For we receive and have uprightness-of-will before we
+keep it. We do not receive it and have it for the first time because
+we keep it, but we begin to keep it because we have received it
+and already have it.”
+    But to these inferences we can reply that at one and the same
+time we receive the willing it and the having it. For we have up-
+rightness only by willing it; and if we will it, then by this very act
+we have it. However, just as we simultaneously have it and will it,
+so we simultaneously will it and keep it; for just as we do not keep
+it except when we will it, so there is no time when we will it and
+do not keep it. Now, as long as we will it we keep it; and as long
+as we keep it we will it. Therefore, since our willing it and having
+it occur at the same time, and since our willing it and keeping it
+do not occur at different times, then it necessarily follows that we
+receive simultaneously the having of it and the keeping of it. And
+just as we have it as long as we keep it, so we keep it as long as
+we have it. These assertions involve no contradiction.
+    Of course, the receiving of this uprightness is by nature prior
+to having it or willing it (since having it or willing it is not the
+cause of receiving it, but receiving it makes possible both the hav-
+ing and the willing it); and yet receiving, having, and willing occur
+simultaneously (for we begin to receive and to have and to will
+this uprightness at the same time; and as soon as uprightness is
+received, it is both had and willed). Similarly, having uprightness
+and willing it occur simultaneously [with keeping it], even though
+they are by nature prior to keeping. Therefore, we receive justice
+through receiving simultaneously the having, the willing, and the
+keeping of uprightness-of-will. And as soon as we have and will this
+uprightness-of-will, this uprightness is to be called justice.
+    The phrase “for its own sake,” which we included [in our def-
+inition of “justice,”] is so essential that this very uprightness is in
+no respect justice unless it is kept for its own sake.
+    S. I can think of no objections to this.
+186                               On Truth 12
+
+
+    T. Do you think that this definition can be applied to the
+Supreme Justice—insofar, that is, as we are able to speak about a
+thing of which nothing, or almost nothing, can properly be said?
+    S. Since in God's divinity, power is not other than the divinity
+itself, we speak of the power of His divinity or of His divine power
+or of His powerful divinity. Similarly, although God's will is not
+one thing and His uprightness another, nevertheless it is not un-
+suitable for us to speak of His uprightness of will or of His vol-
+untary uprightness or of His right will. But if we say that God's up-
+rightness is kept for its own sake, then we seem not to be able to
+say this as suitably about anyone else's uprightness. For just as
+nothing else keeps God's uprightness, but it keeps itself, and just
+as it keeps itself through nothing other than through itself, so it
+keeps itself for the sake of nothing but itself.
+    T. Then, we can say with certainty that justice is uprightness-
+of-will which is being kept for its own sake.
+    Now, since [in Latin] we do not have a present passive partici-
+ple of the verb “servatur” (“is being kept”), we can use the perfect
+passive participle of this verb in order to express present time.
+    S. We have the well-known practice of using perfect passive par-
+ticiples as substitutes for present passive participles, which Latin
+does not have. Similarly, Latin lacks perfect participles of active
+and neuter verbs; and for these past participles which are lacking
+we use present participles. For example, I might say about some-
+one, “Only compelled (coactus) does he teach what he learned
+studying and reading (studens et legens)”; that is, “Only when he is
+compelled does he teach what he learned while he studied and
+read.”
+    T. Then we did well to say that justice is uprightness-of-will kept
+(servatam) for its own sake, i.e., which is being kept (servatur) for
+its own sake. Accordingly, men who are just are sometimes called
+upright in heart (i.e., upright in will); and sometimes they are sim-
+ply called upright, without the qualifying phrase “in heart,” since
+no one is understood to be upright except one who has an upright
+will. For example: “Glory, all of you who are upright in heart,” 1
+and also "The upright shall see and shall rejoice.” 2
+    S. With your definition of “justice” you have satisfied even chil-
+
+1                        2
+ Psalms 31:11 (32:11).       Psalms 106:42 (107:42).
+                          On Truth 12 & 13                          187
+
+
+dren. Let us go on to other matters.
+
+                      CHAPTER THIRTEEN
+                   Truth is one in all true things.
+    T. Let us go back to [the notion of ] rightness, or truth. Since
+we are talking about rightness perceptible only to the mind, “right-
+ness,” or “truth,” signifies a single thing which is the genus of jus-
+tice. Let us ask whether there is only one truth in all the things
+in which we say there is truth, or whether there is more than one
+truth, even as there is more than one thing in which we know
+truth to be.
+    S. I very much desire to know the answer to this.
+    T. It is evident that regardless of what thing truth is in, truth
+is nothing other than rightness (rectitudo).
+    S. I do not doubt this.
+    T. Then, if in accordance with the many things there were many
+truths, there would also be many rightnesses.
+    S. This is equally certain.
+    T. And if there had to be as many different rightnesses as there
+are different kinds of things, then surely these rightnesses would
+exist in accordance with these various things; and just as the things
+in which there is rightness vary, so there would have to be a vari-
+ety of rightnesses.
+    S. By means of one thing in which we say that there is rightness,
+show me what I may understand about other things [in which we
+also say that there is rightness].
+    T. I mean that if the rightness of signification [i.e., correctness]
+were different from the rightness of the will [i.e., uprightness] sim-
+ply because the former rightness is in the signification and the
+latter in the will, then the former rightness would exist on account
+of signification and would be changed in accordance with it.
+    S. But isn't this the case? For when what is is signified to be,
+or when what-is-not is signified not to be, then the signification
+is correct, or right, and (assuredly) rightness exists, without which
+the signification could not be right. But if what-is-not is signified
+to be, or if what is is signified not to be, or if nothing at all is sig-
+nified, then there will be no rightness-of-signification, which exists
+only in the signification. Hence, this rightness has its existence
+188                          On Truth 13
+
+
+through the signification and is changed with the signification—
+just as color has its existence and non-existence through a mater-
+ial object. For as long as the material object exists it is necessary
+that its color exist; but when the material object perishes, it is im-
+possible for its color to remain.
+    T. No. Rightness does not belong to signification as color be-
+longs to a material object.
+    S. Show me the difference.
+    T. If no one wishes to signify by means of any sign what should
+be signified, then will there be any signification by means of signs?
+    S. No .
+    T. And so, it will not be right for what-ought-to-be-signified to
+be signified?
+    S. [On the contrary], it will not therefore be less right and right-
+ness will no less demand this.
+    T. Therefore, when the signification does not exist, that right-
+ness does not perish by which it is right that there be signified
+what should be signified and by which it is demanded that there
+be signified what should be signified.
+    S. If that rightness had perished, then it would not have been
+right [for what-ought-to-be-signified to be signified], and rightness
+would not have demanded this.
+    T. Don't you think that when what ought to be signified is sig-
+nified, the signification is right on account of and in accordance
+with this very rightness?
+    S. Indeed, I cannot think differently. For if the signification
+were right by virtue of some other rightness, then were the above-
+mentioned rightness to perish, nothing would prevent the signifi-
+cation from being right. But no signification is right which signi-
+fies what is not right to be signified or which signifies what right-
+ness does not demand [that it signify.
+    T. Therefore, no signification is right by virtue of any other
+rightness than that which remains when the signification perish-
+es.
+    S. Clearly not.
+    T. Therefore, don't you see that rightness is in the significa-
+tion not because rightness begins to be when what is is signified
+to be or when what-is-not is signified not to be, but because the
+signification is made in accordance with a rightness which always
+                           On Truth 13                           189
+
+
+exists? [Don't you see too that] rightness is absent from significa-
+tion not because rightness perishes when the signification is not
+as it ought to be or when there is no signification but because the
+signification lacks this rightness which never perishes?
+    S. I see this so clearly that I cannot fail to see it.
+    T. Then, the rightness in terms of which the signification is
+called correct, or right, neither exists through nor changes with
+the signification, regardless of how the signification changes.
+    S. Nothing is now clearer to me.
+    T. Can you prove that color is related to a material object sim-
+ilarly to how rightness is related to signification?
+    S. I am now more prepared to prove that they are related very
+dissimilarly.
+    T. I think you now know what must be thought about the will
+and its rightness, and about the other things which ought to have
+rightness.
+    S. I see perfectly that your reasoning proves that rightness re-
+mains unchangeable, regardless of how these other things are.
+    T. So what conclusion do you think follows regarding these
+rightnesses? Are they different from one another, or is there one
+and the same rightness of all things?
+    S. I conceded previously that if there is more than one right-
+ness simply because there is more than one thing in which right-
+ness is seen to be, then it necessarily follows that these rightness-
+es exist and change in accordance with those things. But this was
+proven not at all to happen. Therefore, it is not the case that there
+is more than one rightness simply because there is more than one
+thing in which there is rightness.
+    T. Do you have any other reason for supposing that there is a
+plurality of rightnesses except that there is a plurality of things?
+    S. Just as I recognize that the argument from a plurality of
+things is faulty, so I see that no other argument can be found.
+    T. Therefore, the rightness of all things is one and the same.
+    S. Yes, I have to agree.
+    T. Moreover, if it is only when things are in accordance with
+what they ought to be that rightness is in those things which ought
+to have it, and if for them to be right is only [for them to be in
+accordance with what they ought to be], then it is evident that the
+rightness of all these things is only one.
+190                         On Truth 13
+
+
+    S. It cannot be denied.
+    T. Therefore, truth is one in all these things.
+    S. This is also impossible to be denied. But nevertheless, if truth
+assumes no diversity as a result of the [plurality of things], show
+me why we say “the truth of this thing” or “the truth of that
+thing,” as if we were distinguishing different truths. For many per-
+sons will be quite reluctant to concede that there is no difference
+between the truth of the will and what is called the truth of ac-
+tion, or [the truth of] one of the other things.
+    T. Truth is improperly said to be “of this thing” or “of that
+thing.” For truth does not have its being in or from or through the
+things in which it is said to be. But when these things are in ac-
+cordance with truth, which is always present to things which are
+as they ought to be, then we say “the truth of this thing” or “the
+truth of that thing” (for example, “the truth of the will” or “the
+truth of action”). Similarly, we say “the time of this thing” or “the
+time of that thing,” although there is one and the same time for
+all things which exist together at the same time. And if this thing
+did not exist or if that thing did not exist, time would nonethe-
+less remain the same; for we say “the time of this thing” or “the
+time of that thing” not because time is in these things but because
+these things are in time. Now, when considered in itself, time is
+not called the time of anything; but when we consider things
+which are in time, we say “the time of this thing” or “the time of
+that thing.” Similarly, Supreme Truth, existing in and of itself, is
+not the truth of anything; but when something accords with
+Supreme Truth, then we speak of the truth, or rightness, of that
+thing.
+

@@ -1,0 +1,1713 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Exercise 2: Photo Sorting Application 📸 &#8212; AI: ML &amp; Analytics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 's16_exercises_2_solved/s16.2-zero-shot-classification-solved';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introduction to the Transformers Library for NLP: pipelines" href="../s19_intro_to_transformers/s19.1_pipelines_solved.html" />
+    <link rel="prev" title="Exercise 1: Eurovision Song Lyrics Analysis" href="s16.1-umap-solved.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-neon.png" class="logo__image only-light" alt="AI: ML & Analytics - Home"/>
+    <script>document.write(`<img src="../_static/logo-neon.png" class="logo__image only-dark" alt="AI: ML & Analytics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    <no title>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">1. Our first Generative AI application</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/example_genAI.html">Our first Generative AI application</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2. Matrix Algebra with NumPy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.1-numpy.html">Matrix operations with Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.2-numpy-exercises-solutions.html">Numpy exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.3-image-blending.html">Working with images in Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Optimization and Automatic Differentiation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s03_optimization_automatic_differentiation/s03.1_notebook-solutions.html">Review of Optimization</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Review of Machine Learning with scikit-learn</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s04_review_ML_sklearn/s04.1-supervised-learning-sklearn-solutions.html">Scikit-learn</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../s04_review_ML_sklearn/s04.2-cost-benefit-analysis.html">Cost-Benefit Analysis of a ML classifier.</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">5. Unsupervised Learning with UMAP</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s05_unsupervised-learning-umap/s05.1-dimensionality-reduction.html">Dimensionality Reduction. UMAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s05_unsupervised-learning-umap/s05.2-text-analysis-solutions.html">Text Analysis with UMAP</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">6. Text Processing with scikit-learn</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s06_text-processing-sklearn/s06.1-text-classification-solved.html">Session 6: More on working with text data in scikit-learn</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">7. Intro to Deep Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s07_intro_deep_learning/s07.1-neural_network-solved.html">07: Introduction to Neural Networks</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">9. Deep Learning in Computer Vision</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.1-examples.html">Session 9. More on Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.2-examples-2.html">Introduction to Computer Vision with Deep Learning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.3-intro-to-convolutions_solved.html">Intro to convolutional neural networks (CNNs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.4-convolutional-networks_solved.html">Convolutional Neural Networks (CNNs)</a></li>
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">11. Transfer Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s11_transfer_learning/s11.1-transfer-learning-examples.html">Transfer Learning</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">12. Zero-Shot Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s12_zero-shot-learning/s12.1_intro-zero-shot-classification.html">Zero-Shot Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">13. Semantic Search</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s13_semantic_search_and_biases/s13.1_semantic_search_solved.html">Semantic Search</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">14. Object Detection</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s14_more_vision_tasks_object_detection/s14.1-intro-object-detection.html">Object Detection</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../s14_more_vision_tasks_object_detection/s14.2-zero-shot_object_detection.html">Zero-shot object detection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">15. Exercises I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.1-text-classification-solved.html">Exercise 1: Hate Spech Detection in X (aka Twitter) 🤬</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.2-transfer-learning-solved.html">Exercise: Plant Disease App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.3-semantic-search-solved2.html">Exercise: Product Item Recommender 🧥</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">16. Exercises II</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="s16.1-umap-solved.html">Exercise 1: Eurovision Song Lyrics Analysis</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise 2: Photo Sorting Application 📸</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">19. Intro to Transformers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s19_intro_to_transformers/s19.1_pipelines_solved.html">Introduction to the Transformers Library for NLP: pipelines</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s19_intro_to_transformers/s19.2_zero-shot-classification.html">Zero-Shot Classification in NLP</a></li>
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">20. Transformers Architecture &amp; Transfer Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.1_transformers_architecture.html">Fundamentals of the Transformer Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.2-transfer-intro.html">Transfer Learning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.3-transfer-learning-example.html">Transfer Learning example: Legal Text Classification</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fs16_exercises_2_solved/s16.2-zero-shot-classification-solved.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/s16_exercises_2_solved/s16.2-zero-shot-classification-solved.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exercise 2: Photo Sorting Application 📸</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="exercise-2-photo-sorting-application">
+<h1>Exercise 2: Photo Sorting Application 📸<a class="headerlink" href="#exercise-2-photo-sorting-application" title="Link to this heading">#</a></h1>
+<p>In this exercise, we want to use a model for classifying photos in the <code class="docutils literal notranslate"><span class="pre">exercise2_images</span></code> folder.</p>
+<p>Assume the photos are not tagged/labeled, andd you cannot use labeled data.</p>
+<p>First, let’s load the model and print some images.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image_paths</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;exercise2_images/*&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">image_paths</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>47
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># display grid of images</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">image_paths</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/3dd394526243a2eeb7e764e95ea6312bc235984cff5c161271940915ae42d4c3.png" src="../_images/3dd394526243a2eeb7e764e95ea6312bc235984cff5c161271940915ae42d4c3.png" />
+</div>
+</div>
+<p><strong>a)</strong> First, we want to classify the images into three groups:</p>
+<ul class="simple">
+<li><p>Photos of roses.</p></li>
+<li><p>Photos of sunflowers.</p></li>
+<li><p>Photos of other things.</p></li>
+</ul>
+<p>For each of the photos, compute its vector representation into a matrix.
+After that, print each photo, and its corresponding classification into the three groups.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">clip</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="n">device</span> <span class="o">=</span> <span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span>
+<span class="n">model</span><span class="p">,</span> <span class="n">preprocess</span> <span class="o">=</span> <span class="n">clip</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;ViT-B/32&quot;</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image_embeddings</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">image_path</span> <span class="ow">in</span> <span class="n">image_paths</span><span class="p">:</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">preprocess</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">))</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+        <span class="n">image_features</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">encode_image</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+        <span class="n">image_features</span> <span class="o">/=</span> <span class="n">image_features</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">image_embeddings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">image_features</span><span class="p">)</span>
+
+<span class="n">image_embeddings</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="n">image_embeddings</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image_embeddings</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch.Size([47, 512])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A photo of a rose&#39;</span><span class="p">,</span> <span class="s2">&quot;A photo of a sunflower&quot;</span><span class="p">,</span> <span class="s2">&quot;A photo&quot;</span><span class="p">]</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="n">clip</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="n">text_features</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">encode_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">text_features</span> <span class="o">/=</span> <span class="n">text_features</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">text_features</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch.Size([3, 512])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">similarities</span> <span class="o">=</span> <span class="p">(</span><span class="mf">100.0</span> <span class="o">*</span> <span class="n">image_embeddings</span> <span class="o">@</span> <span class="n">text_features</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">image_path</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">image_paths</span><span class="p">):</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Similarity scores:&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">l</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">labels</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">similarities</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/74d02a60602521f6b78a80cd6b8a070c6c35cb8117c374aef74cd5d97c794417.png" src="../_images/74d02a60602521f6b78a80cd6b8a070c6c35cb8117c374aef74cd5d97c794417.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.00
+A photo of a sunflower: 1.00
+A photo: 0.00
+</pre></div>
+</div>
+<img alt="../_images/729931f1780c6a59e12b9c8442c67b9af8813f288927afc4b49544572627bb05.png" src="../_images/729931f1780c6a59e12b9c8442c67b9af8813f288927afc4b49544572627bb05.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.00
+A photo of a sunflower: 1.00
+A photo: 0.00
+</pre></div>
+</div>
+<img alt="../_images/3ca811c9eb9f1e804831ff1eb1d280d6ece25ba9de5f24a30f1e6633cbc2687d.png" src="../_images/3ca811c9eb9f1e804831ff1eb1d280d6ece25ba9de5f24a30f1e6633cbc2687d.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 1.00
+A photo of a sunflower: 0.00
+A photo: 0.00
+</pre></div>
+</div>
+<img alt="../_images/428adaa007ad4ead87886a17bee04932c9a4c776a9d90d94ddde01d4eff8ee0e.png" src="../_images/428adaa007ad4ead87886a17bee04932c9a4c776a9d90d94ddde01d4eff8ee0e.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.00
+A photo of a sunflower: 1.00
+A photo: 0.00
+</pre></div>
+</div>
+<img alt="../_images/dad5699726b3dcdfd2b10f4aa77e02d2a89e7f38a457de63c65636e77cf4c13b.png" src="../_images/dad5699726b3dcdfd2b10f4aa77e02d2a89e7f38a457de63c65636e77cf4c13b.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 1.00
+A photo of a sunflower: 0.00
+A photo: 0.00
+</pre></div>
+</div>
+<img alt="../_images/e694fb71f861c76350e5ca3338790680c236f2ed9ed5af5bbfe1ab43678411fd.png" src="../_images/e694fb71f861c76350e5ca3338790680c236f2ed9ed5af5bbfe1ab43678411fd.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 1.00
+A photo of a sunflower: 0.00
+A photo: 0.00
+</pre></div>
+</div>
+<img alt="../_images/482a4368fd41b0a7408b920c8fabd378fdfb17974a61e946d26d053536f01aed.png" src="../_images/482a4368fd41b0a7408b920c8fabd378fdfb17974a61e946d26d053536f01aed.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.00
+A photo of a sunflower: 1.00
+A photo: 0.00
+</pre></div>
+</div>
+<img alt="../_images/03b53708693d154fd578fe01c6896e345faf44e9f89219eb5a0638a1ab562f92.png" src="../_images/03b53708693d154fd578fe01c6896e345faf44e9f89219eb5a0638a1ab562f92.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 1.00
+A photo of a sunflower: 0.00
+A photo: 0.00
+</pre></div>
+</div>
+<img alt="../_images/c4e46920dc28f41201d362bfc3f0e2cd6f6f09342baa64b0e2d54d1feec3500d.png" src="../_images/c4e46920dc28f41201d362bfc3f0e2cd6f6f09342baa64b0e2d54d1feec3500d.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.00
+A photo of a sunflower: 1.00
+A photo: 0.00
+</pre></div>
+</div>
+<img alt="../_images/a8177aa2c6830831810d679a745388fd574ba136d1ddaf44021c649347765517.png" src="../_images/a8177aa2c6830831810d679a745388fd574ba136d1ddaf44021c649347765517.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.02
+A photo of a sunflower: 0.02
+A photo: 0.96
+</pre></div>
+</div>
+<img alt="../_images/e644cc7d66ad353687833ae7618e8ff1b60017a5146259a59149c2913eb90850.png" src="../_images/e644cc7d66ad353687833ae7618e8ff1b60017a5146259a59149c2913eb90850.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.01
+A photo of a sunflower: 0.01
+A photo: 0.98
+</pre></div>
+</div>
+<img alt="../_images/c5426cf2ba61293ff42fcde508ac37cfe16c4042c33c351b595e10c82379e766.png" src="../_images/c5426cf2ba61293ff42fcde508ac37cfe16c4042c33c351b595e10c82379e766.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 1.00
+A photo of a sunflower: 0.00
+A photo: 0.00
+</pre></div>
+</div>
+<img alt="../_images/11d36166e9832f82219d222e675760e1c23296436b607d02079a5869ed8d3d62.png" src="../_images/11d36166e9832f82219d222e675760e1c23296436b607d02079a5869ed8d3d62.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.00
+A photo of a sunflower: 1.00
+A photo: 0.00
+</pre></div>
+</div>
+<img alt="../_images/768d8c6ffbd7f1b73188fa51dc860436efc5064ca478996efbe89e967b2b1933.png" src="../_images/768d8c6ffbd7f1b73188fa51dc860436efc5064ca478996efbe89e967b2b1933.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.00
+A photo of a sunflower: 1.00
+A photo: 0.00
+</pre></div>
+</div>
+<img alt="../_images/211d43eafff5914e9fb4dc387a47a063480698081052a5ccfe52c29ff71b861d.png" src="../_images/211d43eafff5914e9fb4dc387a47a063480698081052a5ccfe52c29ff71b861d.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 1.00
+A photo of a sunflower: 0.00
+A photo: 0.00
+</pre></div>
+</div>
+<img alt="../_images/ffea8c706bb4a447c2965f76a76fa00601d9d42d21736e2aaf141936136501bd.png" src="../_images/ffea8c706bb4a447c2965f76a76fa00601d9d42d21736e2aaf141936136501bd.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.99
+A photo of a sunflower: 0.00
+A photo: 0.01
+</pre></div>
+</div>
+<img alt="../_images/15ffc1b1986b865bfbea4314510c24a593357be58e23622f73ced88819d057b2.png" src="../_images/15ffc1b1986b865bfbea4314510c24a593357be58e23622f73ced88819d057b2.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.95
+A photo of a sunflower: 0.01
+A photo: 0.04
+</pre></div>
+</div>
+<img alt="../_images/dca79163115597fdd0d950e48ea2dffcc64c5ece13d1bb178f0b61e121c5be8d.png" src="../_images/dca79163115597fdd0d950e48ea2dffcc64c5ece13d1bb178f0b61e121c5be8d.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.00
+A photo of a sunflower: 1.00
+A photo: 0.00
+</pre></div>
+</div>
+<img alt="../_images/7de7ae29bc7f7edff4118dc781227fca75ca49cfc06cd655738d9b181e322c37.png" src="../_images/7de7ae29bc7f7edff4118dc781227fca75ca49cfc06cd655738d9b181e322c37.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.99
+A photo of a sunflower: 0.00
+A photo: 0.01
+</pre></div>
+</div>
+<img alt="../_images/9d65e633772be1f445843d9a50ba21e6bdb325b3f74037494dfc987cdd13ad78.png" src="../_images/9d65e633772be1f445843d9a50ba21e6bdb325b3f74037494dfc987cdd13ad78.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.04
+A photo of a sunflower: 0.01
+A photo: 0.95
+</pre></div>
+</div>
+<img alt="../_images/a417b3e974573edb8c16e5aa3bc8b7aeea0641889a0f452e9ea8cd23473944a8.png" src="../_images/a417b3e974573edb8c16e5aa3bc8b7aeea0641889a0f452e9ea8cd23473944a8.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.01
+A photo of a sunflower: 0.01
+A photo: 0.99
+</pre></div>
+</div>
+<img alt="../_images/3d4489a929e389c80cd5372be379aa6817ea80d1adcb0a66b62d7c8b328af1ad.png" src="../_images/3d4489a929e389c80cd5372be379aa6817ea80d1adcb0a66b62d7c8b328af1ad.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.00
+A photo of a sunflower: 1.00
+A photo: 0.00
+</pre></div>
+</div>
+<img alt="../_images/8103367fe04a6e1a094c52967bd855f824563332b0f0fdb3257f828b5a9519d1.png" src="../_images/8103367fe04a6e1a094c52967bd855f824563332b0f0fdb3257f828b5a9519d1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.00
+A photo of a sunflower: 1.00
+A photo: 0.00
+</pre></div>
+</div>
+<img alt="../_images/9e59d35925f505029b68ee58e4f19ee47abb62fe64c8d6a0a64f20c23c581dce.png" src="../_images/9e59d35925f505029b68ee58e4f19ee47abb62fe64c8d6a0a64f20c23c581dce.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 1.00
+A photo of a sunflower: 0.00
+A photo: 0.00
+</pre></div>
+</div>
+<img alt="../_images/f25a0e6f30097c2d5631b196aaf8b48bf8c7b972a273c75064ca1ef728325c39.png" src="../_images/f25a0e6f30097c2d5631b196aaf8b48bf8c7b972a273c75064ca1ef728325c39.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.00
+A photo of a sunflower: 1.00
+A photo: 0.00
+</pre></div>
+</div>
+<img alt="../_images/5d6f7b3cc8b976b721715b8de41d2ae982e7202397faad17eec90c423b9688e7.png" src="../_images/5d6f7b3cc8b976b721715b8de41d2ae982e7202397faad17eec90c423b9688e7.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.99
+A photo of a sunflower: 0.00
+A photo: 0.01
+</pre></div>
+</div>
+<img alt="../_images/755a9748363198fd8fe5f8a7cbe6cf30c4d5f55b6816da2cf5c62f21c255bc82.png" src="../_images/755a9748363198fd8fe5f8a7cbe6cf30c4d5f55b6816da2cf5c62f21c255bc82.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.98
+A photo of a sunflower: 0.00
+A photo: 0.02
+</pre></div>
+</div>
+<img alt="../_images/a5c5fe13ffda5144281af3ca8fd55ab7313a40e7af4647a27a068b5e64713cec.png" src="../_images/a5c5fe13ffda5144281af3ca8fd55ab7313a40e7af4647a27a068b5e64713cec.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.00
+A photo of a sunflower: 0.99
+A photo: 0.01
+</pre></div>
+</div>
+<img alt="../_images/b6f3c337663be23a7aac9062518e8705afdb18f62cb47a7079f67cf05cb87a95.png" src="../_images/b6f3c337663be23a7aac9062518e8705afdb18f62cb47a7079f67cf05cb87a95.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.00
+A photo of a sunflower: 1.00
+A photo: 0.00
+</pre></div>
+</div>
+<img alt="../_images/6aafa4d7f35d4d4d46d945b2b37a6a78c8df5a7bf3be43c29b2aacad05c5997e.png" src="../_images/6aafa4d7f35d4d4d46d945b2b37a6a78c8df5a7bf3be43c29b2aacad05c5997e.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.04
+A photo of a sunflower: 0.05
+A photo: 0.91
+</pre></div>
+</div>
+<img alt="../_images/fb35a8e2783970e27cc2c8a2f1798c2b50fdd70f0142556206872f7004eb2ce0.png" src="../_images/fb35a8e2783970e27cc2c8a2f1798c2b50fdd70f0142556206872f7004eb2ce0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.97
+A photo of a sunflower: 0.00
+A photo: 0.03
+</pre></div>
+</div>
+<img alt="../_images/2c6fb7d1fe27ab703cd4d4c89a72b5907e967ab386dab75b6ff9f168cafadd48.png" src="../_images/2c6fb7d1fe27ab703cd4d4c89a72b5907e967ab386dab75b6ff9f168cafadd48.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.00
+A photo of a sunflower: 1.00
+A photo: 0.00
+</pre></div>
+</div>
+<img alt="../_images/ed0f72db3ec1ab6377741754b1dad35f43b2d3bcb90b70d1a6b9baa816985937.png" src="../_images/ed0f72db3ec1ab6377741754b1dad35f43b2d3bcb90b70d1a6b9baa816985937.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 1.00
+A photo of a sunflower: 0.00
+A photo: 0.00
+</pre></div>
+</div>
+<img alt="../_images/2323c451fc505c24431e59c028e5f46bea500323635c6f04be4c3cc2ef3b4d43.png" src="../_images/2323c451fc505c24431e59c028e5f46bea500323635c6f04be4c3cc2ef3b4d43.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.96
+A photo of a sunflower: 0.00
+A photo: 0.04
+</pre></div>
+</div>
+<img alt="../_images/448c6716784cd6cdb01dcd35b9f373454129309e7332a562032f07b3a9cbac28.png" src="../_images/448c6716784cd6cdb01dcd35b9f373454129309e7332a562032f07b3a9cbac28.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.91
+A photo of a sunflower: 0.00
+A photo: 0.09
+</pre></div>
+</div>
+<img alt="../_images/8871ebe1cf9dcdc998fe78ee47e91eea3d3c6ada655fba2c64aad92bfc98c63e.png" src="../_images/8871ebe1cf9dcdc998fe78ee47e91eea3d3c6ada655fba2c64aad92bfc98c63e.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.01
+A photo of a sunflower: 0.01
+A photo: 0.98
+</pre></div>
+</div>
+<img alt="../_images/cecc0fe972aa77ef21139b20243d757b064bd7e8da71f7586f93a1c0d8c933e0.png" src="../_images/cecc0fe972aa77ef21139b20243d757b064bd7e8da71f7586f93a1c0d8c933e0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.00
+A photo of a sunflower: 1.00
+A photo: 0.00
+</pre></div>
+</div>
+<img alt="../_images/78f82997dae900d01dd36a7efb76cc72f8c43580377e5a6a0aac517478b0c093.png" src="../_images/78f82997dae900d01dd36a7efb76cc72f8c43580377e5a6a0aac517478b0c093.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 1.00
+A photo of a sunflower: 0.00
+A photo: 0.00
+</pre></div>
+</div>
+<img alt="../_images/aeceb8967671599d677badf862f7cc8edc882cb17ca40381b9aed51649ab37de.png" src="../_images/aeceb8967671599d677badf862f7cc8edc882cb17ca40381b9aed51649ab37de.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.00
+A photo of a sunflower: 1.00
+A photo: 0.00
+</pre></div>
+</div>
+<img alt="../_images/20bb08851467ba3a00ccf278c5f7741b63ec70fd4114c1855a673c505690a2cb.png" src="../_images/20bb08851467ba3a00ccf278c5f7741b63ec70fd4114c1855a673c505690a2cb.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.00
+A photo of a sunflower: 1.00
+A photo: 0.00
+</pre></div>
+</div>
+<img alt="../_images/d8fa9065948cd1178297278cc57db5f52f7ae05d4e58a6b38c22ba9d0125f091.png" src="../_images/d8fa9065948cd1178297278cc57db5f52f7ae05d4e58a6b38c22ba9d0125f091.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.99
+A photo of a sunflower: 0.00
+A photo: 0.01
+</pre></div>
+</div>
+<img alt="../_images/34900dead4a17818d196bba9ae023f96b97904c83a7dd1e4210fba65d41af7ba.png" src="../_images/34900dead4a17818d196bba9ae023f96b97904c83a7dd1e4210fba65d41af7ba.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.01
+A photo of a sunflower: 0.00
+A photo: 0.99
+</pre></div>
+</div>
+<img alt="../_images/e0bbfe48a7ebe8b1fd5b38b26c7bbf7106b38294e64c6b9e4b7aec14f10809a7.png" src="../_images/e0bbfe48a7ebe8b1fd5b38b26c7bbf7106b38294e64c6b9e4b7aec14f10809a7.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.08
+A photo of a sunflower: 0.30
+A photo: 0.62
+</pre></div>
+</div>
+<img alt="../_images/40594df89ad344a248f7dbd879d956e84299983f313a291902ea8a36ff94b8c6.png" src="../_images/40594df89ad344a248f7dbd879d956e84299983f313a291902ea8a36ff94b8c6.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.00
+A photo of a sunflower: 1.00
+A photo: 0.00
+</pre></div>
+</div>
+<img alt="../_images/a90e00e1bf81bce3872186b9fabdf364ddf9f9aa8d3a3362c55887aad29d3e8f.png" src="../_images/a90e00e1bf81bce3872186b9fabdf364ddf9f9aa8d3a3362c55887aad29d3e8f.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.00
+A photo of a sunflower: 1.00
+A photo: 0.00
+</pre></div>
+</div>
+<img alt="../_images/4503386f6af7fa74df4c558c77ff18a833ca52c794264d134fa5003bcaf9580a.png" src="../_images/4503386f6af7fa74df4c558c77ff18a833ca52c794264d134fa5003bcaf9580a.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.02
+A photo of a sunflower: 0.01
+A photo: 0.97
+</pre></div>
+</div>
+<img alt="../_images/c92d57de5f5cd22ee104088e96a379dcfdb927ee7865554b86c788e7aeac466a.png" src="../_images/c92d57de5f5cd22ee104088e96a379dcfdb927ee7865554b86c788e7aeac466a.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a rose: 0.94
+A photo of a sunflower: 0.02
+A photo: 0.05
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>b)</strong> Let’s say now we want to classify the same images into two groups:</p>
+<ul class="simple">
+<li><p>Photos of cars.</p></li>
+<li><p>The rest of the photos.</p></li>
+</ul>
+<p>Do only the minimum changes to the previous code, and again, for each photo print the new classification.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A photo of a car&#39;</span><span class="p">,</span> <span class="s2">&quot;A photo&quot;</span><span class="p">]</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="n">clip</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="n">text_features</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">encode_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">text_features</span> <span class="o">/=</span> <span class="n">text_features</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">text_features</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch.Size([2, 512])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">similarities</span> <span class="o">=</span> <span class="p">(</span><span class="mf">100.0</span> <span class="o">*</span> <span class="n">image_embeddings</span> <span class="o">@</span> <span class="n">text_features</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">image_path</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">image_paths</span><span class="p">):</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Similarity scores:&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">l</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">labels</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">similarities</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/74d02a60602521f6b78a80cd6b8a070c6c35cb8117c374aef74cd5d97c794417.png" src="../_images/74d02a60602521f6b78a80cd6b8a070c6c35cb8117c374aef74cd5d97c794417.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.02
+A photo: 0.98
+</pre></div>
+</div>
+<img alt="../_images/729931f1780c6a59e12b9c8442c67b9af8813f288927afc4b49544572627bb05.png" src="../_images/729931f1780c6a59e12b9c8442c67b9af8813f288927afc4b49544572627bb05.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.00
+A photo: 1.00
+</pre></div>
+</div>
+<img alt="../_images/3ca811c9eb9f1e804831ff1eb1d280d6ece25ba9de5f24a30f1e6633cbc2687d.png" src="../_images/3ca811c9eb9f1e804831ff1eb1d280d6ece25ba9de5f24a30f1e6633cbc2687d.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.01
+A photo: 0.99
+</pre></div>
+</div>
+<img alt="../_images/428adaa007ad4ead87886a17bee04932c9a4c776a9d90d94ddde01d4eff8ee0e.png" src="../_images/428adaa007ad4ead87886a17bee04932c9a4c776a9d90d94ddde01d4eff8ee0e.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.06
+A photo: 0.94
+</pre></div>
+</div>
+<img alt="../_images/dad5699726b3dcdfd2b10f4aa77e02d2a89e7f38a457de63c65636e77cf4c13b.png" src="../_images/dad5699726b3dcdfd2b10f4aa77e02d2a89e7f38a457de63c65636e77cf4c13b.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.02
+A photo: 0.98
+</pre></div>
+</div>
+<img alt="../_images/e694fb71f861c76350e5ca3338790680c236f2ed9ed5af5bbfe1ab43678411fd.png" src="../_images/e694fb71f861c76350e5ca3338790680c236f2ed9ed5af5bbfe1ab43678411fd.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.00
+A photo: 1.00
+</pre></div>
+</div>
+<img alt="../_images/482a4368fd41b0a7408b920c8fabd378fdfb17974a61e946d26d053536f01aed.png" src="../_images/482a4368fd41b0a7408b920c8fabd378fdfb17974a61e946d26d053536f01aed.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.02
+A photo: 0.98
+</pre></div>
+</div>
+<img alt="../_images/03b53708693d154fd578fe01c6896e345faf44e9f89219eb5a0638a1ab562f92.png" src="../_images/03b53708693d154fd578fe01c6896e345faf44e9f89219eb5a0638a1ab562f92.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.02
+A photo: 0.98
+</pre></div>
+</div>
+<img alt="../_images/c4e46920dc28f41201d362bfc3f0e2cd6f6f09342baa64b0e2d54d1feec3500d.png" src="../_images/c4e46920dc28f41201d362bfc3f0e2cd6f6f09342baa64b0e2d54d1feec3500d.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.01
+A photo: 0.99
+</pre></div>
+</div>
+<img alt="../_images/a8177aa2c6830831810d679a745388fd574ba136d1ddaf44021c649347765517.png" src="../_images/a8177aa2c6830831810d679a745388fd574ba136d1ddaf44021c649347765517.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.00
+A photo: 1.00
+</pre></div>
+</div>
+<img alt="../_images/e644cc7d66ad353687833ae7618e8ff1b60017a5146259a59149c2913eb90850.png" src="../_images/e644cc7d66ad353687833ae7618e8ff1b60017a5146259a59149c2913eb90850.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.00
+A photo: 1.00
+</pre></div>
+</div>
+<img alt="../_images/c5426cf2ba61293ff42fcde508ac37cfe16c4042c33c351b595e10c82379e766.png" src="../_images/c5426cf2ba61293ff42fcde508ac37cfe16c4042c33c351b595e10c82379e766.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.01
+A photo: 0.99
+</pre></div>
+</div>
+<img alt="../_images/11d36166e9832f82219d222e675760e1c23296436b607d02079a5869ed8d3d62.png" src="../_images/11d36166e9832f82219d222e675760e1c23296436b607d02079a5869ed8d3d62.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.01
+A photo: 0.99
+</pre></div>
+</div>
+<img alt="../_images/768d8c6ffbd7f1b73188fa51dc860436efc5064ca478996efbe89e967b2b1933.png" src="../_images/768d8c6ffbd7f1b73188fa51dc860436efc5064ca478996efbe89e967b2b1933.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.01
+A photo: 0.99
+</pre></div>
+</div>
+<img alt="../_images/211d43eafff5914e9fb4dc387a47a063480698081052a5ccfe52c29ff71b861d.png" src="../_images/211d43eafff5914e9fb4dc387a47a063480698081052a5ccfe52c29ff71b861d.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.02
+A photo: 0.98
+</pre></div>
+</div>
+<img alt="../_images/ffea8c706bb4a447c2965f76a76fa00601d9d42d21736e2aaf141936136501bd.png" src="../_images/ffea8c706bb4a447c2965f76a76fa00601d9d42d21736e2aaf141936136501bd.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.00
+A photo: 1.00
+</pre></div>
+</div>
+<img alt="../_images/15ffc1b1986b865bfbea4314510c24a593357be58e23622f73ced88819d057b2.png" src="../_images/15ffc1b1986b865bfbea4314510c24a593357be58e23622f73ced88819d057b2.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.00
+A photo: 1.00
+</pre></div>
+</div>
+<img alt="../_images/dca79163115597fdd0d950e48ea2dffcc64c5ece13d1bb178f0b61e121c5be8d.png" src="../_images/dca79163115597fdd0d950e48ea2dffcc64c5ece13d1bb178f0b61e121c5be8d.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.02
+A photo: 0.98
+</pre></div>
+</div>
+<img alt="../_images/7de7ae29bc7f7edff4118dc781227fca75ca49cfc06cd655738d9b181e322c37.png" src="../_images/7de7ae29bc7f7edff4118dc781227fca75ca49cfc06cd655738d9b181e322c37.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.01
+A photo: 0.99
+</pre></div>
+</div>
+<img alt="../_images/9d65e633772be1f445843d9a50ba21e6bdb325b3f74037494dfc987cdd13ad78.png" src="../_images/9d65e633772be1f445843d9a50ba21e6bdb325b3f74037494dfc987cdd13ad78.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.00
+A photo: 1.00
+</pre></div>
+</div>
+<img alt="../_images/a417b3e974573edb8c16e5aa3bc8b7aeea0641889a0f452e9ea8cd23473944a8.png" src="../_images/a417b3e974573edb8c16e5aa3bc8b7aeea0641889a0f452e9ea8cd23473944a8.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.01
+A photo: 0.99
+</pre></div>
+</div>
+<img alt="../_images/3d4489a929e389c80cd5372be379aa6817ea80d1adcb0a66b62d7c8b328af1ad.png" src="../_images/3d4489a929e389c80cd5372be379aa6817ea80d1adcb0a66b62d7c8b328af1ad.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.01
+A photo: 0.99
+</pre></div>
+</div>
+<img alt="../_images/8103367fe04a6e1a094c52967bd855f824563332b0f0fdb3257f828b5a9519d1.png" src="../_images/8103367fe04a6e1a094c52967bd855f824563332b0f0fdb3257f828b5a9519d1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.00
+A photo: 1.00
+</pre></div>
+</div>
+<img alt="../_images/9e59d35925f505029b68ee58e4f19ee47abb62fe64c8d6a0a64f20c23c581dce.png" src="../_images/9e59d35925f505029b68ee58e4f19ee47abb62fe64c8d6a0a64f20c23c581dce.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.01
+A photo: 0.99
+</pre></div>
+</div>
+<img alt="../_images/f25a0e6f30097c2d5631b196aaf8b48bf8c7b972a273c75064ca1ef728325c39.png" src="../_images/f25a0e6f30097c2d5631b196aaf8b48bf8c7b972a273c75064ca1ef728325c39.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.01
+A photo: 0.99
+</pre></div>
+</div>
+<img alt="../_images/5d6f7b3cc8b976b721715b8de41d2ae982e7202397faad17eec90c423b9688e7.png" src="../_images/5d6f7b3cc8b976b721715b8de41d2ae982e7202397faad17eec90c423b9688e7.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.00
+A photo: 1.00
+</pre></div>
+</div>
+<img alt="../_images/755a9748363198fd8fe5f8a7cbe6cf30c4d5f55b6816da2cf5c62f21c255bc82.png" src="../_images/755a9748363198fd8fe5f8a7cbe6cf30c4d5f55b6816da2cf5c62f21c255bc82.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.00
+A photo: 1.00
+</pre></div>
+</div>
+<img alt="../_images/a5c5fe13ffda5144281af3ca8fd55ab7313a40e7af4647a27a068b5e64713cec.png" src="../_images/a5c5fe13ffda5144281af3ca8fd55ab7313a40e7af4647a27a068b5e64713cec.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.02
+A photo: 0.98
+</pre></div>
+</div>
+<img alt="../_images/b6f3c337663be23a7aac9062518e8705afdb18f62cb47a7079f67cf05cb87a95.png" src="../_images/b6f3c337663be23a7aac9062518e8705afdb18f62cb47a7079f67cf05cb87a95.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.01
+A photo: 0.99
+</pre></div>
+</div>
+<img alt="../_images/6aafa4d7f35d4d4d46d945b2b37a6a78c8df5a7bf3be43c29b2aacad05c5997e.png" src="../_images/6aafa4d7f35d4d4d46d945b2b37a6a78c8df5a7bf3be43c29b2aacad05c5997e.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.99
+A photo: 0.01
+</pre></div>
+</div>
+<img alt="../_images/fb35a8e2783970e27cc2c8a2f1798c2b50fdd70f0142556206872f7004eb2ce0.png" src="../_images/fb35a8e2783970e27cc2c8a2f1798c2b50fdd70f0142556206872f7004eb2ce0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.00
+A photo: 1.00
+</pre></div>
+</div>
+<img alt="../_images/2c6fb7d1fe27ab703cd4d4c89a72b5907e967ab386dab75b6ff9f168cafadd48.png" src="../_images/2c6fb7d1fe27ab703cd4d4c89a72b5907e967ab386dab75b6ff9f168cafadd48.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.03
+A photo: 0.97
+</pre></div>
+</div>
+<img alt="../_images/ed0f72db3ec1ab6377741754b1dad35f43b2d3bcb90b70d1a6b9baa816985937.png" src="../_images/ed0f72db3ec1ab6377741754b1dad35f43b2d3bcb90b70d1a6b9baa816985937.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.00
+A photo: 1.00
+</pre></div>
+</div>
+<img alt="../_images/2323c451fc505c24431e59c028e5f46bea500323635c6f04be4c3cc2ef3b4d43.png" src="../_images/2323c451fc505c24431e59c028e5f46bea500323635c6f04be4c3cc2ef3b4d43.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.00
+A photo: 1.00
+</pre></div>
+</div>
+<img alt="../_images/448c6716784cd6cdb01dcd35b9f373454129309e7332a562032f07b3a9cbac28.png" src="../_images/448c6716784cd6cdb01dcd35b9f373454129309e7332a562032f07b3a9cbac28.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.01
+A photo: 0.99
+</pre></div>
+</div>
+<img alt="../_images/8871ebe1cf9dcdc998fe78ee47e91eea3d3c6ada655fba2c64aad92bfc98c63e.png" src="../_images/8871ebe1cf9dcdc998fe78ee47e91eea3d3c6ada655fba2c64aad92bfc98c63e.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.98
+A photo: 0.02
+</pre></div>
+</div>
+<img alt="../_images/cecc0fe972aa77ef21139b20243d757b064bd7e8da71f7586f93a1c0d8c933e0.png" src="../_images/cecc0fe972aa77ef21139b20243d757b064bd7e8da71f7586f93a1c0d8c933e0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.01
+A photo: 0.99
+</pre></div>
+</div>
+<img alt="../_images/78f82997dae900d01dd36a7efb76cc72f8c43580377e5a6a0aac517478b0c093.png" src="../_images/78f82997dae900d01dd36a7efb76cc72f8c43580377e5a6a0aac517478b0c093.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.00
+A photo: 1.00
+</pre></div>
+</div>
+<img alt="../_images/aeceb8967671599d677badf862f7cc8edc882cb17ca40381b9aed51649ab37de.png" src="../_images/aeceb8967671599d677badf862f7cc8edc882cb17ca40381b9aed51649ab37de.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.01
+A photo: 0.99
+</pre></div>
+</div>
+<img alt="../_images/20bb08851467ba3a00ccf278c5f7741b63ec70fd4114c1855a673c505690a2cb.png" src="../_images/20bb08851467ba3a00ccf278c5f7741b63ec70fd4114c1855a673c505690a2cb.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.02
+A photo: 0.98
+</pre></div>
+</div>
+<img alt="../_images/d8fa9065948cd1178297278cc57db5f52f7ae05d4e58a6b38c22ba9d0125f091.png" src="../_images/d8fa9065948cd1178297278cc57db5f52f7ae05d4e58a6b38c22ba9d0125f091.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.00
+A photo: 1.00
+</pre></div>
+</div>
+<img alt="../_images/34900dead4a17818d196bba9ae023f96b97904c83a7dd1e4210fba65d41af7ba.png" src="../_images/34900dead4a17818d196bba9ae023f96b97904c83a7dd1e4210fba65d41af7ba.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.98
+A photo: 0.02
+</pre></div>
+</div>
+<img alt="../_images/e0bbfe48a7ebe8b1fd5b38b26c7bbf7106b38294e64c6b9e4b7aec14f10809a7.png" src="../_images/e0bbfe48a7ebe8b1fd5b38b26c7bbf7106b38294e64c6b9e4b7aec14f10809a7.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.01
+A photo: 0.99
+</pre></div>
+</div>
+<img alt="../_images/40594df89ad344a248f7dbd879d956e84299983f313a291902ea8a36ff94b8c6.png" src="../_images/40594df89ad344a248f7dbd879d956e84299983f313a291902ea8a36ff94b8c6.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.01
+A photo: 0.99
+</pre></div>
+</div>
+<img alt="../_images/a90e00e1bf81bce3872186b9fabdf364ddf9f9aa8d3a3362c55887aad29d3e8f.png" src="../_images/a90e00e1bf81bce3872186b9fabdf364ddf9f9aa8d3a3362c55887aad29d3e8f.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.01
+A photo: 0.99
+</pre></div>
+</div>
+<img alt="../_images/4503386f6af7fa74df4c558c77ff18a833ca52c794264d134fa5003bcaf9580a.png" src="../_images/4503386f6af7fa74df4c558c77ff18a833ca52c794264d134fa5003bcaf9580a.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.98
+A photo: 0.02
+</pre></div>
+</div>
+<img alt="../_images/c92d57de5f5cd22ee104088e96a379dcfdb927ee7865554b86c788e7aeac466a.png" src="../_images/c92d57de5f5cd22ee104088e96a379dcfdb927ee7865554b86c788e7aeac466a.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A photo of a car: 0.00
+A photo: 1.00
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>c)</strong> Without printing any photo, could you tell if there were any person’s face in the photos?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A person&#39;s face&quot;</span><span class="p">,</span> <span class="s2">&quot;A photo&quot;</span><span class="p">]</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="n">clip</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="n">text_features</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">encode_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">text_features</span> <span class="o">/=</span> <span class="n">text_features</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">text_features</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch.Size([2, 512])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">similarities</span> <span class="o">=</span> <span class="p">(</span><span class="mf">100.0</span> <span class="o">*</span> <span class="n">image_embeddings</span> <span class="o">@</span> <span class="n">text_features</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">image_path</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">image_paths</span><span class="p">):</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Similarity scores:&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">l</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">labels</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">similarities</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/74d02a60602521f6b78a80cd6b8a070c6c35cb8117c374aef74cd5d97c794417.png" src="../_images/74d02a60602521f6b78a80cd6b8a070c6c35cb8117c374aef74cd5d97c794417.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.03
+A photo: 0.97
+</pre></div>
+</div>
+<img alt="../_images/729931f1780c6a59e12b9c8442c67b9af8813f288927afc4b49544572627bb05.png" src="../_images/729931f1780c6a59e12b9c8442c67b9af8813f288927afc4b49544572627bb05.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.01
+A photo: 0.99
+</pre></div>
+</div>
+<img alt="../_images/3ca811c9eb9f1e804831ff1eb1d280d6ece25ba9de5f24a30f1e6633cbc2687d.png" src="../_images/3ca811c9eb9f1e804831ff1eb1d280d6ece25ba9de5f24a30f1e6633cbc2687d.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.01
+A photo: 0.99
+</pre></div>
+</div>
+<img alt="../_images/428adaa007ad4ead87886a17bee04932c9a4c776a9d90d94ddde01d4eff8ee0e.png" src="../_images/428adaa007ad4ead87886a17bee04932c9a4c776a9d90d94ddde01d4eff8ee0e.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.07
+A photo: 0.93
+</pre></div>
+</div>
+<img alt="../_images/dad5699726b3dcdfd2b10f4aa77e02d2a89e7f38a457de63c65636e77cf4c13b.png" src="../_images/dad5699726b3dcdfd2b10f4aa77e02d2a89e7f38a457de63c65636e77cf4c13b.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.27
+A photo: 0.73
+</pre></div>
+</div>
+<img alt="../_images/e694fb71f861c76350e5ca3338790680c236f2ed9ed5af5bbfe1ab43678411fd.png" src="../_images/e694fb71f861c76350e5ca3338790680c236f2ed9ed5af5bbfe1ab43678411fd.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.02
+A photo: 0.98
+</pre></div>
+</div>
+<img alt="../_images/482a4368fd41b0a7408b920c8fabd378fdfb17974a61e946d26d053536f01aed.png" src="../_images/482a4368fd41b0a7408b920c8fabd378fdfb17974a61e946d26d053536f01aed.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.01
+A photo: 0.99
+</pre></div>
+</div>
+<img alt="../_images/03b53708693d154fd578fe01c6896e345faf44e9f89219eb5a0638a1ab562f92.png" src="../_images/03b53708693d154fd578fe01c6896e345faf44e9f89219eb5a0638a1ab562f92.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.07
+A photo: 0.93
+</pre></div>
+</div>
+<img alt="../_images/c4e46920dc28f41201d362bfc3f0e2cd6f6f09342baa64b0e2d54d1feec3500d.png" src="../_images/c4e46920dc28f41201d362bfc3f0e2cd6f6f09342baa64b0e2d54d1feec3500d.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.03
+A photo: 0.97
+</pre></div>
+</div>
+<img alt="../_images/a8177aa2c6830831810d679a745388fd574ba136d1ddaf44021c649347765517.png" src="../_images/a8177aa2c6830831810d679a745388fd574ba136d1ddaf44021c649347765517.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.30
+A photo: 0.70
+</pre></div>
+</div>
+<img alt="../_images/e644cc7d66ad353687833ae7618e8ff1b60017a5146259a59149c2913eb90850.png" src="../_images/e644cc7d66ad353687833ae7618e8ff1b60017a5146259a59149c2913eb90850.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.01
+A photo: 0.99
+</pre></div>
+</div>
+<img alt="../_images/c5426cf2ba61293ff42fcde508ac37cfe16c4042c33c351b595e10c82379e766.png" src="../_images/c5426cf2ba61293ff42fcde508ac37cfe16c4042c33c351b595e10c82379e766.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.02
+A photo: 0.98
+</pre></div>
+</div>
+<img alt="../_images/11d36166e9832f82219d222e675760e1c23296436b607d02079a5869ed8d3d62.png" src="../_images/11d36166e9832f82219d222e675760e1c23296436b607d02079a5869ed8d3d62.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.02
+A photo: 0.98
+</pre></div>
+</div>
+<img alt="../_images/768d8c6ffbd7f1b73188fa51dc860436efc5064ca478996efbe89e967b2b1933.png" src="../_images/768d8c6ffbd7f1b73188fa51dc860436efc5064ca478996efbe89e967b2b1933.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.02
+A photo: 0.98
+</pre></div>
+</div>
+<img alt="../_images/211d43eafff5914e9fb4dc387a47a063480698081052a5ccfe52c29ff71b861d.png" src="../_images/211d43eafff5914e9fb4dc387a47a063480698081052a5ccfe52c29ff71b861d.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.02
+A photo: 0.98
+</pre></div>
+</div>
+<img alt="../_images/ffea8c706bb4a447c2965f76a76fa00601d9d42d21736e2aaf141936136501bd.png" src="../_images/ffea8c706bb4a447c2965f76a76fa00601d9d42d21736e2aaf141936136501bd.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.02
+A photo: 0.98
+</pre></div>
+</div>
+<img alt="../_images/15ffc1b1986b865bfbea4314510c24a593357be58e23622f73ced88819d057b2.png" src="../_images/15ffc1b1986b865bfbea4314510c24a593357be58e23622f73ced88819d057b2.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.02
+A photo: 0.98
+</pre></div>
+</div>
+<img alt="../_images/dca79163115597fdd0d950e48ea2dffcc64c5ece13d1bb178f0b61e121c5be8d.png" src="../_images/dca79163115597fdd0d950e48ea2dffcc64c5ece13d1bb178f0b61e121c5be8d.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.02
+A photo: 0.98
+</pre></div>
+</div>
+<img alt="../_images/7de7ae29bc7f7edff4118dc781227fca75ca49cfc06cd655738d9b181e322c37.png" src="../_images/7de7ae29bc7f7edff4118dc781227fca75ca49cfc06cd655738d9b181e322c37.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.01
+A photo: 0.99
+</pre></div>
+</div>
+<img alt="../_images/9d65e633772be1f445843d9a50ba21e6bdb325b3f74037494dfc987cdd13ad78.png" src="../_images/9d65e633772be1f445843d9a50ba21e6bdb325b3f74037494dfc987cdd13ad78.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.06
+A photo: 0.94
+</pre></div>
+</div>
+<img alt="../_images/a417b3e974573edb8c16e5aa3bc8b7aeea0641889a0f452e9ea8cd23473944a8.png" src="../_images/a417b3e974573edb8c16e5aa3bc8b7aeea0641889a0f452e9ea8cd23473944a8.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.15
+A photo: 0.85
+</pre></div>
+</div>
+<img alt="../_images/3d4489a929e389c80cd5372be379aa6817ea80d1adcb0a66b62d7c8b328af1ad.png" src="../_images/3d4489a929e389c80cd5372be379aa6817ea80d1adcb0a66b62d7c8b328af1ad.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.06
+A photo: 0.94
+</pre></div>
+</div>
+<img alt="../_images/8103367fe04a6e1a094c52967bd855f824563332b0f0fdb3257f828b5a9519d1.png" src="../_images/8103367fe04a6e1a094c52967bd855f824563332b0f0fdb3257f828b5a9519d1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.11
+A photo: 0.89
+</pre></div>
+</div>
+<img alt="../_images/9e59d35925f505029b68ee58e4f19ee47abb62fe64c8d6a0a64f20c23c581dce.png" src="../_images/9e59d35925f505029b68ee58e4f19ee47abb62fe64c8d6a0a64f20c23c581dce.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.03
+A photo: 0.97
+</pre></div>
+</div>
+<img alt="../_images/f25a0e6f30097c2d5631b196aaf8b48bf8c7b972a273c75064ca1ef728325c39.png" src="../_images/f25a0e6f30097c2d5631b196aaf8b48bf8c7b972a273c75064ca1ef728325c39.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.15
+A photo: 0.85
+</pre></div>
+</div>
+<img alt="../_images/5d6f7b3cc8b976b721715b8de41d2ae982e7202397faad17eec90c423b9688e7.png" src="../_images/5d6f7b3cc8b976b721715b8de41d2ae982e7202397faad17eec90c423b9688e7.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.02
+A photo: 0.98
+</pre></div>
+</div>
+<img alt="../_images/755a9748363198fd8fe5f8a7cbe6cf30c4d5f55b6816da2cf5c62f21c255bc82.png" src="../_images/755a9748363198fd8fe5f8a7cbe6cf30c4d5f55b6816da2cf5c62f21c255bc82.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.03
+A photo: 0.97
+</pre></div>
+</div>
+<img alt="../_images/a5c5fe13ffda5144281af3ca8fd55ab7313a40e7af4647a27a068b5e64713cec.png" src="../_images/a5c5fe13ffda5144281af3ca8fd55ab7313a40e7af4647a27a068b5e64713cec.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.11
+A photo: 0.89
+</pre></div>
+</div>
+<img alt="../_images/b6f3c337663be23a7aac9062518e8705afdb18f62cb47a7079f67cf05cb87a95.png" src="../_images/b6f3c337663be23a7aac9062518e8705afdb18f62cb47a7079f67cf05cb87a95.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.04
+A photo: 0.96
+</pre></div>
+</div>
+<img alt="../_images/6aafa4d7f35d4d4d46d945b2b37a6a78c8df5a7bf3be43c29b2aacad05c5997e.png" src="../_images/6aafa4d7f35d4d4d46d945b2b37a6a78c8df5a7bf3be43c29b2aacad05c5997e.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.08
+A photo: 0.92
+</pre></div>
+</div>
+<img alt="../_images/fb35a8e2783970e27cc2c8a2f1798c2b50fdd70f0142556206872f7004eb2ce0.png" src="../_images/fb35a8e2783970e27cc2c8a2f1798c2b50fdd70f0142556206872f7004eb2ce0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.02
+A photo: 0.98
+</pre></div>
+</div>
+<img alt="../_images/2c6fb7d1fe27ab703cd4d4c89a72b5907e967ab386dab75b6ff9f168cafadd48.png" src="../_images/2c6fb7d1fe27ab703cd4d4c89a72b5907e967ab386dab75b6ff9f168cafadd48.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.21
+A photo: 0.79
+</pre></div>
+</div>
+<img alt="../_images/ed0f72db3ec1ab6377741754b1dad35f43b2d3bcb90b70d1a6b9baa816985937.png" src="../_images/ed0f72db3ec1ab6377741754b1dad35f43b2d3bcb90b70d1a6b9baa816985937.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.03
+A photo: 0.97
+</pre></div>
+</div>
+<img alt="../_images/2323c451fc505c24431e59c028e5f46bea500323635c6f04be4c3cc2ef3b4d43.png" src="../_images/2323c451fc505c24431e59c028e5f46bea500323635c6f04be4c3cc2ef3b4d43.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.01
+A photo: 0.99
+</pre></div>
+</div>
+<img alt="../_images/448c6716784cd6cdb01dcd35b9f373454129309e7332a562032f07b3a9cbac28.png" src="../_images/448c6716784cd6cdb01dcd35b9f373454129309e7332a562032f07b3a9cbac28.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.01
+A photo: 0.99
+</pre></div>
+</div>
+<img alt="../_images/8871ebe1cf9dcdc998fe78ee47e91eea3d3c6ada655fba2c64aad92bfc98c63e.png" src="../_images/8871ebe1cf9dcdc998fe78ee47e91eea3d3c6ada655fba2c64aad92bfc98c63e.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.03
+A photo: 0.97
+</pre></div>
+</div>
+<img alt="../_images/cecc0fe972aa77ef21139b20243d757b064bd7e8da71f7586f93a1c0d8c933e0.png" src="../_images/cecc0fe972aa77ef21139b20243d757b064bd7e8da71f7586f93a1c0d8c933e0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.14
+A photo: 0.86
+</pre></div>
+</div>
+<img alt="../_images/78f82997dae900d01dd36a7efb76cc72f8c43580377e5a6a0aac517478b0c093.png" src="../_images/78f82997dae900d01dd36a7efb76cc72f8c43580377e5a6a0aac517478b0c093.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.03
+A photo: 0.97
+</pre></div>
+</div>
+<img alt="../_images/aeceb8967671599d677badf862f7cc8edc882cb17ca40381b9aed51649ab37de.png" src="../_images/aeceb8967671599d677badf862f7cc8edc882cb17ca40381b9aed51649ab37de.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.02
+A photo: 0.98
+</pre></div>
+</div>
+<img alt="../_images/20bb08851467ba3a00ccf278c5f7741b63ec70fd4114c1855a673c505690a2cb.png" src="../_images/20bb08851467ba3a00ccf278c5f7741b63ec70fd4114c1855a673c505690a2cb.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.02
+A photo: 0.98
+</pre></div>
+</div>
+<img alt="../_images/d8fa9065948cd1178297278cc57db5f52f7ae05d4e58a6b38c22ba9d0125f091.png" src="../_images/d8fa9065948cd1178297278cc57db5f52f7ae05d4e58a6b38c22ba9d0125f091.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.02
+A photo: 0.98
+</pre></div>
+</div>
+<img alt="../_images/34900dead4a17818d196bba9ae023f96b97904c83a7dd1e4210fba65d41af7ba.png" src="../_images/34900dead4a17818d196bba9ae023f96b97904c83a7dd1e4210fba65d41af7ba.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.06
+A photo: 0.94
+</pre></div>
+</div>
+<img alt="../_images/e0bbfe48a7ebe8b1fd5b38b26c7bbf7106b38294e64c6b9e4b7aec14f10809a7.png" src="../_images/e0bbfe48a7ebe8b1fd5b38b26c7bbf7106b38294e64c6b9e4b7aec14f10809a7.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.43
+A photo: 0.57
+</pre></div>
+</div>
+<img alt="../_images/40594df89ad344a248f7dbd879d956e84299983f313a291902ea8a36ff94b8c6.png" src="../_images/40594df89ad344a248f7dbd879d956e84299983f313a291902ea8a36ff94b8c6.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.01
+A photo: 0.99
+</pre></div>
+</div>
+<img alt="../_images/a90e00e1bf81bce3872186b9fabdf364ddf9f9aa8d3a3362c55887aad29d3e8f.png" src="../_images/a90e00e1bf81bce3872186b9fabdf364ddf9f9aa8d3a3362c55887aad29d3e8f.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.07
+A photo: 0.93
+</pre></div>
+</div>
+<img alt="../_images/4503386f6af7fa74df4c558c77ff18a833ca52c794264d134fa5003bcaf9580a.png" src="../_images/4503386f6af7fa74df4c558c77ff18a833ca52c794264d134fa5003bcaf9580a.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.18
+A photo: 0.82
+</pre></div>
+</div>
+<img alt="../_images/c92d57de5f5cd22ee104088e96a379dcfdb927ee7865554b86c788e7aeac466a.png" src="../_images/c92d57de5f5cd22ee104088e96a379dcfdb927ee7865554b86c788e7aeac466a.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Similarity scores:
+A person&#39;s face: 0.01
+A photo: 0.99
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./s16_exercises_2_solved"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="s16.1-umap-solved.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exercise 1: Eurovision Song Lyrics Analysis</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../s19_intro_to_transformers/s19.1_pipelines_solved.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introduction to the Transformers Library for NLP: pipelines</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Víctor Gallego
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

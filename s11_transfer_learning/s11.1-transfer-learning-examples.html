@@ -1,0 +1,1565 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Transfer Learning &#8212; AI: ML &amp; Analytics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 's11_transfer_learning/s11.1-transfer-learning-examples';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Zero-Shot Learning" href="../s12_zero-shot-learning/s12.1_intro-zero-shot-classification.html" />
+    <link rel="prev" title="Convolutional Neural Networks (CNNs)" href="../s09_intro_deep_learning_computer_vision/s09.4-convolutional-networks_solved.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-neon.png" class="logo__image only-light" alt="AI: ML & Analytics - Home"/>
+    <script>document.write(`<img src="../_static/logo-neon.png" class="logo__image only-dark" alt="AI: ML & Analytics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    <no title>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">1. Our first Generative AI application</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/example_genAI.html">Our first Generative AI application</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2. Matrix Algebra with NumPy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.1-numpy.html">Matrix operations with Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.2-numpy-exercises-solutions.html">Numpy exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.3-image-blending.html">Working with images in Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Optimization and Automatic Differentiation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s03_optimization_automatic_differentiation/s03.1_notebook-solutions.html">Review of Optimization</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Review of Machine Learning with scikit-learn</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s04_review_ML_sklearn/s04.1-supervised-learning-sklearn-solutions.html">Scikit-learn</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../s04_review_ML_sklearn/s04.2-cost-benefit-analysis.html">Cost-Benefit Analysis of a ML classifier.</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">5. Unsupervised Learning with UMAP</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s05_unsupervised-learning-umap/s05.1-dimensionality-reduction.html">Dimensionality Reduction. UMAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s05_unsupervised-learning-umap/s05.2-text-analysis-solutions.html">Text Analysis with UMAP</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">6. Text Processing with scikit-learn</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s06_text-processing-sklearn/s06.1-text-classification-solved.html">Session 6: More on working with text data in scikit-learn</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">7. Intro to Deep Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s07_intro_deep_learning/s07.1-neural_network-solved.html">07: Introduction to Neural Networks</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">9. Deep Learning in Computer Vision</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.1-examples.html">Session 9. More on Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.2-examples-2.html">Introduction to Computer Vision with Deep Learning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.3-intro-to-convolutions_solved.html">Intro to convolutional neural networks (CNNs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.4-convolutional-networks_solved.html">Convolutional Neural Networks (CNNs)</a></li>
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">11. Transfer Learning</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Transfer Learning</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">12. Zero-Shot Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s12_zero-shot-learning/s12.1_intro-zero-shot-classification.html">Zero-Shot Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">13. Semantic Search</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s13_semantic_search_and_biases/s13.1_semantic_search_solved.html">Semantic Search</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">14. Object Detection</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s14_more_vision_tasks_object_detection/s14.1-intro-object-detection.html">Object Detection</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../s14_more_vision_tasks_object_detection/s14.2-zero-shot_object_detection.html">Zero-shot object detection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">15. Exercises I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.1-text-classification-solved.html">Exercise 1: Hate Spech Detection in X (aka Twitter) 🤬</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.2-transfer-learning-solved.html">Exercise: Plant Disease App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.3-semantic-search-solved2.html">Exercise: Product Item Recommender 🧥</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">16. Exercises II</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s16_exercises_2_solved/s16.1-umap-solved.html">Exercise 1: Eurovision Song Lyrics Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s16_exercises_2_solved/s16.2-zero-shot-classification-solved.html">Exercise 2: Photo Sorting Application 📸</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">19. Intro to Transformers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s19_intro_to_transformers/s19.1_pipelines_solved.html">Introduction to the Transformers Library for NLP: pipelines</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s19_intro_to_transformers/s19.2_zero-shot-classification.html">Zero-Shot Classification in NLP</a></li>
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">20. Transformers Architecture &amp; Transfer Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.1_transformers_architecture.html">Fundamentals of the Transformer Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.2-transfer-intro.html">Transfer Learning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.3-transfer-learning-example.html">Transfer Learning example: Legal Text Classification</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fs11_transfer_learning/s11.1-transfer-learning-examples.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/s11_transfer_learning/s11.1-transfer-learning-examples.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Transfer Learning</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Transfer Learning</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-and-how-to-do-transfer-learning">When and how to do transfer learning?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-to-do-transfer-learning">Why to do transfer learning?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-learning-with-pytorch-extracting-features-from-a-cnn">Transfer Learning with Pytorch: extracting features from a CNN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-with-some-input-images">Examples with some input images</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-example-human-presence-analysis-in-stock-images">Practical Example: Human Presence Analysis in Stock Images</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">Take-aways ⚠️</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="transfer-learning">
+<h1>Transfer Learning<a class="headerlink" href="#transfer-learning" title="Link to this heading">#</a></h1>
+<p>In practice, <strong>very few people train an entire Convolutional Network from scratch</strong>, because it is relatively rare to have a dataset of sufficient size. Instead, it is common to <strong>use a pretrained a CNN on a very large dataset (e.g. ImageNet, which contains 1.2 million images with 1000 categories)</strong>, and then use the CNN either as an <strong>initialization or a fixed feature extractor</strong> for the task of interest to us.</p>
+<p><img alt="images" src="../_images/tf1.png" /></p>
+<ul class="simple">
+<li><p><strong>Pretrained models</strong>. Since modern CNNs take 2-3 weeks to train across multiple GPUs on ImageNet, it is common to see people release their final parameters for the benefit of others. In the previous notebook we already saw how to use a pretrained model from PyTorch’s <code class="docutils literal notranslate"><span class="pre">torchvision</span></code> module.</p></li>
+</ul>
+<p>There are two main ways to do transfer learning with a pre-trained model:</p>
+<ul class="simple">
+<li><p><strong>Feature Extraction</strong>.  Take a CNN pretrained on ImageNet, remove the last linear layers, then treat the remaining of the CNN as a feature extractor for the new dataset. In an AlexNet for example, this would compute a 4096-D vector for every image. We call these features CNN codes. Once you extract the 4096-D codes for all images, train a standard classifier (i.e. Logistic Regression or Random Forest).</p></li>
+<li><p><strong>Fine-Tuning</strong>. The second strategy is to not only replace and retrain the classifier on top of the CNN on the new dataset, but to also fine-tune the weights of the pretrained network by continuing the training on our new dataset. It is possible to fine-tune all the layers of the CNN, or it’s possible to keep some of the earlier layers fixed (due to overfitting concerns) and only fine-tune the later layers.</p></li>
+</ul>
+<p>In the case of the VGG architecture, this is a diagram of what the network looks like:</p>
+<p><img alt="images" src="../_images/tf2.png" /></p>
+<section id="when-and-how-to-do-transfer-learning">
+<h2>When and how to do transfer learning?<a class="headerlink" href="#when-and-how-to-do-transfer-learning" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>How much data do you have?</strong>. If you have a small dataset, it is not a good idea to fine-tune a full CNN. Instead, you should use feature extraction, training a linear classifier on top of the CNN codes.</p></li>
+<li><p><strong>How similar is the data to the pretrained data?</strong>. If your new dataset is very different from the dataset on which the original model was trained, it may be better to train a new CNN from scratch.</p></li>
+</ul>
+</section>
+<section id="why-to-do-transfer-learning">
+<h2>Why to do transfer learning?<a class="headerlink" href="#why-to-do-transfer-learning" title="Link to this heading">#</a></h2>
+<p>The main advantage of transfer learning is the ability to empower you to achieve better accuracy on your tasks. We can break down its advantages as follows:</p>
+<ul class="simple">
+<li><p><strong>Training efficiency</strong>: When you start with a pre-trained model that has already learned the general features of the data, you then only need to fine-tune the model to your specific task, which can be done much more quickly (i.e. using fewer training epochs).</p></li>
+<li><p><strong>Model accuracy</strong>: Using transfer learning can give you a significant performance boost compared to training a model from scratch using the same amount of resources. Choosing the right pre-trained model for transfer-learning for your specific task is important though.</p></li>
+<li><p><strong>Training data size</strong>: Since a pre-trained model would have already learned to identify many of the features that overlap with your task-specific features, you can train the pre-trained model with less domain-specific data. This is useful if you don’t have as much labeled data for your specific task.</p></li>
+</ul>
+</section>
+<section id="transfer-learning-with-pytorch-extracting-features-from-a-cnn">
+<h2>Transfer Learning with Pytorch: extracting features from a CNN<a class="headerlink" href="#transfer-learning-with-pytorch-extracting-features-from-a-cnn" title="Link to this heading">#</a></h2>
+<p>The process is straightforward. We first start with a pre-trained CNN, for example EfficientNet-B4.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">torchvision.models</span> <span class="kn">import</span> <span class="n">efficientnet_b4</span><span class="p">,</span> <span class="n">EfficientNet_B4_Weights</span>
+
+<span class="c1"># Step 1: Initialize model with the best available weights</span>
+<span class="n">weights</span> <span class="o">=</span> <span class="n">EfficientNet_B4_Weights</span><span class="o">.</span><span class="n">DEFAULT</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">efficientnet_b4</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>  <span class="c1"># disables gradient calculation for inference.</span>
+
+<span class="c1"># Step 2: Initialize the preprocess function</span>
+<span class="n">preprocess</span> <span class="o">=</span> <span class="n">weights</span><span class="o">.</span><span class="n">transforms</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/victorgallego/miniforge3/lib/python3.9/site-packages/transformers/utils/generic.py:441: UserWarning: torch.utils._pytree._register_pytree_node is deprecated. Please use torch.utils._pytree.register_pytree_node instead.
+  _torch_pytree._register_pytree_node(
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">torchvision.models.feature_extraction</span> <span class="kn">import</span> <span class="n">create_feature_extractor</span><span class="p">,</span> <span class="n">get_graph_node_names</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We want to output the names of the layers with the folowing function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_graph_node_names</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([&#39;x&#39;,
+  &#39;features.0&#39;,
+  &#39;features.1.0.block.0&#39;,
+  &#39;features.1.0.block.1&#39;,
+  &#39;features.1.0.block.2&#39;,
+  &#39;features.1.1.block.0&#39;,
+  &#39;features.1.1.block.1&#39;,
+  &#39;features.1.1.block.2&#39;,
+  &#39;features.1.1.stochastic_depth&#39;,
+  &#39;features.1.1.add&#39;,
+  &#39;features.2.0.block.0&#39;,
+  &#39;features.2.0.block.1&#39;,
+  &#39;features.2.0.block.2&#39;,
+  &#39;features.2.0.block.3&#39;,
+  &#39;features.2.1.block.0&#39;,
+  &#39;features.2.1.block.1&#39;,
+  &#39;features.2.1.block.2&#39;,
+  &#39;features.2.1.block.3&#39;,
+  &#39;features.2.1.stochastic_depth&#39;,
+  &#39;features.2.1.add&#39;,
+  &#39;features.2.2.block.0&#39;,
+  &#39;features.2.2.block.1&#39;,
+  &#39;features.2.2.block.2&#39;,
+  &#39;features.2.2.block.3&#39;,
+  &#39;features.2.2.stochastic_depth&#39;,
+  &#39;features.2.2.add&#39;,
+  &#39;features.2.3.block.0&#39;,
+  &#39;features.2.3.block.1&#39;,
+  &#39;features.2.3.block.2&#39;,
+  &#39;features.2.3.block.3&#39;,
+  &#39;features.2.3.stochastic_depth&#39;,
+  &#39;features.2.3.add&#39;,
+  &#39;features.3.0.block.0&#39;,
+  &#39;features.3.0.block.1&#39;,
+  &#39;features.3.0.block.2&#39;,
+  &#39;features.3.0.block.3&#39;,
+  &#39;features.3.1.block.0&#39;,
+  &#39;features.3.1.block.1&#39;,
+  &#39;features.3.1.block.2&#39;,
+  &#39;features.3.1.block.3&#39;,
+  &#39;features.3.1.stochastic_depth&#39;,
+  &#39;features.3.1.add&#39;,
+  &#39;features.3.2.block.0&#39;,
+  &#39;features.3.2.block.1&#39;,
+  &#39;features.3.2.block.2&#39;,
+  &#39;features.3.2.block.3&#39;,
+  &#39;features.3.2.stochastic_depth&#39;,
+  &#39;features.3.2.add&#39;,
+  &#39;features.3.3.block.0&#39;,
+  &#39;features.3.3.block.1&#39;,
+  &#39;features.3.3.block.2&#39;,
+  &#39;features.3.3.block.3&#39;,
+  &#39;features.3.3.stochastic_depth&#39;,
+  &#39;features.3.3.add&#39;,
+  &#39;features.4.0.block.0&#39;,
+  &#39;features.4.0.block.1&#39;,
+  &#39;features.4.0.block.2&#39;,
+  &#39;features.4.0.block.3&#39;,
+  &#39;features.4.1.block.0&#39;,
+  &#39;features.4.1.block.1&#39;,
+  &#39;features.4.1.block.2&#39;,
+  &#39;features.4.1.block.3&#39;,
+  &#39;features.4.1.stochastic_depth&#39;,
+  &#39;features.4.1.add&#39;,
+  &#39;features.4.2.block.0&#39;,
+  &#39;features.4.2.block.1&#39;,
+  &#39;features.4.2.block.2&#39;,
+  &#39;features.4.2.block.3&#39;,
+  &#39;features.4.2.stochastic_depth&#39;,
+  &#39;features.4.2.add&#39;,
+  &#39;features.4.3.block.0&#39;,
+  &#39;features.4.3.block.1&#39;,
+  &#39;features.4.3.block.2&#39;,
+  &#39;features.4.3.block.3&#39;,
+  &#39;features.4.3.stochastic_depth&#39;,
+  &#39;features.4.3.add&#39;,
+  &#39;features.4.4.block.0&#39;,
+  &#39;features.4.4.block.1&#39;,
+  &#39;features.4.4.block.2&#39;,
+  &#39;features.4.4.block.3&#39;,
+  &#39;features.4.4.stochastic_depth&#39;,
+  &#39;features.4.4.add&#39;,
+  &#39;features.4.5.block.0&#39;,
+  &#39;features.4.5.block.1&#39;,
+  &#39;features.4.5.block.2&#39;,
+  &#39;features.4.5.block.3&#39;,
+  &#39;features.4.5.stochastic_depth&#39;,
+  &#39;features.4.5.add&#39;,
+  &#39;features.5.0.block.0&#39;,
+  &#39;features.5.0.block.1&#39;,
+  &#39;features.5.0.block.2&#39;,
+  &#39;features.5.0.block.3&#39;,
+  &#39;features.5.1.block.0&#39;,
+  &#39;features.5.1.block.1&#39;,
+  &#39;features.5.1.block.2&#39;,
+  &#39;features.5.1.block.3&#39;,
+  &#39;features.5.1.stochastic_depth&#39;,
+  &#39;features.5.1.add&#39;,
+  &#39;features.5.2.block.0&#39;,
+  &#39;features.5.2.block.1&#39;,
+  &#39;features.5.2.block.2&#39;,
+  &#39;features.5.2.block.3&#39;,
+  &#39;features.5.2.stochastic_depth&#39;,
+  &#39;features.5.2.add&#39;,
+  &#39;features.5.3.block.0&#39;,
+  &#39;features.5.3.block.1&#39;,
+  &#39;features.5.3.block.2&#39;,
+  &#39;features.5.3.block.3&#39;,
+  &#39;features.5.3.stochastic_depth&#39;,
+  &#39;features.5.3.add&#39;,
+  &#39;features.5.4.block.0&#39;,
+  &#39;features.5.4.block.1&#39;,
+  &#39;features.5.4.block.2&#39;,
+  &#39;features.5.4.block.3&#39;,
+  &#39;features.5.4.stochastic_depth&#39;,
+  &#39;features.5.4.add&#39;,
+  &#39;features.5.5.block.0&#39;,
+  &#39;features.5.5.block.1&#39;,
+  &#39;features.5.5.block.2&#39;,
+  &#39;features.5.5.block.3&#39;,
+  &#39;features.5.5.stochastic_depth&#39;,
+  &#39;features.5.5.add&#39;,
+  &#39;features.6.0.block.0&#39;,
+  &#39;features.6.0.block.1&#39;,
+  &#39;features.6.0.block.2&#39;,
+  &#39;features.6.0.block.3&#39;,
+  &#39;features.6.1.block.0&#39;,
+  &#39;features.6.1.block.1&#39;,
+  &#39;features.6.1.block.2&#39;,
+  &#39;features.6.1.block.3&#39;,
+  &#39;features.6.1.stochastic_depth&#39;,
+  &#39;features.6.1.add&#39;,
+  &#39;features.6.2.block.0&#39;,
+  &#39;features.6.2.block.1&#39;,
+  &#39;features.6.2.block.2&#39;,
+  &#39;features.6.2.block.3&#39;,
+  &#39;features.6.2.stochastic_depth&#39;,
+  &#39;features.6.2.add&#39;,
+  &#39;features.6.3.block.0&#39;,
+  &#39;features.6.3.block.1&#39;,
+  &#39;features.6.3.block.2&#39;,
+  &#39;features.6.3.block.3&#39;,
+  &#39;features.6.3.stochastic_depth&#39;,
+  &#39;features.6.3.add&#39;,
+  &#39;features.6.4.block.0&#39;,
+  &#39;features.6.4.block.1&#39;,
+  &#39;features.6.4.block.2&#39;,
+  &#39;features.6.4.block.3&#39;,
+  &#39;features.6.4.stochastic_depth&#39;,
+  &#39;features.6.4.add&#39;,
+  &#39;features.6.5.block.0&#39;,
+  &#39;features.6.5.block.1&#39;,
+  &#39;features.6.5.block.2&#39;,
+  &#39;features.6.5.block.3&#39;,
+  &#39;features.6.5.stochastic_depth&#39;,
+  &#39;features.6.5.add&#39;,
+  &#39;features.6.6.block.0&#39;,
+  &#39;features.6.6.block.1&#39;,
+  &#39;features.6.6.block.2&#39;,
+  &#39;features.6.6.block.3&#39;,
+  &#39;features.6.6.stochastic_depth&#39;,
+  &#39;features.6.6.add&#39;,
+  &#39;features.6.7.block.0&#39;,
+  &#39;features.6.7.block.1&#39;,
+  &#39;features.6.7.block.2&#39;,
+  &#39;features.6.7.block.3&#39;,
+  &#39;features.6.7.stochastic_depth&#39;,
+  &#39;features.6.7.add&#39;,
+  &#39;features.7.0.block.0&#39;,
+  &#39;features.7.0.block.1&#39;,
+  &#39;features.7.0.block.2&#39;,
+  &#39;features.7.0.block.3&#39;,
+  &#39;features.7.1.block.0&#39;,
+  &#39;features.7.1.block.1&#39;,
+  &#39;features.7.1.block.2&#39;,
+  &#39;features.7.1.block.3&#39;,
+  &#39;features.7.1.stochastic_depth&#39;,
+  &#39;features.7.1.add&#39;,
+  &#39;features.8&#39;,
+  &#39;avgpool&#39;,
+  &#39;flatten&#39;,
+  &#39;classifier.0&#39;,
+  &#39;classifier.1&#39;],
+ [&#39;x&#39;,
+  &#39;features.0&#39;,
+  &#39;features.1.0.block.0&#39;,
+  &#39;features.1.0.block.1&#39;,
+  &#39;features.1.0.block.2&#39;,
+  &#39;features.1.1.block.0&#39;,
+  &#39;features.1.1.block.1&#39;,
+  &#39;features.1.1.block.2&#39;,
+  &#39;features.1.1.stochastic_depth&#39;,
+  &#39;features.1.1.add&#39;,
+  &#39;features.2.0.block.0&#39;,
+  &#39;features.2.0.block.1&#39;,
+  &#39;features.2.0.block.2&#39;,
+  &#39;features.2.0.block.3&#39;,
+  &#39;features.2.1.block.0&#39;,
+  &#39;features.2.1.block.1&#39;,
+  &#39;features.2.1.block.2&#39;,
+  &#39;features.2.1.block.3&#39;,
+  &#39;features.2.1.stochastic_depth&#39;,
+  &#39;features.2.1.add&#39;,
+  &#39;features.2.2.block.0&#39;,
+  &#39;features.2.2.block.1&#39;,
+  &#39;features.2.2.block.2&#39;,
+  &#39;features.2.2.block.3&#39;,
+  &#39;features.2.2.stochastic_depth&#39;,
+  &#39;features.2.2.add&#39;,
+  &#39;features.2.3.block.0&#39;,
+  &#39;features.2.3.block.1&#39;,
+  &#39;features.2.3.block.2&#39;,
+  &#39;features.2.3.block.3&#39;,
+  &#39;features.2.3.stochastic_depth&#39;,
+  &#39;features.2.3.add&#39;,
+  &#39;features.3.0.block.0&#39;,
+  &#39;features.3.0.block.1&#39;,
+  &#39;features.3.0.block.2&#39;,
+  &#39;features.3.0.block.3&#39;,
+  &#39;features.3.1.block.0&#39;,
+  &#39;features.3.1.block.1&#39;,
+  &#39;features.3.1.block.2&#39;,
+  &#39;features.3.1.block.3&#39;,
+  &#39;features.3.1.stochastic_depth&#39;,
+  &#39;features.3.1.add&#39;,
+  &#39;features.3.2.block.0&#39;,
+  &#39;features.3.2.block.1&#39;,
+  &#39;features.3.2.block.2&#39;,
+  &#39;features.3.2.block.3&#39;,
+  &#39;features.3.2.stochastic_depth&#39;,
+  &#39;features.3.2.add&#39;,
+  &#39;features.3.3.block.0&#39;,
+  &#39;features.3.3.block.1&#39;,
+  &#39;features.3.3.block.2&#39;,
+  &#39;features.3.3.block.3&#39;,
+  &#39;features.3.3.stochastic_depth&#39;,
+  &#39;features.3.3.add&#39;,
+  &#39;features.4.0.block.0&#39;,
+  &#39;features.4.0.block.1&#39;,
+  &#39;features.4.0.block.2&#39;,
+  &#39;features.4.0.block.3&#39;,
+  &#39;features.4.1.block.0&#39;,
+  &#39;features.4.1.block.1&#39;,
+  &#39;features.4.1.block.2&#39;,
+  &#39;features.4.1.block.3&#39;,
+  &#39;features.4.1.stochastic_depth&#39;,
+  &#39;features.4.1.add&#39;,
+  &#39;features.4.2.block.0&#39;,
+  &#39;features.4.2.block.1&#39;,
+  &#39;features.4.2.block.2&#39;,
+  &#39;features.4.2.block.3&#39;,
+  &#39;features.4.2.stochastic_depth&#39;,
+  &#39;features.4.2.add&#39;,
+  &#39;features.4.3.block.0&#39;,
+  &#39;features.4.3.block.1&#39;,
+  &#39;features.4.3.block.2&#39;,
+  &#39;features.4.3.block.3&#39;,
+  &#39;features.4.3.stochastic_depth&#39;,
+  &#39;features.4.3.add&#39;,
+  &#39;features.4.4.block.0&#39;,
+  &#39;features.4.4.block.1&#39;,
+  &#39;features.4.4.block.2&#39;,
+  &#39;features.4.4.block.3&#39;,
+  &#39;features.4.4.stochastic_depth&#39;,
+  &#39;features.4.4.add&#39;,
+  &#39;features.4.5.block.0&#39;,
+  &#39;features.4.5.block.1&#39;,
+  &#39;features.4.5.block.2&#39;,
+  &#39;features.4.5.block.3&#39;,
+  &#39;features.4.5.stochastic_depth&#39;,
+  &#39;features.4.5.add&#39;,
+  &#39;features.5.0.block.0&#39;,
+  &#39;features.5.0.block.1&#39;,
+  &#39;features.5.0.block.2&#39;,
+  &#39;features.5.0.block.3&#39;,
+  &#39;features.5.1.block.0&#39;,
+  &#39;features.5.1.block.1&#39;,
+  &#39;features.5.1.block.2&#39;,
+  &#39;features.5.1.block.3&#39;,
+  &#39;features.5.1.stochastic_depth&#39;,
+  &#39;features.5.1.add&#39;,
+  &#39;features.5.2.block.0&#39;,
+  &#39;features.5.2.block.1&#39;,
+  &#39;features.5.2.block.2&#39;,
+  &#39;features.5.2.block.3&#39;,
+  &#39;features.5.2.stochastic_depth&#39;,
+  &#39;features.5.2.add&#39;,
+  &#39;features.5.3.block.0&#39;,
+  &#39;features.5.3.block.1&#39;,
+  &#39;features.5.3.block.2&#39;,
+  &#39;features.5.3.block.3&#39;,
+  &#39;features.5.3.stochastic_depth&#39;,
+  &#39;features.5.3.add&#39;,
+  &#39;features.5.4.block.0&#39;,
+  &#39;features.5.4.block.1&#39;,
+  &#39;features.5.4.block.2&#39;,
+  &#39;features.5.4.block.3&#39;,
+  &#39;features.5.4.stochastic_depth&#39;,
+  &#39;features.5.4.add&#39;,
+  &#39;features.5.5.block.0&#39;,
+  &#39;features.5.5.block.1&#39;,
+  &#39;features.5.5.block.2&#39;,
+  &#39;features.5.5.block.3&#39;,
+  &#39;features.5.5.stochastic_depth&#39;,
+  &#39;features.5.5.add&#39;,
+  &#39;features.6.0.block.0&#39;,
+  &#39;features.6.0.block.1&#39;,
+  &#39;features.6.0.block.2&#39;,
+  &#39;features.6.0.block.3&#39;,
+  &#39;features.6.1.block.0&#39;,
+  &#39;features.6.1.block.1&#39;,
+  &#39;features.6.1.block.2&#39;,
+  &#39;features.6.1.block.3&#39;,
+  &#39;features.6.1.stochastic_depth&#39;,
+  &#39;features.6.1.add&#39;,
+  &#39;features.6.2.block.0&#39;,
+  &#39;features.6.2.block.1&#39;,
+  &#39;features.6.2.block.2&#39;,
+  &#39;features.6.2.block.3&#39;,
+  &#39;features.6.2.stochastic_depth&#39;,
+  &#39;features.6.2.add&#39;,
+  &#39;features.6.3.block.0&#39;,
+  &#39;features.6.3.block.1&#39;,
+  &#39;features.6.3.block.2&#39;,
+  &#39;features.6.3.block.3&#39;,
+  &#39;features.6.3.stochastic_depth&#39;,
+  &#39;features.6.3.add&#39;,
+  &#39;features.6.4.block.0&#39;,
+  &#39;features.6.4.block.1&#39;,
+  &#39;features.6.4.block.2&#39;,
+  &#39;features.6.4.block.3&#39;,
+  &#39;features.6.4.stochastic_depth&#39;,
+  &#39;features.6.4.add&#39;,
+  &#39;features.6.5.block.0&#39;,
+  &#39;features.6.5.block.1&#39;,
+  &#39;features.6.5.block.2&#39;,
+  &#39;features.6.5.block.3&#39;,
+  &#39;features.6.5.stochastic_depth&#39;,
+  &#39;features.6.5.add&#39;,
+  &#39;features.6.6.block.0&#39;,
+  &#39;features.6.6.block.1&#39;,
+  &#39;features.6.6.block.2&#39;,
+  &#39;features.6.6.block.3&#39;,
+  &#39;features.6.6.stochastic_depth&#39;,
+  &#39;features.6.6.add&#39;,
+  &#39;features.6.7.block.0&#39;,
+  &#39;features.6.7.block.1&#39;,
+  &#39;features.6.7.block.2&#39;,
+  &#39;features.6.7.block.3&#39;,
+  &#39;features.6.7.stochastic_depth&#39;,
+  &#39;features.6.7.add&#39;,
+  &#39;features.7.0.block.0&#39;,
+  &#39;features.7.0.block.1&#39;,
+  &#39;features.7.0.block.2&#39;,
+  &#39;features.7.0.block.3&#39;,
+  &#39;features.7.1.block.0&#39;,
+  &#39;features.7.1.block.1&#39;,
+  &#39;features.7.1.block.2&#39;,
+  &#39;features.7.1.block.3&#39;,
+  &#39;features.7.1.stochastic_depth&#39;,
+  &#39;features.7.1.add&#39;,
+  &#39;features.8&#39;,
+  &#39;avgpool&#39;,
+  &#39;flatten&#39;,
+  &#39;classifier.0&#39;,
+  &#39;classifier.1&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice the last layers of the network are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;flatten&#39;</span><span class="p">,</span>
+<span class="s1">&#39;classifier.0&#39;</span><span class="p">,</span>
+<span class="s1">&#39;classifier.1&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>That is, after the convolutional layers, we have a flatten layer, and then two linear layers to perform the classification.</p>
+<ul class="simple">
+<li><p>The classification layers are not interesting to use, because they are specialized for the ImageNet dataset (1000 clases). We will remove them and use the rest of the network as a feature extractor.</p></li>
+<li><p>So we only use the output of the flatten layer as the features of our data.</p></li>
+</ul>
+<p>To do this, we will use the following code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">layer_before_final_classifiers</span> <span class="o">=</span> <span class="s1">&#39;flatten&#39;</span>
+
+<span class="n">return_nodes</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">layer_before_final_classifiers</span><span class="p">:</span> <span class="n">layer_before_final_classifiers</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">feature_extractor</span> <span class="o">=</span> <span class="n">create_feature_extractor</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">return_nodes</span><span class="o">=</span><span class="n">return_nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, <code class="docutils literal notranslate"><span class="pre">feature_extractor</span></code>, is just the convolutional layers of the network, and we can use it to extract features from our data, and compute a better representation.</p>
+<section id="examples-with-some-input-images">
+<h3>Examples with some input images<a class="headerlink" href="#examples-with-some-input-images" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">torchvision.io</span> <span class="kn">import</span> <span class="n">read_image</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">img</span> <span class="o">=</span> <span class="n">read_image</span><span class="p">(</span><span class="s1">&#39;images/husky.png&#39;</span><span class="p">)</span>
+
+<span class="n">image_processed</span> <span class="o">=</span> <span class="n">preprocess</span><span class="p">(</span><span class="n">img</span><span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">image_processed</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch.Size([1, 3, 380, 380])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since the images are RGB, the input to the network is a tensor of shape <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">3,</span> <span class="pre">380,</span> <span class="pre">380)</span></code>. We need to add a singleton dimension to the input tensor, because the network expects a batch of images, and we only have one image. So this is just a way of adding a batch dimension to the input tensor.</p>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">feature_extractor</span></code> to extract the features of the images.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cnn_code</span> <span class="o">=</span> <span class="n">feature_extractor</span><span class="p">(</span><span class="n">image_processed</span><span class="p">)[</span><span class="n">layer_before_final_classifiers</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cnn_code</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch.Size([1, 1792])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice now the dimensions change:</p>
+<ul class="simple">
+<li><p>1 because we only have one image in our batch</p></li>
+<li><p>1792 because that is the number of remaining dimensions after the convolutional layers.</p></li>
+</ul>
+<p>So instead of representing our images with 380x380x3=433200 dimensions, we can represent them with 1792 dimensions, which is a much more compact representation.</p>
+<p>We can also work with several images at the same time, in a single batch.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">imgs_processed</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">img_path</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;images/husky.png&#39;</span><span class="p">,</span> <span class="s1">&#39;images/bank.png&#39;</span><span class="p">]:</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">read_image</span><span class="p">(</span><span class="n">img_path</span><span class="p">)</span>
+    <span class="n">img_processed</span> <span class="o">=</span> <span class="n">preprocess</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="n">imgs_processed</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">img_processed</span><span class="p">)</span>
+
+<span class="n">imgs_processed</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">imgs_processed</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">imgs_processed</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch.Size([2, 3, 380, 380])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cnn_codes</span> <span class="o">=</span> <span class="n">feature_extractor</span><span class="p">(</span><span class="n">imgs_processed</span><span class="p">)[</span><span class="n">layer_before_final_classifiers</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cnn_codes</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch.Size([2, 1792])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we are working with a batch of 2 images.</p>
+</section>
+</section>
+</section>
+<section id="practical-example-human-presence-analysis-in-stock-images">
+<h1>Practical Example: Human Presence Analysis in Stock Images<a class="headerlink" href="#practical-example-human-presence-analysis-in-stock-images" title="Link to this heading">#</a></h1>
+<p>Unlocking Sales Potential with <strong>Human Features Presence Analysis</strong>.</p>
+<p>The primary goal of this example is to develop a model to assist the sales/marketing and studio departments at a fashion firm (Parfois). This model will offer a clear overview of the presence of human models for different products on their website, ultimately allowing informed decision-making.</p>
+<p><img alt="image" src="../_images/parfois.png" /></p>
+<ol class="arabic simple">
+<li><p>First, we will load a csv with the image paths and the corresponding labels (human presence or not).</p></li>
+</ol>
+<p>We have around 70 labeled images, which is a very small dataset. We will use transfer learning to solve this problem.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data_parfois/images_labels.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>image_file_name</th>
+      <th>label</th>
+      <th>Unnamed: 2</th>
+      <th>Unnamed: 3</th>
+      <th>Unnamed: 4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>216394_BM_1y.jpg</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>216394_BM_2yf.jpg</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>216394_BM_3y.jpg</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>216394_BM_4y.jpg</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>216394_BM_5y.jpg</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="s1">&#39;label&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;label&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/3de56119352f0d98ad01f7586f7c7d27d3baa83e1bcd2cf500ba0fd8a9dea5f4.png" src="../_images/3de56119352f0d98ad01f7586f7c7d27d3baa83e1bcd2cf500ba0fd8a9dea5f4.png" />
+</div>
+</div>
+<ol class="arabic simple">
+<li><p>We use a pretrained CNN to extract the features from the images, one by one.</p></li>
+</ol>
+<p>Finally, we will store it in a single tensor</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">torchvision.io</span> <span class="kn">import</span> <span class="n">read_image</span>
+<span class="kn">from</span> <span class="nn">torchvision.models</span> <span class="kn">import</span> <span class="n">efficientnet_b0</span><span class="p">,</span> <span class="n">EfficientNet_B0_Weights</span>
+<span class="kn">from</span> <span class="nn">torchvision.models.feature_extraction</span> <span class="kn">import</span> <span class="n">create_feature_extractor</span>
+
+<span class="c1"># Step 1: Initialize model with the best available weights</span>
+<span class="n">weights</span> <span class="o">=</span> <span class="n">EfficientNet_B0_Weights</span><span class="o">.</span><span class="n">DEFAULT</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">efficientnet_b0</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>  <span class="c1"># disables gradient calculation for inference.</span>
+
+<span class="c1"># Step 2: Initialize the preprocess function</span>
+<span class="n">preprocess</span> <span class="o">=</span> <span class="n">weights</span><span class="o">.</span><span class="n">transforms</span><span class="p">()</span>
+
+
+<span class="n">layer_before_final_classifiers</span> <span class="o">=</span> <span class="s1">&#39;flatten&#39;</span>
+
+<span class="n">return_nodes</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">layer_before_final_classifiers</span><span class="p">:</span> <span class="n">layer_before_final_classifiers</span>
+<span class="p">}</span>
+
+<span class="n">feature_extractor</span> <span class="o">=</span> <span class="n">create_feature_extractor</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">return_nodes</span><span class="o">=</span><span class="n">return_nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading: &quot;https://download.pytorch.org/models/efficientnet_b0_rwightman-7f5810bc.pth&quot; to /Users/victorgallego/.cache/torch/hub/checkpoints/efficientnet_b0_rwightman-7f5810bc.pth
+100%|██████████| 20.5M/20.5M [00:01&lt;00:00, 17.6MB/s]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image_names</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;image_file_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">cnn_codes</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">image_name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">image_names</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Processing image </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">image_names</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">read_image</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;data_parfois/</span><span class="si">{</span><span class="n">image_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">img_processed</span> <span class="o">=</span> <span class="n">preprocess</span><span class="p">(</span><span class="n">img</span><span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">cnn_code</span> <span class="o">=</span> <span class="n">feature_extractor</span><span class="p">(</span><span class="n">img_processed</span><span class="p">)[</span><span class="n">layer_before_final_classifiers</span><span class="p">]</span>
+    <span class="n">cnn_codes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cnn_code</span><span class="p">)</span>
+
+
+<span class="n">cnn_codes</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="n">cnn_codes</span><span class="p">)</span>  <span class="c1"># stack all the processed tensors into a single tensor    </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing image 1/75
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing image 2/75
+Processing image 3/75
+Processing image 4/75
+Processing image 5/75
+Processing image 6/75
+Processing image 7/75
+Processing image 8/75
+Processing image 9/75
+Processing image 10/75
+Processing image 11/75
+Processing image 12/75
+Processing image 13/75
+Processing image 14/75
+Processing image 15/75
+Processing image 16/75
+Processing image 17/75
+Processing image 18/75
+Processing image 19/75
+Processing image 20/75
+Processing image 21/75
+Processing image 22/75
+Processing image 23/75
+Processing image 24/75
+Processing image 25/75
+Processing image 26/75
+Processing image 27/75
+Processing image 28/75
+Processing image 29/75
+Processing image 30/75
+Processing image 31/75
+Processing image 32/75
+Processing image 33/75
+Processing image 34/75
+Processing image 35/75
+Processing image 36/75
+Processing image 37/75
+Processing image 38/75
+Processing image 39/75
+Processing image 40/75
+Processing image 41/75
+Processing image 42/75
+Processing image 43/75
+Processing image 44/75
+Processing image 45/75
+Processing image 46/75
+Processing image 47/75
+Processing image 48/75
+Processing image 49/75
+Processing image 50/75
+Processing image 51/75
+Processing image 52/75
+Processing image 53/75
+Processing image 54/75
+Processing image 55/75
+Processing image 56/75
+Processing image 57/75
+Processing image 58/75
+Processing image 59/75
+Processing image 60/75
+Processing image 61/75
+Processing image 62/75
+Processing image 63/75
+Processing image 64/75
+Processing image 65/75
+Processing image 66/75
+Processing image 67/75
+Processing image 68/75
+Processing image 69/75
+Processing image 70/75
+Processing image 71/75
+Processing image 72/75
+Processing image 73/75
+Processing image 74/75
+Processing image 75/75
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s check the shapes</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cnn_codes_numpy</span> <span class="o">=</span> <span class="n">cnn_codes</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+<span class="n">cnn_codes_numpy</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(75, 1280)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">values</span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>75
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Now, we can continue with sklearn, to make a split of the data and train a classifier for our task.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">cnn_codes_numpy</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span>
+
+<span class="n">clf</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00        18
+           1       1.00      1.00      1.00         5
+
+    accuracy                           1.00        23
+   macro avg       1.00      1.00      1.00        23
+weighted avg       1.00      1.00      1.00        23
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+
+<span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
+
+           0       0.95      1.00      0.97        18
+           1       1.00      0.80      0.89         5
+
+    accuracy                           0.96        23
+   macro avg       0.97      0.90      0.93        23
+weighted avg       0.96      0.96      0.95        23
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise:</strong> What happens if we use a smaller CNN?</p>
+<section id="take-aways">
+<h2>Take-aways ⚠️<a class="headerlink" href="#take-aways" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>Transfer learning</strong> is a powerful technique that can be used to build accurate models with a small amount of data.</p></li>
+<li><p>In our Parfois example, we only had 75 labelled images, but we were able to build a model that could predict the presence of humans in images with perfect degree of accuracy.</p>
+<ul class="simple">
+<li><p>Now, we could use our trained model to classify all the images in the website/marketplace, and then use this information to make decisions about the images that need to be replaced or improved:</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>For example, we can identify the images that do not have human presence and replace them with images that do have human presence.</p></li>
+<li><p>Or we could compute the Click-Through Rate (CTR) for the images with human presence and without human presence, and then use this information to see which group of images is more effective in driving sales.</p></li>
+</ol>
+</li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./s11_transfer_learning"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../s09_intro_deep_learning_computer_vision/s09.4-convolutional-networks_solved.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Convolutional Neural Networks (CNNs)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../s12_zero-shot-learning/s12.1_intro-zero-shot-classification.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Zero-Shot Learning</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Transfer Learning</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-and-how-to-do-transfer-learning">When and how to do transfer learning?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-to-do-transfer-learning">Why to do transfer learning?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-learning-with-pytorch-extracting-features-from-a-cnn">Transfer Learning with Pytorch: extracting features from a CNN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-with-some-input-images">Examples with some input images</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-example-human-presence-analysis-in-stock-images">Practical Example: Human Presence Analysis in Stock Images</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">Take-aways ⚠️</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Víctor Gallego
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

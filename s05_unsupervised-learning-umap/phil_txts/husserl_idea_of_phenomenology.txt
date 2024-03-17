@@ -1,0 +1,4172 @@
+EDMUND HUSSERL
+
+THE IDEA OF
+PHENOMENOLOGY
+TRANSLATED BY
+LEE HARDY
+
+KLUWER ACADEMIC PUBLISHERS
+
+EDMUND HUSSERL
+COLLECTED WORKS
+EDITOR: RUDOLF BERNET
+VOLUME VIII
+
+VOLUME I
+
+Ideas Pertaining to a Pure Phenomenology and to a
+Phenomenological Philosophy
+THIRD BOOK: Phenomenology and the Foundations of the
+Sciences
+
+VOLUME II
+
+Ideas Pertaining to a Pure Phenomenology and to a
+Phenomenological Philosophy
+FIRST BOOK: General Introduction to a Pure Phenomenol­
+ogy
+
+VOLUME III
+
+Ideas Pertaining to a Pure Phenomenology and to a
+Phenomenological Philosophy
+SECOND BOOK: Studies in the Phenomenology of Constitu­
+tion
+
+VOLUME IV
+
+On the Phenomenology of the Consciousness of Internal
+
+VOLUME V
+
+Early Writings in the Philosophy of Logic and Mathematics
+
+VOLUME VI
+
+Psychological and Transcendental Phenomenology and
+
+Time (\893-1917)
+
+Confrontation with Heidegger (1927-1931)
+VOLUME VII
+
+Thing and Space: Lectures of 1907
+
+VOLUME VIII The Idea of Phenomenology
+
+TRANSLATIONS
+PREPARED UNDER THE AUSPICES OF
+THE HUSSERL-ARCHIVES (LEUVEN)
+
+EDMUND HUSSERL
+
+THE IDEA OF PHENOMENOLOGY
+A Translation of
+Die Idee der Phiinomenoiogie
+Husserliana II
+
+TPA"ISLATION AND INTRODUCTION BY
+
+LEE Hi\RDY
+
+KLu\VER ACADEMIC PUBLISHERS
+DORDRECHT I BOSTON I LONDON
+
+TRANSLATOR'S INTRODUCTION
+
+In the winter semester of 1902J03. Edmund Husserl offered a lecture course
+
+at the University of G<>ttingen on the general theory of knowledge. At the
+
+conclusion of that course he recorded the following sentiment on the envelope
+
+containing his lecture notes: "From time to time I am born up by the convic­
+
+tion that I have made more progress in the critique of knowledge than any of
+
+my predecessors, that I have seen with substantial and, in some respects,
+
+complete clarity what my predecessors scarcely suspected or else left in a state
+of confusion. And yet: what a mass of unclarity in these pages. how much
+
+half-done work, how much anguishing uncertainty in the details. How much
+is still just preliminary work, mere struggle on the way to the goal and not the
+
+full goal itself. actually achieved and seen from every side? Will it not be
+
+given to me, with powerfu) effort redoubled and with the application of all my
+vital energies, actually to arrive at the goal? Is this half clarity, this tonuous
+
+restlessness, which is a sign of unresolved problems, beamble? Thus I am.
+
+after many years, still the beginner and the student. But I want to become the
+master! Carpe diem. "J On November 4. 1903. he added this dismal observa­
+
+tion, 'The anguish only grows greater, and I remain in the same old place. No
+progress has been made.,,2
+
+The philosophical impasse Husserl experienced in the years inunediately
+following the publication of the Logical Investigations (1900101) was
+compounded by serious professional disappointment in 1905. In April of that
+
+year, the Ministerium had made known its intention of appointing Husserl as
+an
+
+associate
+
+professor (Ordinarius) at the University of G<>ttingen. But on
+
+May 11th the appointment was blocked by the Philosophy Faculty. In his
+
+diary, Husserl recorded the reason for its opposition: "the lack of my scientific
+,,
+significance. 3 Undeterred by this vote of no confidence from his colleagues.
+Husserl remained resolute in his critical inquiries. It was during this time. in
+fact, that his philosophical ambition grew to Kantian proportions: having
+published limited studies in the philosophy of arithmetic and logic. he now
+
+took upon himself the task of providing a comprehensive critique of reason in
+
+its several divisions - theoretical, practical. and evaluative.
+
+At some point between 1903 and 1905 Husserl finally achieved insight into
+
+the methodological procedure required by the general problem of knowledge.
+On February 18, 1905, he made the following triumphant entry in his
+
+note book: "I am so fmnly convinced that in it I possess the true method for the
+
+critique of knowledge, that I see it as my life-goal to solve by its means the
+
+main problems of the critique of knowledge one by one - to that end I will
+
+2
+
+THE IDEA OF PHENOMEN OLOGY
+
+work incessantly, year in and year OUt ,4 An initial sketch of this method can
+be found in what are now known as the Seefelder Blatter, dating from the
+sununer of 1905. In September of 1906, confident that he now possessed the
+tools equal to his task, Husserl referred to the critique of reason as "the general
+task that I must accomplish for myself if I am to call myself a philosopher."s
+Thus Hussed's sense of philosophical vocation took shape in the first
+decade of the twentieth century. The subsequent course of his thought can be
+seen as an attempt to fulfill the task he had then envisioned under aegis of the
+methodological insight he had acquired midway between the publication of
+the Logical Investigations (1900/01), a clarification of the basic concepts of
+pure logic by way of descriptive psychology, and Ideas I (1913), a systematic
+attempt to introduce transcendental phenomenology as a fundamental
+philosophical discipline.
+The first public exposition of the motivation, sense, and implications of
+Hussed's newly discovered method - called the "phenomenological reduc­
+tion," or, alternatively, the "epistemological reduction" was given in five
+lectures later published under the title, Die Idee der Phiinomenoiogie. These
+lectures were delivered between April 26 and May 2 of 1907 as an introduc­
+tion to Husserl's "Dingkolleg," a four-hour lecture course given in the summer
+semester of that year and later published as Ding und Raum: Vorlesungen
+1907.6 Hussed wrote the "Train of Thought in These Lectures" in the evening
+immediately following the presentation of his final lecture. This piece is
+included at the end of this volume as a restatement and extension of the
+argument given in the five lectures. The original manuscripts M III 9 113a,
+4a, 6a, 22a
+were edited by Walter Biemel and published as the second
+volume of Husserliana in 1950. In 1963 part of Die Idee der Phiinomenologie
+was translated into English by William P. Alston and George Nakhnikian so
+that it might be included in an anthology they were editing at the time entitled,
+Readings in Twentieth Century Philosophy. In 1964 their complete translation
+appeared as a separate volume, published by Martinus Nijhoff.
+Since the first publication of these lectures in English, the conventions of
+Hussed translation developed and solidified as additional works of Hussed
+were translated by Dorion Cairns, Fred Kersten, Dallas Willard, John B.
+Brough, and others. It became clear that the Idea of Phenomenology should
+now be re-translated for the official English language edition of the Collected
+Works of Husserl in order to bring it in line with current Husser! translation
+practice and to correct the outright mistakes that inevitably afflict fIrst
+translation efforts.
+.,
+
+In the Third Lecture of the Idea of Phenomenology, Hussed defines
+phenomenology as the "science of pure phenomena" (see below, p. 35); in the
+
+J
+
+TRANSLATOR'S INTRODUCTION
+
+same lecture he characterizes the phenomenology of knowledge, more
+specifically,
+knowing"
+
+as
+
+the "theory of the essence of the pure phenomenon of
+
+(see below. p. 36). Such
+
+"critique of knowledge," in which
+
+a
+
+phenomenology would advance the
+
+the problem of knowledge is clearly
+
+fonnulated and the possibility of knowledge rigorously secured. It is important
+to realize, however, that in these lectures Husser1 will not enact, pursue, or
+develop a phenomenological critique of knowledge, even though he opens
+with a trenchant statement of the problem of knowledge that such a critique
+would solve. Rather. he
+
+seeks here only to secure the possibility of a phe­
+
+nomenological critique of knowledge; that is, he attempts to secure the
+possibility of the knowledge of the possibility of knowledge, not the possibil­
+ity of knowledge in general (see below, pp.
+is
+
+not
+
+phenomenological
+
+in
+
+the
+
+37-39). Thus the work before us
+
+straightforward.
+
+sense,
+
+but
+
+pre­
+
+phenomenological: it sets out to identify and satisfy the epistemic require­
+ments of the phenomenological critique of knowledge, not to cany out that
+critique itself.
+To keep these two levels of theoretical inquiry distinct. I will call the level
+that deals with the problem of the possibility of knowledge the "critical level";
+the level that deals with the problem of the possibility of the knowledge of the
+possi bility of knowledge the "meta-critical level." Although distinct, these
+levels nonetheless interact: the initial statement of the problem of knowledge
+on the critica1level governs the identification and elaboration of the require·
+ments on the meta-criticallevel; the work done on
+
+the meta-critical level to
+
+indicate how these requirements will be satisfied in turn leads to a
+reformulation of the problem of knowledge on the critical level. The produc·
+tive interaction between these two levels inquiry is key to understanding the
+progress of the text before us. Husserl"s initial formulation of the problem of
+knowledge is broadly Cartesian; the refonnulation is specifically phenome­
+nological. Thus the exposition given in these lectures recapitulates
+
+the order
+
+of the discovery: it retraces the steps in the development of Husserl's thought
+concerning the problem of knowledge,
+
+and it invites the reader to tread the
+
+same path.
+The initial formulation of the problem of knowledge at the critical level in
+parts. Fiest, the problem of knowledge entails the problem
+
+Lecture I has two
+
+of ''transcendence''; how can consciousness reach out beyond itself and ''make
+contact" with an object wholly external to it?
+
+(see below, p. 19) Second, the
+
+problem of knowledge involves the problem of "correspondence": bow can we
+be assured of an agreement between the act of knowing and the object known?
+
+(see below. p. 17) The first part of the problem of knowledge is to be solved
+by a theory of intentionality, an account of how acts of consciousness refer to
+objects. The second part is to be solved by a specifically phenomenological
+
+4
+
+THE IDEA OF PHENOMENOLOGY
+
+version of the eorrespondence relation between act and object, calling upon,
+as we shall see, the strict correlation between the real and intentional compo­
+nents of knowing.
+Both parts of the problem of knowledge are defined by the fact that, in most
+cases, our consciousness of objects and the objects of which we are conscious
+are
+
+ontologically distinct. They are separated by a gap between two orders of
+
+being. If we
+
+are
+
+to account for the possibility of know ledge, then, we must not
+
+only show how consciousness can go beyond itself and make contact with an
+object that is not itself a part of consciousness, we must also be assured that
+the object really is "in itself' the way it appears to be in consciousness. But if
+things exist independently of our consciousness of them, we can always ask,
+as Husserl did, "what do the things themselves care about our ways of
+thinking and the logical mles that govern them?" (see below, p. 61) Somehow
+we must be in a position to demonstrate an agreement between the two if we
+are to account for the possibility of genuine knowledge.
+These two problems - transcendence and correspondence
+
+together
+
+constitute the "riddle" of knowledge. HusserI takes the first, the problem of
+transcendence, as his initial guide (see below, p. 27). And it immediately leads
+him to a recognition of the first requirement for the critical project: the critique
+of knowledge must be based upon a form of knowledge that is itself entirely
+free of the problem of transcendence. Otherwise, the knowledge of the
+possibility of knowledge would be burdened by the very riddle it seeks to
+solve. Because of the comprehensive nature of the philosophical problem of
+knowledge, HusserI must, of course, be prepared at the outset of his critical
+inquiry to make knowledge in general problematic, granting no special
+exemptions to any traditionally favored forms of knowledge. But if, after
+careful consideration, all forms of knowledge remain problematic, then clearly
+the form of knowledge embodied in the critique of knowledge will have no
+place to stand. To fulfill the first requirement, HusserI must make a thorough
+canvas of the various types of knowledge in hopes of discovering one that is
+completely unproblematic on the point of transcendence.
+I will call the knowledge to which the problem of transcendence applies
+"Type One" knowledge; knowledge free of that problem, if there is any,
+"Type Two" knowledge, If all knowledge is of Type One, then the project of
+philosophically securing the possibility of Type One knowledge is doomed
+from the very outset. Clearly the knowledge represented in the critique of
+knowledge must be of a different order than the knowledge for which the
+critique is supplied. If the critique of knowledge is to be possible, it needs
+leverage; another type of knowledge must be isolated and secured as its basis
+for comment on the possibility of Type One knowledge.
+
+TRANSLATOR'S INTRODUCTION
+
+5
+
+Husserl indicates how this requirement will be satisfied by making the
+familiar Cartesian move in Lecture ll: while the knowledge of external objects
+is problematic, the knowledge of internal objects is not. Not all knowledge is
+saddled with the problem of transcendence.
+
+For in the dire<..1 reflective
+
+apprehension of its own acts, consciousness does not move beyond itself. It
+remains within the sphere of immanence. While it is possible to doubt the
+validity of our knowledge of objects transcendent to consciousne�s. it makes
+no sense to doubt our claims about what is given within the very midst of
+consciousness itself. In the former case we can always doubt whether we have
+it right; in the latter case, Hussed claims, doubt makes no sense. For here we
+have a "sphere of absolute givenness" (see below, p. 26), where what we
+claim can be directly measured by what we see, without remainder. Here
+consciousness does not go beyond what is immediately given to it.
+The rigorous abstention from all knowledge claims involving transcendence
+(Type One), and the consequent restriction of the critique of knowledge to
+claims concerning the domain of immanence (Type Two), is the "phenome­
+nological reduction," the methodological move required for the solution of the
+problem of knowledge
+
+as
+
+it is comprehensively posed by philosophy.
+
+After the discovery of sphere of immanence in the reflective apprehension
+of the acts of consciousness, Type Two knowledge undergoes two successive
+extensions of domain. Both of the extensions
+
+are
+
+motivated by reference to
+
+additional requirements for the critique of knowledge identifieAl at the meta­
+critical leveL First, if the critique of knowledge is to be a genuine science, it
+must amount to more than a mere collection of reports on particular acts of
+consciousness. If it is to issue general claims about the essence of sllch acts,
+then essences must also be proper objects of Type Two knowledge. And so
+they are, Husserl claims. In a process called "ideating abstraction" - which
+Husserl names but does not explain here - the essence of a particular phe­
+nomenon can be grasped in a way that makes doubt senseless. "It is senseless
+to question and to doubt what the essence of red is ... provided that, while one
+is seeing red and grasping it in terms of its specific kind, one means by the
+word 'red' exactly what is grasped and seen ... We grasp it - there it is; there
+is what we mean, the species red. Could a divine being, an infinite intellect,
+do anything more to grasp the essence of red than to see it as a universal?"
+(see below, p. 42) If this is indeed the case, then the reflective apprehension
+of the acts of consciousness will afford much more than a record of private
+mental occurrences; when followed by acts of ideating abstraction it will yield
+insights into the very essence of the acts of consciousness and, among them,
+the acts of knowing. Statements issued on the basis of such insights into
+essence will count as a priori truths, not empirical generalizations over the
+regularities of mental life.
+
+6
+
+THE IDEA OF PHENOMENOLOGY
+
+Thus phenomenology will become a science. But it will not be like other
+sciences. For the other sciences assume the general validity of Type One
+knowledge; that is. they assume the success of transcendence on the part of
+consciousness. For them. doubt is always a localized affair, to be resolved by
+appeals to other parts of knowledge of the same basic type. But phenomenol­
+ogy, as the critique of knowledge, takes the general validity of Type One
+knowledge as its explicit theme. Thus it cannot assume the existence of a
+world of transcendent objects in causal relation with each other, for it is
+precisely this assumption that is put into question by the critique of knowl­
+edge. Phenomenology, then, will not try to give a causal account of knowledge
+and its connection to the world; it will not seek to explain knowledge as a
+"natural fact"; it will not engage in theoretical constructions of the hypotheti­
+cal-deductive sort. It cannot borrow from the result" of empirical disciplines;
+more pointedly, it cannot be based upon the deliverances of psychology, either
+explanatory (as in Wundt), or descriptive (as in Brentano). Nor can it make
+use of the speculations of evolutionary biology. Rather, its task is to exhibit
+the essence of knowing within the framework of the phenomenological
+reduction (see below, p. 41). Thus it must remain entirely a matter of reflec­
+tion, direct intuition, analysis, and description.
+The fIrst expansion of Type Two knowledge, so as to include not only acts
+but essences, will lead Husserl to reformulate the problem of transcendence
+as stated on the critical level. The shift from transcendence to immanence was
+motivated by the need to locate and secure a type of knowledge not afflicted
+by the problem of transcendence. But the admission of the knowledge of
+essences into the sphere of Type Two knowledge makes it clear that the
+crucial epistemic distinction is not simply between what is external and what
+is internal to consciousness in some picturesque sense, but rather what is
+inadequateJy given as opposed to what is adequately given. For the issue here
+is not location, but indubitability. Knowledge claims are indubitable just in
+case they are made on the basis of the adequate givenness of their corre­
+sponding objects. An object is adequately given when everything intended in
+the knowledge claim has its counterpart in what is intuitively given in the
+experience which grounds that claim, when "nothing that is meant fails to be
+given" (see below, p. 45). In such cases, Husserl maintains, it makes no sense
+to doubt. If, upon the putative perception of a house, I claim to see a house,
+my claim goes far beyond what is actually given in the perceptual experience.
+What was actually given was a fInite sequence of ostensible house­
+appearances, on the basis of which I claimed that I saw a house. But my claim
+may be refuted by subsequent experience. As I walk, it may turn out that what
+I saw was only a house far;:ade, or a cleverly painted wall of a commercial
+establishment, or one phase of a particularly vivid dream sequence. Acts of
+
+TRANSLATOR'S INTRODUCTION
+
+7
+
+perception, on the other hand, have no sides. They are given - whole and
+entire - in the reflective apprehension I have of them. So, while I may be
+deceived regarding the house I apparently perceive; I cannot be deceived,
+Husserl will claim here, in my reflective apprehension of the fact that I am
+having an apparent house-perception.
+This point having been made, there is no reason to think that only items
+immanent to consciousness in the real sense can be adequately given, or that
+all objects transcendent to consciousness in the sense of being external to it
+must be given inadequately. The initial assumption was that the distinction
+between immanence and transcendence in the real sense is co-terminous with
+the distinction between adequate and inadequate givenness. Thus the phe­
+nomenological reduction, in seeking to remove all traces of transcendence in
+knowledge, would strictly limit Type Two knowledge to an examination of the
+acts of consciousness. But the experience of universals, as Husserl describes
+it, shows that this is not the case. Acts of consciousness may be adequately
+given by virtue of being immanent to consciousness in the real sense, but this
+fact does not preclude the possibility of other kinds of objects being ade­
+quately given on other grounds.
+This leads Husser! to redefine the distinction between immanence and
+transcendence, and thus to reformulate the problem of transcendence on the
+critical level. Immanence, in the phenomenologically revised sense, will be
+cQrrelated�w�adeq_-g{Yfmlless; tr,!nsc�f!c!�Qc;�.\'{itJ:ljn3:dequate givenness.
+Call these revised senses "phenomenological immanence" and "pnen6iiienol­
+ogical transcendence." In the case of essences, or, more generally, universals,
+we now have entities that are transcendent in the real sense (external to
+consciousness) but not in the phenomenological sense (since they can be
+wholly given); conversely, they are not immanent in the real sense (since they
+are not real parts of consciousness), but they are in the phenomenological
+sense (again, because they can be wholly given).
+The phenomenological reduction, consistently applied, will have implica­
+tions for the status of the knowing subject as well as the known object. It is
+one thing to set aside all positing of existence with respect to external objects;
+but positing the existence of the subject of knowing, the "I" of the "I think,"
+must also be inhibited insofar as that subject is identified as a particular
+empirical person inhabiting the transcendent world it knows. Thus, together
+with the outward transcendence of physical objects, the "inward transcen­
+dence" of the empirical ego annexed to a body that is in tum part and parcel
+of the world must fall under the reduction. In this move, the phenomenon of
+knowing, then, will be divested of all "psychological apperception" and
+thereby rendered "pure" (see below, pp. 33-34). For the special purposes of
+the critique of knowledge, consciousness will no longer be construed as a
+
+THE IDEA OF PHENOMENOLOGY
+
+regular inhabitant of the world it takes as its object; it will be referred to as
+"pure consciousness" (later: "transcendental consciousness").
+This implication of the methodological requirements of the critique of
+knowledge, worked out on the meta-critical level, in turn forces another
+revision of the formulation of the problem of knowledge on the critical level.
+Henceforth the question is not how the psychological phenomenon of knowing
+can transcend itself, but how the pure phenomenon of knowing can transcend
+itself. Transcendence is no longer the problem of reaching out from the inner
+workings of one part of the world to another, but the transcendence of a pure
+consciousness to which both the empirical object and empirical subject appear.
+The first requirement for the critique of knowledge, the requirement of
+Type Two knowledge, motivated the reflective tum to acts of consciousness.
+The second requirement for the critique of knowledge - a basis for general
+statements motivated the expansion of Type Two knowledge SO as to include
+essences. The object domain of Type Two knowledge will now undergo a
+second expansion in connection with a third requirement for the critique of
+knowledge: that the problem of correspondence become phenomenologically
+accessible (see below, pp. 29, 35-36, 55). For if the problem of knowledge is
+to receive a phenomenological solution, the relation between the act of
+knowing and the object known must be drawn into the sphere of immanence
+in the phenomenologically revised sense; it must itself be given, and, as such,
+open to direct investigation under the constraints of the reduction. Otherwise,
+knowledge claims concerning correspondence, insofar as they posit transcen­
+dent relations between acts and objects, will be afflicted by the very problem
+they seek to solve.
+Husserl addresses this issue in Lecture Five. There he states that while the
+physical object which appears is transcendent (in both the real and phenome­
+nological sense) to the act of consciousness that apprehends it, the same is not
+the case for the appearances of the physical object whereby it presents itself
+to consciousness. In phenomenologically reduced experience, these object­
+appearances are wholly given. Although they are not a real part of conscious­
+ness, thus transcendent in the real sense, they are absolutely given, thus
+immanent in the phenomenological sense. This fact provides Husserl with all
+the resources he needs for a phenomenological version of the correspondence
+theory. The phenomenon of knowing, the act of knowing as given in reflec­
+tion, is adequately given. It intentionally contains the systems of appearance
+whereby objects, persons, properties, universals, and states of affairs present
+themselves to it. For every possible objectivity, there is a corresponding set of
+appearances whereby it appears. The correspondence relation is not between
+stripped-down acts occurring within a self-enclosed mind and objects external
+to it, as we have in Descartes. Consciousness is not like an empty container
+
+TRANSLATOR'S iNTRODUCTION
+
+9
+
+into which ready-made objects of knowledge, or its representatives, are simply
+inserted. Rather. it is a highly complex temporal system of mental processes
+by which the givenness of the known object is "constituted." This means that
+i n every case of knowledge there is a strict correlation between the real (later
+"noetic") and the intentional (later "noematic") components of the act of
+knowing, which itself can be wholly given in an act of reflective apprehen­
+sion. The task of the phenomenological critique of knowledge, then, is to
+identify, analyze, and describe the various ramified systems of presentation
+and representation correlated to the various kinds of possible objectivities, and
+in so doing, identify the forms of evidence which serve to justify belief in the
+existence and determinations of the objectivities so given.
+In the Idea of Phenomenology we have only an initial sketch of the
+phenomenological research program thus conceived. I n the subsequent Ding
+und Raum lectures, to which these five lectures were an introduction, HusserI
+pursues in great descriptive detail the manifold correlations involved in our
+perceptual awareness of material things in space. In his next major publica­
+tion, Ideas I, the plan of the research program will be elaborated with a more
+extensive and sophisticated account of the noetic-noematic correlation (Part
+1m and complemented by a specifically phenomenological theory of rational­
+ity (Part IV) the very project HusserI had envisioned for himself in 1906.
+I have represented the progress of thought in the Idea of Phenomenology as
+one driven by an interaction between two levels of inquiry, the .critical and the
+�!�ritical. On the critical level, the problem of knowledge�was-initialfy
+stated in terms HusserI inherited from the tradition of modern philosophy: how
+can the acts of knowing, which occur within the mind, reach out and make
+contact with Objects wholly external to it; and how can we be sure that they
+correspond to the objects they thus encounter? As we saw, once the require­
+ments for answering such questions were specified and the conditions of their
+satisfaction worked out through several preliminary phenomenological
+reflections, the questions themselves were transformed. No longer is it a
+matter of how acts, encased in some inner psychological sphere, move beyond
+themselves in order to make contact with external objects, but rather how the
+givenness of objects is intentionally constituted within a consciousness that
+embraces both the givenness of the empirical mind and the empirical world of
+which that mind is a part. The questions, thus transformed, can now be
+answered on the basis of the resources phenomenology has at its disposal
+under the reduction; it need not consult empirical research on the causal
+connections between minds and objects, or rely on speculative arguments that
+serve as a bridge from the interior of the mind to the great outdoors.
+The phenomenological reduction could suggest itself as a viable methodo­
+logical procedure for the solution to the problem of knowledge only on the
+-
+
+THE iDEA OF PHENOMENOLOGY
+
+10
+
+kind of theory of intentionality that Husserl had already adopted in the Logical
+Investigations. Theories of intentionality fall into two main categories:
+
+!elati�llitl��!: The relational account takes "intentionality" to refer
+
+to a relation that obtains between two terms - in this case, the act of knowing
+and the object known. The nature of this relation, causal or otherwise, is
+
+variously specified. But the main point here is that the relation obtains only
+if the two terms of the relation also exist. Just as the relation "taller than"
+
+cannot obtain between me and my brother, unless my brother and I also exist,
+
+so an act of consciousness cannot be intentionally related to an object unless
+
+that object also exists. Those who hold to a relational account of intentionality
+must, of course, be in a position to account for the fact that we can think
+about, or imagine, non-existent objects; and they are quite naturally tempted
+
+to posit a panoply of objects
+
+called "ideas" in the modern tradition - that
+
+exist inside the mind and serve as the proper objects of those thoughts and
+
+imaginations of things that do not exist outside the mind, thus preserving the
+existence condition by positing the "in-existence" of the objects of conscious­
+
+ness. To keep the account consistent, it is often held that the immediate objects
+of veridical perceptions
+
+are
+
+also mentally in-existent objects, generated by the
+
+causal powers of physical objects in the neighborhood of the mind. Belief,
+
+then, in the existence of objects transcendent to consciousness will always_
+involve a causal inference from the immediately perceived representational
+
+object in the mind to the external object that ostensibly caused it. Such an
+
+inference is, of course, deductively invalid, as David Hume, among others,
+
+was happy to point out, thus intensifying the problem of knowledge based
+upon a relational theory of intentionality.
+
+Adverbial theories take intentionality to name not a relation between an act
+
+of consciousness and its object, but rather the property of an act of conscious­
+ness whereby it refers to its object. Furthermore, adverbial theories hold that
+acts of consciousness have it within their power to refer to objects, even if
+
+those objects do not exist. Husserl clearly beli>!!KS to the adverbial camp. In
+t if the-acts giv;;niiireflection
+the third lecture of this vo
+
+�
+
+"happen also to refer intentionally to objective reality, then that referring is a
+
+characteristic that resides in them, while nothing is thereby assumed concern­
+
+ing the existence or non-existence of reality" (see below, p. 34). Again: "the
+
+relating-itself-to-something-transcendent, to refer to it in one way or another,
+
+is an inner characteristic of the phenomenon" (see below, p. 35). This means
+
+that a phenomenological reduction, which forbids the use of the existence of
+
+objects or their putative causal powers for explanatory purposes, leaves
+untouched the resources required for an adequate account of intentionality.
+
+Such an account, unburdened by the problem on transcendence in its own
+
+case, need only describe the internal structure of the acts of consciousness
+
+TRANSLATOR'S I NTRODUCTION
+
+11
+
+whereby they refer to their objects. If those objects exist, then the acts may
+also be said to be in relation to them; but their intentionality does not depen d
+upon the existence of the objects to which they refer. A complete account of
+intentionality can thus be given with the materials delivered by the reflective
+apprehension of the acts of consciousness and their analysis - no appeal need
+be made to divine veracity; no hypothetical causal account need be con­
+structed. In this approach, HusserI also firmly aligns himself with the
+internalist approach to epistemology, which demands that the conditions of
+knowledge be accessible from the first person standpoint.
+Yet a residual problem remains. It is, ironically, a problem created by the
+very adverbial theory of intentionality of consciousness that made phenome­
+nology capable of solving the problem of knowledge in the first place. The
+problem can best be stated as a point a realist might make: if it is the case that
+consciousness can bring it about that a world appear to it independently of the
+existence and causal influence of any world, then is it not possible that the
+world, in itself, is not at all the way it appears to be to consciousness? We
+know that appearances can be deceptive in the local sense. Doesn't HusserI's
+theory of intentionality and constitution mean that they can be deceptive in the
+global sense as well? (see below, p. 59) The move Husserl made to pull the
+correspondence relation into the sphere of immanence seems to leave this
+problem unsolved - perhaps even phenomenologically unsolvable.
+In Ideas I Husse rI admits that it is logically possible that the world, in itself,
+is wholly other than the way it appears to be in consciousness (Ideas I, section
+48). There are basically two ways he can handle the skeptical worry at this
+point: 1) become an idealist; or, 2) develop a theory of rationality that makes
+this possibility untroublesome. If the conflict of interpretations over the
+question of whether HusserI was a realist or idealist - still raging today is
+any indication, it is fair to say that HusserI explored both of these options. One
+is to collapse the object known into the system of its appearances with no
+remainder, thus adopting an idealism of a roughly Berkeleyan sort. The other
+is to develop a theory of rational doubt that will maintain that while i t is
+logically possible for the world to be otherwise than it presents itself in
+experience, we would be rationally justified in doubting that it is the way it
+appears to consciousness only on the basis of motivations arising from
+experience itself. And it is hard to know what these motivations could possibly
+be, other than the complete randomization of experience against the b ack­
+ground memory of orderly experience.
+In my work on this new English version of Husserl's Idee der Phiinome­
+nologie, it has been my aim to upgrade the Alston-Nakhnikian translations of
+1963 and 1964 in matters of both style and accuracy. On three points I h ave
+
+12
+
+THE IDEA OF PHENOMENOLOGY
+
+consistently deviated from their translation policy. I have translated Sinn as
+"sense" rather than "meaning" (annexing the latter to Bedeutung). I do this t o
+disassociate Husserl's concept o f Sinn from exclusively linguistic concerns.
+Sinn, for Hussed, is the intentional element of an act of consciousness
+whereby that act refers to its object. It is intentionally resident in all acts of
+perception, memory, imagination, and the like. As such, it far exceeds in scope
+the concerns of the philosophy of language; indeed, for Husserl, it also
+precedes those concerns insofar as all linguistic reference is ultimately
+founded on pre-predicative acts of consciousness. Second, I have translated
+"naturliche Wissenschaften" as the "positive sciences" rather than the "natural
+sciences" or "sciences of the natural sort." I do so because the term "natural
+sciences" calls to the mind of the English reader such sciences as physics,
+chemistry, and biology; whereas Husserl meant by this locution all the
+sciences insofar as they are based upon the assumption of the "natural
+attitude," the assumption of the existence of the world, the validity of
+transcendent experience - that is, all the sciences except the properly philo­
+sophical science of phenomenology, which seeks to assess the basic and
+pervasive assumption of the positive sciences without participating in it. In his
+later writings Husserl himself referred to all such sciences as the "positive
+Wissenschciften" (see the Crisis otthe European Sciences and Transcendental
+Phenomenology, written in the 1930's, for example). So the use of the English
+cognate for this term in a translation of his earlier work would seem permissi­
+ble. Third, the term "psychisch" is transliterated by Alston and Nakhnikian as
+"psychic," as in "psychic experience," or "psychic data." By this Husserl
+means experience or data as they pertain to the mind. But the term "psychic"
+calls to the mind of the English-speaking reader images of people with
+clairvoyant powers, who regularly invite perfect strangers to chat with them
+over the phone about the details of their private lives. To avoid all associations
+with the para-normal and occult, I have translated the term "psychisch" as
+"mental," "of the mind," and the like.
+An additional terminological difficulty is posed by Husserl's use of the term
+of "reell" both as an adjective and as an adverb. This term is best explained
+by reference to its place in a three-way conceptual partition between the reelle,
+the reale, and the intentionale components of an act of consciousness. First,
+the contrast between reell and intentionale: in expanding the domain of what
+is included in the phenomenon of knowing, Husserl seeks to go beyond the
+temporal parts, layers, and phases of an act that actually make it up to those
+elements that do not make it up, but are essentially referred to by that act, or
+serve as the structural features of the act that make such reference possible.
+The former are reelle components of the act, the latter are intentionale parts.
+The concept of reelle components receives further definition by reference to
+
+TRANSLATOR'S INTRODUCTION
+
+13
+
+a second contrast. Under the phenomenological reduction, the acts under
+investigation are no longer to be construed as acts within the mind of an
+empirical person, part and parcel of the world, but rather as occurring within
+a pure consciousness to which that person, as well as the world, appears. Thus
+Husserl will use the term
+
+reel! to distinguish those components from reale
+
+components of an act psychologically apperceived as part of the world,
+connected, as are all parts of the world, by relations of cause and effect. As a
+English translator, I have only the word "real" to work with, unless I want to
+resort, as other translators have, to such barbarisms as "really ingredient" aud
+the like. My solution is to put the German word
+
+"reell," with its various
+
+adjectival endings, in brackets after the English word "real" every time "real"
+is used to translate "reell." This solution is less than elegant; but terminologi­
+cal accuracy on this point trumps the claims of felicitous style.
+Beyond these shifts in semantic policy,
+
+I have tried to clean up minor errors
+
+in the 1963-64 translations and to conform the style of my own work more
+naturally to the syntactic expectations of the English-speaking reader.
+
+If I ha ve
+
+been successful in doing so, it is in large part because of the fine assistance I
+received from my former student, Bo-Mi Choi, in her careful and thorough
+review of the penultimate draft of my translation. As a native German-speaker,
+she served as an invaluable guide to German idiom. Jtirgen Sander reviewed
+the Addenda and made several helpful suggestions. Jill Forcier read through
+the entire manuscript in search of grammatical mistakes, stylistic glitches, and
+typographical errors.
+For the translation project as a whole, I
+
+am
+
+indebted to Maja de Keijzer of
+
+Kluwer Academic Publishers for her encouragement and, most of all, her
+patience, as my work was in several instances interrupted by unforseen
+scholarly opportunities. To Rudolf Bernet of the HusserI-Archives in Louvain,
+lowe a great deal of gratitude for his expert advice and comment on the
+translation
+
+as
+
+well as my introduction to it.
+
+Lee Hardy
+
+Calvin College
+
+ENDNOTES
+
+I. Karl Schuhmann, Husserl-Chronik: Denk· lind Lebensweg Edmulld Husserls. The Hague:
+Martinus Nijhoft� 1997, p. 74, my translation.
+2. HILsserl-Chronik, p. 77, my translation.
+3. HlIsserl-Chronik, p. 90, my translation.
+4. Husserl-Chronik, p. 87, my translation.
+5. Husserl-Chronik, p. 99, my translation.
+6. Edited by Ulrich Claesges, Husserliamw XVI, The Hague: Martinus Nijhoff, 1973.
+
+LECTUREl
+
+[17] 1 In earlier lectures I drew a distinction between positive and philosophical
+
+science. The fonner originates from the natural attitude of the mind, the latter
+from the philosophical.
+
+The natu,Ial attitude of the mind is not concerned with the critique of
+
+knowledge.) In such an attitude, our attention is tumed - in acts of intuition and
+thought - to things given to us, and given as a matter of course, even though
+
+they are given in different ways and in different modes of being according to
+
+the source and level of our knowledge of them. In perception, for example, a
+thing stands before us as a matter of course. It is there, in the midst of other
+
+things, both living and lifeless, animate and inanimate. That is, it stands before
+us in the midst of a world, part of which is perceived as particular things are
+
+perceived, part of which is given in connection with memory - from whence
+it spreads out into the indeterminate and the unknown. J
+
+It is to this world that our judgments refer. We make statements - some­
+
+times singular, sometimes general - about things: their relations, their
+
+alterations, their functional dependencies and laws of transformation. Thus we
+find expression for what presents itself in direct experience. Following up on
+
+motives provided by experience itself, we infer from what is directly experi­
+
+enced in perception and memory to what is not experienced; we generalize;
+
+we apply in turn general knowledge to particular cases, or, in analytical
+thought, deduce new generalizations from general knowledge. Pieces of
+
+knowledge do not follow upon one another as a matter of mere succession.
+
+Rather, they enter into logical relations with each other, they follow from each
+other, they "agree" with each other, they confmn each other, thereby strength­
+ening their logical power.
+
+On the other hand, they also enter into relations of contradiction and strife;
+
+they fail to agree with each other; they are canceled by assured knowledge,
+
+[18] their pretense to knowledge discredited. Perhaps these contradictions
+
+arise from the sphere of laws governing the pure fonns of predication: we
+
+succumbed to equivocation; we drew fallacious inferences; we miscounted or
+
+miscalculated. If this is so, then we will restore formal consistency, resolve the
+
+equivocation, and the like.
+
+Or the contradictions upset the system of motivations that has been
+
+established by experience: grounds for belief provided by experience enter
+
+into conflict with each other. Where do we look for help then? We proceed to
+I The numbers in brackets refer to the page numbers of the German edition in
+Husserliana II.
+
+i5
+
+THE IDEA OF PHENOMENOLOGY
+
+16
+
+assess the grounds for the various possibilities of detennining or explaining
+the matter; the weaker must give way to the stronger, which, for their part,
+only hold as long as they stand up, that is, as long as they do not get involved
+in a similar logical battle against new epistemic motives introduced by a
+broadened sphere of cognition.
+This is how positive knowledge makes progress. It takes possession, to an
+ever greater degree, of a reality that simply exists and is given as a matter of
+course by examining it more closely with respect to its extent, its content, its
+elements, relations, and laws. Thus the various positive sciences come into
+being and grow - the natural sciences, as sciences of physical and mental
+nature, the human sciences, and. on the other hand, the mathematical sciences,
+the sciences of numbers, of manifolds, of relations, etc. The latter sciences do
+not deal with rea} actualities, but rather with ideal possibilities that are valid
+in themselves and, besides that, unquestioned from the very outset
+
+In every step of knowledge taken by the positive sciences, difficulties arise
+are resolved, either by pure logic or by an appeal to the f
+acts on the basis
+
+and
+
+of impulses or rational motives that lie in the things themselves, that seem to
+come from them as
+
+requirements which these things,
+
+as given, impose upon
+
+knowledge.
+We will now contrast the natural attitude
+of thought, with the philosophical
+
+of thought, or natuml motivations
+
+attitude.
+
+Once reflection on the relation between knowledge and the object is
+awakened, abysmal [19] difficulties open up. Knowledge, the thing taken most
+
+for granted in natural thinking, suddenly stands before us as a mystery. But I
+
+must be more exact What is
+
+taken for granted
+
+in natuml thinking is the
+
+possibility of knowledge. Constantly engaged in productive activity, advanc­
+ing from discovery to discovery in newly developed sciences, natural thinking
+finds no occasion to raise the question of the possibility of knowledge as such.
+To be sure,
+
+knowledge
+
+becomes a problem for it in a
+
+certain wa)"
+
+as does
+
+everything else that occurs in the world: it becomes an object of positive
+research. Knowledge is a natuml state of affairs; it is the experience of some
+knowing organic being; it is a psychological fact. And like any psychological
+fact, it can be described with respect to its kinds and forms of interconnection;
+its genetic relations can be investigated.
+
+On
+
+the other hand, knowledge is,
+
+knowledge ofobjectivity, and it is such by virtue of
+the sense that is immanent to it, the sense by which it relates itself to objectiv­
+
+according to its essence,
+
+ity. And natural thinking also deals with such relations. As an object for
+investigation, it takes, in their
+
+fonnal
+
+genemlity, the a priori connections
+
+priori laws that belong to
+such; it gives rise to a pure grammar and, at a higher level, a
+
+between meanings and meaning-validities, the a
+objectivity as
+
+pure logic (which yields a whole complex of disciplines by virtue of its
+
+LECTURE
+
+I
+
+17
+
+various possible delimitations), and again to a normative and practical logic
+as
+
+an art of thinking, especially scientific thinking.
+
+Thus far, however, we still stand on the ground of natural thinking.2
+
+But it is precisely this correlation between epistemic experience, meaning,
+
+and object - touched upon here for the sake of c ontrasting the psychology of
+
+knowledge and pure logic with ontology - that represents the source of the
+
+deepest and most difficult problems, which, taken together, comprise the
+
+problem of the possibility of knowledge.
+
+[20rIn
+
+all of its manifestations, knowledge is a mental experience:
+
+knowledge belongs to a knowing subject. The known objects stand over
+
+against it.IHow, then, can knowledge be sure of its agreement with the known
+
+objects? How can knowledge go beyond itself and reach its objects reliably?
+What appears to natural thinking as the matter-of-fact givenness of known
+
+objects within knowledge becomes a riddlefIn perception, the perceived
+
+object is supposed to be immediately given. There stands the thing before my
+
+perceiving eyes. I see it; I grasp it. But the perception is nothing more than an
+
+experience that belongs to me, the perceiving subject. Likewise, memory and
+
+expectation
+
+are
+
+subjective experiences, along with all the acts of thought built
+
+upon them, on the basis of which we mediately posit real existence and
+
+determine any
+
+know
+
+truth
+
+about such existenceJ How do I, the knowing subject,
+
+and how can I know for sure - that �ot only my experiences, these acts
+
+of knowing, exist, but also what they know exists? Indeed, how do I know that
+there is anything at all that can be set over against knowledge as an object?
+
+Should I say: only phenomena are genuinely given to the knowing subject,
+
+and the knowing subject never gets beyond the interconnections of its own
+
+experiences. Thus it can only be truly justified in saying: I exist, and every­
+thing that is not me is mere phenomena, resolves itself into phenomenal
+
+contexts. Should I adopt, then, the standpoint of solipsism? This is a hard and
+
+exacting demand. Should L with Hume, reduce all transcendent objectivity to
+mere fictions, which can be explained by means of psychology, but not
+
+rationally justified? But that too is a hard and exacting demand. Does not
+
+Hume's psychology, like any psychology, transcend the sphere of imma­
+
+nence? When it uses such terms as "custom," "human nature," "sense organs,"
+
+"stimulus," and the like, is it not dealing with entities that - by its own
+admission - enjoy a transcendent existence, even while its aim is to degrade
+everything that transcends actual "impressions" and "ideas" to the level of
+
+fiction?3
+
+But what is the use of appealing to contradictions, if [21]
+
+question
+2
+}
+
+and becomes problematic? Indeed, the
+
+See Addendum I.
+See Addendum II.
+
+logic itself is in
+real meaning of logical
+
+18
+
+THE IDEA O F PHENOMENOLOGY
+
+lawfulness, which natural thought would not dream of questioning, now
+becomes questionable and even dubious. Biological lines of thought now
+crowd in upon us. fv.re are reminded of the modern theory of evolution,
+according to which man has developed through the struggle for existence and
+the process of natural selection, and with him, of course, also his intellect, and
+with the intellect the forms that belong to it, especially the logical formsJoo
+not logical forms and logical laws, then, simply express the contingent
+peculiarities of the human species? But couldn' t they have been different?
+And won't they become different in the course of future evolution? Knowl­
+edge, then, is just human knowledge, bound to the forms of the human
+intellect, incapable of making contact with the very nature of things, with the
+things themselves.
+But here again an absurdity immediately leaps to the fore: does the
+knowledge with which such a view operates, or even the possibilities, which
+it considers, make any sense if the laws of logic are given over to such
+relativism? Does not the truth that there is this possibility, or that possibility,
+implicitly presuppose the absolute validity of the principle of non­
+contradiction, according to which a given truth excludes its contradictory?
+These examples should suffice. The possibility of knowledge has become
+a riddle in every respect. If we immerse ourselves in the positive sciences, we
+fmd, to the degree they have developed into exact sciences, everything clear
+and intelligible. We are sure that we are in possession of objective truth, which
+has been grounded through reliable methods that actually make contact with
+objectivity. But as soon as we engage in reflection, we fall into error and
+confusion. We get involved in patently untenable positions, even in contradic­
+tions. We are in constant danger of falling into skepticism, or worse yet, into
+any one of the forms of skepticism that have, unfortunately, one and the same
+characteristic: absurdity.
+The playground of these obscure and contradictory theories, as well as the
+endless [22] controversies associated with them, is �ol!!JD: a�_�
+l!!!J§ics for metaphysics is bound up with epistemology boi.flhistoocally and
+by way of the subject matter. The task of epistemology, or the critique of
+theoretical reason, is first of all a critical one. It must expose and reject the
+mistakes that natural reflection upon the relation between knowledge, its
+sense, and its object almost inevitably makes; and it must thereby refute the
+explicit or implicit skeptical theories concerning the essence of knowledge by
+demonstrating their absurdity.
+On the other hand, its positive task is to solve the problems pertaining to the
+correlation of knowledge, its sense, and its object by inquiring into the essence
+of knOWledge. Among these problems is the problem of explicating the
+essence and sense of knowable objectivity, or what amounts to the same thing,
+
+LECTURE I
+
+19
+
+objectivity i n general: the sense, that i s , which is prescribed a priori (essen­
+tially) to objectivity by virtue of the correlation between knowledge and its
+object. And this, of course, pertains to all of the basic forms of objectivity as
+they are predelineated by the essence of knowledge. (The ontological forms,
+as well as the apophantic and metaphysical.)
+It is precisely through the successful execution of these tasks that episte­
+mology qualifies as a critique of knowledge, or, more exactly, as a critique of
+positive knowledge within all the positive sciences. It thus puts us in the
+position of being able to give an accurate and definitive interpretation of the
+results of the positive sciences with respect to what exists. For the epistemo­
+logical confusion in which we are placed by natural (pre-epistemological)
+reflection on the possibility of knowledge (on the possibility of knowledge
+making contact with its object) i s predicated not only upon false views about
+the essence of knowledge, but also upon self-contradictory, and therefore
+fundamentally misleading, interpretations of being as it is known in the
+positive sciences. Thus one and the same natural science is interpreted in
+materialistic, spiritualistic, dualistic, psycho monistic, positivistic, and many
+other ways, depending upon what interpretation is thought to be the necessary
+conclusion of such reflections. Q!!!L�PE!�mological reflection yields the
+disti!,lction bet'l:veen [23] positive science and�philosophy:Oiily-thrOugh such­
+reflection-does it become clear thai- the positlve iiC1eUCes ArenoTtlie-tiTtfrriate
+.
+sciences of belng-: What i s required is a science of w - . . stsin-the absoliitt;
+s�se.
+. f
+--- '1'Ii1S sCience: which we c
+ow e ge m the particular sc1ences� It is bas
+the InSight
+ac Ulr
+e Into the- essence of Imowiedge
+ra cn 1 ue 0
+and known objectivity accordin to its various basic types, that is, accor III
+to the various aSlC correlations between knowledge and own objectivity.
+IT we then disregard the metaphysical purposes of the critique of �ge
+and attend solely to its task of clarifying the essence ofknowledge and known
+objectivity, then it is a phenomenology of knowledge and known objectivity,
+which forms the first and fundamental part of phenomenology in general.
+Phenomenology: this teon designates a science, a complex of scientific disciplines; but it also designates at the same time and above all a method and
+an attitude of thought: the specifically philosophical attitude of thought, the
+specifically philosophical method.
+In contemporary philosophy, insofar as it claims to be a serious science, it
+has almost become a commonplace that there can be but one method for
+acquiring knowledge in all the sciences, including philosophy. This conviction
+is in complete accordance with the great traditions of the philosophy of the
+17th century, which also held that the salvation of philosophy depends upon
+its taking the exact sciences - especially mathematics and mathematical
+_
+
+,
+
+THE
+
+20
+
+natural science
+
+IDEA
+
+OF PHENOMENOLOGY
+
+as the methodological modeL This posited methodological
+
+parity between philosophy and the other sciences goes hand in hand with
+positing a parity in their subject matter as welL Even today one must still
+reckon with the prevailing opinion that philosophy, more specifically, the
+overarching theory of being and science, can not only be related to all the
+other sciences, but can also be grounded on their findings [24] in the same
+way that the sciences are grounded upon each other, the conclusions of one
+serving as the premi ses for others. Here I remind the reader of the favorite
+ploy of grounding epistemology on a psychology of knowledge or on biology.
+In our day, reactions against these fatal prejudices are frequent. And preju­
+dices they are indeed.
+In the sphere of positive research, one science can readily build upon
+another and one can serve the other as a methodological model, although only
+to a certain extent determined and limited by the nature of the areas of
+research in question. Philosophy, however, lies in a wholly new dimension. It
+requires a wholly new point of departure and
+
+a
+
+wholly new method, a method
+
+that distinguishes it in principle from every "positive" science. This is why the
+logical procedures that lend a unity to the positive sciences, in spite of the
+specialized methods that differ from science to science, have an essentially
+unitary character in contrast to the methodological procedures of philosophy,
+which constitute, in principle, a new unity. This is also why the pure philoso­
+phy within the whole critique of knowledge and the "critical" disciplines in
+general must disregard and refrain from making any use of the entire intellec­
+tual achievement of the positive sciences as well as natural wisdom and lore
+(which are not organized as a science).
+By way of anticipation, this doctrine, which will be given a more detailed
+and exact grounding in subsequent remarks, is suggested by the follo\Ving
+consideration.
+In the skeptical mood necessarily created by critical epistemological
+reflection (here I mean the initial reflection that occurs within the natural
+mode of thought and thus precedes any scientific critique of knowledge),
+every positive science and every positive scientific method ceases to count as
+an available possession. For here the ability of knowledge to make contact
+with an object has become enigmatic and even dubious in its very sense and
+possibility - and here exact knowledge is no less enigmatic than non-exact
+knowledge, scientific no [25] less than prescientific. What becomes question­
+able is the possibility of knowledge, more precisely, the possibility of
+knowledge making contact with an objectivity that is, after all, what it is in
+itself. At bottom, what knowledge accomplishes, the sense of its claim to
+validity or justification, th e sense of the distinction between valid knowledge
+and knowledge that merely makes a pretense to validity, is in question; as is,
+
+LECTURE
+
+I
+
+21
+
+o n the other side, the sense of objectivity, which i s and i s what it i s whether
+it is known or not, and yet as an objectivity is an objectivity of a possible
+knowledge, in principle knowable even if it has as a matter of fact never been
+known or will be knovm, in principle perceivable, imaginable, and detenni n­
+able by predicates in a possible judgment, etc.
+It is impossible to see, however, how operating with assumptions drawn
+from positive knowledge, no matter how "exactly grounded" they are in it, can
+assist us in resolving the doubts generated by the critique of knowledge, or
+solve its problems. IT the very sense and value of positive knowledge as such,
+with all its methodological arrangements, with all its exact groundings, has
+become problematic, then this effects every principle drawn from the sphere
+of positive knowledge that might be taken as a point of departure as well as
+every ostensibly exact method of grounding. The most rigorous forms o f
+mathematics and mathematical natural science here have not the slightest
+advantage over any actual or alleged knowledge belonging to common
+experience. Thus it is clear that there can be no talk of philosophy (which
+begins with the critique oCknowledge and remains entirely rooted in such a
+critique) orienting itself to the exact sciences methodologically (or even with
+respect to its subject matter!), or taking the method of the exact sciences as a
+model, or that it is the task of philosophy to extend and perfect the work
+accomplished in the exact sciences according to a method that is essentially
+the same for all the sciences. In comparison to all positive "�Sl�e_�,
+philosophy, I repeat, lies in a newaliiiension; ano to tliisnewaimension there
+Correspondsit fundamentallY new"inethOd whlch(26J:isl0 lie:i;QntrasteJWUh
+the-"iiatu�al" method - even ifJ-its ouLm�taphor already suggests, it bas itS
+essential connections to the Old dimension. Anyone-who-d;UiesthlS"has�falled
+t;; -lliidersiand -tbe- peculiar levefa-Twhich the problems of the critique of
+knowledge must be posed, and thus has failed to understand what philosophy
+actually wants to accomplish and should accomplish - and what gives
+philosophy, as opposed to all positive knowle-dge and science, its proper
+character and authority.
+
+LECTURE ll
+
+[29] At the outset of the critique of knowledge, then, the entire world
+
+physical and psychological nature, and ultimately one 's own human ego,
+
+together with all the sciences that deal with such objectivities - must be
+assigned the index of dubitability. Its being, its validity, remains undecided.
+Now the question is: how can the
+
+critique of knowledge establish itself? As
+
+the scientific self-understanding of knowledge, it seeks to determine scientifi­
+
+cally, and thus objectively, what the essence of knowledge is and what it
+means to say that i t i s related to an objectivity, and that it i s objectively valid
+
+or correct in those cases where it is to count as genuine knowledge. Although
+the
+
+epoche
+
+which the critique of knowledge must exercise - begins by
+
+placing all knowledge in question, it cannot continue to do so in the case of its
+own knowledge; and although it initially deprives all givenness of its validity,
+
+it cannot continue to do so in the case of the givenness it has itself established.
+
+If it cannot presuppose anything as pregiven, then it must begin with some
+
+knowledge that it does not take unexamined from other sources, but rather
+provides for itself and posits as primary.
+
+This primary knowledge may not contain anything that bespeaks of the
+
+unclarity and dubitability that otherwise lends to knowledge the character of
+being enigmatic and problematic so that we are finally put in the embarrassing
+
+position of having to say that all knowledge as such is a problem, something
+
+that is incomprehensible, in need of clarification and doubtful in all its claims.
+
+In terms of the correlate of knowledge, we may put it this way: if we are
+allowed to take no being as pregiven because the lack of epistemological
+
+clarity entails that we do not understand what it could mean for a being to be
+
+known in itself and yet
+
+be
+
+known in knowledge,
+
+then it must be possible to
+
+point out some being that we must without doubt
+
+[30] acknowledge as
+
+absolutely given insofar as it is given with complete c larity, on the basis of
+
+which every question about it must and will find its immediate answer.
+
+And now we recall the Cartesian doubt. Reflecting on the manifold
+
+deIUsioi1,l�htfaii into such a state of skeptical
+
+possibilities of error and
+
+doubt that I finally say: I am certain of nothing, for me everything is doubtful.
+
+But as soon as I say that, it becomes evident that not everything can be
+doubtful for me. For in making the j udgment that everything is doubtful it
+
+cannot be doubted that I am making this judgment. For this reason it would be
+absurd to persist in universal doubt. In every case of determinant doubt it is
+
+without doubt certain that I am so dOUbting. The same is true of every
+
+cogitatio.
+
+However I might perceive, imagine, judge, infer - whether these
+
+23
+
+24
+
+THE IDEA OF PHENOMENOLOGY
+
+acts are attended by certainty or uncertainty, whether they actually have
+objects or not - it remains absolutely clear and certain that with respect to
+perception I am perceiving this or that, that with respect to judgment, I am
+jUdging this or that, etc.
+Descartes made use of this consideration for other purposes; but with the
+appropriate modifications we can use it here as well.
+If we make an inquiry into the essence of knowledge, no matter what the
+status of our doubt concerning its ability to make genuine contact with
+objectivity may be, or the status of that ability itself, it is still the case that
+knowledge is the title for a highly ramified sphere of being that can be given
+to us absolutely, and must be absolutely given to us in its details at any
+particular time. So, those forms of thought that I actually realize in thinking
+are given to me insofar as I reflect on them, accept them and posit them in a
+pure act of seeing. In a vague way I can talk about knowledge, perception,
+imagination, experience, judgment, inference, and the like. When I reflect,
+then, of course, only the phenomenon of such vague "talking about and
+referring to knowledge, experience, judgment, etc." is given. But it is
+nonetheless given absolutely. Even the phenomenon of vagueness takes its
+place under the title of knowledge in the broadest sense. But I can also
+actually carry out at) act of perception and tum my regard to it. Furthermore,
+I can represent a perception to myself in imagination or in memory and tum
+my regard to its givenness within imagination. Then it is for me no longer [31]
+a matter of empty talk or vague opinion, a mere idea of perception. Rather,
+perception stands right before my eyes, as it were, as something given, either
+actually or by way of imagination. The same holds for every intellectual
+experience, for every form of thinking and knowing.
+Here I have treated the reflective seeing within perception and imagination
+as equivalent. If we were following the Cartesian meditation, perception
+would have been emphasized first; to some degree it corresponds to the so­
+called inner perception of traditional epistemology, though this is, admittedly,
+an ambiguous concept.
+
+Every intellectual experience, indeed every experience whatsoever. can be
+made into an object ofpure seeing and apprehension while it is occurring.
+And in this act of seeing it is an absolute givenness. It is given as an existing
+
+entity, as a "this-here." It would make no sense at all to doubt its being. To be
+sure, I can wonder what sort of being this is, and how this mode of being is
+related to other modes. Furthermore, I can wonder what givenness means here,
+and can, upon a further act of reflection, see this act of seeing itself, the act in
+which this givenness, or this mode of being, constitutes itself. But here I am
+all the while moving on absolute ground: the perception, as long as it lasts, is
+and remains an absolute entity, a "this-here," that is what it is in itself,
+
+LECTURE I I
+
+25
+
+something that I can refer to as a final criterion in determining what being and
+being-given might mean, and here must mean, at least for the manner of being
+and givenness exemplified by the "this-here." And this holds for all specific
+forms of thought, no matter how they are given. They can also be given in
+imagination; they can stand "as it were" before our eyes, and yet not be there
+as presently existing actualities, as actually occurring perceptions, judgment,
+etc. But even then they are in a certain sense given. They stand before us as
+objects of intuition. We speak of them not in vague and sketchy terms, or by
+way of empty opinion. Rather, we see them, and, as we are seeing them, we
+can examine their essence, their constitution, their immanent character and
+confonn our talk by a pure measure to what is seen in the fullness of its
+clarity. All this, however, must be [32] supplemented by a discussion of the
+concept of essence and the knowledge of essence.
+For the moment, we maintain that a sphere of absolute givenness can be
+indicated at the very outset. And it is precisely this sphere that we need if it i s
+t o b e possible for u s t o envision a theory o f knowledge. Indeed, our lack of
+clarity with regard to the sense or essence of knowledge requires a science of
+knowledge, a science that dedicates itself solely to getting clear on the essence
+of knowledge. It will not explain knowledge as a psychological fact; it will not
+investigate the natural conditions under which acts of knowledge come and
+go, or the natural laws by which they originate and change. To investigate
+such things is the task that a positive science sets for itself, the natural science
+of mental facts, of the experiences of the individual minds that undergo them.
+Rather, the critique of knowledge seeks to clarify, to bring to light, the essence
+of knowledge and the legitimacy of its claim to validity, a claim that belongs
+to its essence. And what else can this mean than to bring the essence of
+knowledge to direct self-givenness?
+Recapitulation and Amp..!JJi£a]i2n . In its constant progress from one success
+to anotnerIfifue varlOilSsciences, positive knowledge is entirely confident in
+its ability to make contact with objectivity and has no occasion to worry about
+the possibility of knowledge and the sense of known objectivity. But as soon
+as reflection is directed upon the correlation between knowledge and obj ectiv­
+ity (and eventually upon the ideal meaning-content on the one side, and known
+objectivity on the other) difficulties, untenable positions, and conflicting but
+seemingly well-grounded theories abound. This forces us to admit that the
+possibility of knowledge, with regard to its ability to make contact w ith
+objectivity, is a riddle.
+A new science, the critique of knowledge, is called for here. Its task is to
+resolve these conf�slo�s and cl:rrify f()r-us-the essence of knowledge. The
+possibility of metaphysics, as a science of being in the absolute and final
+sense, depends upon the success of this science. But how [33] can such a
+
+THE IDEA OF PHENOMENOLOGY
+
+26
+
+science of knowledge establish itself? For a science cannot use as a pregiven
+foundation what it places in question. But all knowledge is put in question
+here, since the critique of knowledge takes as its problem the possibility of
+knowledge as such and its ability to make contact with objectivity. Once it
+begins, no knowledge can count for it as simply given. Thus it may not take
+over anything from the sphere of pre-scientific knowledge. All knowledge
+bears the index of dubitability.
+With no knowledge given at the beginning, however, it is impossible to
+make progress in knowledge. Thus the critique of knowledge cannot begin.
+There can be no such science at all.
+At this point I suggested that this is true in that no knowledge can, at the
+beginning, count as pregiven without examination. However, even if the
+critique of knowledge cannot take over any knowledge at the outset, it can
+nonetheless begin by giving itself knowledge - not knowledge it grounds upon
+or logically derives from immediate knowledge that must already be given.
+Rather, what is required is knowledge that the critique of knowledge can
+immediately point out and which is of such a sort that it precludes every doubt
+concerning its possibility and
+
+- ��gg_ ab§g}llt�1y_ cle'!f�.d.jgQ.�aEl�-
+
+contains nothing enigmatic that might provide the occasion for all the
+skeptical confusions. I then referred to Cartesian doubt and to the sphere of
+absolute givenness, that is, to the circle of absolute knowledge, which is
+comprehended under the title of the evidence of the cogitatio. It now remains
+to be shown in more detail that the immanence of this knowledge means that
+it can serve as an appropriate point of departure for the critique of knowledge;
+furthermore, that because of such immanence, this form of knowledge is free
+of that enigmatic character which is the source of all skeptical predicaments;
+and, finally, that immanence is the necessary mark of all knowledge that
+
+comprises the critique of knowledge, and that any borrowing from the sphere
+of the transcendent, any attempt to ground epistemology on psychology, or
+any positive science, is nonsense not only at the start but at any point along the
+way.
+By way of amplification, I add the following: there is an apparently sound
+argument [34] to the effect that epistemology cannot get underway because it
+places knowledge as such in question and so must place any knowledge with
+which it begins in question as well. If all knowledge is a riddle to epistemol­
+ogy, then so is the first piece of knowledge with which it commences. I
+maintain that this apparently sound argument is but a deception. The deception
+arises from the vague generality of the language. What is "placed in question"
+is knowledge in general. But that is not to deny that there is any knowledge at
+all - for that would lead to an absurdity. Rather, it is to say that knowledge
+contains within itself a certain problem, namely, how it is possible for it to
+
+LECTURE 11
+
+27
+
+achieve what we usually take it to achieve: contact with objectivity. I may
+even doubt that such an achievement is possible. But doubt as I may, a first
+step can be taken when the doubt is canceled by the fact that I can point to
+certain kinds of knowledge that render such doubt pointless. Although i t is
+true, moreover, that if I begin by not understanding knowledge at all, then this
+lack of understanding embraces all knowledge in its indeterminate generality,
+this does not mean that every instance of knowledge that I come upon in the
+future must forever remain incomprehensible. It may be that a great riddle
+accompanies that class of knowledge which initially crowds to the fore, and
+that I am compelled to say, with some embarrassment, that knowledge as such
+is a riddle. But then it may soon afterwards become apparent that this riddle
+does not inhabit certain other kinds of knowledge. As a matter of fact, this is
+the case, as we shall soon see.
+I said that the knowledge with which the critique of knowledge must begin
+may not contain anything that can be questioned or doubted, anything that
+throws us into epistemological confusion and thus gives rise to the critique of
+knowledge in the first place. We must show that this holds for the sphere of
+the cogitatio. But this will require a deeper going reflection, one that will
+afford us essential advantages.
+If we take a closer look at what is so enigmatic about knowledge, and what
+causes our predicament in our fIrst reflections on the possibility of knowledge,
+we fInd that it is its transcendence. All positive knowledge, prescientifIc and
+even more so scientifIc, is knowledge that takes its objects as transcendent;
+
+[35] it posits objects as existing, and claims to make cognitive contact with
+
+states of affairs that are not "in the genuine sense given" in it, not "immanent"
+to it.
+Upon closer examination, this � turns out to be ambiguous. It
+can refer to the fact that the known object is not really [reell] contained in the
+act of knowing. In this case, "given in the genuine sense" or "immanently
+given" would be understood in terms of real [reelle] containment: the ac t of
+knowing, the cogitatio, has real [reelle] moments that really [reell] constitute
+it; but the thing to which it refers and which it ostensibly perceives, remem­
+bers, and the like, is to be found in the cogitatio itself as an experience not
+really [reell] as a part, as something that actually exists inside it. Thus the
+question is: how can experience, so to speak, go beyond itself? Here "imma­
+
+nent " means "really [reell] immanent to the experience of knowing. "
+But there is another sense of transcendence, whose counterpart is an
+entirely different kind of immanence, namely, absolute and clear givenness,
+self-give/mess in the absolute sense. This givenness, which excludes any
+meaningful doubt, consists of an immediate act of seeing and apprehending
+the meant objectivity itself as it is. It constitutes the precise concept of
+
+THE IDEA OF PHENOMENOLOGY
+
+28
+
+evidence, understood as immediate evidence. All knowledge that is not
+evident, that refers to or posits what is objective, but
+
+does not see itfor itself,
+
+is transcendent in this second sense. In such knowledge we go beyond what
+is given in the genuine sense, beyond what can be directly seen and appre­
+hended. Here the question is: how can knowledge posit something as existing
+that is not directly and genuinely given in it?
+Before critical epistemology enters into deeper levels of reflection, these
+two senses of immanence and transcendence are initially interwoven with each
+other in a confused fashion. Clearly those who bring up the first question of
+the possibility of real transcendence in fact also bring the second question into
+play, the question concerning the possibility of transcendence beyond the
+sphere of evident givenness. But they are implicitly supposing that the only
+actually comprehensible, unquestionable, absolutely evident givenness is that
+of a
+
+moment really [reell] contained in
+
+the act of knowing.
+
+[36]
+
+Thus they
+
+regard everything about the known objectivity that is not really
+
+[reel!]
+
+contained in it as enigmatic, problematic. But we shall soon see that this i s a
+fatal mistake.
+Now one may understand transcendence in one or the other sense, or one
+may initially take it in its ambiguous sense, but transcendence remains both
+the initial and the guiding problem for the critique of knowledge. It is the
+riddle that stands in the way of positive knowledge and the impulse behind
+these new investigations. One could at the outset characterize the task of
+critique of knowledge as one of providing a solution to the problem of
+transcendence, thereby giving this new discipline its preliminary delimitation,
+instead of giving a more general characterization of its theme as the problem
+of the essence of knowledge as such.
+At any rate, if the riddle connected with the i nitial establishment of this
+discipline lies here, then we can determine more exactly what cannot be
+claimed as pregiven. Nothing transcendent may be utilized as pregiven.
+not understand
+
+how
+
+If I do
+
+it is possible for know ledge to make contact with
+
+something transcendent to it:, then
+
+I also do not know whether it is possible.
+
+The scientific validation of the transcendent existence of something is of no
+assistance to me anymore. For all mediate validation is ultimately based upon
+i mmediate validation, and the riddle is already contained in what is immediate.
+Yet someone might say: "That mediate as well as immediate knowledge
+contain the riddle is certain. But it is only the how that is puzzling, whereas the
+
+that is absolutely certain. No
+
+sensible person will doubt the exi stence of the
+
+world; besides, the skeptic betrays himself by his practice." Very well, then
+we will answer this person with a stronger and more far-reaching argument.
+For this argument will not only show that one may have no recourse to the
+content of the positive sciences, which take their obj ects to be transcendent,
+
+LECTURE
+
+II
+
+29
+
+at the beginning of epistemology, but that one may have no such recourse
+throughout its entire development. Thus it proves the fundamental thesis that
+epistemology can never be built upon a positive science of any kind. Hence we
+
+ask: what will our opponent propose to do with his transcendent knowledge?
+We put at his disposal the entire stock of transcendent truths belonging to the
+objective [37] sciences, and we leave their truth value unaltered by the
+emergence of the riddle concerning the possibility of transcendent science.
+Now what wilt he propose to do with his all-embracing knowledge? How does
+he think he will get from the ''that'' to the "how"? The fact that he knows that
+transcendent knowledge is actual guarantees for him as logically obvious the
+fact that transcendent knowledge is possible. But the riddle is how it is
+possible. Can he solve this riddle by assuming afl theScIeiiCes�Oroypresup::­
+poslng'iiil or any transcendent knowledge? Let us consider: what more does
+he really need? He takes the possibility of transcendent knowledge for
+granted, even as analytically obvious, since, as he says to himself, in my case
+there is knowledge of the transcendent. What he lacks is wholly apparent.1
+What is unclear to him is the relation to transcendence; what is unclear is the
+"contactwith a traU:-Sce�de�t'� 'that-i� ��ribedtokllowledge,to-lffiOWini­
+wh�owwoufdhe achieve CiariiY oll.tlsll polntHYtily inlii�-essenC'e- of
+this relation is somewhere given to him, so that he could see it, so that the
+unity of knowing and the known object, which is suggested by the phrase
+"making contact with objectivity" [Triftigkeit], would itself stand right before
+his eyes. Then he would not only have knowledge about its possibility, rather
+this possibility would be clearly given to him. But for him this possibility is
+itself something transcendent, a known possibility, but not a possibility that
+is given and seen. Apparently his thought is this: knowing is something other
+than the known object; knowing is given, but the known object is not given;
+and yet knowing is supposed to relate to the object, to know it. How can I
+understand this possibility? Naturally the answer is: I could only understand
+it if the relation itself could be given, as something that can be seen. But if the
+obj ect is and remains something transcendent, and if knowing and the obj ect
+are actually separate, then surely he can see nothing here, and his hopes for
+finding a way to somehow achieve clarity by drawing conclusions from
+transcendent presuppositions are obviously foolish. [38]
+As a consequence of this line of thought, he would also have to give up his
+starting point: he would have to acknowledge that, in this situation, knowledge
+of the transcendent is impossible, and that his alleged knowledge of the
+transcendent is a mere prejudice. Then the problem is no longer how transcen­
+dent knowledge is possible, but rather how to explain the prejudice that
+
+1
+
+See Addendum III.
+
+30
+
+T H E IDEA OF PHENOMENOLOGY
+
+ascribes a transcendent accomplishment to knowledge. This is the way Hume
+took.
+Disregarding that approach, we will illustrate the fundamental notion that
+the problem of "how" (how transcendent knowledge is possible, or, more
+generally, how knowledge as such is possible) can never be solved on the
+basis of pregiven knowledge concerning what is transcendent, or from
+pregiven principles of such knowledge, taken from anywhere, even from the
+exact sciences, by adding the following consideration: a person born deaf
+knows that there are tones, that harmonies are based on tones, and that a
+splendid art is derived from them. But such a person cannot understand how
+tones do such a thing, or how tonal works of art are possible. Such a person
+couldn't even imagine them, that is, couldn't see them and in seeing them
+apprehend how they are possible. Knowledge of existence would be of no help
+here; and it would be absurd to propose to deduce the "how" of music, to
+clarify its possibilities, by way of inference from such knowledge. It will not
+do to draw conclusions from the existence of things one merely knows but
+does not see. Seeing cannot be demonstrated or deduced. It is a manifest piece
+of nonsense to try to clarify possibilities (and immediate possibilities at that)
+through a logical derivation from non-intuitive knowledge. I may be wholly
+certain that there are transcendent worlds; I may grant full validity to the
+content of all the positive sciences. But I cannot borrow anything from them.
+I should never imagine that I can get to where I want to go in the critique of
+knowledge by way of transcendent suppositions and scientific inferences
+namely, to be able to envision the possibility of the transcendent objectivity
+of knowledge. And that holds not only for the beginning of the critique of
+knowledge, but for its entire development. so long as it sticks to the problem
+of clarifying � kn�wle�ljLJ!Q!sible. And that holds not just for the
+.
+problem of transcendent objectivity, but fOi=tl1e clarification of any possibility.
+If we combine with this the extraordinarily strong tendency to j udge in a
+transcendent sense wherever a transcendently directed act of thought occurs
+and a judgment is to be based upon such an act, thus falling into a J.1€'Capcwt�
+Ei� &.U.o yevo� then we can give a sufficient and complete deduction of the
+following §l!.!!.!l!.'flC!!:g.giEal principle: in every epistemological investigation,
+into whatever type of � the epistemological reduction must be
+performed, that is, all transcendence that comes into play here must be
+excluded, must be supplied with the index of indifference, of epistemological
+nullity, with an index that says: the existence of all transcendent entities,
+whether I believe in them or not, does not concern me here; this is not the
+place to pass judgment on the issue, to do so is entirely beside the point.
+All of the basic errors in epistemology are connected to the above men­
+tioned IlE'tapaO\� on the one hand, the error of psychologism, and on the
+
+LECTURE II
+
+31
+
+other, the error of anthropologism and biologism. This llecti�a<Hs is
+exceedingly dangerous, partly because the proper sense of the problem is
+never made clear and remains totally lost in it, and partly because even those
+who have gotten clear on the problem find it very difficult to hang onto this
+clarity and, in subsequent thought, easily slip back into the temptations of the
+natural modes of thinking and j udging as well as those false and misleading
+formulations of the problem which grow on their basis.
+
+LECTURE III
+
+[43] By the foregoing considerations we have determined precisely and
+reliably what the critique of knowledge may and may not use. While its riddle
+is the possibility of transcendence, it may never under any conditions draw the
+actuality of what is transcendent into its account. The sphere of usable
+objectivities, of usable knowledge, which present themselves as valid and
+remain free of the marks of epistemological vacuity, however, does not reduce
+itself to zero. For we have secured the entire sphere of cogitationes. The being
+of the
+
+cogitatio
+
+-
+
+more precisely, the phenomenon of knowledge itself - is
+
+beyond question and free of the riddle of transcendence. Such existences are
+already presupposed in the initial statement of the problem of knowledge. The
+question of how the transcendent enters into knowledge would surely forfeit
+its sense if not only the transcendent but also knowledge itself were given up.
+It is also clear that cogitationes present a sphere of absolutely immanent
+givenness, whatever else we might mean by "immanence. In the seeing of the
+"
+
+pure phenomenon the object is not external to knowledge, or to "conscious­
+ness"; rather, it is given in the sense of the absolute self-givenness of what is
+simply seen.
+But this point needs to be secured by the
+
+epistemological reduction, the
+in concreto for
+
+methodological essence of which we now propose to examine
+
+the first time. We need this reduction in order not to confuse the evidence of
+the being of the
+
+cogitatio with the evidence for existence of my cogitatio, the
+sum cogitans and the like. We must guard ourselves against
+this fundamental confusion between the pure phenomenon in the phenomenol­
+ogical sense and the psychological phenomenon, the object of psychology as
+
+evidence of the
+
+a positive science. If I, as one thinking in the natural mode. consider the
+perception I am presently undergoing, [44] I apperceive it immediately and
+almost unavoidably (as a matter of fact) in relation to my ego. It stands there
+as an experience of this experiencing person, as this person's state, as its act;
+the sensory content stands there
+
+as
+
+content that is given, sensed, and recog­
+
+nized by this person, and integrates itself within the perception of objective
+time. Perception, or any
+
+cogitatio, thus apperceived is a psychological fact.
+
+Thus it is apperceived
+
+a datum in objective time, belonging to the experi­
+
+as
+
+encing ego, the ego that is in the world and endures for a time (a time
+
+that is
+
+measured by empirically calibrated instruments). Thus it is a phenomenon in
+keeping with the sense of the positive science we call psychology.
+The phenomenon in this sense falls under the law to which we must subject
+ourselves in the critique of knowledge, the law of the
+
+33
+
+epoch!? in relation to
+
+34
+
+THE IDEA OF PHENOMENOLOGY
+
+everything transcendent. The ego as a person, as a thing belonging to the
+world, and experience as the experience of this person
+even if entirely
+indeterminant - exist in the order of objective time: they are all transcendent
+and, as such, epistemologically null. Only through a reduction, which we shall
+call the phenomenological reduction, do I acquire an absolute givenness that
+no longer offers anything transcendent. If I place the ego and the world and
+the experience of the ego as such in question, then reflection upon what is
+given in the apperception of the relevant experience, upon my ego
+a
+reflection that simply "sees" - yields the phenomenon of this apperception: the
+phenomenon, roughly, of "perception apprehended as my perception." Of
+course, I can also refer this phenomenon to my ego in the mode of natural
+reflection, and posit this ego in the empirical sense by saying: I have this
+phenomenon, it is mine. If I then wanted to acquire the pure phenomenon, I
+would again have to place the ego as well as time and the world in question,
+thereby bringing out a pure phenomenon, the pure cogitatio. But while I am
+perceiving I can also regard this perception itself in an act of pure seeing, just
+as it is, ignoring its relation to the ego, or abstracting from that relation. The
+perception thus grasped and delimited in "seeing" is then an absolute
+perception, devoid of every transcendence, given as a pure phenomenon in the
+phenomenological sense. [45]
+
+I -Thus to every psychological experience there corresponds, by way of the
+phenomenological reduction, C!1Z.IJ[f!,phenomenon r.1:1flLcxb.ibiU iUjmmanent
+ess��!.JtaJs.e�n_! �di�!���!!Yl ��!!!.:: absotiilitgivenn�ss. All positing of a "non­
+
+_
+immanent reality;" a reality not conTaTned in the phenomenon and therefore
+not given in the second sense, even if it is intended in the phenomenon, is shut
+of� that is, suspended,J
+If it is now possible to take such pure phenomena as objects for research,
+it is evident that we are no longer doing psychology, a positive science that
+takes its objects to be transcendent. We are not making an investigation of
+psychological phenomena, of certain occurrences in so-called real reality
+(whose existence remains in question throughout), nor do we speak of them.
+Rather, we are investigating what exists and remains valid whether anything
+like objcctive reality exists or not, whether the positing of such transcendence
+is justified or not. We speak then of just those things that are absolutely given;
+if they happen also to refer intentionally to objective reality, then that referring
+is a characteristic that resides in them, while nothing is thereby assumed
+concerning the existence or non-existence of reality. And thus we drop anchor
+on the shore of phenomenology, whose objects are posited as existing, as any
+science posits the existence of the objects it investigates, but not as existing
+in an ego, in a temporal world, but rather as entities absolutely given and
+grasped in pure immanent seeing: what is purely immanent here is first of all
+
+LECTURE III
+
+35
+
+to be characterized through the phenomenological reduction; I mean precisely
+what is immanent, not what it refers to beyond itself, but rather what it is in
+itself and what it is given as. This discussion is, of course, only a roundabout
+way of helping us to see what is to be seen here, namely, the distinction
+between the quasi-givenness of transcendent objects and the absolute
+givenness of the phenomenon itself.
+Additional steps, additional considerations, are necessary, however, i f we
+are to gain a fIrm footing on this new land and not, in the end, run aground on
+its shore. For this shore [46] has its share of rocks, and it is covered by clouds
+of obscurity that threaten us with the gales of skepticism. What we have said
+up to this point pertains to all phenomena. But, of course, for the purposes of
+the critique of reason, only cognitive phenomena are of interest to us. Yet
+what we will now establish here can be applied to all phenomena, as it holds,
+mutatis mutandis, for all of them.
+The way in which we have envisioned the critique of knowledge has led us
+to a beginning, to the mainland of givenness, of which we may avail ourselves
+and, above all, of which we appear to stand in need: to fathom the essence of
+knowledge I must naturally possess knowledge in all its questionable forms
+as given, but in such a way that this givenness has in itself nothing of the
+problematical character that the other forms of knowledge bring with them,
+however much they might appear to offer a givenness of their own.
+Now that we have secured for ourselves the field of pure knowledge, we
+can conduct a study of this knowledge, and establish a science of pure
+phenomena, a ph�I)tJU��. Is it not obvious that this sciefiCeiiiUstbe the
+basis'fbr UiesOf�tion to the problems that have been agitating us? For surely
+I can get clear on the essence of knowledge when I see it for myself, and when
+it is itself given to me, just as it is, in "seeing." I must study knowledge
+inunanently, through a pure seeing, within the pure phenomenon, within "pure
+consciousness": its transcendence is, of course, dubitable; the existence of the
+objectivity, to which it refers, is not given to me insofar as it is transcendent.
+What is in question, then, is how this objectivity can nonetheless be posited,
+and what sense it has, and may have, if such positing should be possible. On
+the other hand, the relation to something transcendent, whether I question the
+existence of the transcendent object or the ability of the relation to make
+contact with it, still contains something that can be apprehended within the
+pure phenomenon. The relating-itself-to-something-transcendent, to refer to
+it in one way or another, is an inner characteristic of the phenomenon. It
+would almost seem that it all depends on having a science of absolute
+cogitationes. Since I have to strike out the pregivenness of anything transcen­
+dent to which I might refer, where else could I examine not only the sense of
+this referring that reaches out beyond itself but also its possible validity, or the
+
+36
+
+THE IDEA O F PHENOMENOLOGY
+
+sense of such validity, except where this sense is absolutely given [47] and
+where the sense of validity comes to givenness within the pure phenomenon
+of relation, confirmation, and justification?
+But here again we are stalked by the doubt that something more has to come
+into play, that the givenness of validity also brings with it the givenness of the
+object, which, for its part, cannot be the givenness of the cogitatio insofar as
+it is a matter of valid transcendence. However that may be, a science of
+absolute phenomena, understood as cogitationes, is the first thing that is
+required, and it will have to yield at least the main part of the solution.
+What we intend to establish, then, is a phenomenology, a phenomenology
+of knowledge as the theory of the essence of pure phenomena of knowing.
+And the prospects are good. But how is phenomenology to proceed? How is
+it possible? I am to make judgments, indeed, judgments that are objectively
+valid, I am to gain scientific knowledge of pure phenomena. But doesn 't all
+
+science lead to establishing an objectivity existing in itself, thus to what is
+transcendent? What is scientifically established is "in itself': it counts as
+existing whether I know it and posit it as existing or not. Is it not the essence
+of science to have as its correlate only the objectivity that is known by science,
+that is scientifically grounded? And is it not the case that what is scientifically
+grounded is universally valid? What is the situation here? We move in the
+field of pure phenomena. But why do I say "field "
+
+-
+
+is it not rather an eternal
+
+Heraclitean stream of phenomena? What statements can I make about it?
+While I
+
+am
+
+seeing it, I can say: this here! - it exists, indubitably. Perhaps I can
+
+even say that this phenomenon includes that phenomenon as a part, or that it
+is connected with that one, or that this phenomenon flows into the other one,
+etc.
+But obviously there is nothing by way of "objective " validity about these
+statements. They have no "objective sense "; they have only a "subjective "
+
+truth. At this point we will not conduct an investigation in order to find out
+whether these statements, insofar as they claim to be "subjectively" true, also
+have their objectivity. But it is clear even in a fleeting glance that the higher
+dignity of objectivity, which the natural judgments of prescientific experience
+
+[48] enact, so to speak, and which the valid judgments of the exact sciences
+bring to an incomparably higher level of perfection, is entirely lacking here.
+Thus w e will not attribute any particular value to such judgments as 'This is
+here," and the like, which we make on the basis of pure seeing.
+Such judgments remind us of the famous Kantian distinction between
+
+judgments ofperception and judgments of experience. The affinity is obvious.
+But, lacking the concept of phenomenology and the phenomenological
+reduction, and unable to loose himself entirely from the grip of psychologism
+and anthropologism, Kant did not arrive at the ultimate intent of the distinction
+
+37
+
+LECTURE III
+
+that must be made here. For us it is not a matter of merely subjectively valid
+judgments, the validity of which is limited to the empirical subject, and
+objectively valid j udgments in the sense of being valid for every subject in
+general. For we have excluded the empirical subject; and transcendental
+apperception, consciousness as such, will soon acquire for us a wholly
+different sense, one that is not mysterious at all.
+We now return to the main theme under consideration. Phenomenological
+judgments, as singular j udgments, are not terribly instructive. But how do we
+acquire judgments, especially scientifically valid judgments? The word
+
+" scientific, " however, immediately places us in a preilicament. Doesn't
+transcendence, we might ask, come along with o�ectivity, and with transcen­
+dence the doubt about what it means and whether and how it i s possible?
+Through the epistemological reduction we exclude all transcendent presuppo­
+sitions, because the possible validity and sense o f transcendence i s in question.
+But then are the scientific conclusions, the transcendent conclusions of
+epistemology themselves still valid? Is it not obvious that before the possibil­
+ity of transcendence is demonstrated no transcendent conclusion of epistemol­
+ogy is secure? But if the epistemological epoche requires - as it appears to do
+- that we ascribe no validity to transcendence before we have demonstrated
+its possibility, and i f the demonstration of the possibility of transcendence
+itself, in the foml of an objective demonstration, requires transcendent
+assumptions, then it appears [49J that we are faced with a circle that makes
+both phenomenology and epistemology impossible - and our labor of love
+will, up to th i s point, have been in vain.
+But we will not immediately despair of the possibility of phenomenology
+and the critique of knowledge that is quite obviously bound up with it. What
+we need here is a further step that will roll out this spurious circle for us. But
+we have already taken this step in principle by distingu ishing the two senses
+of transcendence and immanence. Descartes asked, as you will recall, after he
+had established the evidence of the cogitatio (or rather, in a phrase we have
+not adopted, the "cogito ergo sum"): What is it that assures me ofthis basic
+
+givenness ? The answer: clear and distinct perception [clara et distincta
+perceptio] . We can latch onto this point. l need not mention the fact that we
+have already grasped the matter in a purer and deeper way than Descartes did,
+and that we have thus grasped and understood evidence, clear and distinct
+perception, in a purer sense. With Descartes we can now take the additional
+step (mutatis mutandis): whatever is given through clear and distinct percep­
+tion, as it is in any singular cogitatio, we
+
+are
+
+entitled to accept. But if we recall
+
+the third and fourth meditations - the proof of God' s existence, the recourse
+to divine veracity [veracitas dell, etc.
+be very skeptical, or rather, critical.
+
+we should expect a bad outcome. So,
+
+38
+
+THE IDEA OF PHENOMENOLOGY
+
+We have acknowledged the givenness of the pure cogitatio as absolute, but
+
+not the givenness of the external thing in outer perception, even if this
+
+givenness claims to present the being of the thing itself. The transcendence of
+the thing requires that we put the thing in question. We do not see how
+
+perception makes contact with what is transcendent; but we do understand
+
+how it makes contact with what is immanent, if it is a reflective and purely
+
+immanent perception which has undergone the reduction. But why do we
+
+understand this? Because we directly see and grasp precisely what we intend
+in the seeing and the grasping. To have an appearance before one's eye, which
+
+refers to something that is not itself given in the phenomenon, and to doubt
+whether it exists or how its existence is to be understood
+
+that makes sense.
+
+But to see and to intend nothing other than what is grasped in the seeing, and
+yet still
+
+[50] question and doubt - that makes no sense at all. In essence this
+
+is to say: seeing, grasping what is self-given, insofar as it is an actual seeing
+
+that presents an actual self-givenness and not a givenness that refers to
+something not given
+
+that is something ultimate. This i s
+
+evidence [absolute Selbstverstiindlichkeit].
+
+absolute self
+
+What is not self-evident, what is
+
+problematic, perhaps even mysterious, is to be found in acts of referring to
+
+what i s transcendent, that is, in referring to, believing in, or even thoroughly
+
+proving something that is not given. It is of no help to us that there is an
+
+absolute givenness to be found here, i.e., the givenness of the referring, the
+
+believing themselves. We need only reflect to discover it. But what is given
+
+here is not what is meant.
+
+But is absolute self-evidence, self-givenness in the act of seeing, present
+
+only in the singUlar experience and its singular moments and parts; can it be
+only a matter of positing a
+
+"this-here "
+
+in the act of seeing? Could not there
+
+also be a positing of other forms of givenness as the absolute givenness of, for
+instance, universals, where a universal would come to self-evident givenness
+
+in an act of seeing and any doubt concerning it would be absurd?
+
+How remarkable it would be to restrict absolute givenness to the phenome­
+
+nologically singular givenness of the
+
+cogitatio follows from the fact that the
+
+entire meditation on evidence, which we have, following Descartes, carried
+
+out, and which was surely illuminated throughout by clarity and self-evidence,
+would lose its validity. In the case of a singular
+
+cogitatio that
+
+lies before us,
+
+say a feeling that we are experiencing, we could perhaps say: i t i s given. But
+we could by no means dare to state the most universal proposition:
+
+the
+givenness of any reduced phenomenon is an absolute and indubitable
+givenness.
+But this is just to help you along the way. In any case, it i s illuminating to
+
+note that the possibility of a critique of knowledge depends on the indication
+
+of forms of absolute givenness other than the reduced
+
+cogitationes.
+
+Upon
+
+39
+
+LECTURE 1II
+
+closer consideration, it turns out that we already go beyond these
+
+cogitationes
+
+when we predicate something of them in j udgment. We do so when we say:
+this or that phenomenon of representation lies at the basis of this phenomenon
+of j udging; this
+
+[5 1 ] phenomenon of perceiving contains these or those
+
+moments - color contents and the like. Even if we grant, for the sake of the
+argument, that we are making these assertions in the most exact conformity to
+the givenness of the
+
+cogitatio,
+
+the logical forms, which are reflected in the
+
+linguistic expression, take us beyond the mere cogitationes. There is here a
+surplus, which does not consist of a mere agglomeration of more cogitationes.
+And even if, with such predicative thinking, new
+
+cogitationes
+
+cogitationes
+
+join those
+
+about which we are making statements, the former do not
+
+constitute the predicative state of affairs, the object of the statement.
+For those who can place themselves in the position of pure seeing and c an
+stay clear of all natural prejudices, it is easier to conceive of knowledge that
+can not only bring particulars, but also universals, universal objects, and
+universal states of affairs to absolute givenness. This knowledge is of decisive
+significance for the possibility of phenomenology. For it is the peculiar
+
+character of phenomenology to analyze and conduct research into essences
+within the framework of a reflection that involves only pure seeing, a
+framework of absolute self-givenness. And that is necessarily its character; for
+it aims to be a science and a method that clarifies possibilities, possibilities of
+knowledge, possibilities of evaluation, and clarifies them on the basis of their
+fundamental essence. Such possibilities are generally dubitable, and so
+research into them will be a general research into essence. Analysis of essence
+is
+
+eo ipso
+
+general analysis, knowledge of essence based on knowledge
+
+a priori has a
+a priori knowledge mean, if not knowledge
+
+directed to essences, to universal objectivities. Here talk of the
+legitimate place. For what does
+
+that is directed to general essences and that draws its validity solely from the
+domain of essence? (And here we exclude the concepts of the
+
+a priori
+
+as
+
+distorted by the empiricists.)
+
+In any case, this is one justified concept of the
+
+a priori;
+
+another concept
+
+arises when we range under the title a priori all those concepts that have, in
+a certain sense, their principle meaning as categories, and then, in an extended
+sense, all those laws of essence that are grounded in them.
+If we concentrate on the first concept of the
+will deal with the
+
+a priori
+
+[52]
+
+a priori, then phenomenology
+
+in the sphere of origins, the sphere of absolute
+
+givenness, with species that can be grasped in a general seeing, and with the
+
+a priori states of affairs that constitute themselves on the basis of these species
+in a way that can be immediately seen. If we direct ourselves to the critique
+of reason, not only theoretical reason, but also practical reason, and any other
+form of reason as well, the chief goal is of course the
+
+a priori in the second
+
+40
+
+THE IDEA OF PHENOMENOLOGY
+
+sense, that is, to establish the principle of self-given forms and states of
+affairs, and, by means of these, to develop, analyze, and evaluate those
+
+concepts and laws of logic, of ethics, of value theory, that have a claim to the
+status of principles.
+
+LECfURE IV
+
+[55] If we restrict ourselves to just the phenomenology of knowledge, then we
+will be concerned with the essence
+
+of knowledge that can be exhibited in direct
+
+intuition. That is, we will be concerned with the exhibition and analytical
+partitioning of the various sorts of phenomena that are embraced by the broad
+title "knowledge" within the framework of the phenomenological reduction
+and self-givenness. Then the question is: what is essentially contained and
+grounded in such phenomena; from what factors are they constructed; what
+possibilities of combination do they found when they are taken essentially and
+as purely immanent; and what general relations flow from them?
+
+[reell] imma­
+immanent in the intentional sense. It belongs to the
+essence of cognitive experiences to have an intentio: they refer to something;
+And here we will not only be concerned with what is really
+
+nent, but also with what is
+
+they relate themselves in one way or another to an objectivity. This "relating
+itself to an objectivity" belongs to them even if the objectivity does not. What
+is objective can appear, can achieve a certain givenness within appearance,
+even though it neither really exists in the phenomenon of knowing nor as a
+
+cogitatio.
+
+To explain the essence of knowledge, and to bring the essential
+
+connections that belong to it to self-givenness, is to inquire into both of these
+sides, to investigate this relation that belongs to the essence of knowledge.
+Here lie the riddles, the mysteries, the problems concerning the final sense of
+the objectivity of knowledge, including its validity or invalidity when it is a
+matter of j udgment, its adequation when it is a matter of evidence, etc.
+In any case, such research into essence is obviously research into univer­
+sals. The singular phenomenon of knowledge, coming and going in the stream
+of consciousness, is not the object of phenomenological detennination.
+Phenomenology is directed to the "sources of knowing,"
+
+[56] to the general
+
+origins which can be seen, to absolutely given universals that provide the
+general criteria in terms of which
+
+the sense and
+
+also the correctness of all our
+
+highly intricate thought is to be ascertained, and by which all the riddles
+concerning .its objectivity are to be solved.
+But can
+
+universality, can general essences, and the general states of affairs
+
+that belong to them, actually achieve the same kind of self-givenness that a
+
+cogitatio
+
+does?
+
+Does not the universal
+
+as
+
+such transcend knowledge ?
+
+Knowledge of universals, of course, is given as an absolute phenomenon ; but
+we will search in vain for the universal that is supposed to be identical in the
+strongest sense across like immanent contents of innumerable possible acts of
+knowing.
+
+41
+
+42
+
+THE lDEA OF PHENOMENOLOGY
+
+Our answer is, of course, the answer we have already given: the universal
+
+has this form of transcendence. Each real
+
+[reelle] part of the phenomenon of
+
+knowing, of this phenomenological partiCUlarity, is itself a particularity. Thus
+
+the universal, which is not a particularity, cannot be really
+
+[reell] contained in
+this kind of
+
+the consciousness of universality. But one could take exception to
+
+transcendence only on the basis of a prejudice that stems from an inappropri­
+
+ate view of knowledge that is not drawn from the sources themselves. One
+
+must get especially clear on the fact that the absolute phenomenon, the
+
+reduced
+
+cogitatio, does not count as an absolute givenness because it is a
+
+particular, but rather because it displays itself in pure seeing after the
+phenomenological reduction as something that is
+
+absolutely self-given. But in
+
+pure seeing we can discover that universality is no less such an absolute
+givenness.
+
+Is this actually so?
+
+'Let us consider cases where the universal is given, that
+
+is, cases where a purely immanent consciousness of universality constitutes
+
+itself on the basis of a seen and self-given particularity. I have a particular
+
+intuition of red , or several particular intuitions of red; I attend to pure
+
+immanence alone; I perform the phenomenological reduction. I separate off
+
+anything that red might signify that might lead one to apperceive it as
+
+transcendent, as, say, the red of a piece of blotting paper [57] on my desk, and
+
+the like. And now I actualize in pure seeing the sense of the thought red, red
+
+in specie, the identical universal that is seen in this or that; now the particular­
+ity as such is no longer meant, but rather red in general . If we in fact do this
+in a pure act of seeing, would it still make sense to doubt what re9 in general
+
+is, what is meant by "red," what it is according to its essence? We see it ­
+
+there it is; there is what we mean, this species red. Could a div'ftie being, an
+infinite intellect, do anything more to grasp the essence of red than to see it as
+a universal?
+
+And if two species of red are given to us, two nuances of red, can we not
+
+judge that they are similar to each other - not these particular, individual red
+
+phenomena, but rather the species, the nuances as such? Isn't the relation of
+similarity a universal that is absolutely given?
+
+Thus this givenness is a purely immanent givenness, not immanent in the
+
+false sense, namely, existing in the sphere of individual consciousness. Here
+we are not speaking of the acts of abstraction that occur in the psychological
+
+subject, and the psychological conditions under which they are performed.
+
+Rather, we are speaking of the universal essence red, or the sense red, and its
+givenness in the act o f seeing a universal.
+
+Thus it is senseless to question and to doubt what the essence of red is, or
+
+what the sense of red is, provided that, while one is seeing red and grasping
+
+it in terms of its specific kind, one means by the word "red" exactly what is
+
+LECTURE IV
+
+43
+
+grasped and seen. Likewise it makes no sense, with respect t o the essence of
+
+knowledge and fundamental stmcture of knowledge, to doubt what its sense
+
+is while one has the relevant exemplary phenomena and the relevant species
+
+given right before one ' s eyes in a reflection that involves only acts o f pure
+seeing and ideating within the sphere of the phenomenological reduction. Now
+
+of course knowledge is not as simple a matter as red. One must distinguish the
+manifold forms and kinds of knowledge. Moreover, one must investigate the
+
+ways in which these forms and kinds are related to each other. For to under­
+stand knowledge is to clarify generally the
+
+knowledge,
+
+[58]
+
+teleological interconnections
+
+of
+
+which amount to certain essential relations of various
+
+essential types of intellectual forms. And this would include the ultimate
+
+clarification of the principles, which, as the i deal conditions of the possibility
+
+of scientific objectivity, serve as norms governing all of the procedures of
+empirical science. The entire investigation carried out for the sake of clarify­
+ing these principles moves within the sphere of essence, which, in turn,
+
+constitutes itself on the underlying basis of singular phenomena within the
+
+phenomenological reduction.
+
+At every step the analysis is an analysis of essence and an investigation of
+
+universal states of affairs that are constituted within immediate intuition. The
+
+entire investigation is thus an a priori investigation - but not, of course, in the
+sense of mathematical deduction. What distinguishes it from the "objectify­
+
+a priori sciences is its method and its goal. PhellomenoJg� carries out
+its cll}!:Jf}5..fl!jQ!:���!_9:�t�?£!;.:i,!:¥,:..���:!!,::I!I,!�lk.���'alsti�;gUi�hi�g s�:��. It
+
+ing"
+
+.
+
+compares, It dIstmgUlshes, It connects, It places m" reiatIGnr-1t�'Q des mto
+,
+parts, it separates off moments. But it does all this in the act of pure seeing. It
+does not engage in theory or mathematical constmction; that is, it offers no
+
+explanations in the sense of deductive theories. Because it seeks to clarify
+
+basic concepts and basic propositions, which, as principles, govern the
+
+possibility of the obj ectifying sciences - and also makes its own basic
+
+concepts and principles into objects of reflective clarification - it ends where
+obj ectifying science begins. Thus it is a science in an entirely different sense,
+
+The
+procedure of seeing and ideating within the strictest phenomenological
+reduction is its exclusive domain; it is the specifically philosophical method
+insofar as this method belongs essentially to the sellSe of the critique of
+knowledge alld thus to any critique of reason in general (thus to the critique
+with entirely different tasks to fulfill and entirely different methods.
+
+of evaluative and practical reason as well). Whatever genuinely belongs to
+
+philosophy in addition to the critique of reason must be referenced to this
+
+critique. This would include the metaphysics of nature and the metaphysics of
+
+[59] the entire life of culture and hi story [Geistesleben], thus metaphysics in
+
+the widest sense.
+
+44
+
+THE I D E A O F PHENOMENOLOGY
+
+In such cases of seeing, one speaks of evidence, and in fact those who are
+acquainted with the precise concept of evidence, and have a firm grip on its
+essence, have just these kinds of occurrences in mind. The fundamental point
+is that one does not overlook the fact that evidence is this consciousness, a
+seeing consciousness that directly and adequately apprehends itself, that
+evidence signifies nothing other than adequate self-givenness. Epistemologists
+of the empiricist persuasion, who speak so much of the value of investigating
+origins, and yet remain just as far removed from the true origins as the most
+extreme rationalist, would have us believe that the entire distinction between
+evident and non-evident judgments consists in a certain feeling by which the
+former make themselves known. But how can feeling contribute to the
+intelligibility of anything here? What can it accomplish? Is it, perchance, to
+call out to us: "Stop ! Here is the truth !"? And why should we believe this
+feeling? Must this belief also be supplied with an index of feeling? And why
+does the judgment with the sense "2 times 2 is 5" never have this index of
+feeling, and why can't it have it? How does one actually come to this theory
+of feeling-indices? Well, one says to oneself: "Logically speaking, the same
+judgment, say the judgment
+
+"2 times 2 equals 4," can at one time be evident
+
+to me and at another not be evident to me, the same concept of 4 can at one
+time be given to me intuitively with evidence, and at another time be given by
+way of a mere symbolic representation. Thus in both cases it i s the same
+phenomenon with respect to content, but in the one case a distinguishing
+feeling lends it a preferred value, a character of value." But do I in fact have
+in each case the same phenomenon, the one accompanied by a feeling, the
+other one not? If one attends to the phenomenon, one will immediately notice
+that the same phenomenon is not presented in both cases, but rather two
+
+If I
+2 equals 4, and then say this i n vague symbolic judgments,
+
+essentially different phenomena that merely have something in common.
+see that 2 times
+
+then I am referring to an equality. But to refer to an equality is not to have the
+phenomenon of equality. Thus in the two cases the content is different in the
+one case I see, and in the act of seeing the state of affairs is itself given; but in
+the other case I have only the symbolic reference. In the one case I have
+intuition, in the other, an empty intention. [60]
+Does the difference then consist i n this, that in both cases there is a
+common feature, the same "sense," at one time with the index of feeling and
+the other time not? But one should look at the phenomenon itself, and not
+speak of it and construe it from on high. Let us take a simpler example: if I at
+one time have a vivid intuition of red, and at another time think of red in an
+empty symbolic intention, then is it the case that both times the same red­
+phenomenon is really [reell] present, the one time with feeling and the other
+time without feeling?
+
+LECTURE
+
+45
+
+IV
+
+One need only consider the phenomena to realize that they are entirely
+different, united only by what can be identified in both cases, what we call the
+"sense." But if the difference exists in the phenomena themselves, do we still
+need something like a feeling to distinguish them? And does not the distinc­
+tion consist in this, that in the one case the self-givenness of red lies before
+
+us,
+
+the self-givenness of numbers and numerical equality, or, subjectively
+expressed, that this matter itself is adequately grasped in an act of seeing, and
+in the other case the matter is merely referred to? For this reason we cannot
+accept the notion of evidence as feeling. It itself could only be justified if it
+were to prove itself in an act of pure seeing and' if this act of pure seeing meant
+precisely what we expect of it - which contradicts the notion of evidence
+
+as
+
+feeling.
+Applying the concept of evidence, we can also say: we have evidence of the
+being of the cogitatio, and because we have evidence, the cogitatio implies no
+riddle, and therefore implies no riddle of transcendence; it counts for us as
+something unquestionable, something we can make use of. To no lesser degree
+we have evidence of universals.
+
+Universal objectivities and states of affairs
+
+come to self-givenness for us, and they are in the same sense unquestionably
+given, in the strongest sense adequately self-given.
+Accordingly, the phenomenological reduction does not signify the limita­
+tion of the investigation to the sphere of real
+
+[reellen] immanence, to the
+[reellJ contained in the absolute "this" of the cogitatio,
+and it does not at all signify the limitation to the sphere of the cogitatio, but
+rather the limitation to the sphere of pure self-givenness, to the sphere of what
+is not merely talked about and [61] referred to; but also not to the sphere of
+sphere of what is really
+
+what is perceived, but rather to what is given in exactly the same sense in
+which it is meant - and self-given in the strictest sense - in such a way that
+nothing that is meant fails to be given. In a word, it is a limitation to the sphere
+of pure evidence, "evidence" here understood in a strict sense that excludes
+"mediate evidence" and, above all, evidence in the loose sense.
+Absolute givenness is an ultimate. Of course, one can easily say and
+maintain that something is absolutely given when in truth it is not. Again,
+absolute givenness can be talked about in a vague way, or it can be given i n
+absolute givenness. Just a s I can see the phenomenon red and merely, without
+seeing it, talk about it, so I can talk about the seeing of the red and see the
+seeing of the red, and thus apprehend the seeing of the red itself in an act of
+seeing. On the other hand, to deny self-givenness in general is to deny every
+ultimate norm, every basic criterion that lends sense to knowledge. But then
+one would have to take everything as illusion, and, in an absurd way, also take
+illusion as such to be an illusion, and thus get involved in the absurdity of
+skepticism. But clearly only those who countenance grounds, who assign
+
+46
+
+THE IDEA OF PHENOMENOLOGY
+
+some meaning to seeing and evidence, can argue in this way against the
+skeptic. The one who does not see, or does not want to see, the one who
+speaks and argues, but always remains in a position of accepting all contradic­
+tions and at the same time denying all contradictions - with such a person we
+cannot even get started. We cannot answer by saying, "obviously" it is so,
+because such a person would deny that anything can be "obvious"; it is as if
+a blind person would want to deny that there is such a thing as seeing - or
+better, as if a person who can see would want to deny that he himself sees and
+that there is anything like seeing. How could we convince such a person,
+under the assumption that he has no other mode of sense perception?
+If we hold onto the self-givenness which, as we have already established,
+is not the self-givenness of real
+particulars of the
+
+[reeller] particulars, say, the absolute
+cogitatio, then the question arises as to how far this self­
+
+givenness extends and to what extent, or in what sense, it is bound to the
+sphere of the
+
+cogitationes [62] and the generalizing universals drawn from the
+
+sphere. If one has thrown off the first and immediate prej udice that sees the
+absolutely given only in the singular
+
+cogitatio and the sphere of real [reellen]
+
+immanence, then one must also do away with the additional and no less
+immediate prejudice, according to which new self-given objectivities grow
+
+only in the general intuitions derived from this sphere.
+"Cogitationes are absolutely given to us in reflective perception in that we
+consciously experience them" - so one would like to begin; and then we
+could spy out the universals that are singled out within them and within their
+real
+
+[reellen] moments, apprehend the universals in intuitive abstraction, and
+
+constitute the essential connections that are based purely in these universals
+as self-given states of affairs in a thinking that sees and relates. And that
+would be all.
+No tendency, however, is more dangerous to the intuitive knowledge of
+origins, of those things absolutely given, than to think too much, and to draw
+out of such thoughtful reflection things that are ostensibly obvious - things
+that for the most part are not explicitly fonnulated and for that reason not
+subject to any critique based on an act of seeing; things that rather remain
+unexpressed, determining and inappropriately limiting the direction of
+research.
+
+Intuitive knowledge is thatfonn of reason that sets itself the task of
+bringing the discursive understanding to reason. The understanding must not
+
+be allowed to interrupt and smuggle its unredeemed banknotes among those
+that have already been cashed; yet its method of exchange and conversion,
+which is based upon mere treasury bonds, is not questioned here at alL
+Hence: as little understanding as possible, as much pure intuition as
+possible
+
+(intuitio sine comprehensione). Indeed, we are here reminded of the
+
+speech of the mystics when they describe the intellectual act of seeing that
+
+LECTURE
+
+IV
+
+47
+
+contains no discursive knowledge. The whole trick here is to let the seeing eyc
+have its say and to exclude all transcendent reference that is interwoven with
+seeing, those things that are ostensibly given or thought along with what is
+seen, and, finally, those things that i n subsequent reflection get imputed to
+what is given. The constant question is: is the intended object
+
+[63] also given
+
+in the genuine sense, seen and apprehended in the strictest sense, or does the
+intention go beyond it?
+Supposing this to be the case, we soon realize that it would be
+believe that intuitive research moves in the sphere of so-called
+
+afictiol1 to
+inner percep­
+
+tion and a purely immanent abstraction built upon it that ideates its phenom­
+ena and phenomenal moments. There
+
+are
+
+diverse modes of objectivity and,
+
+with them, diverse modes of so-called givenness, and perhaps the givenness
+of particular existing things in the sense of "inner perception" and the
+givenness of things in positive, objectifying science is only one kind of
+givenness, while the others, although characterized as presenting non-existent
+entities, are still types of givelmess if only because they can be set over against
+the other sorts and distinguished from them with respect to their forms of
+evidence.
+
+LECTURE V
+
+(67) If we have established the evidence of the cogitatio, and, in a further step,
+acknowledged the evident givenness of universals, then this step will
+immediately lead us to take additional steps.
+By perceiving color and exercising the reduction upon this perception, I
+acquire the pure phenomenon of color. And if I then perform a pure abstrac­
+tion, I acquire the essence of phenomenological color in general. But am I not
+also in full possession of this essence when I clearly imagine this color?
+
+(Memory,
+
+however, is not a simple matter. From the very start it offers
+
+different forms of objectivity and givenness, all interwoven with each other.
+Thus one could refer to the so-called primary
+
+memory, to the retention that is
+
+necessarily bound up with every perception. The experience that we are now
+undergoing becomes objective for us in immediate reflection, and in this
+experience the same object continues to present itself: the same tone, which
+has just existed as an actual now, remains the same tone from that point on,
+only now moving back into the past and thus constituting the same objective
+
+point in tim�J And if the tone does not cease but rather endures, and during its
+
+continuation presents itself as the same or as changing i n content, can we not
+
+grasp this fact - the fact that it endures or changes
+
+with evidence (within
+
+certain bounds)? And does not this mean, in tum, that seeing reaches beyond
+the pure now-point, that it is thus capable of intentionally holding on, in a new
+now, to what no longer exists now, and is therefore capable of becoming
+
+certain about a stretch of the past as a matter of evident givenness? Here again
+we must distinguish between, on the one hand, what is objective, what is and
+was, what endures and changes, and, on the other hand, the phenomenon of
+the present and the past, the phenomenon of duration and change, which is at
+times a now, and in whose profiles, which it contains, and in the constant
+
+{68]
+
+alteration it undergoes, brings temporal being to appearance, to presentation.
+The object is not a real
+
+{reelles] part of the phenomenon - in its temporality
+
+it has something that cannot be found in or resolved into the phenomenon even
+though it constitutes itself within the phenomenon. It presents itself in the
+phenomenon, and in the phenomenon it is given with evidence as "existing."
+A further point can be made in connection with the givenness of essence:
+it does not constitute itself just on the basis of perception, and the retention
+woven within perception, in such a way that it, so to speak, plucks out a
+universal from the phenomenon itself; rather, it constitutes itself by
+
+izing the appearing object, positing
+
+universal­
+
+a universal with regard to it: for instance,
+
+temporal content in general, duration in general, change in general. Further-
+
+49
+
+THE IDEA OF PHENOMENOLOGY
+
+50
+
+more, imagination and recollection can serve as its basis by providing
+possibilities that can be purely apprehended. In the same sense it can pick out
+universalities in these acts, universals that, for their part, are not really
+
+[reell]
+
+contained in these acts.
+Obviously a completely evident apprehension does
+
+refer back to a singular
+
+intuition, on the basis of which it must constitute itself, but not necessarily to
+a
+
+singular perception that presents the exemplary particular as something
+
+really [reell] given in the present. The essence of the phenomenological tone
+quality, tone intensity, the tone of colors, brightness, and the like, is itself
+given even if the ideating abstraction occurs on the basis of a perceptioll or on
+the basis of a
+
+representation in imagination. The actual positing of existence,
+irrelevant. The same holds
+
+or the modification of that positing, is in both cases
+
+for the apprehension of essence that relates to the species of mental data in the
+genuine sense, such as j udgment, affirmation, denial, perception, inference,
+and the like. And, of course, it also holds for general states of affairs that
+belong to such universals. The insight that of two different tones, one is lower
+and the other is higher, and that this relation is not reversible, constitutes itself
+in an act of seeing. The instances must stand before our eyes, but not in the
+same way that states of affairs do in perception. In a consideration of essence,
+perception and imaginative representation are entirely equivalent - the same
+essence can been seen in both,
+
+[69] can be abstracted in both, the positing of
+
+existence in each case being irrelevant. That the perceived tone together with
+its intensity, its quality, etc.,
+
+exists in a certain sense, while the tone in
+exist; that the one is really
+
+imagination, that is, the imagined tone, does not
+
+[reell] present with evidence, while the other is not; that, in the case of
+recollection, it is posited as having been rather than as existing now, and must
+now be re-presented
+
+all this belongs to a different consideration. For the
+
+consideration of essence, such matters do not come up, unless it directs itself
+to precisely these distinctions, which also have their givenness that can be
+presented and about which general insights can be established.
+It is, moreover, clear that even if the underlying instances are given in
+perceptions, it is precisely that which lends distinction to the givenness of
+perception
+
+namely, existence - that has no bearing on the matter. hnagina­
+
+tion, however, not only functions in the same way as perception in the
+consideration of essence, it also seems that
+
+singular things are given in it, even
+
+given with evidence.
+Let us consider
+
+mere imagination, without the positing that belongs to
+
+memory.
+An imagined color is not a givenness in the sense of color sensation. We
+now distinguish between the imagined color and an experience of imagining
+this color. The hovering of the color before me
+
+to put it roughly
+
+is a
+
+LECTURE V
+"now," a presently existing
+
+51
+
+cogitatio, but the color itself i s not a presently
+
+existing color, it is not being sensed. On the other hand, it is in a certain way
+given: it stands before my gaze. Like the colors of sensation, it ean also be
+reduced through the exclusion of all transcendent significance. Thus it
+signifies to me not the color of the paper, the color of the house, and the like.
+All empirical positings of existence can be suspended. Then l can take it j ust
+as I "see" it, as I "experience" it. Nevertheless, i t i s not a real
+
+[reeller) part of
+
+the experience of imagination. It i s not a presented color, but a re-presented
+color. In both cases it stands, as it were, before the gaze, but not
+
+as
+
+a real
+
+[reelle) presence. Nevertheless, it is seen, and as seen it is in a certain sense
+given. Here I do not posit it as a physical or a mental existence; neither do I
+posit it in the sense of a genuine cogitatio; for a cogitatio is a real "now," a
+givel1ness, which is characterized with evidence as givenness in the "now."
+
+[70] That an imagined color is not given in one or another sense does not
+mean that it is given in no sense. It appears and appears itself; it presents
+itself; in an act of seeing it in its re-presentation I can make j udgments about
+it and about the moments that constitute it and their interconnections. Of
+course these moments too are given in the same sense and not "actually"
+existing anywhere ill the experience of imagination; they are not really
+
+[reell]
+
+present, only "represented." The pure judgment of imagination, that merely
+gives expression to the
+
+content, the singUlar essence of what appears, can
+
+assert: this is of this kind, contains these moments, changes thus and so,
+without in the least passing judgment on existence as actual being in actual
+time, on the actual being of the now, of the past, or of the future. Thus w e
+could say that a j udgment i s made about t h e
+
+individual essence, but n o t
+
+existence. For precisely this reason, the general j udgment pertaining to
+essence
+
+which we usually designate simply as the j udgment of essence
+
+is
+
+independent of the distinction between perception and imagination. Perception
+posits
+
+existence; but it also has an essence, which, as a content posited as
+
+existing can be the same in re-presentation.
+But the contrast between
+
+existence and essence means nothing other than
+
+that here two modes of being manifest themselves in two modes of givenness
+which have to be distingui shed. In the mere imagining of a color, the existence
+that concerns the color as an actuality in time has no bearing on the matter; no
+j udgments are made about it, and nothing of it is given in the content of the
+imagining. But the color appears, it stands there, it is a "this," it can become
+the subject of a j udgment, even an evident judgment. Thus a mode of
+givenness manifests itself in the intuitions of imagination and such evident
+j udgments as
+
+are
+
+grounded in them. But of course we are restricting ourselves
+
+to the sphere of singular individuals, so we can't get much underway with
+these kinds of j udgments. Only when we construct general j udgments of
+
+52
+
+THE IDEA OF PHENOMENOLOGY
+
+essence do we attain the secure objectivity required by science. But nothing
+like that comes up here. So, we seem to have fallen into a pretty kettle of fish.
+We began with the evidence of the cogitatio. At first it appeared as though
+we were on firm ground [71] being, pure and simple. One had simply to
+grasp it and to see it. That one could make comparisons and distinctions with
+regard to such givenness, that one could bring out specific universalities and
+thus attain judgments of essence all that one could easily admit. But, upon
+closer examination, it now turns out that the pure being of the cogitatio does
+not present itself as so simple a matter; it turns out that diverse forms of
+objectivity "constitute" themselves i n the Cartesian sphere, and that "constitu­
+tion" me41ns that things given immanently are not, as it first appeared, i n
+consciousness a s things are in a box, but rather that they present themselves
+in something like "appearances," in appearances that are not themselves the
+objects, and do not really contain the objects, appearan(.'es that in a certain
+sense create objects for the ego in their changing and highly pe{;uliar structure
+- "create" insofar as it is appearances of precisely such a sort and structure
+that belong to what we have been calling "givenness."
+rThe original object of time constitutes itself in perception and the retention
+that belongs to it. Only in such a consciousness can time be given. Thus the
+universal constitutes itself in a consciollsness of universality that is built upon
+perception or imagination, and in imagination as wen as i n perception it
+constitutes itself by disregarding the positing of the existence of the intuitive
+content in the sense of singular essencclThus, to remind ourselves once again,
+we have the categorial acts, which are presupposed by evident assertions. The
+categorial forms that come to the fore here, that get expressed in such words
+as "is" and "is not," "the same" and "the other," "one" and "several," "and"
+and "or," in the form of predication and attribution, etc., indicate forms of
+thinking by means of which thought-fornlS that, if appropriately built up, come
+to consciousness on the basis of given objects synthetically connected i n
+elementary acts so as to present states o f affairs o f this o r that ontological
+form. It is also here that the "self-constitution" of spedfic objectivities takes
+place in acts of thought formed in certain ways. And consciousness, in which
+givenness and likewise the pure act of seeing things occur, is once again not
+something like a mere box in which [72] things given simply are; rather,
+seeing consciousness apart from mere attentiveness - is just acts of thought
+formed in certain ways, and things, which are not acts of thought, are
+nonetheless constituted in them, come to given ness in them - and, as a matter
+of principle, show themselves to be what they are only when they are thus
+constituted.
+But is this not a plain miracle? Where does this constituting of objectivity
+start, and where does it end? Are there any real limits to it? Doesn't a
+�
+
+LECTURE Y
+
+53
+
+givenness occur in every representation, i n every judgment? Isn ' t every
+objectivity, insofar as it is seen, imagined, or thought in such and such a way,
+a givenness, even an evident givenness? fu the perception of an external thing,
+say the house standing before us, it is precisel y the thing that is perceived.
+This house is a transcendence, and forfeits its existence after the phenomenol­
+ogical reduction. What is then actually given is the appearing of the house, this
+
+cogitatio,
+
+emerging in the stream of consciousness and eventually flowing
+
+away. In this house-phenomenon we find a red-phenomenon, an extension­
+phenomenon, etc. And these are given with evidence. But is it not also evident
+that a house appears in the house-phenomenon, thus giving us a reason to call
+it a house-perception? Furthennore, is it not just a house in general, but this
+house, determined in such and such a w ay and appearing with just these
+determinations? Can I not with evidence make a judgment by saying:
+according to the appearance, or according to the sense of this percept ion, the
+house is so and so, a brick building, with a slate roof, etc.?
+And when I call forth a fiction i n my imagination, so that, say, before me
+8t. George the knight is killing a dragon, is it not evident that the imagined
+phenomenon represents precisely St. George, even the one right before me;
+and that it represents this St. George as something transcendent? Can I not
+here make a judgment, not about the real
+
+[reellen] content of the appearance
+
+within imagination, but rather about the appearing object? To be sure, only a
+side of the object - and soon another side - falls within the framework of the
+actual re-presentation. But however that may be, it is still evident that this
+object
+
+the knight 81. George, etc.
+
+lies within the sense of the appearance,
+
+and manifests itself within the appearances as a "givenness."
+
+[73]
+
+And finally, let us consider so-caned symbolic thinking. Without any
+intuition, I think
+
+"2 times 2
+
+is 4." Can I doubt that I am thinking about this
+
+numerical proposition and that this thought does not concern, say, today' s
+weather? Here too I have evidence, and therefore something like givenness.
+And if we are prepared to go this far, then nothing prevents us from also
+recognizing the fact that in a certain way what is completely absurd can also
+be "given." A round rectangle does not appear to me in the imagination, as the
+dragon killer did, nor does it appear in perception
+
+as
+
+an arbitrary external
+
+thing. But an intentional object is nevertheless obviously there. I can describe
+the phenomenon, "thinking of a round rectangle," in terms of its real contents,
+but the round rectangle is not in there. Yet it is evident that it is thought in this
+thinking and that roundness and rectangularity are attributed to it when it is
+thought in this way or that the object of this thought i s round and rectangular
+at the same time.
+Now we should not maintain that what we have cited in this last series of
+considerations is given in the genuine sense of actual givenness. Otherwise it
+
+54
+
+THE IDEA OF PHENOMENOLOGY
+
+would tum out that anything perceived, imagined, pretended, or symbolically
+represented, every fiction and absurdity would be "given with evidence." We
+only want to point out the great difficulties that lie here. And yet, as a matter
+of principle, these difficulties cannot, prior to their clarification, prevent us
+from saying that evidence and give/mess are co-extensive. The chief question
+will be, of course, exactly what is actually given and what is not given when
+evidence occurs in its pure state? What is produced within the phenomenon
+by inauthentic thinking and then imputed to it without any grounds in
+givenness?
+Above all, answering this question is not a matter of establishing arbitrarily
+choosen appearances as given, but rather gaining insight into the essence of
+givenness and the self-constitution of the different modes of obj ectivity.
+Surely every thought-phenomenon has its objective reference, and such a
+phenomenon - and this is a primary insight into its essence has its real
+[reellen] content, moments that make it up in a real [reellen] sense as a belief;
+and, on the other hand, it also has its intentional object, an object that it
+intends as constituted in a certain way according to its essential kind. [74]
+If this situation is actually to be made evident, then this evidence itself must
+teach us all we need to know. In evidence, it must become clear what
+"intentional inexistence" really means and how it is related to the real [reellen]
+content of the thought-phenomenon itself. We must see in which connection
+it appears as actual and genuine evidence, and what is actually genuinely
+given in this connection. This will be a matter of exhibiting the different modes
+of genuine givenness, and, ill this regard, the constitution of the different
+modes of objectivity and their relation to each other: the givenness of the
+cogitatio, the givenness of the cogitatio re-lived in a fresh memory, the
+givenness of the unity of appearances persisting in the phenomenal stream, the
+givenness pf the change in such a unity, the givenness of the thing i n "outer"
+perception, the givenness of the different forms of imagination and recollec­
+tion, as well as the givenness of manifold perceptions and other kinds of
+representations that are synthetically unified in corresponding connections.
+And of course there is also logical give/mess, the givenness of universality, of
+predicates, of states of affairs, etc., and the givenness of absurdity, contradic­
+tion, of a noll-existent object, etc. In general, givenness whether it manifests
+itself in connection with something merely represented or truly existing, real
+or ideal, possible or impossible
+is a givenness in the phenomenon of
+knowing, in the phenomenon of thought in the widest sense of the word, and
+in each case this initially miraculous con'elation is to be investigated in tenns
+of its essence.
+The essence of givenness can only be studied with regard to all its basic
+fOnTIS in knowing. For only in knowing is it given, is it to be seen with
+
+LECTURE V
+
+55
+
+evidence. This evident act ofseeing is itself knowing in the
+
+most precise sense;
+
+and objectivity is not something that i s in knowing like something is in a sack,
+as if knowing were a completely empty form - one and the same empty sack
+into which one thing is put, [75] and then another. Rather, in givenness we
+see
+
+that the object constitutes itself in knowing,
+
+that one can distinguish as
+
+many basic forms of acts of knowing, groups, and interconnections of acts of
+knowing, as there are basic forms of objectivity. Moreover, the acts of
+knowing, more broadly apprehended as acts of thought in general, are not
+free-floating partiCUlarities, coming and going in the stream of consciousness.
+Rather, essentially related to each other, they display teleological
+
+illterconllectioll and
+
+fonus of
+
+corresponding connections of fulfillment, corroboration,
+
+confirmation, and their counterparts. And everything depends upon the
+interconnections that present intelligible unity. They themselves constitute
+objectivity; they connect in a logical way those acts of inauthentic givenness
+with acts of authentic givenness, acts of mere representation, or rather mere
+believing and acts of insight, and the manifolds of acts that
+
+are
+
+related to the
+
+same object, be they acts of intuitive or non-intuitive thinking.
+And it is only in these conncctions that the objectivity of the objective
+sciences, and above all the objectivity of real spatial-temporal actuality,
+constitutes itself
+All of this can
+
+not in one blow, but in a gradually ascending process.
+
+be studied, and studied in the sphere of pure evidence, in
+
+order to clarify the great problems of the essence of knowledge and of the
+
+correlation of knowledge and known objectivity. The original
+the relation between subjective psychological experience and the
+reality in itself apprehended in this experience, at first the real reality, and
+
+sense of the
+
+problem was
+
+later the mathematical and other forms of ideal reality. But first we need that
+insight that the
+
+object,
+
+radical problem is rather the relation between knowledge and
+reduced sense, according to which we are dealing not with
+
+but in the
+
+human knowledge but rather with knowledge in general, without any relation
+to existential co-positings,
+
+be they of the empirical ego or of a real world. We
+
+need the insight that the truly significant [76] problem is the problem of the
+
+ultimate sense-bestowal of knowledge,
+
+and thus of objectivity in general,
+
+which is what it is only in its correlation to possible knowledge. Furthermore,
+we need the insight that this problem can be solved only in the sphere of pure
+evidence, in the sphere of givellness, which provides the ultimate norms
+because it is absolute; and that accordingly, we must investigate one by one
+all the basic forms of knowledge and all the basics forms of objectivity that
+come to givenness in it either fully or partially, in order to determine the sense
+of all those correlations that can be explicated.
+
+ADDENDA
+
+ADDENDUM
+
+I
+
+In knowledge, nature is given, but so is humanity in its associations and
+cultural works. All that is known. But to the knowledge of culture belongs
+valuing and willing as parts of the act that constitutes the sense of objectivity.
+Knowledge refers to the object with a varying sense in varying experiences,
+in the varying affects and actions of the ego.
+In addition to the formal logical doctrine of sense, and the doctrine of true
+propositions as valid senses, we have in the natural attitude still other positive
+scientific investigations: we distinguish basic species (regions) from objects
+and consider, for instance, for the region of mere physical nature in its
+essential generality, what belongs ineliminably to it and to every object of
+nature in itself and in its relation to nature. We develop an ontology of nature.
+There we explicate the sense and that means the valid sense of a natural
+object as the object of the knowledge of nature, as an object meant in such
+knowledge: that without which a possible object of nature, that is, an object
+of possible external experience of nature, cannot be thought if it is to be
+capable of truly existing. Thus, we consider the sense of external experience
+[Eifahrung] (the object-meant), indeed the sense in its truth, its true or valid
+existence according to its essential constituents.
+Likewise we consider the true sense oj an artwork in general and the
+specific sense of a particular artwork. In the former case, we study the
+"essence" of a work of art in its pure generality; in the latter case, the actual
+content of the actually given artwork, what here comes to the same thing as
+the knowing of the determinant object (as truly existing, according to its true
+determinations), say a symphony of Beethoven's. Likewise we study generally
+the essence of the state in general, or empirically the essence of the German
+state in some epoch, according to its general features or in entirely individu al
+determinations, thus this individual objective being "the German state." The
+parallel here is something like the determination of the natural features of the
+individual object Earth. Thus, in addition to empirical research, we have
+empirical laws and individuals, ontological research, research of truly valid
+senses not only in formal generality, but also in the particularity of material
+regions.
+
+57
+
+THE lDEA OF PHENOMENOLOGY
+
+58
+
+To be sure, pure research into essences is never, or only in exceptional
+cases, cultivated in complete purity. Nonetheless, some groups of scientific
+investigations point in this direction; yet they remain on a natural basis. To
+these belong psychological research, directed upon cognitive expetiences and
+ego activities in general or in relation to the relevant object regions - upon the
+subjective manners in which such objects give themselves to us, in which the
+subject relates itself to them, how it comes to fonn such "representations" of
+them, which kinds of acts and experiences (e.g., evaluative and volitional)
+play a role in the formation of such representations.
+Further: a particularly sensitive problem is that of the possibility of arriving
+at the being of the object itself, first just with respect to nature. It is there on
+its own, one says to oneself, whether we are there knowing it or not; it
+proceeds along its course by itself. We recognize other humans beings through
+expression in their bodiliness, thus on the basis of physical objects, just as we
+recognize, on the one hand, artworks and other cultural obj ects, and, on the
+other hand, social groups. It seems, at first, that if we were only in a po sition
+to understand the possibility of the knowledge of nature, we would also be in
+a position to understand the possibility of all other forms of knowledge by
+means of psychology. And psychology does not appear to offer any special
+problems, since the one who is knowing directly experiences his own mental
+life and that of others by way of analogy to it in "empathy." Let us limit
+ourselves, as it was done in epistemology until recently, to the theory of the
+knowledge of nature.
+
+ADDENDA
+
+59
+
+ADDENDUM II
+An attempt at alteration and supplementation: assume that I would be just as
+I am, that I would have been just as I was, and that I would be in the future
+just as I will be; assume that in all this there is nothing lacking by way of my
+perceptions pertaining to the five senses or any other perceptions in general;
+nothing lacking by way of my apperceptive processes, none of my conceptual
+thoughts, none of my imaginations and thought experiences, or any of my
+experiences in general
+
+assume all of them in their concrete fullness, in their
+
+determinate arrangements and connections; what would prevent there from
+being simply nothing at all in addition to them? Could not an all-powerful God
+or a deceitful spirit have so created my mind and supplied it with mental
+content that nothing exists of all the objectivities that are meant within i t
+insofar a s they are extra-mental? Perhaps things do exist outside o f me, but not
+one of those that I take to be real. And perhaps there is nothing outside me at
+all.
+But I do assume that there are actual things, things outside of me - but on
+what basis? On the basis of external perception? With one look I apprehend
+my thing-filled surroundings, right up to the most distant world of fixed stars.
+But perhaps that is all a dream, a deception of the senses. This and that visual
+content, this and that apperception, this and that judgment, that is the given,
+the only given in the genuine sense. Does perception carry with it some
+
+evidence for this achievement of transcendence? But a piece of evidence, what
+is this other than a certain mental characteristic? Perception plus the charac­
+teristic of evidence, that is the given, and why something should now
+correspond to this complex is an enigma. Perhaps I then say: we
+
+infer
+
+transcendence, through inferences we go beyond the immediate given, it is
+generally an achievement of inferences that what is not given is grounded in
+what is given. But even if we set aside the question of how such grounding
+can be achieved, we will respond: analytical inferences would be of no help,
+for the transcendent is not implied in the immanent. But synthetic inferences,
+how can they be anything other than inferences of experience? What is
+experienced provides experiential grounds, that is: rational grounds of
+probability for what is not experienced, but then only for what is experience­
+able. But transcendence is in principle not experienceable.
+
+THE IDEA OF PHENOMENOLOGY
+
+60
+
+ADDENDUM ill
+Unclear is the
+
+relation of knowledge to what is transcendent. When would we
+
+get clarity and where would we get it? Now, if and where the essence of this
+relation would be given to us, so that we could
+
+see it, then we would under­
+
+stand the possibility of knowledge (for the relevant form of knowledge, where
+this insight was achieved). The requirement, of course, appears from the very
+outset to be unfulfillable for all transcendent knowledge, and thus transcendent
+knowledge appears to be
+The
+
+skeptic
+
+impossible.
+
+says: knowledge is something other than the known object.
+
+Knowledge is given, but the known object is not given - especially and as a
+matter of principle in the sphere of those objects that are called transcendent.
+And yet knowledge is supposed to relate itself to the object and know it - how
+is that possible?
+How an image corresponds to a thing - that we believe we understand. But
+that it is an image we would only know from cases given to us in which we
+have the thing just as we have the image so as to compare the one with the
+other.
+But how can knowledge go beyond itself to reach the object and yet be sure
+of this relation with complete indubitability? How can we understand that
+knowledge, without losing its immanence, can not only be correct but can also
+demonstrate this correctness? This being the question, this possibility of
+demonstration presupposes that I can see that the knowledge of the relevant
+kind accomplishes what is here required. And only when that is the case can
+we understand the possibility of knowledge. But is transcendence an essential
+characteristic of certain objects of knowledge - how does it go here?
+Thus the consideration presupposes precisely this: that transcendence is an
+essential characteristic of certain objects, and that known objects of that type
+can never be immanently given and can never exist immanently. The whole
+conception also presupposes that immanence itself is not in question. How
+immanence can be known is intelligible, how transcendence is known,
+unintelligible.
+
+[3] THE TRAIN OF THOUGHT IN THE LECTURES
+
+Natural thought in life and in science is untroubled by the difficulties
+concerning the possibility of knowledge, while philosophical thought is
+determined by the position taken with respect to the problems of the possibil­
+ity of knowledge.
+The perplexities in which the reflection on the possibility of a knowledge
+that makes contact with the things themselves becomes involved: how can
+knowledge be sure that it corresponds to things as they exist in themselves,
+that it "makes contact" with them? What do the things themselves care about
+our ways of thinking and the logical rules that govern them? They are laws of
+our thinking, psychological laws. - Biologi sm, psychological laws as laws o f
+adaptation.
+Absurdity: when one engages in natural reflection upon knowledge and
+subordinates it and its achievements to the natural system of thought found in
+the sciences, one at first gets involved in theories that, although initially
+attractive, invariably end up in contradiction or absurdity. - Tendency toward
+blatant skepticism.
+Even an attempt like this at staking out a scientific position on such
+problems can be called epistemology. But inevitably there emerges here the
+idea of epistemology as a science that would solve the difficulties just
+mentioned as it provided us with a definitive, clear, and therefore internally
+consistent insight into the essence of knowledge and the possibility o f
+achieving it.
+
+A critique o f knowledge i n this sense is the condition of the
+
+possibility of a metaphysics.
+The method of the critique of knowledge is the phenomenological method,
+phenomenology as the general doctrine of essence, within which the science
+.
+of the essence of knowledge finds its place.
+What sort of method is this? How can a science of knowledge establish
+itself if knowledge as such, its sense and its achievement, is put in question ?
+What method can then lead u s t o the goal? [4]
+
+A. THE FIRST STEP IN THE PHENOMENOWGICAL CONSIDERATION
+1 . At the very outset one might wonder whether such a science is at all
+possible. If this science calls all knowledge into question, how can it then
+begin, since every piece of knowledge that might be chosen as a point of
+departure is thereby also called into question?
+
+61
+
+62
+
+THE IDEA OF PHENOMENOLOGY
+
+The difficulty here, however, is only apparent. For knowledge is not denied,
+nor is it regarded as doubtful in
+
+every sense, when
+
+it is "called into question."
+
+The question is directed to certain achievements that have been attributed to
+knowledge, but it remains an open question whether the difficulties pertain to
+all possible types of knowledge. At any rate, if epistemology is to addres s the
+possibility of knowledge, then it must possess forms of knowledge concerning
+the possibility of knowledge that are themselves indubitable, that count as
+knowledge in the strictest sense - where there is absolutely no doubt about
+their own possibility or the fact that they have made contact with their object.
+
+If we become unclear or uncertain as to how it is possible for knowledge to
+reach its object, and if we are then inclined to doubt whethcr such a thing is
+possible, then we must first consider indubitable cases of knowledge or
+possible knowledge - ones where knowledge actually reaches, or would reach,
+its object. At the outset we may not simply assume that some example of
+knowledge is indeed knowledge, otherwise we would have no possible or what comes to the same thing - meaningful goal.
+Here the
+being of the
+
+Cartesian meditation on doubt provides us with a beginning: the
+cogitatio, of experience as it occurs and is simply being reflected
+
+upon, cannot
+the
+
+be doubted; the intuitive, direct apprehension and possession of
+
+cogitatio is itself a
+
+knowing, the
+
+cogitationes are the first
+
+absolute items
+
+of givenness.
+
+2. What follows quite naturally from this is the first epistemological
+
+reflection:
+
+what constitutes the unquestionability of these cases, and, in
+
+contrast to them, the questionability of other cases of alleged knowledge?
+Why is there in certain cases the tendency to skepticism and the skeptical
+question: how can contact with a being be made in knowledge?; and why, in
+the case of cogitationes, is this doubt and this difficulty absent?
+One answers - and this i s the obvious answer
+pair or word pair
+the
+
+cogitatio
+
+[5]
+
+in terms of the conceptual
+
+immanence and transcendence. The intuitive knowledge of
+
+is immanent, the knowledge that belongs to the objective
+
+sciences - the natural and the human sciences, and, upon closer consideration,
+the mathematical sciences as well
+
+is transcendent. With the oJ:ti ective
+
+sciences comes transcendence, which is always questionable. One can ask:
+how can knowledge reach out beyond itself, how can it make contact with a
+being that is not to bc found within the confines of consciousness? With the
+intuitive knowledge of the
+
+cogitatio,
+
+this difficulty falls away.
+
+3. At first one is inclined to interpret, as if it were entirely obvious,
+
+innnanence as real [reelle] immanence, indeed, as real
+
+[reale]
+
+immanence in
+
+the psychological sense: the object of knowledge also exists in the experience
+of knowing, or in the consciousness of the ego, to which the experience
+belongs, as a real actuality. One takes it to be a simple matter of course that
+
+63
+
+THE TRAIN 01' THOUGHT I N THE LECTURES
+
+the act o f knowing finds and makes contact with its obj ect in the same
+consciousness and in the same real
+
+[realen]
+
+now. The immanent is in
+
+me,
+
+the
+
+beginner will say at this point, and the transcendent is outside of me.
+Upon closer examination, however, one can distinguish between real
+[reelle] immanence and immanence in the sense of the self-givenness that
+constitutes itself in evidence. What is really [reell] immanent counts as
+indubitable precisely because it presents nothing else, it refers to nothing
+"beyond" itself, because here what is meant is also adequately self-given, full
+and complete. At fIrst any form of self-givenness other than the self-givenness
+of the really
+
+[reell]
+
+immanent is not yet in view.
+
+4. So at first no distinction is made. The first step toward clarity is now this:
+the really
+
+[reell] immanent or,
+
+what means the same here, the adequately self­
+
+given is beyond question. I may make use of it. That which is transcendent
+(not really [reell] immanent) I may not use. For that reason I must perform the
+phenomenological reduction; I must exclude all that is posited as transcen­
+dent.
+Why? If I am unclear about how know ledge can make contact with what is
+transcendent, not the self-given but rather what is referred to "beyond,"
+
+[6]
+
+then surely no forms of transcendent knowledge or science will assist me in
+achieving clarity, What I want i s
+
+clarity. I want to understand
+
+the possibility
+
+of this contact, that is, if we consider what we mean here: I want to bring
+within my purview the essence of the possibility of this contact, to bring it to
+givenness in an act of seeing. A "seeing" cannot be demonstrated. A blind
+person who would like to be able to see cannot acquire that ability through
+scientific demonstrations; physical and physiological theories of color yield
+no intuitive clarity about the sense of color comparable to the clarity possessed
+by those who can see. If the critique of knowledge is a science that seeks only
+to clarify all species and forms of knowledge
+without doubt - then
+
+as this consideration shows
+
+it can make no use of the positive sciences. It cannot
+
+tie
+
+into the results of the positive sciences, nor their conclusions about what
+exists, for all of these remain in question for it. All of the sciences are for it
+only
+
+science-phenomena. Every tie to science of this sort signifies a mistaken
+
+j.L€1:'upaot'3. This comes
+
+about only through a mistaken, but entirely natural,
+
+shifting of(he problem: between the explanation [Erklarung] of knowledge
+
+as
+
+a natural fact as offered by the natural science of psychology, and the
+clarification
+
+[Aujkllirung]
+
+of knowledge in terms of the essential possibilities
+
+of its achievement. Thus, if this shifting is to be avoided, and we are to remain
+focused upon the sense of the question concerning this possibility, the
+
+phenomellological reduction
+
+is required.
+
+This means: everything transcendent (everything not given immanently to
+me) is to be assigned the index of zero, that is, its existence, its validity is not
+
+THE IDEA OF PHENOMENOLOGY
+
+64
+
+to be assumed as such, except as at most the phenomenon of validity. I may
+have recourse to the sciences only as phenomena, and therefore not as systemq
+of valid truths , or as premises, or even as hypotheses that I could use as points
+of departure - for instance, the whole of psychology or the whole of the
+natural sciences. For the proper sense of the principle lies in the constant
+requirement of sticking with the things that are put in question here by the
+critique of knowledge and not to confuse the problems brought up here with
+entirely different problems. The clarification of the possibilities of knowledge
+does not follow the ways of obj ective science. [7] To bring knowledge to
+evident self-givenness, and to try to see therein the essence of its achievement,
+is not a matter of deducing, i nducing, calculating, and the like; and it is not a
+matter of deriving in a reasoned way new things from things already given, or
+fro m things that count as already given.
+
+B. THE SECOND STEP IN THE PHENOMENOLOGICAL CONSIDERATION
+At this point we need a new level of consideration in order to achieve a higher
+degree of clarity regarding the essence of phenomenological research and its
+problems.
+1. First the Cartesian
+
+cogitatio itself requires the phenomenological
+
+reduction. The psychological phenomenon in psychological apperception and
+obj ectification is not really an absolute givenness. rather, only the pure
+phenomenon, the reduced phenomenon. The experiencing ego, the object, the
+human being in world-time, the thing among things, etc., are not absolute
+givennesses, and therefore experience as this human being's experience is not
+an absolute givenness either. We abandon once and for all the basis of
+
+psychology
+
+even descriptive psychology. Thus the question that initially
+
+drove us is also reduced: not how can J, this person, in my experiences, make
+contact with a being in itself, something that exists out there, outside of me;
+in place of this question, which was ambiguous and, because of its transcen­
+dent freight, unstable and complex, we have now a pure basic question: how
+can the pure phenomenon of knowledge make contact with something that is
+not immanent to it, how can the absolute self-givenness of knowledge make
+contact with something that i s not self-given, and how is this contact to be
+understood?
+At the same time the concept of real {reellenl immanence is reduced. It no
+longer signifies real {reale1 i mmanence, immanence in the consciousness of
+a person and in a real [realen] mental phenomenon.
+
+2. It would seem that once we have the "seen" phenomena, we also have a
+phenomenology, a science of these phenomena.
+
+THE TRAIN OF THOUGHT IN THE LECTURES
+
+65
+
+But as soon as we begin there, we notice certain limitations. [8] The field
+of absolute phenomena
+
+taken in their particularity - does not appear to be
+
+sufficient to satisfy our intentions. What will these particular "seeings" do for
+us, even if they bring the cogitationes to self-givenness with complete
+certainty? At first it would appear entirely obvious that one can perform
+logical operations on the basis of these "seeings," that one can compare,
+distinguish, subsume under concepts, predicate. But later it will tum out, as we
+shall see, that new objectivities stand behind these operations. If we simply
+accept what seems obvious here, and consider it no further, then we will not
+see how generally valid claims are to be made, claims of the sort we need.
+But there is something that appears to help us along: ideating abstraction.
+It yields for us generalities, species, and essences that admit of insight - and
+
+thus it appears that the magic word has been spoken: we seek intuitive clarity
+about the essence of knowledge; knowledge belongs to the sphere cogitatio­
+
+nes; so we must simply raise, in an act of seeing, the general objectivities of
+this sphere to consciousness of generalities, and a doctrine of the essence of
+knowledge becomes possible.
+We take this step following Descartes's observation concerning clear and
+distinct perception. The "existence" of the cogitatio is guaranteed by its
+absolute self-givenness, by its givenness in pure evidence. It follows that
+wherever we have pure evidence, the pure and direct seeing and grasping of
+an objectivity itself, we have the same rights, the same certainties.
+This step provides us with a new objectivity that counts as absolute
+givenness, the objectivity of essences; and just as the logical acts that find
+expression in statements based upon what is seen remain at the beginning
+unnoticed, so it is at the same time with the field of statements regarding
+
+essences with respect to general states of affairs given in pure seeing, at first
+undifferentiated from particular cases of general givenness.
+
+3. Do we now have everything, do we have a fully delineated phenomenol­
+ogy and a clear self-understanding that puts us in possession of all that we
+need for a critique of knowledge? [9] And do we have clarity about the
+problems that are to be solved?
+No, the step that we took leads us further. To begin with, it makes clear to
+us that real [reelle] immanence (and, respectively, transcendence) is only a
+special case of the broader concept ofimmanence as such. It is now no longer
+obvious and unquestioned that what is absolutely given and what is really
+
+[reell] immanent are one and the same thing; for the general is absolutely
+given and yet not really [reel/] immanent. The knowledge of generalities is
+itself something singular; it is at any given time a moment in the stream of
+consciousness. The general itself, which is given in evidence within the
+
+66
+
+THE IDEA OF PHENOMENOLOGY
+
+stream of consciousness, is, on the other hand, not something singular, but
+rather something general, and thus, in the real
+
+[reellen]
+
+sense, transcendent.
+
+As a result, the concept of the phenomenological reduction acquires a more
+precise and deeper determination, and a clearer sense: it is not the exclusion
+of the really [reell] transcendent (say, in the psychological-empirical sense),
+rather it is the exclusion of the transcendent as such, as an existence to be
+assumed, that is, everything that is not absolute givenness in the genuine sense
+- the absolute givenness of pure seeing. But of course everything else we said
+remains the same: validities, actualities, etc., that have been scientifically
+induced or deduced, or derived from hypotheses, facts, or axioms, remain
+excluded and are permitted only as "phenomena"; and, of course, the same
+holds for all recourse to any "knowing"
+must restrict itself to
+
+pure seeing
+
+-
+
+[HWissen," "Erkenntnis"] : research
+[reel/]
+
+but not, therefore to the really
+
+immanent. For it i s research in the sphere of pure evidence, and, moreover, it
+is research into essences. We also said that its field is
+
+absolute self-givenness.
+
+the a priori within
+
+Thus the field is now characterized. It is a field of absolute knowledge,
+where the matters of the ego, the world, God, mathematical manifolds, and
+any scientific objectivities whatever, remain undecided; a knowledge that is
+therefore not dependent on these things, which have their own validity,
+whether one is skeptical with respect to them or not. All that remains the
+same. What is fundamental is to apprehend the sense ofabsolute givenlless,
+the absolute clarity of being given, [ 10] which excludes every meaningful
+doubt, in a word, evidence that is absolute seeing and apprehends itself as
+such. In a certain sense, the historical signit1cance of the Cartesian meditation
+no doubt lies in the discovery of this kind of evidence. But for Descartes, to
+discover and to abandon were the same. We do no more than grasp purely and
+formulate consistently what is already contained within this age-old intention.
+In this connection we have set ourselves against the psychologistic interpreta­
+tion of evidence as a feeling.
+
+C. THE THIRD STEP IN THE PHENOMENOLOGICAL CONSIDERATION
+Once again we need a new level of consideration in order to achieve a higher
+degree of clarity about the sense of phenomenology and the phenomenological
+problematic.
+How far does self-givenness extend? Is it confined to the givenness of the
+
+cogitatio
+
+and the ideations that grasp it in its generality? As far as self­
+
+givennes s extends, so far extends our phenomenological sphere, the sphere of
+absolute clarity, of immanence in the genuine sense.
+
+THE TRAIN OF THOUGHT IN THE LECTURES
+
+67
+
+We are now led somewhat further into the depths, and in the depths lie
+obscurities, and in the obscurities lie the problems.
+At first everything seemed quite straightforward, scarcely requiring hard
+work on our part. One might cast aside the prejudice of immanence as real
+
+[reeller] immanence, as if it all came down to that, yet, at least in a certain
+[reellen] immanence. Initially it appears
+that the examination of essence only has to grasp what is really [reell]
+immanent in the cogitationes in their generality and to establish the relations
+sense, one remains attached to real
+
+that are grounded in essences - an apparently easy matter. One reflects, looks
+back upon one ' s own acts, accepts their real
+
+[reellen] contents, just as they
+
+are, only under the phenomenological reduction. This appears to be the only
+difficulty. And now there remains nothing else to do but to lift what is s een
+into the consciousness of generality.
+Things
+
+are
+
+a bit less accommodating, however, once we consider what is
+
+given more closely. First: the
+
+cogitationes, which [ 1 1] we take to be simply
+
+given and therefore entirely unmysterious, conceal all sorts of transcendencies.
+
+rrr we
+
+look closer and now notice how, in the experience of a tone, for
+
+instance, even after the phenomenological reduction the
+
+appearance and that
+which appears stand over against each other, and do s o in the midst ofpure
+give/mess, that is, within genuine immanence, then we begin to wonder. The
+tone lasts for a while; then we have the unity of the tone and its temporal span
+with its temporal phases - the now-phase and the past phases - in evident
+givenness; on the other hand, when we reflect, the phenomenon of the tone
+duration, which is itself a temporal phenomenon, has its own now-phase and
+phases of "having been
+
+j And in any now-phase of the phenomenon we might
+
+pick out, what we have before us as an object is not just the now of the tone
+itself, for the now of a tone is only a point in the duration of a tone.
+Detailed analyses belong to the special tasks we wlll take up in the near
+future, but the above indication already suffices to make us aware of some­
+thing new: the phenomenon of tone perception, even the evident and reduced
+phenomenon, requires a distinction within immanence between the
+
+appear­
+ance and that which appears. Thus we have two forms of absolute givenness,
+the givenness of the appealing and the givenness of the object - and the object
+]
+within this. immanence is not immanent in the real [reellen] sense; it is not a
+part of the appearance, for tlle past phases of the tone duration are still
+objective, and yet they are not really
+
+[reell] contained in the now-point of the
+
+appearance. Thus what we found in the case of the consciousness of generality
+- that it is a consciousness that constitutes a self-givenness which is not really
+
+[reellell] contained in it and is not to be found as a cogitatio
+the phenomenon of perception.
+I
+
+In the manuscript "transcendent."
+
+-
+
+we also find in
+
+68
+
+T H E I D E A OF PHENOMENOLOGY
+
+At the lowest level of consideration, at the naIve stage, it first appears as if
+evidence is just plain seeing, a featureless mental look, always one and the
+same, bearing no distinctions within itself: seeing sees just things,
+
+[12] things
+
+are simply there, and i n truly evident seeing they are there in consciousness
+and seeing simply sees them there. Or to use an image with a different sense:
+evidence is a direct grasping, or taking, or pointing to something that simply
+is and is there. All distinctions lie in the things, which are for themselves and
+have their distinctions by themselves.
+Note how different the seeing of things proves to be upon closer analysis.
+Even if one still places under title of "attentiveness" an indescribable and
+undifferentiated seeing, it still turns out that it makes no sense at all to speak
+of things as if they were simply there and need only to be seen. For this
+"simply being there" is a matter of certain experiences of a specific and
+changing structure, such as perception, imagination, memory, predication,
+etc.; and things
+
+are
+
+in them not as they might be in a case or container, rather,
+
+constitute themselves in these experiences even though they are not to
+be found in them in the real [reellen] sense. For " things to be given" i s for
+them to preseIU themselves (to be represented) as such in these phenomena.
+things
+
+And this does not mean that the things are once again there for themselves and
+
+then "send their representatives into consciousness ." Such a thing cannot
+happen for us within the sphere of the phenomenological reduction . Rather,
+things exist, and exist in appearance, and are themselves given by virtue of
+appearance; to be sure, taken individually, they exist, or hold, independently
+of appearance - insofar as nothing depends on this particular appearance (on
+this consciousness of givenness) - but essentially, according to their essence,
+they cannot be separated from appearance.
+Thus this wonderful correlation between the phenomenon of knowledge and
+the
+
+object of knowledge reveals itself everywhere. And now we note that the
+
+task of phenomenology, or rather the field of its tasks and research, is not such
+a trivial thing, as if one would just have to look, just have to open one' s eyes.
+Even in the first and simplest cases, in the lowest forms of knowledge, pure
+analysis and examination of essence is confronted by the greatest of difficul­
+ties. It is easy to speak of the correlation in general terms, but very hard to get
+clear on the way in which an object of knowledge constitutes itself in
+knowledge.
+
+[13] The task is this: to track down, within the framework of pure
+all correlations and forms of givenness, and to
+
+evidence or self-givenness,
+
+elucidate them through analysis. And of course not only particular acts will
+come under consideration here, but their complexities, their connections by
+way of agreement and disagreement, and the teleologies which emerge from
+such connections. These connections are not conglomerations, but rather
+unities that are characteristically bound up, congruent as it were, unities of
+
+THE TRAIN OF THOUGHT IN THE LECTURES
+
+69
+
+knowledge, which, as unified, also have their unified objective correlates.
+Thus they belong to acts of knowledge, their types
+
+are
+
+types of knowledge, and
+
+the fonns that inhabit them are forms of thought and forms of intuition (not to
+be understood here in the Kantian sense).
+At this point it is a matter of tracing, step by step, the forms of givenness
+
+[Gegebenheiten] in all their modifications - the authentic and inauthentic; the
+simple and the synthetic; those constituted in one blow, so to speak, and those
+that, according to their essence, can only be built up gradu ally; those that are
+absolutely valid, and those that, in the process of cognition, only approach
+givenness and full validity in an infinite progression.
+In this way we finally arrive at an understanding of how the transcendent
+real object can be encountered within the act of knowing (i.e., how nature can
+be known), first as an obj ect merely intended [gemeint], and how the sense of
+this intending [Meinung] is gradually filled out in the continuously developing
+context of knowledge (insofar as this context possesses the forms appropriate
+to the constitution of an object of experience). We then understand how the
+object of experience constitutes itself in a continuum, and how the manner of
+this constitution is prescribed to it, in that its essence requires just such a
+gradated constitution.
+Along this way lie the methodological forms that are determinative of all
+the sciences and constitutive of all that is given within the sciences , thus the
+elucidation of the theory of science, and hence implicitly the elucidation of all
+the sciences: but, of course, only implicitly, since the critique of knowledge
+will become capable of being a critique of the particular sciences, and thus
+capable of evaluating them metaphysically, only when this enormous work of
+elucidation is accomplished.
+
+[14]
+
+constitution
+of objectivities of every kind within knowledge. The phenomenology of
+These then are the problems of givenness, the problems of the
+
+knowledge is a science of the phenomenon of knowledge in a twofold sense:
+of [acts of) knowledge
+
+as
+
+appearances, presentations, acts of consciousness in
+
+which these or those objectivities are presented, become objects of conscious­
+ness, either passively or actively; and, on the other hand, of the objectivities
+themselves as objects that present themselves i n just such ways. The meaning
+of the word "phenomenon" is twofold because of the essential correlation
+between
+
+appearing and that which appears.
+
+H<paw0J.LEV0v" proper means
+
+"that which appears," and yet it is predominantly used for the appearing itself,
+the subjective phenomenon (if one is allowed to use this misleading expres­
+sion in a rough psychological sense).
+In reflection the
+
+cogitatio, the appearing itself, becomes an object, and this
+
+encourages the development of the equivocation. Finally, it need not be
+emphasized again that when we speak of inquiry into the objects of knowledge
+
+70
+
+THE IDEA OF PHENOMENOLOGY
+
+and the modes of knowledge, we always mean inquiry into essences that,
+within the sphere of absolute givenness, exhibit in their generality the
+definitive sense, the possibility, and the essence of the objectivity of knowl­
+edge and of the knowledge of objectivity.
+Of course the general phenomenology
+
+of reason has to solve the parallel
+
+problems of the correl ation of evaluation and value, etc. If one uses the word
+"phenomenology" so broadly as to include the analysis of all self-givenness,
+then even apparently unconnected data would come together: analysis of
+sensuous forms of givenness according to their various species, and the like
+the common element here is the method of the analysis of essences within
+the sphere of immediate evidence.
+
+Index
+
+Abstraction, ideating, 47, 50, 65
+
+2 1 , 23, 25-28, 30, 33, 35, 37, 3 8 , 4 3 ,
+
+Anthropologism, 3 1 , 36
+
+6 1 , 63, 64, 65, 69; essence of, 1 8-19,
+
+Appearances, 52, 54, 67, 69
+
+23-25, 35, 4 1 , 43, 55, 65; phenonne­
+
+Apperception, 34, 36, 59, 64
+
+non of, 33, 36, 64, 69; problem of, 3 3 ;
+
+Attitude, natural, 15-16, 57; philosophi­
+
+positive, 1 6, 19; possibility of, 16-21,
+
+cal, 1 5- 1 6, 1 9
+
+25 27, 60-62, 70; transcendent, 2830, 60
+
+Biologism, 30, 6 1
+Logic, 16, 17, 1 8, 40
+Cultw'e, 4 3 , 5 7
+Constitution, 54 , 69
+
+Mathematics, 1 6, 19, 2 1 , 43, 62
+Memory, 17, 24, 49
+
+Descartes, 24, 37, 38, 65, 66
+
+Metaphysics, 1 9, 25, 43, 6 1
+
+Doubt, cartesian, 23, 26
+Nature, 23, 57, 58
+Ego, 34, 55, 62, 64
+Object, intended, 47, 69; intentional, 53,
+
+Epistemology, 18- 20, 24, 26, 28-30, 37,
+58, 6 1 , 62,
+
+54; transcendent 28-29, 35
+Objectivity, 16, 1 8-20, 23-27, 29, 30,
+
+Epoche, 23, 33, 37
+Essence, 25, 39, 42, 5 1 , 52, 57, 58, 70
+
+35-37, 4 1 , 4 3 , 47, 52-54, 65, 70
+
+Ethics, 40
+Evidence, 28, 33, 4 1 , 44, 45, 49, 52-54,
+
+Perception,
+
+I S , 17, 24, 33, 49, 5 1 , 53, 59,
+
+67; immanent, 38; inner, 47; outer, 54
+
+63, 65, 66, 68, 70
+
+Phenomenon, 1 7, 33, 38, 54, 69; psy­
+
+Evolution, 1 8
+Existence, 1 7, 28, 34, 50, 5 1 , 5 3
+
+chological, 3 3, 34; pure, 33-36, 4 9,
+64
+
+Givenness, 24-28, 34-36, 38, 42, 49,
+
+Phenomenology, 1 9 , 34-37, 39, 4 1 , 6 1 ,
+
+53-55, 66, 69, 70
+
+64, 69, 70
+Philosophy, 1 9-2 1 , 43
+
+Hume, 1 7, 30
+
+Psychology, 1 7, 20, 26, 30, 3 3 , 58, 63,
+
+lwagination, 24, 50, 5 1 , 53, 59
+
+Psychologism, 36
+
+64
+Immanencc, 26, 28, 33, 37, 60, 62, 63,
+65; intentional, 4 1 ; real, 27, 46, 63-
+
+Reality, 1 6; objective, 34
+
+65, 67
+
+Reason, 46; critique of 1 8, 35, 43;
+practical, 39; theoretical, 1 8 , 39
+
+Intention, 44
+
+Reduction, epistemological, 3 3 , 37;
+
+Intuition, 4 1 , 43, 44, 46
+
+phenomenological, 34, 35, 43 , 45 ,
+Judgment, 1 5 , 3 7, 41 , 5 1
+
+63-68
+Retention, 49
+
+Kant, 3 6
+Knowledge, 1 5-1 6, 18, 23, 25-27, 39,
+47, 57, 60, 68; critiqne of,
+
+Science, exact, 1 9, 2 1 , 36; human, 62;
+
+I S, 19, 20,
+
+natural, 16, 19, 62; philosophical 1 5,
+
+71
+
+72
+
+T H E IDEA OF PHENOMENOLOGY
+
+positive, 1 5, 1 6, 1 8-20, 26, 28, 30,
+33, 63
+Seeing, 28, 45, 46, 50, 55, 65, 66, 68;
+pure, 24, 34, 35, 39
+Self-constitution, 52, 54, 55, 68
+Self-evidence, 38
+Self-givenness, 25, 37-39, 4 1 , 44-46,
+
+Thought, philosophical, 61 ; natural, 3 1 ,
+61
+Time, 52, 67 ; objective, 33, 34; world,
+
+64
+
+Transcendence, 27, 28, 33-38, 42, 53,
+5 9 , 60, 62, 65
+Truth, 17, 1 8, 29, 36, 44, 5 7
+
+63-65, 68, 70
+Sense, 1 8, 35, 36, 42, 45, 55, 57, 69
+
+Universals, 3 8 , 3 9 , 4 1 , 42, 46, 49, 52
+
+Skepticism, 1 8, 20, 28, 35, 60, 61 ,
+Solipsism, 1 7
+
+Validity, 1 8, 20, 23, 35, 36, 4 1 , 63
+Value theory, 4 0
+
+
