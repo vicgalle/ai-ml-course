@@ -1,0 +1,1172 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Fine-tuning with transformers’ library &#8212; AI: ML &amp; Analytics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 's21_fine-tuning-trainer/s21.1-fine-tuning-example';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Intent Classification in Banking 🏦" href="s21.2-fine-tuning-example-2.html" />
+    <link rel="prev" title="Transfer Learning example: Legal Text Classification" href="../s20_transfer-learning-and-transformers-architecture/s20.3-transfer-learning-example.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-neon.png" class="logo__image only-light" alt="AI: ML & Analytics - Home"/>
+    <script>document.write(`<img src="../_static/logo-neon.png" class="logo__image only-dark" alt="AI: ML & Analytics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    <no title>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">1. Our first Generative AI application</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/example_genAI.html">Our first Generative AI application</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2. Matrix Algebra with NumPy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.1-numpy.html">Matrix operations with Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.2-numpy-exercises-solutions.html">Numpy exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.3-image-blending.html">Working with images in Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Optimization and Automatic Differentiation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s03_optimization_automatic_differentiation/s03.1_notebook-solutions.html">Review of Optimization</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Review of Machine Learning with scikit-learn</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s04_review_ML_sklearn/s04.1-supervised-learning-sklearn-solutions.html">Scikit-learn</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../s04_review_ML_sklearn/s04.2-cost-benefit-analysis.html">Cost-Benefit Analysis of a ML classifier.</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">5. Unsupervised Learning with UMAP</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s05_unsupervised-learning-umap/s05.1-dimensionality-reduction.html">Dimensionality Reduction. UMAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s05_unsupervised-learning-umap/s05.2-text-analysis-solutions.html">Text Analysis with UMAP</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">6. Text Processing with scikit-learn</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s06_text-processing-sklearn/s06.1-text-classification-solved.html">Session 6: More on working with text data in scikit-learn</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">7. Intro to Deep Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s07_intro_deep_learning/s07.1-neural_network-solved.html">07: Introduction to Neural Networks</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">9. Deep Learning in Computer Vision</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.1-examples.html">Session 9. More on Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.2-examples-2.html">Introduction to Computer Vision with Deep Learning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.3-intro-to-convolutions_solved.html">Intro to convolutional neural networks (CNNs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.4-convolutional-networks_solved.html">Convolutional Neural Networks (CNNs)</a></li>
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">11. Transfer Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s11_transfer_learning/s11.1-transfer-learning-examples.html">Transfer Learning</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">12. Zero-Shot Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s12_zero-shot-learning/s12.1_intro-zero-shot-classification.html">Zero-Shot Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">13. Semantic Search</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s13_semantic_search_and_biases/s13.1_semantic_search_solved.html">Semantic Search</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">14. Object Detection</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s14_more_vision_tasks_object_detection/s14.1-intro-object-detection.html">Object Detection</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../s14_more_vision_tasks_object_detection/s14.2-zero-shot_object_detection.html">Zero-shot object detection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">15. Exercises I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.1-text-classification-solved.html">Exercise 1: Hate Spech Detection in X (aka Twitter) 🤬</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.2-transfer-learning-solved.html">Exercise: Plant Disease App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.3-semantic-search-solved2.html">Exercise: Product Item Recommender 🧥</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">16. Exercises II</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s16_exercises_2_solved/s16.1-umap-solved.html">Exercise 1: Eurovision Song Lyrics Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s16_exercises_2_solved/s16.2-zero-shot-classification-solved.html">Exercise 2: Photo Sorting Application 📸</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">19. Intro to Transformers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s19_intro_to_transformers/s19.1_pipelines_solved.html">Introduction to the Transformers Library for NLP: pipelines</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s19_intro_to_transformers/s19.2_zero-shot-classification.html">Zero-Shot Classification in NLP</a></li>
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">20. Transformers Architecture &amp; Transfer Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.1_transformers_architecture.html">Fundamentals of the Transformer Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.2-transfer-intro.html">Transfer Learning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.3-transfer-learning-example.html">Transfer Learning example: Legal Text Classification</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/vicgalle/ai-ml-course" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/vicgalle/ai-ml-course/issues/new?title=Issue%20on%20page%20%2Fs21_fine-tuning-trainer/s21.1-fine-tuning-example.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/s21_fine-tuning-trainer/s21.1-fine-tuning-example.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Fine-tuning with transformers’ library</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-sms-spam-detection">Example: SMS Spam detection</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-a-model">Saving a model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-with-scikit-learn">Comparing with scikit-learn</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="fine-tuning-with-transformers-library">
+<h1>Fine-tuning with transformers’ library<a class="headerlink" href="#fine-tuning-with-transformers-library" title="Link to this heading">#</a></h1>
+<p>Instead of extracting features, and then applying a different machine learning model, we can use the <code class="docutils literal notranslate"><span class="pre">transformers</span></code> library to fine-tune a pre-trained model, continuing the training on a pre-trained model from Hugging Face’s Hub with our own data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datasets</span> <span class="kn">import</span> <span class="n">load_dataset</span>
+<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoTokenizer</span><span class="p">,</span> <span class="n">DataCollatorWithPadding</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="example-sms-spam-detection">
+<h2>Example: SMS Spam detection<a class="headerlink" href="#example-sms-spam-detection" title="Link to this heading">#</a></h2>
+<p>In this example, we will fine-tune a pre-trained BERT model to classify SMS messages as spam or not spam.</p>
+<p>This is the dataset we want to use: <a class="reference external" href="https://huggingface.co/datasets/sms_spam">https://huggingface.co/datasets/sms_spam</a></p>
+<ol class="arabic simple">
+<li><p>Load the dataset in hf’s format.</p></li>
+</ol>
+<p>Note that since in the previous webpage, the data only has a single split (“train”), we will have to split it ourselves:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw_dataset_train</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;sms_spam&quot;</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="s2">&quot;train[:50%]&quot;</span><span class="p">)</span>
+<span class="n">raw_dataset_val</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;sms_spam&quot;</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="s2">&quot;train[50%:]&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw_dataset_train</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset({
+    features: [&#39;sms&#39;, &#39;label&#39;],
+    num_rows: 2787
+})
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw_dataset_train</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;sms&#39;: &quot;FreeMsg Hey there darling it&#39;s been 3 week&#39;s now and no word back! I&#39;d like some fun you up for it still? Tb ok! XxX std chgs to send, £1.50 to rcv\n&quot;,
+ &#39;label&#39;: 1}
+</pre></div>
+</div>
+</div>
+</div>
+<p>For exploratory purposes, we can convert a hf’s dataset into a pandas dataframe:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset_df</span> <span class="o">=</span> <span class="n">raw_dataset_train</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+
+<span class="n">dataset_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sms</th>
+      <th>label</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Go until jurong point, crazy.. Available only ...</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Ok lar... Joking wif u oni...\n</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Free entry in 2 a wkly comp to win FA Cup fina...</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>U dun say so early hor... U c already then say...</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Nah I don't think he goes to usf, he lives aro...</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>It seems that label 1 refers to spam, and label 0 refers to not spam.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset_df</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: &gt;
+</pre></div>
+</div>
+<img alt="../_images/fd29cd753db16eda712baf86b97b71ecaea93fd4889eb07f894c223fbc272593.png" src="../_images/fd29cd753db16eda712baf86b97b71ecaea93fd4889eb07f894c223fbc272593.png" />
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Chosing a pre-trained model (and corresponding tokenizer) to tokenize the dataset.</p></li>
+</ol>
+<p>We want to fine-tune the bert model. We load its tokenizer first, and apply it to the dataset splits.</p>
+<p><img alt="" src="https://huggingface.co/datasets/huggingface-course/documentation-images/resolve/main/en/chapter2/full_nlp_pipeline.svg" /></p>
+<p>Like other neural networks, Transformer models can’t process raw text directly, so the first step of our pipeline is to convert the text inputs into numbers that the model can make sense of. To do this we use a tokenizer, which will be responsible for:</p>
+<ul class="simple">
+<li><p>Splitting the input into words, subwords, or symbols (like punctuation) that are called tokens</p></li>
+<li><p>Mapping each token to an integer</p></li>
+<li><p>Adding additional inputs that may be useful to the model</p></li>
+</ul>
+<p>All this preprocessing needs to be done in exactly the same way as when the model was pretrained, so we first need to download that information from the Model Hub. To do this, we use the AutoTokenizer class and its from_pretrained() method. Using the checkpoint name of our model, it will automatically fetch the data associated with the model’s tokenizer and cache it (so it’s only downloaded the first time you run the code below).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_name</span> <span class="o">=</span> <span class="s2">&quot;bert-base-uncased&quot;</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">tokenize_function</span><span class="p">(</span><span class="n">example</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">tokenizer</span><span class="p">(</span><span class="n">example</span><span class="p">[</span><span class="s2">&quot;sms&quot;</span><span class="p">],</span> <span class="n">truncation</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="n">tokenized_datasets_train</span> <span class="o">=</span> <span class="n">raw_dataset_train</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">tokenize_function</span><span class="p">,</span> <span class="n">batched</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">tokenized_datasets_val</span> <span class="o">=</span> <span class="n">raw_dataset_val</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">tokenize_function</span><span class="p">,</span> <span class="n">batched</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">data_collator</span> <span class="o">=</span> <span class="n">DataCollatorWithPadding</span><span class="p">(</span><span class="n">tokenizer</span><span class="o">=</span><span class="n">tokenizer</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "214abeb81fc34cecb99ca96e8559b315", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<p>Now we can load the pre-trained model:</p>
+<p>The AutoModelForSequenceClassification class is a powerful tool that allows us to use a pre-trained model to classify sequences of text. It modifies the last layers of the pre-trained BERT model to make it compatible with a classification task.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoModelForSequenceClassification</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForSequenceClassification</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">num_labels</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: [&#39;classifier.bias&#39;, &#39;classifier.weight&#39;]
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BertForSequenceClassification(
+  (bert): BertModel(
+    (embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (token_type_embeddings): Embedding(2, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (encoder): BertEncoder(
+      (layer): ModuleList(
+        (0-11): 12 x BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+      )
+    )
+    (pooler): BertPooler(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (activation): Tanh()
+    )
+  )
+  (dropout): Dropout(p=0.1, inplace=False)
+  (classifier): Linear(in_features=768, out_features=2, bias=True)
+)
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Training the model</p></li>
+</ol>
+<p>The first step before we can define our Trainer is to define a TrainingArguments class that will contain all the hyperparameters the Trainer will use for training and evaluation. The only argument you have to provide is a directory where the trained model will be saved, as well as the checkpoints along the way. For all the rest, you can leave the defaults, which should work pretty well for a basic fine-tuning.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">TrainingArguments</span>
+
+<span class="n">training_args</span> <span class="o">=</span> <span class="n">TrainingArguments</span><span class="p">(</span><span class="s2">&quot;experiment-spam&quot;</span><span class="p">,</span> <span class="n">per_device_train_batch_size</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">logging_steps</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once we have our model, we can define a Trainer by passing it all the objects constructed up to now — the model, the training_args, the training and validation datasets, our data_collator, and our tokenizer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">Trainer</span>
+
+<span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">(</span>
+    <span class="n">model</span><span class="p">,</span>
+    <span class="n">training_args</span><span class="p">,</span>
+    <span class="n">train_dataset</span><span class="o">=</span><span class="n">tokenized_datasets_train</span><span class="p">,</span>
+    <span class="n">eval_dataset</span><span class="o">=</span><span class="n">tokenized_datasets_val</span><span class="p">,</span>
+    <span class="n">data_collator</span><span class="o">=</span><span class="n">data_collator</span><span class="p">,</span>
+    <span class="n">tokenizer</span><span class="o">=</span><span class="n">tokenizer</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+</pre></div>
+</div>
+</div>
+</div>
+<p>To fine-tune the model on our dataset, we just have to call the train() method of our Trainer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Failed to detect the name of this notebook, you can set it manually with the WANDB_NOTEBOOK_NAME environment variable to enable code saving.
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+<span class=" -Color -Color-Bold -Color-Bold-Blue">wandb</span>: Currently logged in as: <span class=" -Color -Color-Yellow">vicgalle</span>. Use <span class=" -Color -Color-Bold">`wandb login --relogin`</span> to force relogin
+</pre></div>
+</div>
+<div class="output text_html">Tracking run with wandb version 0.16.4</div><div class="output text_html">Run data is saved locally in <code>/Users/victorgallego/curso_ML_IE/s21_fine-tuning-trainer/wandb/run-20240319_073619-jac2cqhr</code></div><div class="output text_html">Syncing run <strong><a href='https://wandb.ai/vicgalle/huggingface/runs/jac2cqhr' target="_blank">devout-cloud-560</a></strong> to <a href='https://wandb.ai/vicgalle/huggingface' target="_blank">Weights & Biases</a> (<a href='https://wandb.me/run' target="_blank">docs</a>)<br/></div><div class="output text_html"> View project at <a href='https://wandb.ai/vicgalle/huggingface' target="_blank">https://wandb.ai/vicgalle/huggingface</a></div><div class="output text_html"> View run at <a href='https://wandb.ai/vicgalle/huggingface/runs/jac2cqhr' target="_blank">https://wandb.ai/vicgalle/huggingface/runs/jac2cqhr</a></div><script type="application/vnd.jupyter.widget-view+json">{"model_id": "62b2eb6bd09b460d91fbfc7aad699d4b", "version_major": 2, "version_minor": 0}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;loss&#39;: 0.3912, &#39;grad_norm&#39;: 2.1155686378479004, &#39;learning_rate&#39;: 4.904761904761905e-05, &#39;epoch&#39;: 0.06}
+{&#39;loss&#39;: 0.1405, &#39;grad_norm&#39;: 13.298932075500488, &#39;learning_rate&#39;: 4.80952380952381e-05, &#39;epoch&#39;: 0.11}
+{&#39;loss&#39;: 0.12, &#39;grad_norm&#39;: 8.244377136230469, &#39;learning_rate&#39;: 4.714285714285714e-05, &#39;epoch&#39;: 0.17}
+{&#39;loss&#39;: 0.0356, &#39;grad_norm&#39;: 0.2509291470050812, &#39;learning_rate&#39;: 4.6190476190476194e-05, &#39;epoch&#39;: 0.23}
+{&#39;loss&#39;: 0.0764, &#39;grad_norm&#39;: 0.3728467524051666, &#39;learning_rate&#39;: 4.523809523809524e-05, &#39;epoch&#39;: 0.29}
+{&#39;loss&#39;: 0.1239, &#39;grad_norm&#39;: 0.17081677913665771, &#39;learning_rate&#39;: 4.428571428571428e-05, &#39;epoch&#39;: 0.34}
+{&#39;loss&#39;: 0.0772, &#39;grad_norm&#39;: 0.12423927336931229, &#39;learning_rate&#39;: 4.3333333333333334e-05, &#39;epoch&#39;: 0.4}
+{&#39;loss&#39;: 0.0691, &#39;grad_norm&#39;: 7.357865333557129, &#39;learning_rate&#39;: 4.2380952380952385e-05, &#39;epoch&#39;: 0.46}
+{&#39;loss&#39;: 0.0463, &#39;grad_norm&#39;: 0.10748817026615143, &#39;learning_rate&#39;: 4.1428571428571437e-05, &#39;epoch&#39;: 0.51}
+{&#39;loss&#39;: 0.0744, &#39;grad_norm&#39;: 6.749342918395996, &#39;learning_rate&#39;: 4.047619047619048e-05, &#39;epoch&#39;: 0.57}
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">l_</span><span class="o">/</span><span class="n">k13w4mhd5hv4bddxwqz8qdfw0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_21210</span><span class="o">/</span><span class="mf">49973641.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+
+<span class="nn">~/miniforge3/lib/python3.9/site-packages/transformers/trainer.py</span> in <span class="ni">train</span><span class="nt">(self, resume_from_checkpoint, trial, ignore_keys_for_eval, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1622</span>                 <span class="n">hf_hub_utils</span><span class="o">.</span><span class="n">enable_progress_bars</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1623</span>         <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1624</span>             <span class="k">return</span> <span class="n">inner_training_loop</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1625</span>                 <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1626</span>                 <span class="n">resume_from_checkpoint</span><span class="o">=</span><span class="n">resume_from_checkpoint</span><span class="p">,</span>
+
+<span class="nn">~/miniforge3/lib/python3.9/site-packages/transformers/trainer.py</span> in <span class="ni">_inner_training_loop</span><span class="nt">(self, batch_size, args, resume_from_checkpoint, trial, ignore_keys_for_eval)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1959</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1960</span>                 <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">accelerator</span><span class="o">.</span><span class="n">accumulate</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1961</span>                     <span class="n">tr_loss_step</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">training_step</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">inputs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1962</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1963</span>                 <span class="k">if</span> <span class="p">(</span>
+
+<span class="nn">~/miniforge3/lib/python3.9/site-packages/transformers/trainer.py</span> in <span class="ni">training_step</span><span class="nt">(self, model, inputs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2909</span>                 <span class="n">scaled_loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">2910</span>         <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2911</span>             <span class="bp">self</span><span class="o">.</span><span class="n">accelerator</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2912</span> 
+<span class="g g-Whitespace">   </span><span class="mi">2913</span>         <span class="k">return</span> <span class="n">loss</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">gradient_accumulation_steps</span>
+
+<span class="nn">~/miniforge3/lib/python3.9/site-packages/accelerate/accelerator.py</span> in <span class="ni">backward</span><span class="nt">(self, loss, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1964</span>             <span class="bp">self</span><span class="o">.</span><span class="n">scaler</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1965</span>         <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1966</span>             <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1967</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1968</span>     <span class="k">def</span> <span class="nf">set_trigger</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">~/miniforge3/lib/python3.9/site-packages/torch/_tensor.py</span> in <span class="ni">backward</span><span class="nt">(self, gradient, retain_graph, create_graph, inputs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">520</span>                 <span class="n">inputs</span><span class="o">=</span><span class="n">inputs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">521</span>             <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">522</span>         <span class="n">torch</span><span class="o">.</span><span class="n">autograd</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">523</span>             <span class="bp">self</span><span class="p">,</span> <span class="n">gradient</span><span class="p">,</span> <span class="n">retain_graph</span><span class="p">,</span> <span class="n">create_graph</span><span class="p">,</span> <span class="n">inputs</span><span class="o">=</span><span class="n">inputs</span>
+<span class="g g-Whitespace">    </span><span class="mi">524</span>         <span class="p">)</span>
+
+<span class="nn">~/miniforge3/lib/python3.9/site-packages/torch/autograd/__init__.py</span> in <span class="ni">backward</span><span class="nt">(tensors, grad_tensors, retain_graph, create_graph, grad_variables, inputs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">264</span>     <span class="c1"># some Python versions print out the first line of a multi-line function</span>
+<span class="g g-Whitespace">    </span><span class="mi">265</span>     <span class="c1"># calls in the traceback and some print out the last line</span>
+<span class="ne">--&gt; </span><span class="mi">266</span>     <span class="n">Variable</span><span class="o">.</span><span class="n">_execution_engine</span><span class="o">.</span><span class="n">run_backward</span><span class="p">(</span>  <span class="c1"># Calls into the C++ engine to run the backward pass</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span>         <span class="n">tensors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span>         <span class="n">grad_tensors_</span><span class="p">,</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Evaluation</p></li>
+</ol>
+<p>To get some predictions from our model, we can use the Trainer.predict() command:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictions</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">tokenized_datasets_val</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">predictions</span><span class="o">.</span><span class="n">predictions</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">predictions</span><span class="o">.</span><span class="n">label_ids</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "3d51508402e340e58eb357fc6d7be8d1", "version_major": 2, "version_minor": 0}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2787, 2) (2787,)
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this predictions object, we have both the predicted logits and the true labels:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictions</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PredictionOutput(predictions=array([[ 3.4188704, -3.2959225],
+       [ 2.8931568, -3.0563471],
+       [ 3.3770955, -3.2512643],
+       ...,
+       [ 3.2661016, -3.2368455],
+       [ 1.9782873, -2.203987 ],
+       [ 3.2964618, -3.2265937]], dtype=float32), label_ids=array([0, 0, 0, ..., 0, 0, 0]), metrics={&#39;test_loss&#39;: 0.041887618601322174, &#39;test_runtime&#39;: 41.2555, &#39;test_samples_per_second&#39;: 67.555, &#39;test_steps_per_second&#39;: 8.459})
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictions</span><span class="o">.</span><span class="n">predictions</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 3.4188704, -3.2959225],
+       [ 2.8931568, -3.0563471],
+       [ 3.3770955, -3.2512643],
+       ...,
+       [ 3.2661016, -3.2368455],
+       [ 1.9782873, -2.203987 ],
+       [ 3.2964618, -3.2265937]], dtype=float32)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictions</span><span class="o">.</span><span class="n">predictions</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 0, 0, ..., 0, 0, 0])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw_dataset_val_df</span> <span class="o">=</span> <span class="n">raw_dataset_val</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+<span class="n">raw_dataset_val_df</span><span class="p">[</span><span class="s1">&#39;prediction&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">predictions</span><span class="o">.</span><span class="n">predictions</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">raw_dataset_val_df</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">],</span> <span class="n">raw_dataset_val_df</span><span class="p">[</span><span class="s1">&#39;prediction&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
+
+           0       0.99      1.00      0.99      2421
+           1       0.97      0.96      0.96       366
+
+    accuracy                           0.99      2787
+   macro avg       0.98      0.98      0.98      2787
+weighted avg       0.99      0.99      0.99      2787
+</pre></div>
+</div>
+</div>
+</div>
+<p>Works pretty close to perfect!</p>
+<section id="saving-a-model">
+<h3>Saving a model<a class="headerlink" href="#saving-a-model" title="Link to this heading">#</a></h3>
+<p>Once we have fine-tuned our model, we can save it to disk so that we can use it later. We can use the save_pretrained() method of our model and tokenizer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">save_pretrained</span><span class="p">(</span><span class="s2">&quot;sms-spam-model&quot;</span><span class="p">)</span> <span class="c1"># this will be the local folder where the model will be saved</span>
+<span class="n">tokenizer</span><span class="o">.</span><span class="n">save_pretrained</span><span class="p">(</span><span class="s2">&quot;sms-spam-model&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;sms-spam-model/tokenizer_config.json&#39;,
+ &#39;sms-spam-model/special_tokens_map.json&#39;,
+ &#39;sms-spam-model/vocab.txt&#39;,
+ &#39;sms-spam-model/added_tokens.json&#39;,
+ &#39;sms-spam-model/tokenizer.json&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can load it using the pipeline, for instance:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">pipeline</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classifier</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;text-classification&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;sms-spam-model&quot;</span><span class="p">,</span> <span class="n">tokenizer</span><span class="o">=</span><span class="s2">&quot;sms-spam-model&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classifier</span><span class="p">(</span><span class="s2">&quot;You have been chosen for 1000 dollars! Text back to claim them!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;label&#39;: &#39;LABEL_1&#39;, &#39;score&#39;: 0.9311851263046265}]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classifier</span><span class="p">(</span><span class="s2">&quot;R u ok?&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;label&#39;: &#39;LABEL_0&#39;, &#39;score&#39;: 0.9987093210220337}]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="comparing-with-scikit-learn">
+<h3>Comparing with scikit-learn<a class="headerlink" href="#comparing-with-scikit-learn" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+    <span class="p">(</span><span class="s2">&quot;vectorizer&quot;</span><span class="p">,</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="s2">&quot;english&quot;</span><span class="p">)),</span>
+    <span class="p">(</span><span class="s2">&quot;classifier&quot;</span><span class="p">,</span> <span class="n">LogisticRegression</span><span class="p">())</span>
+<span class="p">])</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">raw_dataset_train</span><span class="p">[</span><span class="s1">&#39;sms&#39;</span><span class="p">],</span> <span class="n">raw_dataset_train</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">])</span>
+
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">raw_dataset_val</span><span class="p">[</span><span class="s1">&#39;sms&#39;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">raw_dataset_val</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">],</span> <span class="n">y_pred</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
+
+           0       0.95      1.00      0.97      2421
+           1       0.98      0.62      0.76       366
+
+    accuracy                           0.95      2787
+   macro avg       0.96      0.81      0.86      2787
+weighted avg       0.95      0.95      0.94      2787
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise</strong> Find a pre-trained model that is smaller than bert-base, and fine-tune it using the same dataset. Compare the results with the ones obtained with bert-base.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./s21_fine-tuning-trainer"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../s20_transfer-learning-and-transformers-architecture/s20.3-transfer-learning-example.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Transfer Learning example: Legal Text Classification</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="s21.2-fine-tuning-example-2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Intent Classification in Banking 🏦</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-sms-spam-detection">Example: SMS Spam detection</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-a-model">Saving a model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-with-scikit-learn">Comparing with scikit-learn</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Víctor Gallego
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
