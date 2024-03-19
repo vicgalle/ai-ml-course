@@ -66,4 +66,8 @@ parts:
       - file: s20_transfer-learning-and-transformers-architecture/s20.1_transformers_architecture.ipynb
       - file: s20_transfer-learning-and-transformers-architecture/s20.2-transfer-intro.ipynb
       - file: s20_transfer-learning-and-transformers-architecture/s20.3-transfer-learning-example.ipynb
+  - caption: 21. Fine-tuning with Transformers
+    chapters:
+      - file: s21_fine-tuning-trainer/s21.1-fine-tuning-example.ipynb
+      - file: s21_fine-tuning-trainer/s21.2-fine-tuning-example-2.ipynb
   
