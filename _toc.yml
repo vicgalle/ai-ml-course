@@ -70,4 +70,9 @@ parts:
     chapters:
       - file: s21_fine-tuning-trainer/s21.1-fine-tuning-example.ipynb
       - file: s21_fine-tuning-trainer/s21.2-fine-tuning-example-2.ipynb
+  - caption: 22. Speech Recognition with Transformers
+    chapters:
+      - file: s22_automatic_speech_recognition/s22.1_whisper_model.ipynb
+      - file: s22_automatic_speech_recognition/s22.2_text_to_speech.ipynb
+      - file: s22_automatic_speech_recognition/s22.3_using_gpus.ipynb
   
