@@ -1,0 +1,1714 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Instruction Tuning of Language Models &#8212; AI: ML &amp; Analytics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 's23_instruction_tuning_and_gpt/s23.1_gpt_api';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chain of Thought Advanced Prompting Examples" href="s23.2_chain_of_thought.html" />
+    <link rel="prev" title="Using GPUs with transformers" href="../s22_automatic_speech_recognition/s22.3_using_gpus.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-neon.png" class="logo__image only-light" alt="AI: ML & Analytics - Home"/>
+    <script>document.write(`<img src="../_static/logo-neon.png" class="logo__image only-dark" alt="AI: ML & Analytics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    <no title>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">1. Our first Generative AI application</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/example_genAI.html">Our first Generative AI application</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2. Matrix Algebra with NumPy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.1-numpy.html">Matrix operations with Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.2-numpy-exercises-solutions.html">Numpy exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.3-image-blending.html">Working with images in Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Optimization and Automatic Differentiation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s03_optimization_automatic_differentiation/s03.1_notebook-solutions.html">Review of Optimization</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Review of Machine Learning with scikit-learn</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s04_review_ML_sklearn/s04.1-supervised-learning-sklearn-solutions.html">Scikit-learn</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../s04_review_ML_sklearn/s04.2-cost-benefit-analysis.html">Cost-Benefit Analysis of a ML classifier.</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">5. Unsupervised Learning with UMAP</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s05_unsupervised-learning-umap/s05.1-dimensionality-reduction.html">Dimensionality Reduction. UMAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s05_unsupervised-learning-umap/s05.2-text-analysis-solutions.html">Text Analysis with UMAP</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">6. Text Processing with scikit-learn</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s06_text-processing-sklearn/s06.1-text-classification-solved.html">Session 6: More on working with text data in scikit-learn</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">7. Intro to Deep Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s07_intro_deep_learning/s07.1-neural_network-solved.html">07: Introduction to Neural Networks</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">9. Deep Learning in Computer Vision</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.1-examples.html">Session 9. More on Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.2-examples-2.html">Introduction to Computer Vision with Deep Learning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.3-intro-to-convolutions_solved.html">Intro to convolutional neural networks (CNNs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.4-convolutional-networks_solved.html">Convolutional Neural Networks (CNNs)</a></li>
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">11. Transfer Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s11_transfer_learning/s11.1-transfer-learning-examples.html">Transfer Learning</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">12. Zero-Shot Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s12_zero-shot-learning/s12.1_intro-zero-shot-classification.html">Zero-Shot Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">13. Semantic Search</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s13_semantic_search_and_biases/s13.1_semantic_search_solved.html">Semantic Search</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">14. Object Detection</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s14_more_vision_tasks_object_detection/s14.1-intro-object-detection.html">Object Detection</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../s14_more_vision_tasks_object_detection/s14.2-zero-shot_object_detection.html">Zero-shot object detection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">15. Exercises I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.1-text-classification-solved.html">Exercise 1: Hate Spech Detection in X (aka Twitter) 🤬</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.2-transfer-learning-solved.html">Exercise: Plant Disease App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.3-semantic-search-solved2.html">Exercise: Product Item Recommender 🧥</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">16. Exercises II</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s16_exercises_2_solved/s16.1-umap-solved.html">Exercise 1: Eurovision Song Lyrics Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s16_exercises_2_solved/s16.2-zero-shot-classification-solved.html">Exercise 2: Photo Sorting Application 📸</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">19. Intro to Transformers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s19_intro_to_transformers/s19.1_pipelines_solved.html">Introduction to the Transformers Library for NLP: pipelines</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s19_intro_to_transformers/s19.2_zero-shot-classification.html">Zero-Shot Classification in NLP</a></li>
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">20. Transformers Architecture &amp; Transfer Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.1_transformers_architecture.html">Fundamentals of the Transformer Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.2-transfer-intro.html">Transfer Learning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.3-transfer-learning-example.html">Transfer Learning example: Legal Text Classification</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">21. Fine-tuning with Transformers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s21_fine-tuning-trainer/s21.1-fine-tuning-example.html">Fine-tuning with transformers’ library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s21_fine-tuning-trainer/s21.2-fine-tuning-example-2.html">Intent Classification in Banking 🏦</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">22. Speech Recognition with Transformers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s22_automatic_speech_recognition/s22.1_whisper_model.html">Automatic Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s22_automatic_speech_recognition/s22.2_text_to_speech.html">Text to Speech</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s22_automatic_speech_recognition/s22.3_using_gpus.html">Using GPUs with transformers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">23. Instruction Tuning and the GPT API</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Instruction Tuning of Language Models</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="s23.2_chain_of_thought.html">Chain of Thought Advanced Prompting Examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">24. Retrieval Augmented Generation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s24_retrieval_augmented_generation_full/s24.1_into-to-llamaindex.html">Semantic Search for texts</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s24_retrieval_augmented_generation_full/s24.2_multimodal-retrieval.html">Multi-modal Models with LlamaIndex</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">25. Exercises I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s25_applications_llms_streamlit/s25_exercises.html">Exercises 1: LLM models for information extraction in podcasts 🎙️</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/vicgalle/ai-ml-course" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/vicgalle/ai-ml-course/issues/new?title=Issue%20on%20page%20%2Fs23_instruction_tuning_and_gpt/s23.1_gpt_api.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/s23_instruction_tuning_and_gpt/s23.1_gpt_api.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Instruction Tuning of Language Models</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Instruction Tuning of Language Models</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-instruction-tuning">What is Instruction Tuning?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#available-instruction-tuned-models">Available Instruction-tuned Models</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-gpt-models-through-the-api">Using the GPT models through the API</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#we-can-access-the-gpt-models-from-code-and-get-an-answer-to-any-question">We can access the GPT-models from code and get an answer to any question.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-tasks-with-gpt">Classification tasks with GPT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#translation-tasks">Translation tasks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prompt-engineering">Prompt Engineering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#temperature-parameter-effect">Temperature parameter effect</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-summarization">Text Summarization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#role-playing">Role-Playing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-generation">Code Generation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reasoning">Reasoning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferring-topics">Inferring topics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#few-shot-prompting">Few-shot prompting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chain-of-though-prompting">Chain-of-Though prompting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="instruction-tuning-of-language-models">
+<h1>Instruction Tuning of Language Models<a class="headerlink" href="#instruction-tuning-of-language-models" title="Link to this heading">#</a></h1>
+<p>NLP and ML have gone through several phases of how models are trained in recent years. With the arrival of pre-trained models such as BERT, fine-tuning pre-trained models for downstream tasks became the norm. The increasing capabilities of ever larger models then enabled in-context learning via prompting. Recently, instruction tuning has become the newest method to make LLMs useful in practice.</p>
+<section id="what-is-instruction-tuning">
+<h2>What is Instruction Tuning?<a class="headerlink" href="#what-is-instruction-tuning" title="Link to this heading">#</a></h2>
+<p>The main difference between instruction tuning and standard supervised fine-tuning lies in the data that the model is trained on. Whereas supervised fine-tuning trains models on input examples and their corresponding outputs, instruction tuning augments input-output examples with instructions, which enables instruction-tuned models to generalize more easily to new tasks.</p>
+<p><img alt="img" src="../_images/it.webp" />
+<img alt="img" src="../_images/it2.png" /></p>
+<p>For a list of history of Instruction Tuning, and several datasets, you can refer to <a class="reference external" href="https://newsletter.ruder.io/p/instruction-tuning-vol-1">https://newsletter.ruder.io/p/instruction-tuning-vol-1</a></p>
+</section>
+<section id="available-instruction-tuned-models">
+<h2>Available Instruction-tuned Models<a class="headerlink" href="#available-instruction-tuned-models" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Open-source models in the HuggingFace, such as Flan-T5 by Google: <a class="reference external" href="https://huggingface.co/google/flan-t5-large">https://huggingface.co/google/flan-t5-large</a></p></li>
+<li><p>API-based models, such as gpt-3.5-turbo and gpt-4 (the ones behind ChatGPT) from OpenAI: <a class="reference external" href="https://openai.com/product">https://openai.com/product</a></p></li>
+</ul>
+<p>In this session, we will start with the OpenAI API!</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="using-the-gpt-models-through-the-api">
+<h1>Using the GPT models through the API<a class="headerlink" href="#using-the-gpt-models-through-the-api" title="Link to this heading">#</a></h1>
+<p>In this notebook, we will use the GPT models through the API. We will use the <code class="docutils literal notranslate"><span class="pre">openai</span></code> library to interact with the API.
+This can be used for building different applications and services.</p>
+<p>For reference, see <a class="reference external" href="https://platform.openai.com/docs/api-reference/introduction">https://platform.openai.com/docs/api-reference/introduction</a></p>
+<p>This code uses my account for authentication.  If you develop code,
+you should sign up for your own account at <a class="reference external" href="https://platform.openai.com/">https://platform.openai.com/</a>
+then you can use a credit card and set limits (ie x euro or dollars per month maximum)
+when you do this, you will get an API key.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!pip install openai</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We will create a client object using the OpenAI api to make requests</span>
+<span class="c1"># For this we need to use the keys so that is is authenticated and charges can be made</span>
+<span class="c1"># This is the more recent API - for &#39;OpenAI&#39;, not &#39;openai&#39;</span>
+
+<span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span><span class="n">api_key</span> <span class="o">=</span> <span class="s2">&quot;sk-...&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="we-can-access-the-gpt-models-from-code-and-get-an-answer-to-any-question">
+<h2>We can access the GPT-models from code and get an answer to any question.<a class="headerlink" href="#we-can-access-the-gpt-models-from-code-and-get-an-answer-to-any-question" title="Link to this heading">#</a></h2>
+<p>This can be:</p>
+<ul class="simple">
+<li><p>a question from a customer (like an agent)</p></li>
+<li><p>a question for your own work</p></li>
+<li><p>a service that is needed for your code… or more.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+  <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-3.5-turbo&quot;</span><span class="p">,</span>
+  <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;You are a helpful assistant.&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Who won the Soccer World Cup in 2010? &quot;</span><span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The 2010 FIFA World Cup was won by Spain. They defeated the Netherlands 1-0 in the final held in South Africa.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+  <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-3.5-turbo&quot;</span><span class="p">,</span>
+  <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+    <span class="c1">#{&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: &quot;You are a helpful assistant.&quot;},</span>
+    <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Who won the Soccer World Cup in 2010? &quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;assistant&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Who scored the goals?&quot;</span><span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>In the final of the 2010 FIFA World Cup, the only goal was scored by Andrés Iniesta of Spain.
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can inspect the <code class="docutils literal notranslate"><span class="pre">response</span></code> object, and see, how many tokens were used:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ChatCompletion(id=&#39;chatcmpl-99XLsa6oJkTxGxwawBRbDB0fNmpqQ&#39;, choices=[Choice(finish_reason=&#39;stop&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=&#39;In the final of the 2010 FIFA World Cup, the only goal was scored by Andrés Iniesta of Spain.&#39;, role=&#39;assistant&#39;, function_call=None, tool_calls=None))], created=1712060184, model=&#39;gpt-3.5-turbo-0125&#39;, object=&#39;chat.completion&#39;, system_fingerprint=&#39;fp_b28b39ffa8&#39;, usage=CompletionUsage(completion_tokens=25, prompt_tokens=59, total_tokens=84))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">59</span><span class="o">*</span><span class="mf">0.5</span><span class="o">*</span><span class="mf">1e-6</span> <span class="o">+</span> <span class="mi">25</span><span class="o">*</span><span class="mf">1.5</span><span class="o">*</span><span class="mf">1e-6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.7e-05
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">question</span> <span class="o">=</span> <span class="s2">&quot;What are the most common cars? I want a short list of 5 with around 10 words per item&quot;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+  <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-3.5-turbo&quot;</span><span class="p">,</span>
+  <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">question</span><span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1. Toyota Corolla - Affordable, reliable, fuel-efficient compact sedan with comfortable interior.
+2. Ford F-150 - Best-selling pickup truck known for its durability and capabilities.
+3. Honda Civic - Popular compact car offering good performance and fuel efficiency.
+4. Chevrolet Silverado - Versatile and rugged full-size pickup truck with strong towing capacity.
+5. Jeep Wrangler - Iconic off-road SUV with rugged design and impressive capabilities.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s use the GPT-4 model:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">question</span> <span class="o">=</span> <span class="s2">&quot;What are the most common cars?  I want a short list of 5 with 10 words per item&quot;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+  <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4&quot;</span><span class="p">,</span>
+  <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">question</span><span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1. Toyota Corolla: Affordable, reliable, fuel-efficient, compact sedan, produced by Japanese manufacturer.
+2. Ford F-150: American-made, full-size pick-up truck known for hauling capacity.
+3. Honda Civic: Respected for long-term reliability, superior gas-mileage, and sporty design.
+4. Chevrolet Silverado: Tough, heavy-duty pickup, appreciated for towing ability and durability.
+5. Volkswagen Golf: German-engineered hatchback, renowned for comfort, handling and fuel efficiency.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice how it took much longer…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lets get an answer?</span>
+<span class="n">q</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;What do you want to know: &#39;</span><span class="p">)</span>
+<span class="n">answer</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+  <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-3.5-turbo&quot;</span><span class="p">,</span>
+  <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">q</span><span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The capital of France is Paris.
+</pre></div>
+</div>
+</div>
+</div>
+<section id="classification-tasks-with-gpt">
+<h3>Classification tasks with GPT<a class="headerlink" href="#classification-tasks-with-gpt" title="Link to this heading">#</a></h3>
+<p>We can just appropiately prompt the model:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sentiment analysis:</span>
+<span class="n">statement</span> <span class="o">=</span> <span class="s2">&quot;This carpet is never clean&quot;</span>
+
+<span class="n">q</span> <span class="o">=</span> <span class="s2">&quot;What is the sentiment of &quot;</span> <span class="o">+</span> <span class="n">statement</span> <span class="o">+</span> <span class="s2">&quot;. Answer in one lower case word (positive, negative, neutral).</span><span class="se">\n</span><span class="s2">Sentiment:&quot;</span>
+<span class="n">answer</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+  <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-3.5-turbo&quot;</span><span class="p">,</span>
+  <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">q</span><span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>negative
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sentiment analysis:</span>
+<span class="n">statement</span> <span class="o">=</span> <span class="s2">&quot;Coppola invents a new look for cinema and broadens the horizons of an industry that was crying out for new lifeblood.&quot;</span>
+
+<span class="n">q</span> <span class="o">=</span> <span class="s2">&quot;What is the sentiment of &quot;</span> <span class="o">+</span> <span class="n">statement</span> <span class="o">+</span> <span class="s2">&quot;. Anser in one lower case word (positive, negative, neutral).</span><span class="se">\n</span><span class="s2">Sentiment:&quot;</span>
+<span class="n">answer</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+  <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-3.5-turbo&quot;</span><span class="p">,</span>
+  <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">q</span><span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>positive
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="translation-tasks">
+<h3>Translation tasks<a class="headerlink" href="#translation-tasks" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># easy to translate languages</span>
+<span class="n">statement</span> <span class="o">=</span> <span class="s2">&quot;You look great&quot;</span>
+<span class="n">q</span> <span class="o">=</span> <span class="s2">&quot;how do you say this in Spanish:&quot;</span> <span class="o">+</span> <span class="n">statement</span>
+
+<span class="n">answer</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+  <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-3.5-turbo&quot;</span><span class="p">,</span>
+  <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">q</span><span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Te ves genial.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="s2">&quot;write a tagline for a Ferrari with 15 words or less.  Use the word Ferrari&quot;</span>
+
+<span class="n">answer</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+  <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-3.5-turbo&quot;</span><span class="p">,</span>
+  <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">q</span><span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+<span class="n">tagline</span> <span class="o">=</span> <span class="n">answer</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tagline</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unleash your passion for speed with the iconic Ferrari - where power meets luxury.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="prompt-engineering">
+<h2>Prompt Engineering<a class="headerlink" href="#prompt-engineering" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-3.5-turbo&quot;</span><span class="p">,</span> <span class="n">max_tokens</span> <span class="o">=</span> <span class="mi">256</span><span class="p">):</span>
+  <span class="c1"># Create a request to the chat completions endpoint</span>
+  <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="p">,</span>
+    <span class="n">temperature</span> <span class="o">=</span> <span class="n">temperature</span><span class="p">,</span>
+    <span class="n">max_tokens</span> <span class="o">=</span> <span class="n">max_tokens</span><span class="p">,</span>
+    <span class="c1"># Assign the role and content for the message</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">prompt</span><span class="p">}],</span>
+    <span class="c1">#seed = 123</span>
+    <span class="p">)</span>
+  <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="temperature-parameter-effect">
+<h3>Temperature parameter effect<a class="headerlink" href="#temperature-parameter-effect" title="Link to this heading">#</a></h3>
+<p>The temperature parameter is a hyperparameter that controls the randomness of the output. Higher temperatures make the model more creative, but also more unpredictable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;The sky is&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">get_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> blue and dotted with fluffy white clouds.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;The sky is&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">get_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">1.5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>an ever-changing canvas of colors and clouds, showcasing the beauty and wonder of the world above us. Whether it&#39;s a clear blue day or painted with vibrant hues during a sunset, the sky is always a captivating sight to behold. Its endless expanse stretches far and wide, reminding us of the vastness of the universe and our place within it. The sky is a symphony in motion, with clouds dancing and drifting in the wind, creating a magical scene for us to gaze upon. With each passing moment, the sky gives us a new perspective, inspiring us to look up and appreciate the wonders of nature that surround us.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="text-summarization">
+<h3>Text Summarization<a class="headerlink" href="#text-summarization" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Antibiotics are a type of medication used to treat bacterial infections. They work by either killing the bacteria or preventing them from reproducing, allowing the body&#39;s immune system to fight off the infection. Antibiotics are usually taken orally in the form of pills, capsules, or liquid solutions, or sometimes administered intravenously. They are not effective against viral infections, and using them inappropriately can lead to antibiotic resistance.</span>
+
+<span class="s2">Explain the above in one sentence:&quot;&quot;&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">get_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Antibiotics are medications used to treat bacterial infections by either killing the bacteria or preventing their reproduction, but they are not effective against viral infections and misuse can lead to antibiotic resistance.
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise</strong>: Instruct the model to explain the paragraph in one sentence like “I am 5”. Do you see any differences?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Antibiotics are a type of medication used to treat bacterial infections. They work by either killing the bacteria or preventing them from reproducing, allowing the body&#39;s immune system to fight off the infection. Antibiotics are usually taken orally in the form of pills, capsules, or liquid solutions, or sometimes administered intravenously. They are not effective against viral infections, and using them inappropriately can lead to antibiotic resistance.</span>
+
+<span class="s2">Explain the above in one sentence as if I were a 5 year old child:&quot;&quot;&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">get_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Antibiotics are special medicines that help your body fight off bad germs that make you sick.
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can create a workflow to summarize several reviews:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># review for a toy</span>
+<span class="n">review_1</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Got this panda plush toy for my daughter&#39;s birthday, </span><span class="se">\</span>
+<span class="s2">who loves it and takes it everywhere. It&#39;s soft and </span><span class="se">\</span>
+<span class="s2">super cute, and its face has a friendly look. It&#39;s </span><span class="se">\</span>
+<span class="s2">a bit small for what I paid though. I think there </span><span class="se">\</span>
+<span class="s2">might be other options that are bigger for the </span><span class="se">\</span>
+<span class="s2">same price. It arrived a day earlier than expected, </span><span class="se">\</span>
+<span class="s2">so I got to play with it myself before I gave it </span><span class="se">\</span>
+<span class="s2">to her.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="c1"># review for a standing lamp</span>
+<span class="n">review_2</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Needed a nice lamp for my bedroom, and this one </span><span class="se">\</span>
+<span class="s2">had additional storage and not too high of a price </span><span class="se">\</span>
+<span class="s2">point. Got it fast - arrived in 2 days. The string </span><span class="se">\</span>
+<span class="s2">to the lamp broke during the transit and the company </span><span class="se">\</span>
+<span class="s2">happily sent over a new one. Came within a few days </span><span class="se">\</span>
+<span class="s2">as well. It was easy to put together. Then I had a </span><span class="se">\</span>
+<span class="s2">missing part, so I contacted their support and they </span><span class="se">\</span>
+<span class="s2">very quickly got me the missing piece! Seems to me </span><span class="se">\</span>
+<span class="s2">to be a great company that cares about their customers </span><span class="se">\</span>
+<span class="s2">and products.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="c1"># review for an electric toothbrush</span>
+<span class="n">review_3</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;My dental hygienist recommended an electric toothbrush, </span><span class="se">\</span>
+<span class="s2">which is why I got this. The battery life seems to be </span><span class="se">\</span>
+<span class="s2">pretty impressive so far. After initial charging and </span><span class="se">\</span>
+<span class="s2">leaving the charger plugged in for the first week to </span><span class="se">\</span>
+<span class="s2">condition the battery, I&#39;ve unplugged the charger and </span><span class="se">\</span>
+<span class="s2">been using it for twice daily brushing for the last </span><span class="se">\</span>
+<span class="s2">3 weeks all on the same charge. But the toothbrush head </span><span class="se">\</span>
+<span class="s2">is too small. I’ve seen baby toothbrushes bigger than </span><span class="se">\</span>
+<span class="s2">this one. I wish the head was bigger with different </span><span class="se">\</span>
+<span class="s2">length bristles to get between teeth better because </span><span class="se">\</span>
+<span class="s2">this one doesn’t.  Overall if you can get this one </span><span class="se">\</span>
+<span class="s2">around the $50 mark, it&#39;s a good deal. The manufactuer&#39;s </span><span class="se">\</span>
+<span class="s2">replacements heads are pretty expensive, but you can </span><span class="se">\</span>
+<span class="s2">get generic ones that&#39;re more reasonably priced. This </span><span class="se">\</span>
+<span class="s2">toothbrush makes me feel like I&#39;ve been to the dentist </span><span class="se">\</span>
+<span class="s2">every day. My teeth feel sparkly clean!</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="c1"># review for a blender</span>
+<span class="n">review_4</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;So, they still had the 17 piece system on seasonal </span><span class="se">\</span>
+<span class="s2">sale for around $49 in the month of November, about </span><span class="se">\</span>
+<span class="s2">half off, but for some reason (call it price gouging) </span><span class="se">\</span>
+<span class="s2">around the second week of December the prices all went </span><span class="se">\</span>
+<span class="s2">up to about anywhere from between $70-$89 for the same </span><span class="se">\</span>
+<span class="s2">system. And the 11 piece system went up around $10 or </span><span class="se">\</span>
+<span class="s2">so in price also from the earlier sale price of $29. </span><span class="se">\</span>
+<span class="s2">So it looks okay, but if you look at the base, the part </span><span class="se">\</span>
+<span class="s2">where the blade locks into place doesn’t look as good </span><span class="se">\</span>
+<span class="s2">as in previous editions from a few years ago, but I </span><span class="se">\</span>
+<span class="s2">plan to be very gentle with it (example, I crush </span><span class="se">\</span>
+<span class="s2">very hard items like beans, ice, rice, etc. in the </span><span class="se">\</span>
+<span class="s2">blender first then pulverize them in the serving size </span><span class="se">\</span>
+<span class="s2">I want in the blender then switch to the whipping </span><span class="se">\</span>
+<span class="s2">blade for a finer flour, and use the cross cutting blade </span><span class="se">\</span>
+<span class="s2">first when making smoothies, then use the flat blade </span><span class="se">\</span>
+<span class="s2">if I need them finer/less pulpy). Special tip when making </span><span class="se">\</span>
+<span class="s2">smoothies, finely cut and freeze the fruits and </span><span class="se">\</span>
+<span class="s2">vegetables (if using spinach-lightly stew soften the </span><span class="se">\</span>
+<span class="s2">spinach then freeze until ready for use-and if making </span><span class="se">\</span>
+<span class="s2">sorbet, use a small to medium sized food processor) </span><span class="se">\</span>
+<span class="s2">that you plan to use that way you can avoid adding so </span><span class="se">\</span>
+<span class="s2">much ice if at all-when making your smoothie. </span><span class="se">\</span>
+<span class="s2">After about a year, the motor was making a funny noise. </span><span class="se">\</span>
+<span class="s2">I called customer service but the warranty expired </span><span class="se">\</span>
+<span class="s2">already, so I had to buy another one. FYI: The overall </span><span class="se">\</span>
+<span class="s2">quality has gone done in these types of products, so </span><span class="se">\</span>
+<span class="s2">they are kind of counting on brand recognition and </span><span class="se">\</span>
+<span class="s2">consumer loyalty to maintain sales. Got it in about </span><span class="se">\</span>
+<span class="s2">two days.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">reviews</span> <span class="o">=</span> <span class="p">[</span><span class="n">review_1</span><span class="p">,</span> <span class="n">review_2</span><span class="p">,</span> <span class="n">review_3</span><span class="p">,</span> <span class="n">review_4</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">reviews</span><span class="p">)):</span>
+    <span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">    Your task is to generate a short summary of a product </span><span class="se">\</span>
+<span class="s1">    review from an ecommerce site.</span>
+
+<span class="s1">    Summarize the review below, delimited by triple </span><span class="se">\</span>
+<span class="s1">    backticks in at most 20 words.</span>
+
+<span class="s1">    Review: ```</span><span class="si">{</span><span class="n">reviews</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1">```</span>
+<span class="s1">    &#39;&#39;&#39;</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="n">get_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 Summary: Cute panda plush toy loved by daughter, soft and friendly, but smaller than expected for the price. Arrived early. 
+
+1 Summary: Lamp with storage, affordable, fast delivery. Company provided excellent customer service, quick replacements for broken and missing parts. 
+
+2 Impressive battery life, small head, good deal for $50, generic replacement heads available, leaves teeth feeling clean. 
+
+3 Summary: Price fluctuations, slight design flaw, motor noise after a year, but efficient for various food prep tasks. 
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise</strong> Use “extract the information relevant to shipping and delivery” instead of summarize</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">reviews</span><span class="p">)):</span>
+    <span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">    Your task is to generate a short summary of a product </span><span class="se">\</span>
+<span class="s1">    review from an ecommerce site.</span>
+
+<span class="s1">    Extract the information relevant to shipping and delivery, delimited by triple </span><span class="se">\</span>
+<span class="s1">    backticks in at most 20 words.</span>
+
+<span class="s1">    Review: ```</span><span class="si">{</span><span class="n">reviews</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1">```</span>
+<span class="s1">    &#39;&#39;&#39;</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="n">get_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 Shipping and delivery: Arrived a day earlier than expected, allowing for personal enjoyment before gifting. 
+
+1 Shipping and delivery: Lamp arrived in 2 days, replacement string and missing part sent quickly. Great customer service. 
+
+2 Shipping and delivery: Not mentioned. 
+
+3 Shipping and delivery: Got it in about two days. 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Question Answering</span>
+
+<span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Answer the question based on the context below. Keep the answer short and concise. Respond &quot;Unsure about answer&quot; if not sure about the answer.</span>
+
+<span class="s2">Context: Teplizumab traces its roots to a New Jersey drug company called Ortho Pharmaceutical. There, scientists generated an early version of the antibody, dubbed OKT3. Originally sourced from mice, the molecule was able to bind to the surface of T cells and limit their cell-killing potential. In 1986, it was approved to help prevent organ rejection after kidney transplants, making it the first therapeutic antibody allowed for human use.</span>
+
+<span class="s2">Question: What was OKT3 originally sourced from?</span>
+
+<span class="s2">Answer:&quot;&quot;&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">get_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mice
+</pre></div>
+</div>
+</div>
+</div>
+<p>Compare with just asking the question without context:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;What was OKT3 originally sourced from?&quot;&quot;&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">get_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OKT3 was originally sourced from mouse hybridoma cells.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">user_messages</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s2">&quot;La performance du système est plus lente que d&#39;habitude.&quot;</span><span class="p">,</span>  <span class="c1"># System performance is slower than normal</span>
+  <span class="s2">&quot;Mi monitor tiene píxeles que no se iluminan.&quot;</span><span class="p">,</span>              <span class="c1"># My monitor has pixels that are not lighting</span>
+  <span class="s2">&quot;Il mio mouse non funziona&quot;</span><span class="p">,</span>                                 <span class="c1"># My mouse is not working</span>
+  <span class="s2">&quot;Mój klawisz Ctrl jest zepsuty&quot;</span><span class="p">,</span>                             <span class="c1"># My keyboard has a broken control key</span>
+  <span class="s2">&quot;我的屏幕在闪烁&quot;</span>                                               <span class="c1"># My screen is flashing</span>
+<span class="p">]</span>
+<span class="k">for</span> <span class="n">issue</span> <span class="ow">in</span> <span class="n">user_messages</span><span class="p">:</span>
+    <span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Tell me what language this is: ```</span><span class="si">{</span><span class="n">issue</span><span class="si">}</span><span class="s2">```&quot;</span>
+    <span class="n">lang</span> <span class="o">=</span> <span class="n">get_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Original message (</span><span class="si">{</span><span class="n">lang</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="n">issue</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    Translate the following  text to English </span><span class="se">\</span>
+<span class="s2">    and Korean: ```</span><span class="si">{</span><span class="n">issue</span><span class="si">}</span><span class="s2">```</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">get_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Original message (This is French.): La performance du système est plus lente que d&#39;habitude.
+English: &quot;The system performance is slower than usual.&quot;
+
+Korean: &quot;시스템 성능이 평소보다 느립니다.&quot; 
+
+Original message (This is Spanish.): Mi monitor tiene píxeles que no se iluminan.
+English: &quot;My monitor has pixels that do not light up.&quot;
+Korean: &quot;내 모니터에는 빛나지 않는 픽셀이 있습니다.&quot; 
+
+Original message (Italian): Il mio mouse non funziona
+English: My mouse is not working
+Korean: 내 마우스가 작동하지 않습니다 
+
+Original message (This is Polish.): Mój klawisz Ctrl jest zepsuty
+English: My Ctrl key is broken
+Korean: 제 Ctrl 키가 고장 났어요 
+
+Original message (This is Chinese.): 我的屏幕在闪烁
+English: My screen is flickering
+Korean: 내 화면이 깜박거립니다 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="role-playing">
+<h3>Role-Playing<a class="headerlink" href="#role-playing" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;The following is a conversation with an AI research assistant. The assistant tone is technical and scientific.</span>
+
+<span class="s2">Human: Hello, who are you?</span>
+<span class="s2">AI: Greeting! I am an AI research assistant. How can I help you today?</span>
+<span class="s2">Human: Can you tell me about the creation of blackholes?</span>
+<span class="s2">AI:&quot;&quot;&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">get_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Black holes are formed when a massive star collapses under its own gravity after running out of nuclear fuel. This collapse causes the star&#39;s core to shrink to a point of infinite density, known as a singularity. The gravitational pull of this singularity is so strong that not even light can escape, creating a region of spacetime from which nothing can escape, known as the event horizon. This is what we observe as a black hole.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;The following is a conversation with a Blackbeard, the most famous pirate ever.</span>
+
+<span class="s2">Human: Can you tell me about the creation of blackholes?</span>
+<span class="s2">Blackbeard:&quot;&quot;&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">get_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Arrr, I be a pirate, not a scientist! But I&#39;ve heard tales of these blackholes, mysterious and powerful forces of nature that can swallow up anything in their path. Some say they be formed when a massive star collapses in on itself, creating a gravitational pull so strong that not even light can escape. Aye, they be a fearsome sight to behold, and best avoided if ye value yer ship and crew.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="code-generation">
+<h3>Code Generation<a class="headerlink" href="#code-generation" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\&quot;\&quot;\&quot;\n</span><span class="s2">Table departments, columns = [DepartmentId, DepartmentName]</span><span class="se">\n</span><span class="s2">Table students, columns = [DepartmentId, StudentId, StudentName]</span><span class="se">\n</span><span class="s2">Create a MySQL query for all students in the Computer Science Department</span><span class="se">\n\&quot;\&quot;\&quot;</span><span class="s2">&quot;</span>
+
+<span class="n">messages</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">prompt</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">get_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SELECT s.StudentId, s.StudentName
+FROM students s
+JOIN departments d ON s.DepartmentId = d.DepartmentId
+WHERE d.DepartmentName = &#39;Computer Science&#39;;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_json</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;resturant employees&quot;</span> <span class="p">:[</span>
+    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Shyam&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span><span class="s2">&quot;shyamjaiswal@gmail.com&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span><span class="s2">&quot;bob32@gmail.com&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Jai&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span><span class="s2">&quot;jai87@gmail.com&quot;</span><span class="p">}</span>
+<span class="p">]}</span>
+
+<span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Translate the following python dictionary from JSON to an HTML </span><span class="se">\</span>
+<span class="s2">table with column headers and title: </span><span class="si">{</span><span class="n">data_json</span><span class="si">}</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">get_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Restaurant Employees&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Email&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Shyam&lt;/td&gt;
+      &lt;td&gt;shyamjaiswal@gmail.com&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Bob&lt;/td&gt;
+      &lt;td&gt;bob32@gmail.com&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Jai&lt;/td&gt;
+      &lt;td&gt;jai87@gmail.com&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">response</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html>
+<head>
+  <title>Restaurant Employees</title>
+</head>
+<body>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+    <tr>
+      <td>Shyam</td>
+      <td>shyamjaiswal@gmail.com</td>
+    </tr>
+    <tr>
+      <td>Bob</td>
+      <td>bob32@gmail.com</td>
+    </tr>
+    <tr>
+      <td>Jai</td>
+      <td>jai87@gmail.com</td>
+    </tr>
+  </table>
+</body>
+</html></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_json</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;resturant employees&quot;</span> <span class="p">:[</span>
+    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Shyam&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span><span class="s2">&quot;shyamjaiswal@gmail.com&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span><span class="s2">&quot;bob32@gmail.com&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Jai&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span><span class="s2">&quot;jai87@gmail.com&quot;</span><span class="p">}</span>
+<span class="p">]}</span>
+
+<span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Translate the following python dictionary from JSON to XML: </span><span class="si">{</span><span class="n">data_json</span><span class="si">}</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">get_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;root&gt;
+    &lt;resturant_employees&gt;
+        &lt;employee&gt;
+            &lt;name&gt;Shyam&lt;/name&gt;
+            &lt;email&gt;shyamjaiswal@gmail.com&lt;/email&gt;
+        &lt;/employee&gt;
+        &lt;employee&gt;
+            &lt;name&gt;Bob&lt;/name&gt;
+            &lt;email&gt;bob32@gmail.com&lt;/email&gt;
+        &lt;/employee&gt;
+        &lt;employee&gt;
+            &lt;name&gt;Jai&lt;/name&gt;
+            &lt;email&gt;jai87@gmail.com&lt;/email&gt;
+        &lt;/employee&gt;
+    &lt;/resturant_employees&gt;
+&lt;/root&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="reasoning">
+<h3>Reasoning<a class="headerlink" href="#reasoning" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text_1</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Making a cup of tea is easy! First, you need to get some </span><span class="se">\</span>
+<span class="s2">water boiling. While that&#39;s happening, </span><span class="se">\</span>
+<span class="s2">grab a cup and put a tea bag in it. Once the water is </span><span class="se">\</span>
+<span class="s2">hot enough, just pour it over the tea bag. </span><span class="se">\</span>
+<span class="s2">Let it sit for a bit so the tea can steep. After a </span><span class="se">\</span>
+<span class="s2">few minutes, take out the tea bag. If you </span><span class="se">\</span>
+<span class="s2">like, you can add some sugar or milk to taste. </span><span class="se">\</span>
+<span class="s2">And that&#39;s it! You&#39;ve got yourself a delicious </span><span class="se">\</span>
+<span class="s2">cup of tea to enjoy.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">You will be provided with text delimited by triple quotes.</span>
+<span class="s2">If it contains a sequence of instructions, </span><span class="se">\</span>
+<span class="s2">re-write those instructions in the following format:</span>
+
+<span class="s2">Step 1 - ...</span>
+<span class="s2">Step 2 - …</span>
+<span class="s2">…</span>
+<span class="s2">Step N - …</span>
+
+<span class="s2">If the text does not contain a sequence of instructions, </span><span class="se">\</span>
+<span class="s2">then simply write </span><span class="se">\&quot;</span><span class="s2">No steps provided.</span><span class="se">\&quot;</span>
+
+<span class="se">\&quot;\&quot;\&quot;</span><span class="si">{</span><span class="n">text_1</span><span class="si">}</span><span class="se">\&quot;\&quot;\&quot;</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">get_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step 1 - Get some water boiling.
+Step 2 - Grab a cup and put a tea bag in it.
+Step 3 - Pour the hot water over the tea bag.
+Step 4 - Let the tea steep for a few minutes.
+Step 5 - Remove the tea bag.
+Step 6 - Add sugar or milk to taste.
+Step 7 - Enjoy your delicious cup of tea.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text_2</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">The sun is shining brightly today, and the birds are </span><span class="se">\</span>
+<span class="s2">singing. It&#39;s a beautiful day to go for a </span><span class="se">\</span>
+<span class="s2">walk in the park. The flowers are blooming, and the </span><span class="se">\</span>
+<span class="s2">trees are swaying gently in the breeze. People </span><span class="se">\</span>
+<span class="s2">are out and about, enjoying the lovely weather. </span><span class="se">\</span>
+<span class="s2">Some are having picnics, while others are playing </span><span class="se">\</span>
+<span class="s2">games or simply relaxing on the grass. It&#39;s a </span><span class="se">\</span>
+<span class="s2">perfect day to spend time outdoors and appreciate the </span><span class="se">\</span>
+<span class="s2">beauty of nature.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">You will be provided with text delimited by triple quotes.</span>
+<span class="s2">If it contains a sequence of instructions, </span><span class="se">\</span>
+<span class="s2">re-write those instructions in the following format:</span>
+
+<span class="s2">Step 1 - ...</span>
+<span class="s2">Step 2 - …</span>
+<span class="s2">…</span>
+<span class="s2">Step N - …</span>
+
+<span class="s2">If the text does not contain a sequence of instructions, </span><span class="se">\</span>
+<span class="s2">then simply write </span><span class="se">\&quot;</span><span class="s2">No steps provided.</span><span class="se">\&quot;</span>
+
+<span class="se">\&quot;\&quot;\&quot;</span><span class="si">{</span><span class="n">text_2</span><span class="si">}</span><span class="se">\&quot;\&quot;\&quot;</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">get_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No steps provided.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;The odd numbers in this group add up to an even number: 15, 32, 5, 13, 82, 7, 1.</span>
+
+<span class="s2">Solve by breaking the problem into steps. First, identify the odd numbers, add them, and indicate whether the result is odd or even.&quot;&quot;&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">get_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Odd numbers in the group: 15, 5, 13, 7, 1
+
+Adding them together: 15 + 5 + 13 + 7 + 1 = 41
+
+The sum of the odd numbers is 41, which is an odd number.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="inferring-topics">
+<h3>Inferring topics<a class="headerlink" href="#inferring-topics" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">story</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">In a recent survey conducted by the government,</span>
+<span class="s2">public sector employees were asked to rate their level</span>
+<span class="s2">of satisfaction with the department they work at.</span>
+<span class="s2">The results revealed that NASA was the most popular</span>
+<span class="s2">department with a satisfaction rating of 95%.</span>
+
+<span class="s2">One NASA employee, John Smith, commented on the findings,</span>
+<span class="s2">stating, &quot;I&#39;m not surprised that NASA came out on top.</span>
+<span class="s2">It&#39;s a great place to work with amazing people and</span>
+<span class="s2">incredible opportunities. I&#39;m proud to be a part of</span>
+<span class="s2">such an innovative organization.&quot;</span>
+
+<span class="s2">The results were also welcomed by NASA&#39;s management team,</span>
+<span class="s2">with Director Tom Johnson stating, &quot;We are thrilled to</span>
+<span class="s2">hear that our employees are satisfied with their work at NASA.</span>
+<span class="s2">We have a talented and dedicated team who work tirelessly</span>
+<span class="s2">to achieve our goals, and it&#39;s fantastic to see that their</span>
+<span class="s2">hard work is paying off.&quot;</span>
+
+<span class="s2">The survey also revealed that the</span>
+<span class="s2">Social Security Administration had the lowest satisfaction</span>
+<span class="s2">rating, with only 45</span><span class="si">% o</span><span class="s2">f employees indicating they were</span>
+<span class="s2">satisfied with their job. The government has pledged to</span>
+<span class="s2">address the concerns raised by employees in the survey and</span>
+<span class="s2">work towards improving job satisfaction across all departments.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Determine five topics that are being discussed in the </span><span class="se">\</span>
+<span class="s2">following text, which is delimited by triple backticks.</span>
+
+<span class="s2">Make each item one or two words long.</span>
+
+<span class="s2">Format your response as a list of items separated by commas.</span>
+
+<span class="s2">Text sample: &#39;&#39;&#39;</span><span class="si">{</span><span class="n">story</span><span class="si">}</span><span class="s2">&#39;&#39;&#39;</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">get_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1. Survey
+2. Job satisfaction
+3. NASA
+4. Social Security Administration
+5. Government pledge
+</pre></div>
+</div>
+</div>
+</div>
+<p>News alert for certain topics:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">topic_list</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;nasa&quot;</span><span class="p">,</span> <span class="s2">&quot;local government&quot;</span><span class="p">,</span> <span class="s2">&quot;engineering&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;employee satisfaction&quot;</span><span class="p">,</span> <span class="s2">&quot;federal government&quot;</span>
+<span class="p">]</span>
+<span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Determine whether each item in the following list of </span><span class="se">\</span>
+<span class="s2">topics is a topic in the text below, which</span>
+<span class="s2">is delimited with triple backticks.</span>
+
+<span class="s2">Give your answer as list with 0 or 1 for each topic.</span><span class="se">\</span>
+
+<span class="s2">List of topics: </span><span class="si">{</span><span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">topic_list</span><span class="p">)</span><span class="si">}</span>
+
+<span class="s2">Text sample: &#39;&#39;&#39;</span><span class="si">{</span><span class="n">story</span><span class="si">}</span><span class="s2">&#39;&#39;&#39;</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">get_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 0, 0, 1, 1]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="few-shot-prompting">
+<h3>Few-shot prompting<a class="headerlink" href="#few-shot-prompting" title="Link to this heading">#</a></h3>
+<p>If we want to constrain the output to be of a particular form, we can use a set of examples with that same structure in the prompt. This is called few-shot prompting.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;The odd numbers in this group add up to an even number: 4, 8, 9, 15, 12, 2, 1.</span>
+<span class="s2">A: The answer is False.</span>
+
+<span class="s2">The odd numbers in this group add up to an even number: 17,  10, 19, 4, 8, 12, 24.</span>
+<span class="s2">A: The answer is True.</span>
+
+<span class="s2">The odd numbers in this group add up to an even number: 16,  11, 14, 4, 8, 13, 24.</span>
+<span class="s2">A: The answer is True.</span>
+
+<span class="s2">The odd numbers in this group add up to an even number: 17,  9, 10, 12, 13, 4, 2.</span>
+<span class="s2">A: The answer is False.</span>
+
+<span class="s2">The odd numbers in this group add up to an even number: 15, 32, 5, 13, 82, 7, 1.</span>
+<span class="s2">A:&quot;&quot;&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">get_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The answer is False.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="chain-of-though-prompting">
+<h3>Chain-of-Though prompting<a class="headerlink" href="#chain-of-though-prompting" title="Link to this heading">#</a></h3>
+<p>This strategy helps the model to reason</p>
+<p><img alt="cot" src="../_images/cot.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Q: A juggler can juggle 16 balls. Half of the balls are golf balls, and half of the golf balls are blue. How many blue golf balls are there?</span>
+<span class="s2">A: Let&#39;s think step by step.&quot;&quot;&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">get_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>First, we know that the juggler can juggle 16 balls. Since half of the balls are golf balls, that means there are 8 golf balls in total.
+
+Next, we know that half of the golf balls are blue. So, half of 8 is 4. Therefore, there are 4 blue golf balls in total.
+
+So, there are 4 blue golf balls in total.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./s23_instruction_tuning_and_gpt"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../s22_automatic_speech_recognition/s22.3_using_gpus.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Using GPUs with transformers</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="s23.2_chain_of_thought.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chain of Thought Advanced Prompting Examples</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Instruction Tuning of Language Models</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-instruction-tuning">What is Instruction Tuning?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#available-instruction-tuned-models">Available Instruction-tuned Models</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-gpt-models-through-the-api">Using the GPT models through the API</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#we-can-access-the-gpt-models-from-code-and-get-an-answer-to-any-question">We can access the GPT-models from code and get an answer to any question.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-tasks-with-gpt">Classification tasks with GPT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#translation-tasks">Translation tasks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prompt-engineering">Prompt Engineering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#temperature-parameter-effect">Temperature parameter effect</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-summarization">Text Summarization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#role-playing">Role-Playing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-generation">Code Generation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reasoning">Reasoning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferring-topics">Inferring topics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#few-shot-prompting">Few-shot prompting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chain-of-though-prompting">Chain-of-Though prompting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Víctor Gallego
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

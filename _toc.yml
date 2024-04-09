@@ -75,4 +75,16 @@ parts:
       - file: s22_automatic_speech_recognition/s22.1_whisper_model.ipynb
       - file: s22_automatic_speech_recognition/s22.2_text_to_speech.ipynb
       - file: s22_automatic_speech_recognition/s22.3_using_gpus.ipynb
+  - caption: 23. Instruction Tuning and the GPT API
+    chapters:
+      - file: s23_instruction_tuning_and_gpt/s23.1_gpt_api.ipynb
+      - file: s23_instruction_tuning_and_gpt/s23.2_chain_of_thought.ipynb
+  - caption: 24. Retrieval Augmented Generation
+    chapters:
+      - file: s24_retrieval_augmented_generation_full/s24.1_into-to-llamaindex.ipynb
+      - file: s24_retrieval_augmented_generation_full/s24.2_multimodal-retrieval.ipynb
+  - caption: 25. Exercises I
+    chapters:
+      - file: s25_applications_llms_streamlit/s25_exercises.ipynb
+  
   

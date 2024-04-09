@@ -1,0 +1,914 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Exercises 1: LLM models for information extraction in podcasts 🎙️ &#8212; AI: ML &amp; Analytics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 's25_applications_llms_streamlit/s25_exercises';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Multi-modal Models with LlamaIndex" href="../s24_retrieval_augmented_generation_full/s24.2_multimodal-retrieval.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-neon.png" class="logo__image only-light" alt="AI: ML & Analytics - Home"/>
+    <script>document.write(`<img src="../_static/logo-neon.png" class="logo__image only-dark" alt="AI: ML & Analytics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    <no title>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">1. Our first Generative AI application</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/example_genAI.html">Our first Generative AI application</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2. Matrix Algebra with NumPy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.1-numpy.html">Matrix operations with Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.2-numpy-exercises-solutions.html">Numpy exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.3-image-blending.html">Working with images in Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Optimization and Automatic Differentiation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s03_optimization_automatic_differentiation/s03.1_notebook-solutions.html">Review of Optimization</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Review of Machine Learning with scikit-learn</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s04_review_ML_sklearn/s04.1-supervised-learning-sklearn-solutions.html">Scikit-learn</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../s04_review_ML_sklearn/s04.2-cost-benefit-analysis.html">Cost-Benefit Analysis of a ML classifier.</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">5. Unsupervised Learning with UMAP</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s05_unsupervised-learning-umap/s05.1-dimensionality-reduction.html">Dimensionality Reduction. UMAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s05_unsupervised-learning-umap/s05.2-text-analysis-solutions.html">Text Analysis with UMAP</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">6. Text Processing with scikit-learn</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s06_text-processing-sklearn/s06.1-text-classification-solved.html">Session 6: More on working with text data in scikit-learn</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">7. Intro to Deep Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s07_intro_deep_learning/s07.1-neural_network-solved.html">07: Introduction to Neural Networks</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">9. Deep Learning in Computer Vision</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.1-examples.html">Session 9. More on Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.2-examples-2.html">Introduction to Computer Vision with Deep Learning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.3-intro-to-convolutions_solved.html">Intro to convolutional neural networks (CNNs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.4-convolutional-networks_solved.html">Convolutional Neural Networks (CNNs)</a></li>
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">11. Transfer Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s11_transfer_learning/s11.1-transfer-learning-examples.html">Transfer Learning</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">12. Zero-Shot Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s12_zero-shot-learning/s12.1_intro-zero-shot-classification.html">Zero-Shot Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">13. Semantic Search</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s13_semantic_search_and_biases/s13.1_semantic_search_solved.html">Semantic Search</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">14. Object Detection</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s14_more_vision_tasks_object_detection/s14.1-intro-object-detection.html">Object Detection</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../s14_more_vision_tasks_object_detection/s14.2-zero-shot_object_detection.html">Zero-shot object detection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">15. Exercises I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.1-text-classification-solved.html">Exercise 1: Hate Spech Detection in X (aka Twitter) 🤬</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.2-transfer-learning-solved.html">Exercise: Plant Disease App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.3-semantic-search-solved2.html">Exercise: Product Item Recommender 🧥</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">16. Exercises II</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s16_exercises_2_solved/s16.1-umap-solved.html">Exercise 1: Eurovision Song Lyrics Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s16_exercises_2_solved/s16.2-zero-shot-classification-solved.html">Exercise 2: Photo Sorting Application 📸</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">19. Intro to Transformers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s19_intro_to_transformers/s19.1_pipelines_solved.html">Introduction to the Transformers Library for NLP: pipelines</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s19_intro_to_transformers/s19.2_zero-shot-classification.html">Zero-Shot Classification in NLP</a></li>
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">20. Transformers Architecture &amp; Transfer Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.1_transformers_architecture.html">Fundamentals of the Transformer Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.2-transfer-intro.html">Transfer Learning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.3-transfer-learning-example.html">Transfer Learning example: Legal Text Classification</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">21. Fine-tuning with Transformers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s21_fine-tuning-trainer/s21.1-fine-tuning-example.html">Fine-tuning with transformers’ library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s21_fine-tuning-trainer/s21.2-fine-tuning-example-2.html">Intent Classification in Banking 🏦</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">22. Speech Recognition with Transformers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s22_automatic_speech_recognition/s22.1_whisper_model.html">Automatic Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s22_automatic_speech_recognition/s22.2_text_to_speech.html">Text to Speech</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s22_automatic_speech_recognition/s22.3_using_gpus.html">Using GPUs with transformers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">23. Instruction Tuning and the GPT API</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s23_instruction_tuning_and_gpt/s23.1_gpt_api.html">Instruction Tuning of Language Models</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s23_instruction_tuning_and_gpt/s23.2_chain_of_thought.html">Chain of Thought Advanced Prompting Examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">24. Retrieval Augmented Generation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s24_retrieval_augmented_generation_full/s24.1_into-to-llamaindex.html">Semantic Search for texts</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s24_retrieval_augmented_generation_full/s24.2_multimodal-retrieval.html">Multi-modal Models with LlamaIndex</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">25. Exercises I</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercises 1: LLM models for information extraction in podcasts 🎙️</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/vicgalle/ai-ml-course" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/vicgalle/ai-ml-course/issues/new?title=Issue%20on%20page%20%2Fs25_applications_llms_streamlit/s25_exercises.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/s25_applications_llms_streamlit/s25_exercises.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exercises 1: LLM models for information extraction in podcasts 🎙️</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-controllable-summarization">Exercise 2: controllable summarization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-structured-information-extraction">Exercise 3: structured information extraction</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="exercises-1-llm-models-for-information-extraction-in-podcasts">
+<h1>Exercises 1: LLM models for information extraction in podcasts 🎙️<a class="headerlink" href="#exercises-1-llm-models-for-information-extraction-in-podcasts" title="Link to this heading">#</a></h1>
+<p>We want to automatically process podcasts, to extract different kinds of information. We will try several approaches, such as calling the OpenAI API, and/or using HuggingFace open-source models.</p>
+<p>As a starter, we are given an already transcribed podcast (in Spanish), as a string:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Ser Podcast. Los números nos dicen que de momento no se está quedando pese a que la mayoría de los trabajadores preferirían trabajar en remoto al menos parcialmente. Punto medio, sí. Unos días ir a la pandemia se está desinflando como un globo. Ya sabíamos que en ese momento, el del coronavirus, el teletrabajo fue una obligación, pero también decían los expertos y las empresas que gran parte de ese teletrabajo se podría mantener y que España podría dejar de estar por detrás de otros países en el uso del trabajo a distancia. Pasados dos años, los datos nos dicen que no, que eso fueron almacenamiento para la industria alimentaria. Por tanto, su trabajo es sentado en una oficina atendiendo al teléfono o al email. Una pena porque en la pandemia, Nacho trabajó durante un año todos los días desde casa. Y sí se vio mejorada su vida, tiene tres hijos y la conciliación era mucho mejor. Como Nacho, según un estudio de ADECO, la mitad de las personas que teletrabajaban. Ahora la cifra se ha reducido en un millón que han vuelto a las oficinas. Fue cuando Ana decidió cambiar. Modelo híbrido como el que buscó también Lourdes. Conciliación, ahorro, medio ambiente, para cuidar nuestros entornos, al final evitar desplazamientos innecesarios hace que haya menos tráfico. Coger el coche a diario para Aitor se dedica al comercio online, teletrabaja el 100</span><span class="si">% d</span><span class="s2">e su jornada. Su vida ha su domicilio el año pasado. Apenas el 8% tuvo modelo mixto y solo un 6% teletrabajaban en España algún día a la semana. Con la llegada del coronavirus, esa cifra subió a prácticamente cuatro millones. La cifra bajó el año pasado ya a algo menos de tres millones. Y ahora mismo son dos y medio los que trabajaban en remoto, es decir, hemos pasado de cuatro son coronavirus han vuelto a la presencialidad obligatoria. Es verdad que el teletrabajo en ese momento con la pandemia fue una obligación, que había pocas empresas que estaban preparadas, pero también del cambio de paradigma en la metodología productiva de nuestro país. Lo va a cambiar todo. Va a cambiar la estructura negocial en los convenios colectivos, pero va a cambiar también el modus operandi del desarrollo de nuestros trabajos. entre otras cosas, a que la empresa tuviera que asumir que los medios con los que tiene que teletrabajar los pagan las empresas, que tiene un sistema de control de formeras. Pero como estamos viendo, los datos a día de hoy demuestran que hay marcha atrás. De hecho, si desagregamos aún más los datos, estamos viendo que solo en Madrid y algo en Barcelona hay teletrabajo. En Madrid, por ejemplo, uno de cada cinco trabajadores tiene la opción de hacer trabajo en remoto al menos parcialmente. Es una cifra parecida a la media europea. En Barcelona se acerca al 15</span><span class="si">% e</span><span class="s2">l número de personas que pueden teletrabajar. Todas las demás comunidades la siguen muy de lejos y, por ejemplo, en Murcia, en Castilla-La Mancha o en La Rioja no llegan ni al 10</span><span class="si">% lo</span><span class="s2">s que tienen la opción de teletrabajar. Con todo esto, lo que tenemos sobre la mesa es que España, que ya iba retrasada respecto a otros países europeos en esta cuestión, está a día de hoy aún más por detrás. María Benítez, ¿qué tal? Buenas noches. Buenas noches, Jorge. Vamos a repasar los datos. ¿En qué posición está España en cuanto al teletrabajo en comparación con el resto de países europeos? Pues claramente por detrás. Antes de la pandemia, España ocupaba el puesto 14 en el ranking de teletrabajo y ahora ha bajado dos puestos hasta el 16º lugar, claramente por debajo de la media europea ¿por qué? Nuestros compañeros de Radio Madrid le han preguntado estos días a empresarios y a trabajadores. Francisco Aranda, de la patronal madrileña CEIM, apuntaba que es una cuestión de productividad. Tiene el teletrabajo cosas muy positivas, sin duda, como que reduce los tiempos de desplazamiento o que favorece un mayor grado de concentración, pero hay que tener cuidado porque también conlleva situaciones de aislamiento social y profesional que pueden repercutir negativamente en la productividad del empleado. Algunos empresarios también apuntan a que al tener que pagar los costes del teletrabajo a sus empleados, les sale más barato que no teletrabajen, porque así se ahorran este gasto extra. Pero los sindicatos dicen que esto es una excusa. José Varela, responsable de digitalización en el trabajo de UGT, lo decía así. y ya en aquel se afirmaba que todos los costes del teletrabajo tenían que pagarlos el empresario. Estoy hablando de un acuerdo europeo que firmaron las principales patronales europeas. Esto no es un problema de costes, es un problema de fidelizar a los empleados y de tenerlos contentos. Si una empresa decide que no da el teletrabajo por pagar un ordenador y unos pequeños costes de teletrabajo es porque la empresa directamente no es viable. Los costes al final no son más que una excusa. Javier Blasco es director de Diadeco Group Institute. ¿Qué tal? Buenas noches. ¿Qué tal? Buenas noches. Estábamos viendo, según los datos que han publicado ustedes en el monitor que acaban de sacar, que la mitad de los que teletrabajaron durante la pandemia ya no teletrabaja nunca. Esto demuestra que el teletrabajo en muchos casos fue unaimos una norma no sé si anticipada en el tiempo pero parece que en algunas organizaciones tanto de la empresa privada como de la organización pública pues no ha acabado de cuajar y a la pospandemia, algunas de estas han decidido apostar por la perfeccionalidad. No, yo creo que la situación está siendo distinta. Es decir, tanto la situación de teletrabajo en España ya estaba por debajo de la media de la Unión Europea antes de la pandemia y la caída del teletrabajo en la post-pandemia ha sido mayor en el caso español que en el caso del resto de países. Y vemos efectivamente que algunos países, el porcentaje incluso que tenían antes de la pandemia ha mejorado sensiblemente, como en el caso de Portugal, o el caso de Francia. Es decir, que en este año se mueven en cifras por encima del 20% mientras que en el caso español estamos por debajo de la medida y por el mismo nivel que países como similar como Gría, Croacia, Rumanía, Bulgaria, que hay niveles muy distintos de teletrabajo en función de las comunidades autónomas, que básicamente es Madrid la que concentra prácticamente todo el teletrabajo y algo Cataluña, en el resto no. Esto obedece a unas cuestiones entendibles por concentración de las empresas en estas dos comunidades o hay algo detrás de este dato? de empresas, sobre todo de sedes de empresas del sector terciario, para que lo entendamos. Es decir, la zona metropolitana de Barcelona, en el caso de Cataluña y la Cuneo-Madrid con carácter general, es verdad que tienen mayor porcentaje de puestos o de ocupaciones teletrabajables, mientras que otras que, sin embargo, en otros parámetros, ya sea salario, están muy por encima de la media, como el caso de Navarra. Sin embargo, precisamente por ese mayor peso del sector industrial, como ocurre con Cantabria, como ocurre también con Aragón, pues tienen menor porcentaje o doscienes de teletrabajo. Con lo cual, tamaños de empresa, sector de actividad, marca sin duda la mayor presencia del teletrabajo. Bueno, yo creo que ha habido un cúmulo de factores, yo creo que probablemente la normativa no vino en el mejor momento, la normativa de teletrabajo se forzó, se precipitó durante un momento todavía pandémico, yo creo que además lo tuvo probablemente todo el consenso social necesario y probablemente también se vendió como una amenaza. Al final muchas organizaciones, y también probablemente el que los departamentos de recursos humanos no siempre tienen todavía en algunas ocupaciones las métricas suficientes para poder tener un modelo que sea transparente, que publica la productividad, lo del rendimiento y del perform, y esto puede que sea lo que normalmente subyace a esta vuelta a la presencialidad. Que luego haya personas que puedan estar a favor o en contra, va a depender de las situaciones personales, de los espacios de trabajo, de las opciones que tenga la persona, del turista, del serenito de equipos, de las cargas familiares, de los espacios domésticos, para que puedan de alguna u otra manera apostar o no por el tema de trabajo y evidentemente depende del tipo de actividad profesional. Creo que son más las tareas las que en un caso u otro aconsejan presencialidad o trabajan remoto para moverlos a entornos ideales de productividad, pero es verdad que al final las decisiones las toman las personas y las empresas. ya sea de forma parcial o de forma total. ¿Esto ya no es así o sí en el teletrabajo y dependiendo del tipo de profesión, es verdad que en algunos casos se está cometiendo un elemento crítico de animación, al final eso que se llama el salario emocional, o sea, aparte de lo que una persona busca en un puesto de trabajo tiene que ver también con la flexibilidad, la flexibilidad en tiempo de trabajo, la flexibilidad en utilidad también del lugar de trabajo, en este caso el teletrabajo. Gracias presentado también como una vía para favorecer la conciliación, una vía que están avalando incluso los tribunales. Ya hay varias sentencias en este sentido y una de las últimas ha sido por el caso de Verónica. de la cual ha sido favorable y gracias a ellos ahora me permite atender a mis obligaciones familiares. El caso lo ha impulsado el sindicato Uso. Maror Doñez es la responsable de la Federación de Servicios de este sindicato en Galicia. Y se permite a una trabajadora del Contact Center teletrabajar para poder conciliar su vida laboral y familiar. Es un paso más a favor de los trabajadores ver cómo al teletrabajo por pandemia ahora ya trabajan solo exclusivamente desde sus oficinas. Lo de que el teletrabajo llegios y contenidos adicionales, en la app de Cadena Ser y en nuestros canales de Apple Podcast, Spotify, iVoox, Google Podcast y Youtube.&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;OPENAI_API_KEY&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;sk-...&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="question-1">
+<h2>Question 1<a class="headerlink" href="#question-1" title="Link to this heading">#</a></h2>
+<p>Which model could have been used to transcribe the pocast from audio file (such as mp3) to the previous text.</p>
+<p>Whisper…</p>
+</section>
+<section id="question-2">
+<h2>Question 2<a class="headerlink" href="#question-2" title="Link to this heading">#</a></h2>
+<p>Can you estimate the duration of the podcast just from the previous text?</p>
+<p>Assume that, in Spanish, people talk at about 100 words / minute</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number_of_words</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">))</span>
+<span class="n">number_of_words</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1676
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">minutes</span> <span class="o">=</span> <span class="n">number_of_words</span> <span class="o">/</span> <span class="mi">100</span>
+<span class="n">minutes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16.76
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-1">
+<h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Link to this heading">#</a></h2>
+<p>First, we want to have an automatic way of tagging the podcast, into one of the following topics:</p>
+<p><strong>politics, sports, technology, science, culture, economy, health, education, environment, other.</strong></p>
+<p>Describe briefly your approach and implement it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;Act an expert in podcast classification task and classify the following podcast transcription into one of either these categories: politics, sports, technology, science, culture, economy, health, education, environment, other.</span>
+
+<span class="s2">Transcription:</span><span class="si">{</span><span class="n">text</span><span class="si">}</span>
+
+<span class="s2">Please, clasify it into one of the previous categories, and propose sub-categories.</span>
+<span class="s2">Always respond with just a list of words, avoiding explanations.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">openai</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">OpenAI</span><span class="p">()</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+  <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-3.5-turbo&quot;</span><span class="p">,</span>
+  <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;You are a helpful assistant. Always respond with a list of words.&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">prompt</span><span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;- Culture, Work life balance\n- Economy, Productivity, Labor market\n- Other&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;  Culture  Work life balance\n  Economy  Productivity  Labor market\n  Other&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2-controllable-summarization">
+<h2>Exercise 2: controllable summarization<a class="headerlink" href="#exercise-2-controllable-summarization" title="Link to this heading">#</a></h2>
+<p>We want to summarize the podcast, but we want to control the length of the summary. We want two types of summaries:</p>
+<ul class="simple">
+<li><p>A short summary in a sentence, for a tweet.</p></li>
+<li><p>A longer summary, showcasing three bullet points of the main topics discussed in the podcast.</p></li>
+</ul>
+<p>Implement it and test it over the data sample.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;Act an expert in social network content and summarize the following podcast transcription to post it on Tweeter. That is, the summary shall be quite short, with just one of a few sentences.</span>
+
+<span class="s2">Transcription:</span><span class="si">{</span><span class="n">text</span><span class="si">}</span>
+
+<span class="s2">Now, summarize the content for Twitter:</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+  <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-3.5-turbo&quot;</span><span class="p">,</span>
+  <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;You are a helpful assistant.&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">prompt</span><span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Podcast: Spain falls behind in telework post-pandemic. Only 15% in Barcelona and 20% in Madrid have remote work options. Challenges include productivity concerns and lack of employer support. Nationally, telework decline continues post-COVID. #telework #Spain #PostPandemic&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;Act an expert in social network content and summarize the following podcast transcription to post it on LinkedIn. That is, the summary shall consist in three bullet points with the main take-aways.</span>
+
+<span class="s2">Transcription:</span><span class="si">{</span><span class="n">text</span><span class="si">}</span>
+
+<span class="s2">Now, summarize the content for LinkdedIn:</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+  <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4&quot;</span><span class="p">,</span>
+  <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;You are a helpful assistant.&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">prompt</span><span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;1. Despite the widespread preference for remote work, Spain lags behind other European countries in remote work adoption with only an 8% hybrid working model and 6% remote-only workers pre-pandemic. This increased to almost 4 million during the pandemic but has declined to 2.5 million recently.\n2. The decline in remote work post-pandemic is larger in Spain than the rest of Europe. Critics argue a lack of consensus on remote work, possible threats to productivity, and insufficient measurements of productivity in remote settings as reasons for this slide.\n3. While remote work was initially viewed as a tool for promoting work-life balance and lessening environmental impacts, it&#39;s decreasing adoption in Spain puzzles both experts and employees. However, labor courts are backing employees seeking greater flexibility, which could push remote work back into the fore.&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1. Despite the widespread preference for remote work, Spain lags behind other European countries in remote work adoption with only an 8% hybrid working model and 6% remote-only workers pre-pandemic. This increased to almost 4 million during the pandemic but has declined to 2.5 million recently.
+2. The decline in remote work post-pandemic is larger in Spain than the rest of Europe. Critics argue a lack of consensus on remote work, possible threats to productivity, and insufficient measurements of productivity in remote settings as reasons for this slide.
+3. While remote work was initially viewed as a tool for promoting work-life balance and lessening environmental impacts, it&#39;s decreasing adoption in Spain puzzles both experts and employees. However, labor courts are backing employees seeking greater flexibility, which could push remote work back into the fore.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-3-structured-information-extraction">
+<h2>Exercise 3: structured information extraction<a class="headerlink" href="#exercise-3-structured-information-extraction" title="Link to this heading">#</a></h2>
+<p>We want to extract a dictionary with the person names and their corresponding companys, such as the following example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="s2">&quot;Nacho&quot;</span><span class="p">:</span> <span class="s2">&quot;Industria Alimentaria&quot;</span><span class="p">,</span>
+<span class="s2">&quot;Ana&quot;</span><span class="p">:</span> <span class="s2">&quot;No especificado&quot;</span><span class="p">,</span>
+<span class="s2">&quot;Lourdes&quot;</span><span class="p">:</span> <span class="s2">&quot;No especificado&quot;</span><span class="p">,</span>
+<span class="s2">&quot;Aitor&quot;</span><span class="p">:</span> <span class="s2">&quot;Comercio Online&quot;</span><span class="p">,</span>
+<span class="s2">&quot;María Benítez&quot;</span><span class="p">:</span> <span class="s2">&quot;No especificado&quot;</span><span class="p">,</span>
+<span class="s2">&quot;Jorge&quot;</span><span class="p">:</span> <span class="s2">&quot;No especificado&quot;</span><span class="p">,</span>
+<span class="s2">&quot;Francisco Aranda&quot;</span><span class="p">:</span> <span class="s2">&quot;Patronal Madrileña CEIM&quot;</span><span class="p">,</span>
+<span class="s2">&quot;José Varela&quot;</span><span class="p">:</span> <span class="s2">&quot;UGT&quot;</span><span class="p">,</span>
+<span class="s2">&quot;Javier Blasco&quot;</span><span class="p">:</span> <span class="s2">&quot;Diadeco Group Institute&quot;</span><span class="p">,</span>
+<span class="s2">&quot;Verónica&quot;</span><span class="p">:</span> <span class="s2">&quot;No especificado&quot;</span><span class="p">,</span>
+<span class="s2">&quot;Maror Doñez&quot;</span><span class="p">:</span> <span class="s2">&quot;Federación de Servicios del sindicato Uso&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>How could we do this? Implement it and test it over the data sample.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;Act an expert in information extraction and extract the names of the people mentioned in the podcast, with their corresponding companies. That is, you must generate a JSON with the following structure:</span>
+<span class="s2">- As the key, use the name of the person.</span>
+<span class="s2">- As the value, the company of that person.</span>
+
+<span class="s2">Transcription:</span><span class="si">{</span><span class="n">text</span><span class="si">}</span>
+
+<span class="s2">Now, generate the JSON:</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+  <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-3.5-turbo&quot;</span><span class="p">,</span>
+  <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;You are a helpful assistant. Always return a JSON, without sentences&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">prompt</span><span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;{\n    &quot;Nacho&quot;: &quot;No disponible&quot;,\n    &quot;Ana&quot;: &quot;No disponible&quot;,\n    &quot;Lourdes&quot;: &quot;No disponible&quot;,\n    &quot;Aitor&quot;: &quot;Comercio online&quot;,\n    &quot;María Benítez&quot;: &quot;No disponible&quot;,\n    &quot;Francisco Aranda&quot;: &quot;CEIM&quot;,\n    &quot;José Varela&quot;: &quot;UGT&quot;,\n    &quot;Javier Blasco&quot;: &quot;Diadeco Group Institute&quot;,\n    &quot;Maror Doñez&quot;: &quot;Federación de Servicios de Uso&quot;\n}&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">answer</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span>
+<span class="n">answer</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;{\n    &quot;Nacho&quot;: &quot;No disponible&quot;,\n    &quot;Ana&quot;: &quot;No disponible&quot;,\n    &quot;Lourdes&quot;: &quot;No disponible&quot;,\n    &quot;Aitor&quot;: &quot;Comercio online&quot;,\n    &quot;María Benítez&quot;: &quot;No disponible&quot;,\n    &quot;Francisco Aranda&quot;: &quot;CEIM&quot;,\n    &quot;José Varela&quot;: &quot;UGT&quot;,\n    &quot;Javier Blasco&quot;: &quot;Diadeco Group Institute&quot;,\n    &quot;Maror Doñez&quot;: &quot;Federación de Servicios de Uso&quot;\n}&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">dictionary</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dictionary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Nacho&#39;: &#39;No disponible&#39;,
+ &#39;Ana&#39;: &#39;No disponible&#39;,
+ &#39;Lourdes&#39;: &#39;No disponible&#39;,
+ &#39;Aitor&#39;: &#39;Comercio online&#39;,
+ &#39;María Benítez&#39;: &#39;No disponible&#39;,
+ &#39;Francisco Aranda&#39;: &#39;CEIM&#39;,
+ &#39;José Varela&#39;: &#39;UGT&#39;,
+ &#39;Javier Blasco&#39;: &#39;Diadeco Group Institute&#39;,
+ &#39;Maror Doñez&#39;: &#39;Federación de Servicios de Uso&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./s25_applications_llms_streamlit"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../s24_retrieval_augmented_generation_full/s24.2_multimodal-retrieval.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Multi-modal Models with LlamaIndex</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-controllable-summarization">Exercise 2: controllable summarization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-structured-information-extraction">Exercise 3: structured information extraction</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Víctor Gallego
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
