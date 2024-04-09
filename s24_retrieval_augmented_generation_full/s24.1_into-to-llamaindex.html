@@ -1,0 +1,1199 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Semantic Search for texts &#8212; AI: ML &amp; Analytics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 's24_retrieval_augmented_generation_full/s24.1_into-to-llamaindex';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Multi-modal Models with LlamaIndex" href="s24.2_multimodal-retrieval.html" />
+    <link rel="prev" title="Chain of Thought Advanced Prompting Examples" href="../s23_instruction_tuning_and_gpt/s23.2_chain_of_thought.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-neon.png" class="logo__image only-light" alt="AI: ML & Analytics - Home"/>
+    <script>document.write(`<img src="../_static/logo-neon.png" class="logo__image only-dark" alt="AI: ML & Analytics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    <no title>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">1. Our first Generative AI application</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/example_genAI.html">Our first Generative AI application</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2. Matrix Algebra with NumPy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.1-numpy.html">Matrix operations with Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.2-numpy-exercises-solutions.html">Numpy exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.3-image-blending.html">Working with images in Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Optimization and Automatic Differentiation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s03_optimization_automatic_differentiation/s03.1_notebook-solutions.html">Review of Optimization</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Review of Machine Learning with scikit-learn</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s04_review_ML_sklearn/s04.1-supervised-learning-sklearn-solutions.html">Scikit-learn</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../s04_review_ML_sklearn/s04.2-cost-benefit-analysis.html">Cost-Benefit Analysis of a ML classifier.</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">5. Unsupervised Learning with UMAP</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s05_unsupervised-learning-umap/s05.1-dimensionality-reduction.html">Dimensionality Reduction. UMAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s05_unsupervised-learning-umap/s05.2-text-analysis-solutions.html">Text Analysis with UMAP</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">6. Text Processing with scikit-learn</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s06_text-processing-sklearn/s06.1-text-classification-solved.html">Session 6: More on working with text data in scikit-learn</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">7. Intro to Deep Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s07_intro_deep_learning/s07.1-neural_network-solved.html">07: Introduction to Neural Networks</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">9. Deep Learning in Computer Vision</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.1-examples.html">Session 9. More on Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.2-examples-2.html">Introduction to Computer Vision with Deep Learning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.3-intro-to-convolutions_solved.html">Intro to convolutional neural networks (CNNs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.4-convolutional-networks_solved.html">Convolutional Neural Networks (CNNs)</a></li>
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">11. Transfer Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s11_transfer_learning/s11.1-transfer-learning-examples.html">Transfer Learning</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">12. Zero-Shot Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s12_zero-shot-learning/s12.1_intro-zero-shot-classification.html">Zero-Shot Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">13. Semantic Search</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s13_semantic_search_and_biases/s13.1_semantic_search_solved.html">Semantic Search</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">14. Object Detection</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s14_more_vision_tasks_object_detection/s14.1-intro-object-detection.html">Object Detection</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../s14_more_vision_tasks_object_detection/s14.2-zero-shot_object_detection.html">Zero-shot object detection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">15. Exercises I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.1-text-classification-solved.html">Exercise 1: Hate Spech Detection in X (aka Twitter) 🤬</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.2-transfer-learning-solved.html">Exercise: Plant Disease App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.3-semantic-search-solved2.html">Exercise: Product Item Recommender 🧥</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">16. Exercises II</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s16_exercises_2_solved/s16.1-umap-solved.html">Exercise 1: Eurovision Song Lyrics Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s16_exercises_2_solved/s16.2-zero-shot-classification-solved.html">Exercise 2: Photo Sorting Application 📸</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">19. Intro to Transformers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s19_intro_to_transformers/s19.1_pipelines_solved.html">Introduction to the Transformers Library for NLP: pipelines</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s19_intro_to_transformers/s19.2_zero-shot-classification.html">Zero-Shot Classification in NLP</a></li>
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">20. Transformers Architecture &amp; Transfer Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.1_transformers_architecture.html">Fundamentals of the Transformer Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.2-transfer-intro.html">Transfer Learning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.3-transfer-learning-example.html">Transfer Learning example: Legal Text Classification</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">21. Fine-tuning with Transformers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s21_fine-tuning-trainer/s21.1-fine-tuning-example.html">Fine-tuning with transformers’ library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s21_fine-tuning-trainer/s21.2-fine-tuning-example-2.html">Intent Classification in Banking 🏦</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">22. Speech Recognition with Transformers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s22_automatic_speech_recognition/s22.1_whisper_model.html">Automatic Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s22_automatic_speech_recognition/s22.2_text_to_speech.html">Text to Speech</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s22_automatic_speech_recognition/s22.3_using_gpus.html">Using GPUs with transformers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">23. Instruction Tuning and the GPT API</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s23_instruction_tuning_and_gpt/s23.1_gpt_api.html">Instruction Tuning of Language Models</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s23_instruction_tuning_and_gpt/s23.2_chain_of_thought.html">Chain of Thought Advanced Prompting Examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">24. Retrieval Augmented Generation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Semantic Search for texts</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="s24.2_multimodal-retrieval.html">Multi-modal Models with LlamaIndex</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">25. Exercises I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s25_applications_llms_streamlit/s25_exercises.html">Exercises 1: LLM models for information extraction in podcasts 🎙️</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/vicgalle/ai-ml-course" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/vicgalle/ai-ml-course/issues/new?title=Issue%20on%20page%20%2Fs24_retrieval_augmented_generation_full/s24.1_into-to-llamaindex.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/s24_retrieval_augmented_generation_full/s24.1_into-to-llamaindex.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Semantic Search for texts</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Semantic Search for texts</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#application-retrieval-augmented-generation-rag">Application: Retrieval-Augmented Generation (RAG)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-rag">Why RAG?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stages-within-rag">Stages within RAG</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-chat-with-a-book">Example 1 - Chat with a book</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data-and-build-an-index">Load data and build an index</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#query-your-data">Query your data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#storing-your-index">Storing your index</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-financial-reporting">Example 2 - Financial Reporting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-sample-questions">Some sample questions…</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-user-support-assistant">Example 3 - User Support Assistant</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-sample-queries">Some sample queries…</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-local-models">Using local models</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="semantic-search-for-texts">
+<h1>Semantic Search for texts<a class="headerlink" href="#semantic-search-for-texts" title="Link to this heading">#</a></h1>
+<p>To enable searching over a large collection of texts, we can frame it as a task of Sentence Similarity.</p>
+<p>Sentence Similarity is the task of determining how similar two texts are. Sentence similarity models convert input texts into vectors (embeddings) that capture semantic information and calculate how close (similar) they are between them. This task is particularly useful for information retrieval and clustering/grouping.</p>
+<p><img alt="img" src="../_images/text-sim.png" /></p>
+<ol class="arabic simple">
+<li><p>What happens underneath? Obtaining embeddings</p></li>
+</ol>
+<p><img alt="img2" src="https://sentence-transformers-embeddings-semantic-search.hf.space/media/c2fb8304521f374106be37112a4851659f485ffc45c44a736a2b9fa9.png" /></p>
+<ol class="arabic simple" start="2">
+<li><p>Obtaining the closest observations in the vector space</p></li>
+</ol>
+<p>We now have two numerical representations of texts (embeddings): our original text database and our query (here, the description of a python function). Our goal: get the texts in the database that have the closest meaning to our query.</p>
+<p><img alt="img3" src="https://sentence-transformers-embeddings-semantic-search.hf.space/media/c96bd26de397e9c7cf142268ba32b3b0963016f9a3be1e3c86bbf209.png" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="application-retrieval-augmented-generation-rag">
+<h1>Application: Retrieval-Augmented Generation (RAG)<a class="headerlink" href="#application-retrieval-augmented-generation-rag" title="Link to this heading">#</a></h1>
+<p>As we saw in the previous session, the context of a LLM is limited (tipically a few thousand tokens), so we if we want to introduce external knowledge (for example, internal documentation from our company), all the information is not gonna fit in the context.</p>
+<p>Thus, we can combine the power of a LLM with a semantic search engine to retrieve the most relevant information from a large collection of texts. This is what is called <strong>Retrieval-Augmented Generation</strong>.</p>
+<p>Here is a pair of diagrams of this process:</p>
+<p><img alt="img4" src="../_images/rag1.png" /></p>
+<p><img alt="rag2" src="https://blogs.nvidia.com/wp-content/uploads/2023/11/LangChain-2-LLM-with-a-retriveal-process.jpg" /></p>
+<section id="why-rag">
+<h2>Why RAG?<a class="headerlink" href="#why-rag" title="Link to this heading">#</a></h2>
+<p>LLMs offer a natural language interface between humans and data. Widely available models come pre-trained on huge amounts of publicly available data like Wikipedia, mailing lists, textbooks, source code and more.</p>
+<p>However, <strong>while LLMs are trained on a great deal of data, they are not trained on your data, which may be private or specific to the problem you’re trying to solve</strong>. It’s behind APIs, in SQL databases, or trapped in PDFs and slide decks.</p>
+<p>You may choose to fine-tune a LLM with your data, but:</p>
+<ul class="simple">
+<li><p>Training an LLM is expensive.</p></li>
+<li><p>Due to the cost to train, it’s hard to update a LLM with latest information.</p></li>
+<li><p>Observability is lacking. When you ask a LLM a question, it’s not obvious how the LLM arrived at its answer.</p></li>
+</ul>
+<p>Instead of fine-tuning, one can do context augmentation pattern called <strong>Retrieval-Augmented Generation (RAG) to obtain more accurate text generation relevant to your specific data</strong>. RAG involves the following high level steps:</p>
+<ol class="arabic simple">
+<li><p>Retrieve information from your data sources first,</p></li>
+<li><p>Add it to your question as context, and</p></li>
+<li><p>Ask the LLM to answer based on the enriched prompt.</p></li>
+</ol>
+<p>In doing so, RAG overcomes all three weaknesses of the fine-tuning approach:</p>
+<ul class="simple">
+<li><p>There’s no training involved, so it’s cheap.</p></li>
+<li><p>Data is fetched only when you ask for them, so it’s always up to date.</p></li>
+<li><p>It can show you the retrieved documents, so it’s more trustworthy.</p></li>
+</ul>
+</section>
+<section id="stages-within-rag">
+<h2>Stages within RAG<a class="headerlink" href="#stages-within-rag" title="Link to this heading">#</a></h2>
+<p>There are five key stages within RAG, which in turn will be a part of any larger application you build. These are:</p>
+<ul class="simple">
+<li><p>Loading: this refers to getting your data from where it lives – whether it’s text files, PDFs, another website, a database, or an API – into your pipeline. LlamaHub provides hundreds of connectors to choose from.</p></li>
+<li><p>Indexing: this means creating a data structure that allows for querying the data. For LLMs this nearly always means creating vector embeddings, numerical representations of the meaning of your data, as well as numerous other metadata strategies to make it easy to accurately find contextually relevant data.</p></li>
+<li><p>Storing: once your data is indexed you will almost always want to store your index, as well as other metadata, to avoid having to re-index it.</p></li>
+<li><p>Querying: for any given indexing strategy there are many ways you can utilize LLMs and LlamaIndex data structures to query, including sub-queries, multi-step queries and hybrid strategies.</p></li>
+<li><p>Evaluation: a critical step in any pipeline is checking how effective it is relative to other strategies, or when you make changes. Evaluation provides objective measures of how accurate, faithful and fast your responses to queries are.</p></li>
+</ul>
+<p><img alt="stages" src="https://docs.llamaindex.ai/en/stable/_static/getting_started/stages.png" /></p>
+</section>
+<section id="libraries">
+<h2>Libraries<a class="headerlink" href="#libraries" title="Link to this heading">#</a></h2>
+<p>Though we could build our own RAG application from scratch (by using the transformers library or the OpenAI API), it is such a popular application that a lot of wrappers already exist, to simplify our job.</p>
+<p>The most popular library for RAG is LlamaIndex, which is compatible with all the LLM providers (HuggingFace, OpenAI, Anthropic etc)</p>
+<p><a class="reference external" href="https://docs.llamaindex.ai/en/stable/">https://docs.llamaindex.ai/en/stable/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!pip install llama-index</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For the moment, we use the OpenAI models for our RAG examples, so let’s load the API key:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;OPENAI_API_KEY&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;sk-...&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-1-chat-with-a-book">
+<h2>Example 1 - Chat with a book<a class="headerlink" href="#example-1-chat-with-a-book" title="Link to this heading">#</a></h2>
+<p>Let’s first develop an example of how we can use RAG to answer queries about any book. In this case, it’s gonna be:</p>
+<p><img alt="hp" src="../_images/hp.jpg" /></p>
+<p>A friend has shared with us the actual book in txt format, located at <code class="docutils literal notranslate"><span class="pre">data/J.</span> <span class="pre">K.</span> <span class="pre">Rowling</span> <span class="pre">-</span> <span class="pre">Harry</span> <span class="pre">Potter</span> <span class="pre">1</span> <span class="pre">-</span> <span class="pre">Sorcerer's</span> <span class="pre">Stone.txt</span></code>. Let’s load it and see how we can use RAG to answer questions about it.</p>
+<section id="load-data-and-build-an-index">
+<h3>Load data and build an index<a class="headerlink" href="#load-data-and-build-an-index" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">llama_index.core</span> <span class="kn">import</span> <span class="n">VectorStoreIndex</span><span class="p">,</span> <span class="n">SimpleDirectoryReader</span>
+
+<span class="n">documents</span> <span class="o">=</span> <span class="n">SimpleDirectoryReader</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+<span class="n">index</span> <span class="o">=</span> <span class="n">VectorStoreIndex</span><span class="o">.</span><span class="n">from_documents</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This builds an index over the documents in the data folder (which in this case just consists of the book text, but could contain many documents).</p>
+<p>Your directory structure should look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>├── notebook or python script
+└── data
+    └── document1
+    └── document2
+    └── ...
+
+</pre></div>
+</div>
+</section>
+<section id="query-your-data">
+<h3>Query your data<a class="headerlink" href="#query-your-data" title="Link to this heading">#</a></h3>
+<p>This creates an engine for Q&amp;A over your index and asks a simple question.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query_engine</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">as_query_engine</span><span class="p">()</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">query_engine</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;On which date did Harry start classes at Hogwarts?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Harry started classes at Hogwarts on Thursday.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query_engine</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">as_query_engine</span><span class="p">()</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">query_engine</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Generate a list of the books required for first year students at Hogwarts. Use bullet points.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- List of necessary books and equipment for first-year students at Hogwarts:
+  - The Standard Book of Spells (Grade 1) by Miranda Goshawk
+  - A History of Magic by Bathilda Bagshot
+  - Magical Theory by Adalbert Waffling
+  - A Beginner&#39;s Guide to Transfiguration by Emeric Switch
+  - One Thousand Magical Herbs and Fungi by Phyllida Spore
+  - Magical Drafts and Potions by Arsenius Jigger
+  - Fantastic Beasts and Where to Find Them by Newt Scamander
+  - The Dark Forces: A Guide to Self-Protection by Quentin Trimble
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query_engine</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">as_query_engine</span><span class="p">()</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">query_engine</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;How many points is the Golden Snitch worth in a game of Quidditch?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The Golden Snitch is worth an extra hundred and fifty points in a game of Quidditch.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query_engine</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">as_query_engine</span><span class="p">()</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">query_engine</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;How many points did the Gryffindor house achieved at the end of the first year?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gryffindor house achieved a total of four hundred and seventy-two points at the end of the first year.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="storing-your-index">
+<h3>Storing your index<a class="headerlink" href="#storing-your-index" title="Link to this heading">#</a></h3>
+<p>By default, the data you just loaded is stored in memory as a series of vector embeddings. You can save time (and requests to OpenAI) by saving the embeddings to disk. That can be done with this line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">index</span><span class="o">.</span><span class="n">storage_context</span><span class="o">.</span><span class="n">persist</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Of course, you don’t get the benefits of persisting unless you load the data. So let’s modify the code to generate and store the index if it doesn’t exist, but load it if it does:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os.path</span>
+<span class="kn">from</span> <span class="nn">llama_index.core</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">VectorStoreIndex</span><span class="p">,</span>
+    <span class="n">SimpleDirectoryReader</span><span class="p">,</span>
+    <span class="n">StorageContext</span><span class="p">,</span>
+    <span class="n">load_index_from_storage</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># check if storage already exists</span>
+<span class="n">PERSIST_DIR</span> <span class="o">=</span> <span class="s2">&quot;./storage&quot;</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">PERSIST_DIR</span><span class="p">):</span>
+    <span class="c1"># load the documents and create the index</span>
+    <span class="n">documents</span> <span class="o">=</span> <span class="n">SimpleDirectoryReader</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">VectorStoreIndex</span><span class="o">.</span><span class="n">from_documents</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span>
+    <span class="c1"># store it for later</span>
+    <span class="n">index</span><span class="o">.</span><span class="n">storage_context</span><span class="o">.</span><span class="n">persist</span><span class="p">(</span><span class="n">persist_dir</span><span class="o">=</span><span class="n">PERSIST_DIR</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># load the existing index</span>
+    <span class="n">storage_context</span> <span class="o">=</span> <span class="n">StorageContext</span><span class="o">.</span><span class="n">from_defaults</span><span class="p">(</span><span class="n">persist_dir</span><span class="o">=</span><span class="n">PERSIST_DIR</span><span class="p">)</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">load_index_from_storage</span><span class="p">(</span><span class="n">storage_context</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query_engine</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">as_query_engine</span><span class="p">()</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">query_engine</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;How does Harry first learn that he is a wizard?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Harry first learns that he is a wizard when Hagrid arrives to deliver his acceptance letter to Hogwarts School of Witchcraft and Wizardry.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="debugging">
+<h3>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h3>
+<p>To see what’s happening under the hood, you can set the logging level to DEBUG:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">stream</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="n">stream</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">query_engine</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;How does Harry first learn that he is a wizard?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openai._base_client:Request options: {&#39;method&#39;: &#39;post&#39;, &#39;url&#39;: &#39;/embeddings&#39;, &#39;files&#39;: None, &#39;post_parser&#39;: &lt;function Embeddings.create.&lt;locals&gt;.parser at 0x31be1b130&gt;, &#39;json_data&#39;: {&#39;input&#39;: [&#39;How does Harry first learn that he is a wizard?&#39;], &#39;model&#39;: &#39;text-embedding-ada-002&#39;, &#39;encoding_format&#39;: &#39;base64&#39;}}
+Request options: {&#39;method&#39;: &#39;post&#39;, &#39;url&#39;: &#39;/embeddings&#39;, &#39;files&#39;: None, &#39;post_parser&#39;: &lt;function Embeddings.create.&lt;locals&gt;.parser at 0x31be1b130&gt;, &#39;json_data&#39;: {&#39;input&#39;: [&#39;How does Harry first learn that he is a wizard?&#39;], &#39;model&#39;: &#39;text-embedding-ada-002&#39;, &#39;encoding_format&#39;: &#39;base64&#39;}}
+DEBUG:httpcore.connection:close.started
+close.started
+DEBUG:httpcore.connection:close.complete
+close.complete
+DEBUG:httpcore.connection:connect_tcp.started host=&#39;api.openai.com&#39; port=443 local_address=None timeout=60.0 socket_options=None
+connect_tcp.started host=&#39;api.openai.com&#39; port=443 local_address=None timeout=60.0 socket_options=None
+DEBUG:httpcore.connection:connect_tcp.complete return_value=&lt;httpcore._backends.sync.SyncStream object at 0x3183a37c0&gt;
+connect_tcp.complete return_value=&lt;httpcore._backends.sync.SyncStream object at 0x3183a37c0&gt;
+DEBUG:httpcore.connection:start_tls.started ssl_context=&lt;ssl.SSLContext object at 0x3183e7d40&gt; server_hostname=&#39;api.openai.com&#39; timeout=60.0
+start_tls.started ssl_context=&lt;ssl.SSLContext object at 0x3183e7d40&gt; server_hostname=&#39;api.openai.com&#39; timeout=60.0
+DEBUG:httpcore.connection:start_tls.complete return_value=&lt;httpcore._backends.sync.SyncStream object at 0x17f932b00&gt;
+start_tls.complete return_value=&lt;httpcore._backends.sync.SyncStream object at 0x17f932b00&gt;
+DEBUG:httpcore.http11:send_request_headers.started request=&lt;Request [b&#39;POST&#39;]&gt;
+send_request_headers.started request=&lt;Request [b&#39;POST&#39;]&gt;
+DEBUG:httpcore.http11:send_request_headers.complete
+send_request_headers.complete
+DEBUG:httpcore.http11:send_request_body.started request=&lt;Request [b&#39;POST&#39;]&gt;
+send_request_body.started request=&lt;Request [b&#39;POST&#39;]&gt;
+DEBUG:httpcore.http11:send_request_body.complete
+send_request_body.complete
+DEBUG:httpcore.http11:receive_response_headers.started request=&lt;Request [b&#39;POST&#39;]&gt;
+receive_response_headers.started request=&lt;Request [b&#39;POST&#39;]&gt;
+DEBUG:httpcore.http11:receive_response_headers.complete return_value=(b&#39;HTTP/1.1&#39;, 200, b&#39;OK&#39;, [(b&#39;Date&#39;, b&#39;Fri, 05 Apr 2024 10:12:25 GMT&#39;), (b&#39;Content-Type&#39;, b&#39;application/json&#39;), (b&#39;Transfer-Encoding&#39;, b&#39;chunked&#39;), (b&#39;Connection&#39;, b&#39;keep-alive&#39;), (b&#39;access-control-allow-origin&#39;, b&#39;*&#39;), (b&#39;openai-model&#39;, b&#39;text-embedding-ada-002&#39;), (b&#39;openai-organization&#39;, b&#39;victor-xbwupa&#39;), (b&#39;openai-processing-ms&#39;, b&#39;22&#39;), (b&#39;openai-version&#39;, b&#39;2020-10-01&#39;), (b&#39;strict-transport-security&#39;, b&#39;max-age=15724800; includeSubDomains&#39;), (b&#39;x-ratelimit-limit-requests&#39;, b&#39;10000&#39;), (b&#39;x-ratelimit-limit-tokens&#39;, b&#39;5000000&#39;), (b&#39;x-ratelimit-remaining-requests&#39;, b&#39;9999&#39;), (b&#39;x-ratelimit-remaining-tokens&#39;, b&#39;4999988&#39;), (b&#39;x-ratelimit-reset-requests&#39;, b&#39;6ms&#39;), (b&#39;x-ratelimit-reset-tokens&#39;, b&#39;0s&#39;), (b&#39;x-request-id&#39;, b&#39;req_69f1b32343d39530ebf63f785c3d17ea&#39;), (b&#39;CF-Cache-Status&#39;, b&#39;DYNAMIC&#39;), (b&#39;Set-Cookie&#39;, b&#39;__cf_bm=rBh3YkjPAuxqi13f0pKxc6HF.NtAGlarschG9Ts3FcI-1712311945-1.0.1.1-XtT.wloo1_9U5hS4daJUG07lFhp9uOglBHA9hgNbo6T6eb.GNgzvpc_feHXOsXtZEqXbgCLaduCj.SZweosemA; path=/; expires=Fri, 05-Apr-24 10:42:25 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None&#39;), (b&#39;Set-Cookie&#39;, b&#39;_cfuvid=bQsWP5Dlrcui1L0dcDYRKu5vFsfU2ZP5KiLWX9p0L4o-1712311945306-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None&#39;), (b&#39;Server&#39;, b&#39;cloudflare&#39;), (b&#39;CF-RAY&#39;, b&#39;86f8c278fd8786bd-MAD&#39;), (b&#39;Content-Encoding&#39;, b&#39;br&#39;), (b&#39;alt-svc&#39;, b&#39;h3=&quot;:443&quot;; ma=86400&#39;)])
+receive_response_headers.complete return_value=(b&#39;HTTP/1.1&#39;, 200, b&#39;OK&#39;, [(b&#39;Date&#39;, b&#39;Fri, 05 Apr 2024 10:12:25 GMT&#39;), (b&#39;Content-Type&#39;, b&#39;application/json&#39;), (b&#39;Transfer-Encoding&#39;, b&#39;chunked&#39;), (b&#39;Connection&#39;, b&#39;keep-alive&#39;), (b&#39;access-control-allow-origin&#39;, b&#39;*&#39;), (b&#39;openai-model&#39;, b&#39;text-embedding-ada-002&#39;), (b&#39;openai-organization&#39;, b&#39;victor-xbwupa&#39;), (b&#39;openai-processing-ms&#39;, b&#39;22&#39;), (b&#39;openai-version&#39;, b&#39;2020-10-01&#39;), (b&#39;strict-transport-security&#39;, b&#39;max-age=15724800; includeSubDomains&#39;), (b&#39;x-ratelimit-limit-requests&#39;, b&#39;10000&#39;), (b&#39;x-ratelimit-limit-tokens&#39;, b&#39;5000000&#39;), (b&#39;x-ratelimit-remaining-requests&#39;, b&#39;9999&#39;), (b&#39;x-ratelimit-remaining-tokens&#39;, b&#39;4999988&#39;), (b&#39;x-ratelimit-reset-requests&#39;, b&#39;6ms&#39;), (b&#39;x-ratelimit-reset-tokens&#39;, b&#39;0s&#39;), (b&#39;x-request-id&#39;, b&#39;req_69f1b32343d39530ebf63f785c3d17ea&#39;), (b&#39;CF-Cache-Status&#39;, b&#39;DYNAMIC&#39;), (b&#39;Set-Cookie&#39;, b&#39;__cf_bm=rBh3YkjPAuxqi13f0pKxc6HF.NtAGlarschG9Ts3FcI-1712311945-1.0.1.1-XtT.wloo1_9U5hS4daJUG07lFhp9uOglBHA9hgNbo6T6eb.GNgzvpc_feHXOsXtZEqXbgCLaduCj.SZweosemA; path=/; expires=Fri, 05-Apr-24 10:42:25 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None&#39;), (b&#39;Set-Cookie&#39;, b&#39;_cfuvid=bQsWP5Dlrcui1L0dcDYRKu5vFsfU2ZP5KiLWX9p0L4o-1712311945306-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None&#39;), (b&#39;Server&#39;, b&#39;cloudflare&#39;), (b&#39;CF-RAY&#39;, b&#39;86f8c278fd8786bd-MAD&#39;), (b&#39;Content-Encoding&#39;, b&#39;br&#39;), (b&#39;alt-svc&#39;, b&#39;h3=&quot;:443&quot;; ma=86400&#39;)])
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings &quot;HTTP/1.1 200 OK&quot;
+HTTP Request: POST https://api.openai.com/v1/embeddings &quot;HTTP/1.1 200 OK&quot;
+DEBUG:httpcore.http11:receive_response_body.started request=&lt;Request [b&#39;POST&#39;]&gt;
+receive_response_body.started request=&lt;Request [b&#39;POST&#39;]&gt;
+DEBUG:httpcore.http11:receive_response_body.complete
+receive_response_body.complete
+DEBUG:httpcore.http11:response_closed.started
+response_closed.started
+DEBUG:httpcore.http11:response_closed.complete
+response_closed.complete
+DEBUG:openai._base_client:HTTP Request: POST https://api.openai.com/v1/embeddings &quot;200 OK&quot;
+HTTP Request: POST https://api.openai.com/v1/embeddings &quot;200 OK&quot;
+DEBUG:llama_index.core.indices.utils:&gt; Top 2 nodes:
+&gt; [Node ba4fc574-7b71-4c08-8c7b-6272711de372] [Similarity score:             0.869456] He pulled out the letter and read:
+
+HOGWARTS SCHOOL of WITCHCRAFT and WIZARDRY
+
+Headmaster: ALBUS...
+&gt; [Node 189248fc-56c8-4a01-b586-9eecfef9b338] [Similarity score:             0.864436] He seemed to think he&#39;d said too much, because he
+went back to staring out of the window.
+
+Harry ...
+&gt; Top 2 nodes:
+&gt; [Node ba4fc574-7b71-4c08-8c7b-6272711de372] [Similarity score:             0.869456] He pulled out the letter and read:
+
+HOGWARTS SCHOOL of WITCHCRAFT and WIZARDRY
+
+Headmaster: ALBUS...
+&gt; [Node 189248fc-56c8-4a01-b586-9eecfef9b338] [Similarity score:             0.864436] He seemed to think he&#39;d said too much, because he
+went back to staring out of the window.
+
+Harry ...
+DEBUG:openai._base_client:Request options: {&#39;method&#39;: &#39;post&#39;, &#39;url&#39;: &#39;/chat/completions&#39;, &#39;files&#39;: None, &#39;json_data&#39;: {&#39;messages&#39;: [{&#39;role&#39;: &#39;system&#39;, &#39;content&#39;: &quot;You are an expert Q&amp;A system that is trusted around the world.\nAlways answer the query using the provided context information, and not prior knowledge.\nSome rules to follow:\n1. Never directly reference the given context in your answer.\n2. Avoid statements like &#39;Based on the context, ...&#39; or &#39;The context information ...&#39; or anything along those lines.&quot;}, {&#39;role&#39;: &#39;user&#39;, &#39;content&#39;: &#39;Context information is below.\n---------------------\nfile_path: /Users/victorgallego/curso_ML_IE/s24_retrieval_augmented_generation/data/J. K. Rowling - Harry Potter 1 - Sorcerer\&#39;s Stone.txt\n\nHe pulled out the letter and read:\n\nHOGWARTS SCHOOL of WITCHCRAFT and WIZARDRY\n\nHeadmaster: ALBUS DUMBLEDORE\n\n(Order of Merlin, First Class, Grand Sorc., Chf. Warlock, Supreme\nMugwump, International Confed. of Wizards)\n\nDear Mr. Potter,\n\nWe are pleased to inform you that you have been accepted at Hogwarts\nSchool of Witchcraft and Wizardry. Please find enclosed a list of all\nnecessary books and equipment.\n\nTerm begins on September 1. We await your owl by no later than July 31.\nYours sincerely,\n\nMinerva McGonagall,\n\nDeputy Headmistress\n\nQuestions exploded inside Harry\&#39;s head like fireworks and he couldn\&#39;t\ndecide which to ask first. After a few minutes he stammered, &quot;What does\nit mean, they await my owl?&quot;\n\n&quot;Gallopin\&#39; Gorgons, that reminds me,&quot; said Hagrid, clapping a hand to\nhis forehead with enough force to knock over a cart horse, and from yet\nanother pocket inside his overcoat he pulled an owl -- a real, live,\nrather ruffled-looking owl -- a long quill, and a roll of parchment.\nWith his tongue between his teeth he scribbled a note that Harry could\nread upside down:\n\nDear Professor Dumbledore,\n\nGiven Harry his letter.\n\nTaking him to buy his things tomorrow.\n\nWeather\&#39;s horrible. Hope you\&#39;re Well.\n\nHagrid\n\nHagrid rolled up the note, gave it to the owl, which clamped it in its\nbeak, went to the door, and threw the owl out into the storm. Then he\ncame back and sat down as though this was as normal as talking on the\ntelephone.\n\nHarry realized his mouth was open and closed it quickly.\n\n&quot;Where was I?&quot; said Hagrid, but at that moment, Uncle Vernon, still\nashen-faced but looking very angry, moved into the firelight.\n\n&quot;He\&#39;s not going,&quot; he said.\n\nHagrid grunted.\n\n&quot;I\&#39;d like ter see a great Muggle like you stop him,&quot; he said.\n\n&quot;A what?&quot; said Harry, interested.\n\n&quot;A Muggle,&quot; said Hagrid, &quot;it\&#39;s what we call nonmagic folk like thern.\nAn\&#39; it\&#39;s your bad luck you grew up in a family o\&#39; the biggest Muggles I\never laid eyes on.&quot;\n\n&quot;We swore when we took him in we\&#39;d put a stop to that rubbish,&quot; said\nUncle Vernon, &quot;swore we\&#39;d stamp it out of him! Wizard indeed!&quot;\n\n&quot;You knew?&quot; said Harry. &quot;You knew I\&#39;m a -- a wizard?&quot;\n\n&quot;Knew!&quot; shrieked Aunt Petunia suddenly. &quot;Knew! Of course we knew! How\ncould you not be, my dratted sister being what she was? Oh, she got a\nletter just like that and disappeared off to that-that school-and came\nhome every vacation with her pockets full of frog spawn, turning teacups\ninto rats. I was the only one who saw her for what she was -- a freak!\nBut for my mother and father, oh no, it was Lily this and Lily that,\nthey were proud of having a witch in the family!&quot;\n\nShe stopped to draw a deep breath and then went ranting on. It seemed\nshe had been wanting to say all this for years.\n\n&quot;Then she met that Potter at school and they left and got married and\nhad you, and of course I knew you\&#39;d be just the same, just as strange,\njust as -- as -- abnormal -- and then, if you please, she went and got\nherself blown up and we got landed with you!&quot;\n\nHarry had gone very white. As soon as he found his voice he said, &quot;Blown\nup? You told me they died in a car crash!&quot;\n\n&quot;CAR CRASH!&quot; roared Hagrid, jumping up so angrily that the Dursleys\nscuttled back to their corner. &quot;How could a car crash kill Lily an\&#39;\nJames Potter? It\&#39;s an outrage! A scandal! Harry Potter not knowin\&#39; his\nown story when every kid in our world knows his name!&quot; &quot;But why? What\nhappened?&quot; Harry asked urgently.\n\nThe anger faded from Hagrid\&#39;s face. He looked suddenly anxious.\n\n&quot;I never expected this,&quot; he said, in a low, worried voice. &quot;I had no\nidea, when Dumbledore told me there might be trouble gettin\&#39; hold of\nyeh, how much yeh didn\&#39;t know.\n\nfile_path: /Users/victorgallego/curso_ML_IE/s24_retrieval_augmented_generation/data/J. K. Rowling - Harry Potter 1 - Sorcerer\&#39;s Stone.txt\n\nHe seemed to think he\&#39;d said too much, because he\nwent back to staring out of the window.\n\nHarry didn\&#39;t think there was anything wrong with not being able to\nafford an owl. After all, he\&#39;d never had any money in his life until a\nmonth ago, and he told Ron so, all about having to wear Dudley\&#39;s old\nclothes and never getting proper birthday presents. This seemed to cheer\nRon up.\n\n&quot;... and until Hagrid told me, I didn\&#39;t know anything about be ing a\nwizard or about my parents or Voldemort&quot;\n\nRon gasped.\n\n&quot;What?&quot; said Harry.\n\n&quot;You said You-Know-Who\&#39;s name!&quot; said Ron, sounding both shocked and\nimpressed. &quot;I\&#39;d have thought you, of all people --&quot;\n\n&quot;I\&#39;m not trying to be brave or anything, saying the name,&quot; said Harry, I\njust never knew you shouldn\&#39;t. See what I mean? I\&#39;ve got loads to\nlearn.... I bet,&quot; he added, voicing for the first time something that\nhad been worrying him a lot lately, &quot;I bet I\&#39;m the worst in the class.&quot;\n\n&quot;You won\&#39;t be. There\&#39;s loads of people who come from Muggle families and\nthey learn quick enough.&quot;\n\nWhile they had been talking, the train had carried them out of London.\nNow they were speeding past fields full of cows and sheep. They were\nquiet for a time, watching the fields and lanes flick past.\n\nAround half past twelve there was a great clattering outside in the\ncorridor and a smiling, dimpled woman slid back their door and said,\n&quot;Anything off the cart, dears?&quot;\n\nHarry, who hadn\&#39;t had any breakfast, leapt to his feet, but Ron\&#39;s ears\nwent pink again and he muttered that he\&#39;d brought sandwiches. Harry went\nout into the corridor.\n\nHe had never had any money for candy with the Dursleys, and now that he\nhad pockets rattling with gold and silver he was ready to buy as many\nMars Bars as he could carry -- but the woman didn\&#39;t have Mars Bars. What\nshe did have were Bettie Bott\&#39;s Every Flavor Beans, Drooble\&#39;s Best\nBlowing Gum, Chocolate Frogs. Pumpkin Pasties, Cauldron Cakes, Licorice\nWands, and a number of other strange things Harry had never seen in his\nlife. Not wanting to miss anything, he got some of everything and paid\nthe woman eleven silver Sickles and seven bronze Knuts.\n\nRon stared as Harry brought it all back in to the compartment and tipped\nit onto an empty seat.\n\n&quot;Hungry, are you?&quot;\n\n&quot;Starving,&quot; said Harry, taking a large bite out of a pumpkin pasty.\n\nRon had taken out a lumpy package and unwrapped it. There were four\nsandwiches inside. He pulled one of them apart and said, &quot;She always\nforgets I don\&#39;t like corned beef.&quot;\n\n&quot;Swap you for one of these,&quot; said Harry, holding up a pasty. &quot;Go on --&quot;\n\n&quot;You don\&#39;t want this, it\&#39;s all dry,&quot; said Ron. &quot;She hasn\&#39;t got much\ntime,&quot; he added quickly, &quot;you know, with five of us.&quot;\n\n&quot;Go on, have a pasty,&quot; said Harry, who had never had anything to share\nbefore or, indeed, anyone to share it with. It was a nice feeling,\nsitting there with Ron, eating their way through all Harry\&#39;s pasties,\ncakes, and candies (the sandwiches lay forgotten).\n\n&quot;What are these?&quot; Harry asked Ron, holding up a pack of Chocolate Frogs.\n&quot;They\&#39;re not really frogs, are they?&quot; He was starting to feel that\nnothing would surprise him.\n\n&quot;No,&quot; said Ron. &quot;But see what the card is. I\&#39;m missing Agrippa.&quot;\n\n&quot;What?&quot;\n\n&quot;Oh, of course, you wouldn\&#39;t know -- Chocolate Frogs have cards, inside\nthem, you know, to collect -- famous witches and wizards. I\&#39;ve got about\nfive hundred, but I haven\&#39;t got Agrippa or Ptolemy.&quot;\n\nHarry unwrapped his Chocolate Frog and picked up the card. It showed a\nman\&#39;s face. He wore half- moon glasses, had a long, crooked nose, and\nflowing silver hair, beard, and mustache. Underneath the picture was the\nname Albus Dumbledore.\n\n&quot;So this is Dumbledore!&quot; said Harry.\n\n&quot;Don\&#39;t tell me you\&#39;d never heard of Dumbledore!&quot; said Ron. &quot;Can I have a\nfrog?\n---------------------\nGiven the context information and not prior knowledge, answer the query.\nQuery: How does Harry first learn that he is a wizard?\nAnswer: &#39;}], &#39;model&#39;: &#39;gpt-3.5-turbo&#39;, &#39;stream&#39;: False, &#39;temperature&#39;: 0.1}}
+Request options: {&#39;method&#39;: &#39;post&#39;, &#39;url&#39;: &#39;/chat/completions&#39;, &#39;files&#39;: None, &#39;json_data&#39;: {&#39;messages&#39;: [{&#39;role&#39;: &#39;system&#39;, &#39;content&#39;: &quot;You are an expert Q&amp;A system that is trusted around the world.\nAlways answer the query using the provided context information, and not prior knowledge.\nSome rules to follow:\n1. Never directly reference the given context in your answer.\n2. Avoid statements like &#39;Based on the context, ...&#39; or &#39;The context information ...&#39; or anything along those lines.&quot;}, {&#39;role&#39;: &#39;user&#39;, &#39;content&#39;: &#39;Context information is below.\n---------------------\nfile_path: /Users/victorgallego/curso_ML_IE/s24_retrieval_augmented_generation/data/J. K. Rowling - Harry Potter 1 - Sorcerer\&#39;s Stone.txt\n\nHe pulled out the letter and read:\n\nHOGWARTS SCHOOL of WITCHCRAFT and WIZARDRY\n\nHeadmaster: ALBUS DUMBLEDORE\n\n(Order of Merlin, First Class, Grand Sorc., Chf. Warlock, Supreme\nMugwump, International Confed. of Wizards)\n\nDear Mr. Potter,\n\nWe are pleased to inform you that you have been accepted at Hogwarts\nSchool of Witchcraft and Wizardry. Please find enclosed a list of all\nnecessary books and equipment.\n\nTerm begins on September 1. We await your owl by no later than July 31.\nYours sincerely,\n\nMinerva McGonagall,\n\nDeputy Headmistress\n\nQuestions exploded inside Harry\&#39;s head like fireworks and he couldn\&#39;t\ndecide which to ask first. After a few minutes he stammered, &quot;What does\nit mean, they await my owl?&quot;\n\n&quot;Gallopin\&#39; Gorgons, that reminds me,&quot; said Hagrid, clapping a hand to\nhis forehead with enough force to knock over a cart horse, and from yet\nanother pocket inside his overcoat he pulled an owl -- a real, live,\nrather ruffled-looking owl -- a long quill, and a roll of parchment.\nWith his tongue between his teeth he scribbled a note that Harry could\nread upside down:\n\nDear Professor Dumbledore,\n\nGiven Harry his letter.\n\nTaking him to buy his things tomorrow.\n\nWeather\&#39;s horrible. Hope you\&#39;re Well.\n\nHagrid\n\nHagrid rolled up the note, gave it to the owl, which clamped it in its\nbeak, went to the door, and threw the owl out into the storm. Then he\ncame back and sat down as though this was as normal as talking on the\ntelephone.\n\nHarry realized his mouth was open and closed it quickly.\n\n&quot;Where was I?&quot; said Hagrid, but at that moment, Uncle Vernon, still\nashen-faced but looking very angry, moved into the firelight.\n\n&quot;He\&#39;s not going,&quot; he said.\n\nHagrid grunted.\n\n&quot;I\&#39;d like ter see a great Muggle like you stop him,&quot; he said.\n\n&quot;A what?&quot; said Harry, interested.\n\n&quot;A Muggle,&quot; said Hagrid, &quot;it\&#39;s what we call nonmagic folk like thern.\nAn\&#39; it\&#39;s your bad luck you grew up in a family o\&#39; the biggest Muggles I\never laid eyes on.&quot;\n\n&quot;We swore when we took him in we\&#39;d put a stop to that rubbish,&quot; said\nUncle Vernon, &quot;swore we\&#39;d stamp it out of him! Wizard indeed!&quot;\n\n&quot;You knew?&quot; said Harry. &quot;You knew I\&#39;m a -- a wizard?&quot;\n\n&quot;Knew!&quot; shrieked Aunt Petunia suddenly. &quot;Knew! Of course we knew! How\ncould you not be, my dratted sister being what she was? Oh, she got a\nletter just like that and disappeared off to that-that school-and came\nhome every vacation with her pockets full of frog spawn, turning teacups\ninto rats. I was the only one who saw her for what she was -- a freak!\nBut for my mother and father, oh no, it was Lily this and Lily that,\nthey were proud of having a witch in the family!&quot;\n\nShe stopped to draw a deep breath and then went ranting on. It seemed\nshe had been wanting to say all this for years.\n\n&quot;Then she met that Potter at school and they left and got married and\nhad you, and of course I knew you\&#39;d be just the same, just as strange,\njust as -- as -- abnormal -- and then, if you please, she went and got\nherself blown up and we got landed with you!&quot;\n\nHarry had gone very white. As soon as he found his voice he said, &quot;Blown\nup? You told me they died in a car crash!&quot;\n\n&quot;CAR CRASH!&quot; roared Hagrid, jumping up so angrily that the Dursleys\nscuttled back to their corner. &quot;How could a car crash kill Lily an\&#39;\nJames Potter? It\&#39;s an outrage! A scandal! Harry Potter not knowin\&#39; his\nown story when every kid in our world knows his name!&quot; &quot;But why? What\nhappened?&quot; Harry asked urgently.\n\nThe anger faded from Hagrid\&#39;s face. He looked suddenly anxious.\n\n&quot;I never expected this,&quot; he said, in a low, worried voice. &quot;I had no\nidea, when Dumbledore told me there might be trouble gettin\&#39; hold of\nyeh, how much yeh didn\&#39;t know.\n\nfile_path: /Users/victorgallego/curso_ML_IE/s24_retrieval_augmented_generation/data/J. K. Rowling - Harry Potter 1 - Sorcerer\&#39;s Stone.txt\n\nHe seemed to think he\&#39;d said too much, because he\nwent back to staring out of the window.\n\nHarry didn\&#39;t think there was anything wrong with not being able to\nafford an owl. After all, he\&#39;d never had any money in his life until a\nmonth ago, and he told Ron so, all about having to wear Dudley\&#39;s old\nclothes and never getting proper birthday presents. This seemed to cheer\nRon up.\n\n&quot;... and until Hagrid told me, I didn\&#39;t know anything about be ing a\nwizard or about my parents or Voldemort&quot;\n\nRon gasped.\n\n&quot;What?&quot; said Harry.\n\n&quot;You said You-Know-Who\&#39;s name!&quot; said Ron, sounding both shocked and\nimpressed. &quot;I\&#39;d have thought you, of all people --&quot;\n\n&quot;I\&#39;m not trying to be brave or anything, saying the name,&quot; said Harry, I\njust never knew you shouldn\&#39;t. See what I mean? I\&#39;ve got loads to\nlearn.... I bet,&quot; he added, voicing for the first time something that\nhad been worrying him a lot lately, &quot;I bet I\&#39;m the worst in the class.&quot;\n\n&quot;You won\&#39;t be. There\&#39;s loads of people who come from Muggle families and\nthey learn quick enough.&quot;\n\nWhile they had been talking, the train had carried them out of London.\nNow they were speeding past fields full of cows and sheep. They were\nquiet for a time, watching the fields and lanes flick past.\n\nAround half past twelve there was a great clattering outside in the\ncorridor and a smiling, dimpled woman slid back their door and said,\n&quot;Anything off the cart, dears?&quot;\n\nHarry, who hadn\&#39;t had any breakfast, leapt to his feet, but Ron\&#39;s ears\nwent pink again and he muttered that he\&#39;d brought sandwiches. Harry went\nout into the corridor.\n\nHe had never had any money for candy with the Dursleys, and now that he\nhad pockets rattling with gold and silver he was ready to buy as many\nMars Bars as he could carry -- but the woman didn\&#39;t have Mars Bars. What\nshe did have were Bettie Bott\&#39;s Every Flavor Beans, Drooble\&#39;s Best\nBlowing Gum, Chocolate Frogs. Pumpkin Pasties, Cauldron Cakes, Licorice\nWands, and a number of other strange things Harry had never seen in his\nlife. Not wanting to miss anything, he got some of everything and paid\nthe woman eleven silver Sickles and seven bronze Knuts.\n\nRon stared as Harry brought it all back in to the compartment and tipped\nit onto an empty seat.\n\n&quot;Hungry, are you?&quot;\n\n&quot;Starving,&quot; said Harry, taking a large bite out of a pumpkin pasty.\n\nRon had taken out a lumpy package and unwrapped it. There were four\nsandwiches inside. He pulled one of them apart and said, &quot;She always\nforgets I don\&#39;t like corned beef.&quot;\n\n&quot;Swap you for one of these,&quot; said Harry, holding up a pasty. &quot;Go on --&quot;\n\n&quot;You don\&#39;t want this, it\&#39;s all dry,&quot; said Ron. &quot;She hasn\&#39;t got much\ntime,&quot; he added quickly, &quot;you know, with five of us.&quot;\n\n&quot;Go on, have a pasty,&quot; said Harry, who had never had anything to share\nbefore or, indeed, anyone to share it with. It was a nice feeling,\nsitting there with Ron, eating their way through all Harry\&#39;s pasties,\ncakes, and candies (the sandwiches lay forgotten).\n\n&quot;What are these?&quot; Harry asked Ron, holding up a pack of Chocolate Frogs.\n&quot;They\&#39;re not really frogs, are they?&quot; He was starting to feel that\nnothing would surprise him.\n\n&quot;No,&quot; said Ron. &quot;But see what the card is. I\&#39;m missing Agrippa.&quot;\n\n&quot;What?&quot;\n\n&quot;Oh, of course, you wouldn\&#39;t know -- Chocolate Frogs have cards, inside\nthem, you know, to collect -- famous witches and wizards. I\&#39;ve got about\nfive hundred, but I haven\&#39;t got Agrippa or Ptolemy.&quot;\n\nHarry unwrapped his Chocolate Frog and picked up the card. It showed a\nman\&#39;s face. He wore half- moon glasses, had a long, crooked nose, and\nflowing silver hair, beard, and mustache. Underneath the picture was the\nname Albus Dumbledore.\n\n&quot;So this is Dumbledore!&quot; said Harry.\n\n&quot;Don\&#39;t tell me you\&#39;d never heard of Dumbledore!&quot; said Ron. &quot;Can I have a\nfrog?\n---------------------\nGiven the context information and not prior knowledge, answer the query.\nQuery: How does Harry first learn that he is a wizard?\nAnswer: &#39;}], &#39;model&#39;: &#39;gpt-3.5-turbo&#39;, &#39;stream&#39;: False, &#39;temperature&#39;: 0.1}}
+DEBUG:httpcore.connection:close.started
+close.started
+DEBUG:httpcore.connection:close.complete
+close.complete
+DEBUG:httpcore.connection:connect_tcp.started host=&#39;api.openai.com&#39; port=443 local_address=None timeout=60.0 socket_options=None
+connect_tcp.started host=&#39;api.openai.com&#39; port=443 local_address=None timeout=60.0 socket_options=None
+DEBUG:httpcore.connection:connect_tcp.complete return_value=&lt;httpcore._backends.sync.SyncStream object at 0x31bdddb10&gt;
+connect_tcp.complete return_value=&lt;httpcore._backends.sync.SyncStream object at 0x31bdddb10&gt;
+DEBUG:httpcore.connection:start_tls.started ssl_context=&lt;ssl.SSLContext object at 0x16dc8b0c0&gt; server_hostname=&#39;api.openai.com&#39; timeout=60.0
+start_tls.started ssl_context=&lt;ssl.SSLContext object at 0x16dc8b0c0&gt; server_hostname=&#39;api.openai.com&#39; timeout=60.0
+DEBUG:httpcore.connection:start_tls.complete return_value=&lt;httpcore._backends.sync.SyncStream object at 0x31bddc550&gt;
+start_tls.complete return_value=&lt;httpcore._backends.sync.SyncStream object at 0x31bddc550&gt;
+DEBUG:httpcore.http11:send_request_headers.started request=&lt;Request [b&#39;POST&#39;]&gt;
+send_request_headers.started request=&lt;Request [b&#39;POST&#39;]&gt;
+DEBUG:httpcore.http11:send_request_headers.complete
+send_request_headers.complete
+DEBUG:httpcore.http11:send_request_body.started request=&lt;Request [b&#39;POST&#39;]&gt;
+send_request_body.started request=&lt;Request [b&#39;POST&#39;]&gt;
+DEBUG:httpcore.http11:send_request_body.complete
+send_request_body.complete
+DEBUG:httpcore.http11:receive_response_headers.started request=&lt;Request [b&#39;POST&#39;]&gt;
+receive_response_headers.started request=&lt;Request [b&#39;POST&#39;]&gt;
+DEBUG:httpcore.http11:receive_response_headers.complete return_value=(b&#39;HTTP/1.1&#39;, 200, b&#39;OK&#39;, [(b&#39;Date&#39;, b&#39;Fri, 05 Apr 2024 10:12:26 GMT&#39;), (b&#39;Content-Type&#39;, b&#39;application/json&#39;), (b&#39;Transfer-Encoding&#39;, b&#39;chunked&#39;), (b&#39;Connection&#39;, b&#39;keep-alive&#39;), (b&#39;access-control-allow-origin&#39;, b&#39;*&#39;), (b&#39;Cache-Control&#39;, b&#39;no-cache, must-revalidate&#39;), (b&#39;openai-model&#39;, b&#39;gpt-3.5-turbo-0125&#39;), (b&#39;openai-organization&#39;, b&#39;victor-xbwupa&#39;), (b&#39;openai-processing-ms&#39;, b&#39;1043&#39;), (b&#39;openai-version&#39;, b&#39;2020-10-01&#39;), (b&#39;strict-transport-security&#39;, b&#39;max-age=15724800; includeSubDomains&#39;), (b&#39;x-ratelimit-limit-requests&#39;, b&#39;10000&#39;), (b&#39;x-ratelimit-limit-tokens&#39;, b&#39;1000000&#39;), (b&#39;x-ratelimit-remaining-requests&#39;, b&#39;9999&#39;), (b&#39;x-ratelimit-remaining-tokens&#39;, b&#39;997926&#39;), (b&#39;x-ratelimit-reset-requests&#39;, b&#39;6ms&#39;), (b&#39;x-ratelimit-reset-tokens&#39;, b&#39;124ms&#39;), (b&#39;x-request-id&#39;, b&#39;req_c27c32b5a2cb9e15a7fb2b7ed1c2ad94&#39;), (b&#39;CF-Cache-Status&#39;, b&#39;DYNAMIC&#39;), (b&#39;Set-Cookie&#39;, b&#39;__cf_bm=dv10Z1rLgzUihOzwoPRd4RkUlKjJH.I4qZSVpUKm4lA-1712311946-1.0.1.1-xEfPd.hByToDaa2m10SwUgzSICCTzPL0saBOQ8SM3vp8Qzn0SnNsFvZiiGyTVz2lWrypsvOq5ZeT2.vRQSPnEg; path=/; expires=Fri, 05-Apr-24 10:42:26 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None&#39;), (b&#39;Set-Cookie&#39;, b&#39;_cfuvid=L13.yO2bnrQjame0B0l7qNDQlAOUxhykt9vVRZ9u0GE-1712311946849-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None&#39;), (b&#39;Server&#39;, b&#39;cloudflare&#39;), (b&#39;CF-RAY&#39;, b&#39;86f8c27a9fff660b-MAD&#39;), (b&#39;Content-Encoding&#39;, b&#39;br&#39;), (b&#39;alt-svc&#39;, b&#39;h3=&quot;:443&quot;; ma=86400&#39;)])
+receive_response_headers.complete return_value=(b&#39;HTTP/1.1&#39;, 200, b&#39;OK&#39;, [(b&#39;Date&#39;, b&#39;Fri, 05 Apr 2024 10:12:26 GMT&#39;), (b&#39;Content-Type&#39;, b&#39;application/json&#39;), (b&#39;Transfer-Encoding&#39;, b&#39;chunked&#39;), (b&#39;Connection&#39;, b&#39;keep-alive&#39;), (b&#39;access-control-allow-origin&#39;, b&#39;*&#39;), (b&#39;Cache-Control&#39;, b&#39;no-cache, must-revalidate&#39;), (b&#39;openai-model&#39;, b&#39;gpt-3.5-turbo-0125&#39;), (b&#39;openai-organization&#39;, b&#39;victor-xbwupa&#39;), (b&#39;openai-processing-ms&#39;, b&#39;1043&#39;), (b&#39;openai-version&#39;, b&#39;2020-10-01&#39;), (b&#39;strict-transport-security&#39;, b&#39;max-age=15724800; includeSubDomains&#39;), (b&#39;x-ratelimit-limit-requests&#39;, b&#39;10000&#39;), (b&#39;x-ratelimit-limit-tokens&#39;, b&#39;1000000&#39;), (b&#39;x-ratelimit-remaining-requests&#39;, b&#39;9999&#39;), (b&#39;x-ratelimit-remaining-tokens&#39;, b&#39;997926&#39;), (b&#39;x-ratelimit-reset-requests&#39;, b&#39;6ms&#39;), (b&#39;x-ratelimit-reset-tokens&#39;, b&#39;124ms&#39;), (b&#39;x-request-id&#39;, b&#39;req_c27c32b5a2cb9e15a7fb2b7ed1c2ad94&#39;), (b&#39;CF-Cache-Status&#39;, b&#39;DYNAMIC&#39;), (b&#39;Set-Cookie&#39;, b&#39;__cf_bm=dv10Z1rLgzUihOzwoPRd4RkUlKjJH.I4qZSVpUKm4lA-1712311946-1.0.1.1-xEfPd.hByToDaa2m10SwUgzSICCTzPL0saBOQ8SM3vp8Qzn0SnNsFvZiiGyTVz2lWrypsvOq5ZeT2.vRQSPnEg; path=/; expires=Fri, 05-Apr-24 10:42:26 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None&#39;), (b&#39;Set-Cookie&#39;, b&#39;_cfuvid=L13.yO2bnrQjame0B0l7qNDQlAOUxhykt9vVRZ9u0GE-1712311946849-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None&#39;), (b&#39;Server&#39;, b&#39;cloudflare&#39;), (b&#39;CF-RAY&#39;, b&#39;86f8c27a9fff660b-MAD&#39;), (b&#39;Content-Encoding&#39;, b&#39;br&#39;), (b&#39;alt-svc&#39;, b&#39;h3=&quot;:443&quot;; ma=86400&#39;)])
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions &quot;HTTP/1.1 200 OK&quot;
+HTTP Request: POST https://api.openai.com/v1/chat/completions &quot;HTTP/1.1 200 OK&quot;
+DEBUG:httpcore.http11:receive_response_body.started request=&lt;Request [b&#39;POST&#39;]&gt;
+receive_response_body.started request=&lt;Request [b&#39;POST&#39;]&gt;
+DEBUG:httpcore.http11:receive_response_body.complete
+receive_response_body.complete
+DEBUG:httpcore.http11:response_closed.started
+response_closed.started
+DEBUG:httpcore.http11:response_closed.complete
+response_closed.complete
+DEBUG:openai._base_client:HTTP Request: POST https://api.openai.com/v1/chat/completions &quot;200 OK&quot;
+HTTP Request: POST https://api.openai.com/v1/chat/completions &quot;200 OK&quot;
+Harry first learns that he is a wizard when Hagrid arrives to deliver his acceptance letter to Hogwarts School of Witchcraft and Wizardry. This revelation comes as a surprise to Harry, as he had no prior knowledge about his magical abilities or his true identity as a wizard.
+</pre></div>
+</div>
+</div>
+</div>
+<p>To disable it, you can reset the notebook</p>
+</section>
+</section>
+<section id="example-2-financial-reporting">
+<h2>Example 2 - Financial Reporting<a class="headerlink" href="#example-2-financial-reporting" title="Link to this heading">#</a></h2>
+<p>Now, let’s analyze financial data from the APPLE company. We can download such these reports from the SEC fillings page from the US government.</p>
+<p><a class="reference external" href="https://www.sec.gov/edgar/searchedgar/companysearch">https://www.sec.gov/edgar/searchedgar/companysearch</a></p>
+<p>A report is already downloaded in the <code class="docutils literal notranslate"><span class="pre">data_apple</span></code> directory</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">llama_index.core</span> <span class="kn">import</span> <span class="n">VectorStoreIndex</span><span class="p">,</span> <span class="n">SimpleDirectoryReader</span>
+
+<span class="n">documents</span> <span class="o">=</span> <span class="n">SimpleDirectoryReader</span><span class="p">(</span><span class="s2">&quot;data_apple&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+<span class="n">index</span> <span class="o">=</span> <span class="n">VectorStoreIndex</span><span class="o">.</span><span class="n">from_documents</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="some-sample-questions">
+<h3>Some sample questions…<a class="headerlink" href="#some-sample-questions" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query_engine</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">as_query_engine</span><span class="p">()</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">query_engine</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Where are the company&#39;s headquarters located?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The company&#39;s headquarters are located in Cupertino, California.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">query_engine</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Why Epic Games sued Apple?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epic Games sued Apple alleging violations of federal and state antitrust laws and California’s unfair competition law based on the operation of Apple&#39;s App Store.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">query_engine</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;What were the total revenues of Apple in 2023?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Apple&#39;s total revenues in 2023 were $383.3 billion.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">query_engine</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;And the net income?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The net income for the year ended September 30, 2023, was $96,995 million.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">query_engine</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Generate a list of the products that Apple has launched in that year. Use bullet points.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- iPad and iPad Pro
+- Next-generation Apple TV 4K
+- MLS Season Pass
+- MacBook Pro 14”, MacBook Pro 16” and Mac mini
+- Second-generation HomePod
+- MacBook Air 15”, Mac Studio and Mac Pro
+- Apple Vision Pro™
+- iOS 17, macOS Sonoma, iPadOS 17, tvOS 17 and watchOS 10
+- iPhone 15, iPhone 15 Plus, iPhone 15 Pro and iPhone 15 Pro Max
+- Apple Watch Series 9 and Apple Watch Ultra 2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="example-3-user-support-assistant">
+<h2>Example 3 - User Support Assistant<a class="headerlink" href="#example-3-user-support-assistant" title="Link to this heading">#</a></h2>
+<p>Now let’s build a User Support Assistant, that can answer questions about a product. In this case, we will use the Apple Watch as an example.</p>
+<p>It is a PDF manual of almost 400 pages long!!</p>
+<p><a class="reference external" href="https://help.apple.com/pdf/watch/10/en_US/apple-watch-user-guide-watchos10.pdf">https://help.apple.com/pdf/watch/10/en_US/apple-watch-user-guide-watchos10.pdf</a></p>
+<p>It is already downloaded in the <code class="docutils literal notranslate"><span class="pre">data_user_support</span></code> directory</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">llama_index.core</span> <span class="kn">import</span> <span class="n">VectorStoreIndex</span><span class="p">,</span> <span class="n">SimpleDirectoryReader</span>
+
+<span class="n">documents</span> <span class="o">=</span> <span class="n">SimpleDirectoryReader</span><span class="p">(</span><span class="s2">&quot;data_user_support&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+<span class="n">index</span> <span class="o">=</span> <span class="n">VectorStoreIndex</span><span class="o">.</span><span class="n">from_documents</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="some-sample-queries">
+<h3>Some sample queries…<a class="headerlink" href="#some-sample-queries" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query_engine</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">as_query_engine</span><span class="p">()</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">query_engine</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Describe the steps to change notification settings&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Open the Apple Watch app on your iPhone, tap My Watch, then tap Notifications. Select the specific app you want to adjust, tap Custom, and then choose from options like Allow Notifications, Send to Notification Center, or Notifications Off. Additionally, you can customize notification grouping preferences for the app.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">query_engine</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;How can i zoom in in the maps?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>To zoom in on the maps, you can double-tap the map on the spot you want to zoom in on.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">query_engine</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Does my watch support Mirroring&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Your watch supports Mirroring if it is an Apple Watch Series 6, Apple Watch Series 7, Apple Watch Series 8, or Apple Watch Series 9.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
+<p>Build a simple RAG example for a set of documents of your choice</p>
+</section>
+</section>
+<section id="using-local-models">
+<h2>Using local models<a class="headerlink" href="#using-local-models" title="Link to this heading">#</a></h2>
+<p>Instead of using the OpenAI API models for both the embeddings and the LLM, you can use local, open-source models. This is particularly useful when you have a large collection of documents and you want to avoid the costs of the API.</p>
+<p>The code is almost the same, you only need to specify the concrete models:</p>
+<p><a class="reference external" href="https://docs.llamaindex.ai/en/stable/getting_started/starter_example_local/">https://docs.llamaindex.ai/en/stable/getting_started/starter_example_local/</a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./s24_retrieval_augmented_generation_full"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../s23_instruction_tuning_and_gpt/s23.2_chain_of_thought.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Chain of Thought Advanced Prompting Examples</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="s24.2_multimodal-retrieval.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Multi-modal Models with LlamaIndex</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Semantic Search for texts</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#application-retrieval-augmented-generation-rag">Application: Retrieval-Augmented Generation (RAG)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-rag">Why RAG?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stages-within-rag">Stages within RAG</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-chat-with-a-book">Example 1 - Chat with a book</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data-and-build-an-index">Load data and build an index</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#query-your-data">Query your data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#storing-your-index">Storing your index</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-financial-reporting">Example 2 - Financial Reporting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-sample-questions">Some sample questions…</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-user-support-assistant">Example 3 - User Support Assistant</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-sample-queries">Some sample queries…</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-local-models">Using local models</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Víctor Gallego
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

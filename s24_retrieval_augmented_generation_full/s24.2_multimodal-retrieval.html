@@ -1,0 +1,1017 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Multi-modal Models with LlamaIndex &#8212; AI: ML &amp; Analytics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 's24_retrieval_augmented_generation_full/s24.2_multimodal-retrieval';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Exercises 1: LLM models for information extraction in podcasts 🎙️" href="../s25_applications_llms_streamlit/s25_exercises.html" />
+    <link rel="prev" title="Semantic Search for texts" href="s24.1_into-to-llamaindex.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-neon.png" class="logo__image only-light" alt="AI: ML & Analytics - Home"/>
+    <script>document.write(`<img src="../_static/logo-neon.png" class="logo__image only-dark" alt="AI: ML & Analytics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    <no title>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">1. Our first Generative AI application</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/example_genAI.html">Our first Generative AI application</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2. Matrix Algebra with NumPy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.1-numpy.html">Matrix operations with Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.2-numpy-exercises-solutions.html">Numpy exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.3-image-blending.html">Working with images in Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Optimization and Automatic Differentiation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s03_optimization_automatic_differentiation/s03.1_notebook-solutions.html">Review of Optimization</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Review of Machine Learning with scikit-learn</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s04_review_ML_sklearn/s04.1-supervised-learning-sklearn-solutions.html">Scikit-learn</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../s04_review_ML_sklearn/s04.2-cost-benefit-analysis.html">Cost-Benefit Analysis of a ML classifier.</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">5. Unsupervised Learning with UMAP</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s05_unsupervised-learning-umap/s05.1-dimensionality-reduction.html">Dimensionality Reduction. UMAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s05_unsupervised-learning-umap/s05.2-text-analysis-solutions.html">Text Analysis with UMAP</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">6. Text Processing with scikit-learn</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s06_text-processing-sklearn/s06.1-text-classification-solved.html">Session 6: More on working with text data in scikit-learn</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">7. Intro to Deep Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s07_intro_deep_learning/s07.1-neural_network-solved.html">07: Introduction to Neural Networks</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">9. Deep Learning in Computer Vision</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.1-examples.html">Session 9. More on Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.2-examples-2.html">Introduction to Computer Vision with Deep Learning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.3-intro-to-convolutions_solved.html">Intro to convolutional neural networks (CNNs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.4-convolutional-networks_solved.html">Convolutional Neural Networks (CNNs)</a></li>
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">11. Transfer Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s11_transfer_learning/s11.1-transfer-learning-examples.html">Transfer Learning</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">12. Zero-Shot Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s12_zero-shot-learning/s12.1_intro-zero-shot-classification.html">Zero-Shot Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">13. Semantic Search</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s13_semantic_search_and_biases/s13.1_semantic_search_solved.html">Semantic Search</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">14. Object Detection</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s14_more_vision_tasks_object_detection/s14.1-intro-object-detection.html">Object Detection</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../s14_more_vision_tasks_object_detection/s14.2-zero-shot_object_detection.html">Zero-shot object detection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">15. Exercises I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.1-text-classification-solved.html">Exercise 1: Hate Spech Detection in X (aka Twitter) 🤬</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.2-transfer-learning-solved.html">Exercise: Plant Disease App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.3-semantic-search-solved2.html">Exercise: Product Item Recommender 🧥</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">16. Exercises II</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s16_exercises_2_solved/s16.1-umap-solved.html">Exercise 1: Eurovision Song Lyrics Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s16_exercises_2_solved/s16.2-zero-shot-classification-solved.html">Exercise 2: Photo Sorting Application 📸</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">19. Intro to Transformers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s19_intro_to_transformers/s19.1_pipelines_solved.html">Introduction to the Transformers Library for NLP: pipelines</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s19_intro_to_transformers/s19.2_zero-shot-classification.html">Zero-Shot Classification in NLP</a></li>
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">20. Transformers Architecture &amp; Transfer Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.1_transformers_architecture.html">Fundamentals of the Transformer Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.2-transfer-intro.html">Transfer Learning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.3-transfer-learning-example.html">Transfer Learning example: Legal Text Classification</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">21. Fine-tuning with Transformers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s21_fine-tuning-trainer/s21.1-fine-tuning-example.html">Fine-tuning with transformers’ library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s21_fine-tuning-trainer/s21.2-fine-tuning-example-2.html">Intent Classification in Banking 🏦</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">22. Speech Recognition with Transformers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s22_automatic_speech_recognition/s22.1_whisper_model.html">Automatic Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s22_automatic_speech_recognition/s22.2_text_to_speech.html">Text to Speech</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s22_automatic_speech_recognition/s22.3_using_gpus.html">Using GPUs with transformers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">23. Instruction Tuning and the GPT API</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s23_instruction_tuning_and_gpt/s23.1_gpt_api.html">Instruction Tuning of Language Models</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s23_instruction_tuning_and_gpt/s23.2_chain_of_thought.html">Chain of Thought Advanced Prompting Examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">24. Retrieval Augmented Generation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="s24.1_into-to-llamaindex.html">Semantic Search for texts</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Multi-modal Models with LlamaIndex</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">25. Exercises I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s25_applications_llms_streamlit/s25_exercises.html">Exercises 1: LLM models for information extraction in podcasts 🎙️</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/vicgalle/ai-ml-course" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/vicgalle/ai-ml-course/issues/new?title=Issue%20on%20page%20%2Fs24_retrieval_augmented_generation_full/s24.2_multimodal-retrieval.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/s24_retrieval_augmented_generation_full/s24.2_multimodal-retrieval.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Multi-modal Models with LlamaIndex</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-the-image-data">1. Getting the image data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-gpt4v-to-understand-those-input-images">Using GPT4V to understand those input images¶</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="multi-modal-models-with-llamaindex">
+<h1>Multi-modal Models with LlamaIndex<a class="headerlink" href="#multi-modal-models-with-llamaindex" title="Link to this heading">#</a></h1>
+<p>With LlamaIndex we can also work with image data, but first we need to install a few dependencies first:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install llama_index ftfy regex tqdm
+<span class="o">%</span><span class="k">pip</span> install git+https://github.com/openai/CLIP.git
+<span class="o">%</span><span class="k">pip</span> install torch torchvision
+<span class="o">%</span><span class="k">pip</span> install matplotlib scikit-image
+<span class="o">%</span><span class="k">pip</span> install -U qdrant_client
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: llama_index in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (0.10.27)
+Collecting ftfy
+  Downloading ftfy-6.2.0-py3-none-any.whl.metadata (7.3 kB)
+Requirement already satisfied: regex in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (2023.12.25)
+Requirement already satisfied: tqdm in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (4.66.2)
+Requirement already satisfied: llama-index-agent-openai&lt;0.3.0,&gt;=0.1.4 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama_index) (0.2.2)
+Requirement already satisfied: llama-index-cli&lt;0.2.0,&gt;=0.1.2 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama_index) (0.1.11)
+Requirement already satisfied: llama-index-core&lt;0.11.0,&gt;=0.10.27 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama_index) (0.10.27)
+Requirement already satisfied: llama-index-embeddings-openai&lt;0.2.0,&gt;=0.1.5 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama_index) (0.1.7)
+Requirement already satisfied: llama-index-indices-managed-llama-cloud&lt;0.2.0,&gt;=0.1.2 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama_index) (0.1.5)
+Requirement already satisfied: llama-index-legacy&lt;0.10.0,&gt;=0.9.48 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama_index) (0.9.48)
+Requirement already satisfied: llama-index-llms-openai&lt;0.2.0,&gt;=0.1.13 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama_index) (0.1.14)
+Requirement already satisfied: llama-index-multi-modal-llms-openai&lt;0.2.0,&gt;=0.1.3 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama_index) (0.1.4)
+Requirement already satisfied: llama-index-program-openai&lt;0.2.0,&gt;=0.1.3 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama_index) (0.1.5)
+Requirement already satisfied: llama-index-question-gen-openai&lt;0.2.0,&gt;=0.1.2 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama_index) (0.1.3)
+Requirement already satisfied: llama-index-readers-file&lt;0.2.0,&gt;=0.1.4 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama_index) (0.1.13)
+Requirement already satisfied: llama-index-readers-llama-parse&lt;0.2.0,&gt;=0.1.2 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama_index) (0.1.4)
+Requirement already satisfied: wcwidth&lt;0.3.0,&gt;=0.2.12 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from ftfy) (0.2.13)
+Requirement already satisfied: openai&gt;=1.14.0 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama-index-agent-openai&lt;0.3.0,&gt;=0.1.4-&gt;llama_index) (1.16.0)
+Requirement already satisfied: PyYAML&gt;=6.0.1 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (6.0.1)
+Requirement already satisfied: SQLAlchemy&gt;=1.4.49 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from SQLAlchemy[asyncio]&gt;=1.4.49-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (2.0.29)
+Requirement already satisfied: aiohttp&lt;4.0.0,&gt;=3.8.6 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (3.9.3)
+Requirement already satisfied: dataclasses-json in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (0.6.4)
+Requirement already satisfied: deprecated&gt;=1.2.9.3 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (1.2.14)
+Requirement already satisfied: dirtyjson&lt;2.0.0,&gt;=1.0.8 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (1.0.8)
+Requirement already satisfied: fsspec&gt;=2023.5.0 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (2024.2.0)
+Requirement already satisfied: httpx in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (0.27.0)
+Requirement already satisfied: llamaindex-py-client&lt;0.2.0,&gt;=0.1.16 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (0.1.16)
+Requirement already satisfied: nest-asyncio&lt;2.0.0,&gt;=1.5.8 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (1.6.0)
+Requirement already satisfied: networkx&gt;=3.0 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (3.2.1)
+Requirement already satisfied: nltk&lt;4.0.0,&gt;=3.8.1 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (3.8.1)
+Requirement already satisfied: numpy in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (1.26.4)
+Requirement already satisfied: pandas in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (1.4.2)
+Requirement already satisfied: pillow&gt;=9.0.0 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (9.1.1)
+Requirement already satisfied: requests&gt;=2.31.0 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (2.31.0)
+Requirement already satisfied: tenacity&lt;9.0.0,&gt;=8.2.0 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (8.2.3)
+Requirement already satisfied: tiktoken&gt;=0.3.3 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (0.6.0)
+Requirement already satisfied: typing-extensions&gt;=4.5.0 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (4.10.0)
+Requirement already satisfied: typing-inspect&gt;=0.8.0 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (0.9.0)
+Requirement already satisfied: wrapt in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (1.16.0)
+Requirement already satisfied: beautifulsoup4&lt;5.0.0,&gt;=4.12.3 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama-index-readers-file&lt;0.2.0,&gt;=0.1.4-&gt;llama_index) (4.12.3)
+Requirement already satisfied: pymupdf&lt;2.0.0,&gt;=1.23.21 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama-index-readers-file&lt;0.2.0,&gt;=0.1.4-&gt;llama_index) (1.24.1)
+Requirement already satisfied: pypdf&lt;5.0.0,&gt;=4.0.1 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama-index-readers-file&lt;0.2.0,&gt;=0.1.4-&gt;llama_index) (4.1.0)
+Requirement already satisfied: striprtf&lt;0.0.27,&gt;=0.0.26 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama-index-readers-file&lt;0.2.0,&gt;=0.1.4-&gt;llama_index) (0.0.26)
+Requirement already satisfied: llama-parse&lt;0.5.0,&gt;=0.4.0 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llama-index-readers-llama-parse&lt;0.2.0,&gt;=0.1.2-&gt;llama_index) (0.4.0)
+Requirement already satisfied: aiosignal&gt;=1.1.2 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from aiohttp&lt;4.0.0,&gt;=3.8.6-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (1.3.1)
+Requirement already satisfied: attrs&gt;=17.3.0 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from aiohttp&lt;4.0.0,&gt;=3.8.6-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (23.2.0)
+Requirement already satisfied: frozenlist&gt;=1.1.1 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from aiohttp&lt;4.0.0,&gt;=3.8.6-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (1.4.1)
+Requirement already satisfied: multidict&lt;7.0,&gt;=4.5 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from aiohttp&lt;4.0.0,&gt;=3.8.6-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (6.0.5)
+Requirement already satisfied: yarl&lt;2.0,&gt;=1.0 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from aiohttp&lt;4.0.0,&gt;=3.8.6-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (1.9.4)
+Requirement already satisfied: async-timeout&lt;5.0,&gt;=4.0 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from aiohttp&lt;4.0.0,&gt;=3.8.6-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (4.0.3)
+Requirement already satisfied: soupsieve&gt;1.2 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from beautifulsoup4&lt;5.0.0,&gt;=4.12.3-&gt;llama-index-readers-file&lt;0.2.0,&gt;=0.1.4-&gt;llama_index) (2.5)
+Requirement already satisfied: pydantic&gt;=1.10 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from llamaindex-py-client&lt;0.2.0,&gt;=0.1.16-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (2.6.4)
+Requirement already satisfied: anyio in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from httpx-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (4.3.0)
+Requirement already satisfied: certifi in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from httpx-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (2024.2.2)
+Requirement already satisfied: httpcore==1.* in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from httpx-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (1.0.5)
+Requirement already satisfied: idna in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from httpx-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (3.6)
+Requirement already satisfied: sniffio in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from httpx-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (1.3.1)
+Requirement already satisfied: h11&lt;0.15,&gt;=0.13 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from httpcore==1.*-&gt;httpx-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (0.14.0)
+Requirement already satisfied: click in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from nltk&lt;4.0.0,&gt;=3.8.1-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (8.1.7)
+Requirement already satisfied: joblib in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from nltk&lt;4.0.0,&gt;=3.8.1-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (1.3.2)
+Requirement already satisfied: distro&lt;2,&gt;=1.7.0 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from openai&gt;=1.14.0-&gt;llama-index-agent-openai&lt;0.3.0,&gt;=0.1.4-&gt;llama_index) (1.9.0)
+Requirement already satisfied: PyMuPDFb==1.24.1 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from pymupdf&lt;2.0.0,&gt;=1.23.21-&gt;llama-index-readers-file&lt;0.2.0,&gt;=0.1.4-&gt;llama_index) (1.24.1)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from requests&gt;=2.31.0-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (3.3.2)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from requests&gt;=2.31.0-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (2.2.1)
+Requirement already satisfied: greenlet!=0.4.17 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from SQLAlchemy[asyncio]&gt;=1.4.49-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (3.0.3)
+Requirement already satisfied: mypy-extensions&gt;=0.3.0 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from typing-inspect&gt;=0.8.0-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (1.0.0)
+Requirement already satisfied: marshmallow&lt;4.0.0,&gt;=3.18.0 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from dataclasses-json-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (3.21.1)
+Requirement already satisfied: python-dateutil&gt;=2.8.1 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from pandas-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (2.8.2)
+Requirement already satisfied: pytz&gt;=2020.1 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from pandas-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (2024.1)
+Requirement already satisfied: exceptiongroup&gt;=1.0.2 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from anyio-&gt;httpx-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (1.2.0)
+Requirement already satisfied: packaging&gt;=17.0 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from marshmallow&lt;4.0.0,&gt;=3.18.0-&gt;dataclasses-json-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (24.0)
+Requirement already satisfied: annotated-types&gt;=0.4.0 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from pydantic&gt;=1.10-&gt;llamaindex-py-client&lt;0.2.0,&gt;=0.1.16-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (0.6.0)
+Requirement already satisfied: pydantic-core==2.16.3 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from pydantic&gt;=1.10-&gt;llamaindex-py-client&lt;0.2.0,&gt;=0.1.16-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (2.16.3)
+Requirement already satisfied: six&gt;=1.5 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from python-dateutil&gt;=2.8.1-&gt;pandas-&gt;llama-index-core&lt;0.11.0,&gt;=0.10.27-&gt;llama_index) (1.16.0)
+Downloading ftfy-6.2.0-py3-none-any.whl (54 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">54.4/54.4 kB</span> <span class=" -Color -Color-Red">3.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hInstalling collected packages: ftfy
+Successfully installed ftfy-6.2.0
+Note: you may need to restart the kernel to use updated packages.
+Collecting git+https://github.com/openai/CLIP.git
+  Cloning https://github.com/openai/CLIP.git to /private/var/folders/l_/k13w4mhd5hv4bddxwqz8qdfw0000gn/T/pip-req-build-fbp11rpm
+  Running command git clone --filter=blob:none --quiet https://github.com/openai/CLIP.git /private/var/folders/l_/k13w4mhd5hv4bddxwqz8qdfw0000gn/T/pip-req-build-fbp11rpm
+  Resolved https://github.com/openai/CLIP.git to commit a1d071733d7111c9c014f024669f959182114e33
+  Preparing metadata (setup.py) ... ?25ldone
+?25hRequirement already satisfied: ftfy in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from clip==1.0) (6.2.0)
+Requirement already satisfied: regex in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from clip==1.0) (2023.12.25)
+Requirement already satisfied: tqdm in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from clip==1.0) (4.66.2)
+Requirement already satisfied: torch in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from clip==1.0) (2.2.1)
+Collecting torchvision (from clip==1.0)
+  Downloading torchvision-0.17.2-cp310-cp310-macosx_11_0_arm64.whl.metadata (6.6 kB)
+Requirement already satisfied: wcwidth&lt;0.3.0,&gt;=0.2.12 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from ftfy-&gt;clip==1.0) (0.2.13)
+Requirement already satisfied: filelock in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from torch-&gt;clip==1.0) (3.13.3)
+Requirement already satisfied: typing-extensions&gt;=4.8.0 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from torch-&gt;clip==1.0) (4.10.0)
+Requirement already satisfied: sympy in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from torch-&gt;clip==1.0) (1.12)
+Requirement already satisfied: networkx in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from torch-&gt;clip==1.0) (3.2.1)
+Requirement already satisfied: jinja2 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from torch-&gt;clip==1.0) (3.1.3)
+Requirement already satisfied: fsspec in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from torch-&gt;clip==1.0) (2024.2.0)
+Requirement already satisfied: numpy in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from torchvision-&gt;clip==1.0) (1.26.4)
+Collecting torch (from clip==1.0)
+  Downloading torch-2.2.2-cp310-none-macosx_11_0_arm64.whl.metadata (25 kB)
+Requirement already satisfied: pillow!=8.3.*,&gt;=5.3.0 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from torchvision-&gt;clip==1.0) (9.1.1)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from jinja2-&gt;torch-&gt;clip==1.0) (2.1.5)
+Requirement already satisfied: mpmath&gt;=0.19 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from sympy-&gt;torch-&gt;clip==1.0) (1.3.0)
+Downloading torchvision-0.17.2-cp310-cp310-macosx_11_0_arm64.whl (1.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.6/1.6 MB</span> <span class=" -Color -Color-Red">32.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>a <span class=" -Color -Color-Cyan">0:00:01</span>
+?25hDownloading torch-2.2.2-cp310-none-macosx_11_0_arm64.whl (59.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">59.7/59.7 MB</span> <span class=" -Color -Color-Red">40.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>00:0100:01
+?25hBuilding wheels for collected packages: clip
+  Building wheel for clip (setup.py) ... ?25ldone
+?25h  Created wheel for clip: filename=clip-1.0-py3-none-any.whl size=1369499 sha256=bfd28a5c38710ff77240b36e285ffa50087fca72f9f25b02f5df32f10b445fab
+  Stored in directory: /private/var/folders/l_/k13w4mhd5hv4bddxwqz8qdfw0000gn/T/pip-ephem-wheel-cache-xvpfl958/wheels/da/2b/4c/d6691fa9597aac8bb85d2ac13b112deb897d5b50f5ad9a37e4
+Successfully built clip
+Installing collected packages: torch, torchvision, clip
+  Attempting uninstall: torch
+    Found existing installation: torch 2.2.1
+    Uninstalling torch-2.2.1:
+      Successfully uninstalled torch-2.2.1
+Successfully installed clip-1.0 torch-2.2.2 torchvision-0.17.2
+Note: you may need to restart the kernel to use updated packages.
+Requirement already satisfied: torch in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (2.2.2)
+Requirement already satisfied: torchvision in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (0.17.2)
+Requirement already satisfied: filelock in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from torch) (3.13.3)
+Requirement already satisfied: typing-extensions&gt;=4.8.0 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from torch) (4.10.0)
+Requirement already satisfied: sympy in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from torch) (1.12)
+Requirement already satisfied: networkx in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from torch) (3.2.1)
+Requirement already satisfied: jinja2 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from torch) (3.1.3)
+Requirement already satisfied: fsspec in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from torch) (2024.2.0)
+Requirement already satisfied: numpy in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from torchvision) (1.26.4)
+Requirement already satisfied: pillow!=8.3.*,&gt;=5.3.0 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from torchvision) (9.1.1)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from jinja2-&gt;torch) (2.1.5)
+Requirement already satisfied: mpmath&gt;=0.19 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from sympy-&gt;torch) (1.3.0)
+Note: you may need to restart the kernel to use updated packages.
+Requirement already satisfied: matplotlib in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (3.4.3)
+Collecting scikit-image
+  Downloading scikit_image-0.22.0-cp310-cp310-macosx_12_0_arm64.whl.metadata (13 kB)
+Requirement already satisfied: cycler&gt;=0.10 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from matplotlib) (0.11.0)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from matplotlib) (1.4.2)
+Requirement already satisfied: numpy&gt;=1.16 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from matplotlib) (1.26.4)
+Requirement already satisfied: pillow&gt;=6.2.0 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from matplotlib) (9.1.1)
+Requirement already satisfied: pyparsing&gt;=2.2.1 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from matplotlib) (3.0.7)
+Requirement already satisfied: python-dateutil&gt;=2.7 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from matplotlib) (2.8.2)
+Requirement already satisfied: scipy&gt;=1.8 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from scikit-image) (1.12.0)
+Requirement already satisfied: networkx&gt;=2.8 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from scikit-image) (3.2.1)
+Collecting imageio&gt;=2.27 (from scikit-image)
+  Downloading imageio-2.34.0-py3-none-any.whl.metadata (4.9 kB)
+Collecting tifffile&gt;=2022.8.12 (from scikit-image)
+  Downloading tifffile-2024.2.12-py3-none-any.whl.metadata (31 kB)
+Requirement already satisfied: packaging&gt;=21 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from scikit-image) (24.0)
+Collecting lazy_loader&gt;=0.3 (from scikit-image)
+  Downloading lazy_loader-0.3-py3-none-any.whl.metadata (4.3 kB)
+Requirement already satisfied: six&gt;=1.5 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib) (1.16.0)
+Downloading scikit_image-0.22.0-cp310-cp310-macosx_12_0_arm64.whl (13.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">13.3/13.3 MB</span> <span class=" -Color -Color-Red">42.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>00:0100:01
+?25hDownloading imageio-2.34.0-py3-none-any.whl (313 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">313.4/313.4 kB</span> <span class=" -Color -Color-Red">32.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading lazy_loader-0.3-py3-none-any.whl (9.1 kB)
+Downloading tifffile-2024.2.12-py3-none-any.whl (224 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">224.5/224.5 kB</span> <span class=" -Color -Color-Red">20.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hInstalling collected packages: tifffile, lazy_loader, imageio, scikit-image
+Successfully installed imageio-2.34.0 lazy_loader-0.3 scikit-image-0.22.0 tifffile-2024.2.12
+Note: you may need to restart the kernel to use updated packages.
+Collecting qdrant_client
+  Downloading qdrant_client-1.8.2-py3-none-any.whl.metadata (9.5 kB)
+Collecting grpcio&gt;=1.41.0 (from qdrant_client)
+  Downloading grpcio-1.62.1-cp310-cp310-macosx_12_0_universal2.whl.metadata (4.0 kB)
+Collecting grpcio-tools&gt;=1.41.0 (from qdrant_client)
+  Downloading grpcio_tools-1.62.1-cp310-cp310-macosx_12_0_universal2.whl.metadata (6.2 kB)
+Requirement already satisfied: httpx&gt;=0.20.0 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from httpx[http2]&gt;=0.20.0-&gt;qdrant_client) (0.27.0)
+Requirement already satisfied: numpy&gt;=1.21 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from qdrant_client) (1.26.4)
+Collecting portalocker&lt;3.0.0,&gt;=2.7.0 (from qdrant_client)
+  Downloading portalocker-2.8.2-py3-none-any.whl.metadata (8.5 kB)
+Requirement already satisfied: pydantic&gt;=1.10.8 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from qdrant_client) (2.6.4)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.26.14 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from qdrant_client) (2.2.1)
+Collecting protobuf&lt;5.0dev,&gt;=4.21.6 (from grpcio-tools&gt;=1.41.0-&gt;qdrant_client)
+  Downloading protobuf-4.25.3-cp37-abi3-macosx_10_9_universal2.whl.metadata (541 bytes)
+Requirement already satisfied: setuptools in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from grpcio-tools&gt;=1.41.0-&gt;qdrant_client) (69.2.0)
+Requirement already satisfied: anyio in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from httpx&gt;=0.20.0-&gt;httpx[http2]&gt;=0.20.0-&gt;qdrant_client) (4.3.0)
+Requirement already satisfied: certifi in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from httpx&gt;=0.20.0-&gt;httpx[http2]&gt;=0.20.0-&gt;qdrant_client) (2024.2.2)
+Requirement already satisfied: httpcore==1.* in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from httpx&gt;=0.20.0-&gt;httpx[http2]&gt;=0.20.0-&gt;qdrant_client) (1.0.5)
+Requirement already satisfied: idna in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from httpx&gt;=0.20.0-&gt;httpx[http2]&gt;=0.20.0-&gt;qdrant_client) (3.6)
+Requirement already satisfied: sniffio in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from httpx&gt;=0.20.0-&gt;httpx[http2]&gt;=0.20.0-&gt;qdrant_client) (1.3.1)
+Requirement already satisfied: h11&lt;0.15,&gt;=0.13 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from httpcore==1.*-&gt;httpx&gt;=0.20.0-&gt;httpx[http2]&gt;=0.20.0-&gt;qdrant_client) (0.14.0)
+Collecting h2&lt;5,&gt;=3 (from httpx[http2]&gt;=0.20.0-&gt;qdrant_client)
+  Downloading h2-4.1.0-py3-none-any.whl.metadata (3.6 kB)
+Requirement already satisfied: annotated-types&gt;=0.4.0 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from pydantic&gt;=1.10.8-&gt;qdrant_client) (0.6.0)
+Requirement already satisfied: pydantic-core==2.16.3 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from pydantic&gt;=1.10.8-&gt;qdrant_client) (2.16.3)
+Requirement already satisfied: typing-extensions&gt;=4.6.1 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from pydantic&gt;=1.10.8-&gt;qdrant_client) (4.10.0)
+Collecting hyperframe&lt;7,&gt;=6.0 (from h2&lt;5,&gt;=3-&gt;httpx[http2]&gt;=0.20.0-&gt;qdrant_client)
+  Downloading hyperframe-6.0.1-py3-none-any.whl.metadata (2.7 kB)
+Collecting hpack&lt;5,&gt;=4.0 (from h2&lt;5,&gt;=3-&gt;httpx[http2]&gt;=0.20.0-&gt;qdrant_client)
+  Downloading hpack-4.0.0-py3-none-any.whl.metadata (2.5 kB)
+Requirement already satisfied: exceptiongroup&gt;=1.0.2 in /Users/victorgallego/miniforge3/lib/python3.10/site-packages (from anyio-&gt;httpx&gt;=0.20.0-&gt;httpx[http2]&gt;=0.20.0-&gt;qdrant_client) (1.2.0)
+Downloading qdrant_client-1.8.2-py3-none-any.whl (223 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">223.2/223.2 kB</span> <span class=" -Color -Color-Red">11.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading grpcio-1.62.1-cp310-cp310-macosx_12_0_universal2.whl (10.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">10.0/10.0 MB</span> <span class=" -Color -Color-Red">24.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span> <span class=" -Color -Color-Cyan">0:00:01</span>
+?25hDownloading grpcio_tools-1.62.1-cp310-cp310-macosx_12_0_universal2.whl (5.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">5.1/5.1 MB</span> <span class=" -Color -Color-Red">9.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>ta <span class=" -Color -Color-Cyan">0:00:01</span>
+?25hDownloading portalocker-2.8.2-py3-none-any.whl (17 kB)
+Downloading h2-4.1.0-py3-none-any.whl (57 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">57.5/57.5 kB</span> <span class=" -Color -Color-Red">7.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading protobuf-4.25.3-cp37-abi3-macosx_10_9_universal2.whl (394 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">394.2/394.2 kB</span> <span class=" -Color -Color-Red">49.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading hpack-4.0.0-py3-none-any.whl (32 kB)
+Downloading hyperframe-6.0.1-py3-none-any.whl (12 kB)
+Installing collected packages: protobuf, portalocker, hyperframe, hpack, grpcio, h2, grpcio-tools, qdrant_client
+  Attempting uninstall: protobuf
+    Found existing installation: protobuf 5.26.1
+    Uninstalling protobuf-5.26.1:
+      Successfully uninstalled protobuf-5.26.1
+Successfully installed grpcio-1.62.1 grpcio-tools-1.62.1 h2-4.1.0 hpack-4.0.0 hyperframe-6.0.1 portalocker-2.8.2 protobuf-4.25.3 qdrant_client-1.8.2
+Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">OPEN_AI_API_KEY</span> <span class="o">=</span> <span class="s2">&quot;sk-...&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;OPENAI_API_KEY&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">OPEN_AI_API_KEY</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="getting-the-image-data">
+<h2>1. Getting the image data<a class="headerlink" href="#getting-the-image-data" title="Link to this heading">#</a></h2>
+<p>We have downloaded images from Tesla website for GPT4V image reasoning</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">image_paths</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">img_path</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;./input_images&quot;</span><span class="p">):</span>
+    <span class="n">image_paths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;./input_images&quot;</span><span class="p">,</span> <span class="n">img_path</span><span class="p">)))</span>
+
+
+<span class="k">def</span> <span class="nf">plot_images</span><span class="p">(</span><span class="n">image_paths</span><span class="p">):</span>
+    <span class="n">images_shown</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">img_path</span> <span class="ow">in</span> <span class="n">image_paths</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">img_path</span><span class="p">):</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">img_path</span><span class="p">)</span>
+
+            <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">images_shown</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([])</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+
+            <span class="n">images_shown</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">images_shown</span> <span class="o">&gt;=</span> <span class="mi">9</span><span class="p">:</span>
+                <span class="k">break</span>
+
+
+<span class="n">plot_images</span><span class="p">(</span><span class="n">image_paths</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b7ceea91ca269dafa8736e20f2d2388f2ae476f832060b2f1b922679a987ecd9.png" src="../_images/b7ceea91ca269dafa8736e20f2d2388f2ae476f832060b2f1b922679a987ecd9.png" />
+</div>
+</div>
+</section>
+<section id="using-gpt4v-to-understand-those-input-images">
+<h2>Using GPT4V to understand those input images¶<a class="headerlink" href="#using-gpt4v-to-understand-those-input-images" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">llama_index.multi_modal_llms.openai</span> <span class="kn">import</span> <span class="n">OpenAIMultiModal</span>
+<span class="kn">from</span> <span class="nn">llama_index.core</span> <span class="kn">import</span> <span class="n">SimpleDirectoryReader</span>
+
+<span class="c1"># put your local directore here</span>
+<span class="n">image_documents</span> <span class="o">=</span> <span class="n">SimpleDirectoryReader</span><span class="p">(</span><span class="s2">&quot;./input_images&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+
+<span class="n">openai_mm_llm</span> <span class="o">=</span> <span class="n">OpenAIMultiModal</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4-vision-preview&quot;</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="n">OPEN_AI_API_KEY</span><span class="p">,</span> <span class="n">max_new_tokens</span><span class="o">=</span><span class="mi">1500</span>
+<span class="p">)</span>
+
+<span class="n">response_1</span> <span class="o">=</span> <span class="n">openai_mm_llm</span><span class="o">.</span><span class="n">complete</span><span class="p">(</span>
+    <span class="n">prompt</span><span class="o">=</span><span class="s2">&quot;Describe the images as an alternative text&quot;</span><span class="p">,</span>
+    <span class="n">image_documents</span><span class="o">=</span><span class="n">image_documents</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">response_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The images provided appear to be screenshots from a website showcasing specifications and details of an electric vehicle, presumably a Tesla Model Y, based on the information presented.
+
+Image 1: This image displays a comparison chart of two variants of a vehicle, labeled &quot;Performance&quot; and &quot;Long Range AWD.&quot; The chart lists various specifications such as battery type, acceleration, range, top speed, drive type, seating, wheels, and warranty details.
+
+Image 2: This image shows a cutaway illustration of a vehicle, highlighting its structural components. The image focuses on the rigidity and impact protection of the vehicle&#39;s frame, with labels pointing to the &quot;Rigid Structure&quot; and &quot;Impact Protection&quot; features.
+
+Image 3: This image is similar to the first one, showing a comparison chart of the &quot;Model Y Performance&quot; and &quot;Long Range AWD&quot; variants with specifications like battery, acceleration, range, top speed, drive type, seating, wheels, and warranty.
+
+Image 4: This image presents pricing information for different variants of the Model Y, including &quot;Rear-Wheel Drive,&quot; &quot;Dual Motor All Wheel Drive,&quot; and &quot;Model Y Performance.&quot; It also mentions a federal incentive, estimated delivery, and potential savings. The prices and savings are listed, along with a feature to enter a delivery postal code.
+
+Image 5: This image is another comparison chart of the &quot;Performance&quot; and &quot;Long Range AWD&quot; variants with specifications similar to those in the first image, including battery type, acceleration, range, top speed, drive type, seating, wheels, and warranty details.
+
+These images are designed to inform potential buyers about the features, specifications, and pricing of the electric vehicle models being presented.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">response_2</span> <span class="o">=</span> <span class="n">openai_mm_llm</span><span class="o">.</span><span class="n">complete</span><span class="p">(</span>
+    <span class="n">prompt</span><span class="o">=</span><span class="s2">&quot;Can you tell me what is the price with each spec?&quot;</span><span class="p">,</span>
+    <span class="n">image_documents</span><span class="o">=</span><span class="n">image_documents</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">response_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The images you&#39;ve provided show specifications and pricing for different variants of the Tesla Model Y. Here&#39;s a summary of the prices along with their respective specifications:
+
+1. Model Y Rear-Wheel Drive:
+   - Price: $57,990
+   - Battery: Long Range
+   - Acceleration: 6.9 seconds 0-100 km/h
+   - Range: 394 km (EPA est.)
+   - Drive: Rear-Wheel Drive
+   - Seating: Up to 5
+   - Wheels: 19&quot; or 20&quot;
+   - Top Speed: 217 km/h
+   - Display: 15&quot; Center Touchscreen
+   - Warranty: Basic Vehicle - 4 years or 80,000 km, whichever comes first
+
+2. Model Y Dual Motor All-Wheel Drive (Long Range AWD):
+   - Price: $67,990
+   - Battery: Long Range
+   - Acceleration: 5.0 seconds 0-100 km/h
+   - Range: 497 km (EPA est.)
+   - Drive: Dual Motor All-Wheel Drive
+   - Seating: Up to 5
+   - Wheels: 19&quot; or 20&quot;
+   - Top Speed: 217 km/h
+   - Display: 15&quot; Center Touchscreen
+   - Warranty: Basic Vehicle - 4 years or 80,000 km, whichever comes first
+
+3. Model Y Performance:
+   - Price: $74,990
+   - Battery: Long Range
+   - Acceleration: 3.7 seconds 0-100 km/h
+   - Range: 459 km (EPA est.)
+   - Drive: Dual Motor All-Wheel Drive
+   - Seating: Up to 5
+   - Wheels: 21&quot;
+   - Top Speed: 250 km/h
+   - Display: 15&quot; Center Touchscreen
+   - Warranty: Basic Vehicle - 4 years or 80,000 km, whichever comes first
+
+Please note that these prices are subject to change and may vary based on location, available incentives, and other factors. The prices shown in the images may not include potential savings or incentives such as the $5,000 federal incentive mentioned for qualifying electric vehicles. Always check with the manufacturer or your local dealership for the most current pricing and availability.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./s24_retrieval_augmented_generation_full"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="s24.1_into-to-llamaindex.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Semantic Search for texts</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../s25_applications_llms_streamlit/s25_exercises.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercises 1: LLM models for information extraction in podcasts 🎙️</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-the-image-data">1. Getting the image data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-gpt4v-to-understand-those-input-images">Using GPT4V to understand those input images¶</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Víctor Gallego
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
