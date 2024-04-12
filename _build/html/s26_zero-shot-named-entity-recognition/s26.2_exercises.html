@@ -1,0 +1,1452 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Exercise 1: Legal Sentences Analysis &#8212; AI: ML &amp; Analytics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 's26_zero-shot-named-entity-recognition/s26.2_exercises';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="GLiNER: Generalist and Lightweight Model for Named Entity Recognition" href="s26.1_gliner.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-neon.png" class="logo__image only-light" alt="AI: ML & Analytics - Home"/>
+    <script>document.write(`<img src="../_static/logo-neon.png" class="logo__image only-dark" alt="AI: ML & Analytics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    <no title>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">1. Our first Generative AI application</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/example_genAI.html">Our first Generative AI application</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2. Matrix Algebra with NumPy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.1-numpy.html">Matrix operations with Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.2-numpy-exercises-solutions.html">Numpy exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.3-image-blending.html">Working with images in Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Optimization and Automatic Differentiation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s03_optimization_automatic_differentiation/s03.1_notebook-solutions.html">Review of Optimization</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Review of Machine Learning with scikit-learn</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s04_review_ML_sklearn/s04.1-supervised-learning-sklearn-solutions.html">Scikit-learn</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../s04_review_ML_sklearn/s04.2-cost-benefit-analysis.html">Cost-Benefit Analysis of a ML classifier.</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">5. Unsupervised Learning with UMAP</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s05_unsupervised-learning-umap/s05.1-dimensionality-reduction.html">Dimensionality Reduction. UMAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s05_unsupervised-learning-umap/s05.2-text-analysis-solutions.html">Text Analysis with UMAP</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">6. Text Processing with scikit-learn</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s06_text-processing-sklearn/s06.1-text-classification-solved.html">Session 6: More on working with text data in scikit-learn</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">7. Intro to Deep Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s07_intro_deep_learning/s07.1-neural_network-solved.html">07: Introduction to Neural Networks</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">9. Deep Learning in Computer Vision</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.1-examples.html">Session 9. More on Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.2-examples-2.html">Introduction to Computer Vision with Deep Learning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.3-intro-to-convolutions_solved.html">Intro to convolutional neural networks (CNNs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.4-convolutional-networks_solved.html">Convolutional Neural Networks (CNNs)</a></li>
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">11. Transfer Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s11_transfer_learning/s11.1-transfer-learning-examples.html">Transfer Learning</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">12. Zero-Shot Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s12_zero-shot-learning/s12.1_intro-zero-shot-classification.html">Zero-Shot Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">13. Semantic Search</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s13_semantic_search_and_biases/s13.1_semantic_search_solved.html">Semantic Search</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">14. Object Detection</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s14_more_vision_tasks_object_detection/s14.1-intro-object-detection.html">Object Detection</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../s14_more_vision_tasks_object_detection/s14.2-zero-shot_object_detection.html">Zero-shot object detection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">15. Exercises I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.1-text-classification-solved.html">Exercise 1: Hate Spech Detection in X (aka Twitter) 🤬</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.2-transfer-learning-solved.html">Exercise: Plant Disease App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.3-semantic-search-solved2.html">Exercise: Product Item Recommender 🧥</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">16. Exercises II</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s16_exercises_2_solved/s16.1-umap-solved.html">Exercise 1: Eurovision Song Lyrics Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s16_exercises_2_solved/s16.2-zero-shot-classification-solved.html">Exercise 2: Photo Sorting Application 📸</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">19. Intro to Transformers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s19_intro_to_transformers/s19.1_pipelines_solved.html">Introduction to the Transformers Library for NLP: pipelines</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s19_intro_to_transformers/s19.2_zero-shot-classification.html">Zero-Shot Classification in NLP</a></li>
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">20. Transformers Architecture &amp; Transfer Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.1_transformers_architecture.html">Fundamentals of the Transformer Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.2-transfer-intro.html">Transfer Learning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.3-transfer-learning-example.html">Transfer Learning example: Legal Text Classification</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">21. Fine-tuning with Transformers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s21_fine-tuning-trainer/s21.1-fine-tuning-example.html">Fine-tuning with transformers’ library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s21_fine-tuning-trainer/s21.2-fine-tuning-example-2.html">Intent Classification in Banking 🏦</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">22. Speech Recognition with Transformers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s22_automatic_speech_recognition/s22.1_whisper_model.html">Automatic Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s22_automatic_speech_recognition/s22.2_text_to_speech.html">Text to Speech</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s22_automatic_speech_recognition/s22.3_using_gpus.html">Using GPUs with transformers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">23. Instruction Tuning and the GPT API</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s23_instruction_tuning_and_gpt/s23.1_gpt_api.html">Instruction Tuning of Language Models</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s23_instruction_tuning_and_gpt/s23.2_chain_of_thought.html">Chain of Thought Advanced Prompting Examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">24. Retrieval Augmented Generation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s24_retrieval_augmented_generation_full/s24.1_into-to-llamaindex.html">Semantic Search for texts</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s24_retrieval_augmented_generation_full/s24.2_multimodal-retrieval.html">Multi-modal Models with LlamaIndex</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">25. Exercises I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s25_applications_llms_streamlit/s25_exercises.html">Exercises 1: LLM models for information extraction in podcasts 🎙️</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/vicgalle/ai-ml-course" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/vicgalle/ai-ml-course/issues/new?title=Issue%20on%20page%20%2Fs26_zero-shot-named-entity-recognition/s26.2_exercises.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/s26_zero-shot-named-entity-recognition/s26.2_exercises.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exercise 1: Legal Sentences Analysis</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Exercise 1: Legal Sentences Analysis</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-customer-review-analysis">Exercise 2: Customer Review Analysis</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="exercise-1-legal-sentences-analysis">
+<h1>Exercise 1: Legal Sentences Analysis<a class="headerlink" href="#exercise-1-legal-sentences-analysis" title="Link to this heading">#</a></h1>
+<p>We are given a series of legal sentences (in Spanish), and we would like to:</p>
+<ul class="simple">
+<li><p>Extract the companies that are mentioned in there.</p></li>
+<li><p>Extract the persons that are mentioned in there.</p></li>
+</ul>
+<p>Which companies and persons have the most mentions in the dataset?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># you can start with the following code:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;legal.xlsx&#39;</span><span class="p">)[:</span><span class="mi">100</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#set max column width</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_colwidth&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/l_/k13w4mhd5hv4bddxwqz8qdfw0000gn/T/ipykernel_7822/2196259785.py:3: FutureWarning: Passing a negative integer is deprecated in version 1.0 and will not be supported in future version. Instead, use None to not limit the column width.
+  pd.set_option(&#39;display.max_colwidth&#39;, -1)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>nref</th>
+      <th>fallo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>40</th>
+      <td>2003/203935</td>
+      <td>I.- QUE DEBEMOS DECLARAR Y DECLARAMOS LA INADMISIBILIDAD DEL RECURSO CONTENCIOSO-ADMINISTRATIVO INTERPUESTO POR EL PROCURADOR D. GERMÁN APALATEGUI CARASA EN NOMBRE Y REPRESENTACIÓN DE DOÑA Mercedes CONTRA CONVENIO URBANÍSTICO SUSCRITO POR EL AYUNTAMIENTO DE DEBA Y Dª Antonia, APROBADO POR EL AYUNTAMIENTO EL 25 DE MARZO DE 1993 Y SUSCRITO EL 30 SIGUIENTE, POR EL QUE SE ACUERDA LA CESIÓN DE UNA PARCELA DE 316,60 m2 A CAMBIO DE UN APROVECHAMIENTO URBANÍSTICO DE 2.849 m3 A SITUAR EN LA PARTE DE SU PROPIEDAD A CONCRETAR MEDIANTE UN ESTUDIO DE DETALLE. SIN IMPOSICIÓN DE COSTAS.  II.- QUE ESTIMANDO EL RECURSO INTERPUESTO POR EL PROCURADOR D. GERMAN APALATEGUI CARASA EN NOMBRE Y REPRESENTACIÓN DE DOÑA Mercedes CONTRA LA DESESTIMACIÓN PRESUNTA DEL RECURSO DE REPOSICIÓN INTERPUESTO CONTRA EL ACUERDO DE 25 DE ENERO DE 2001 DEL AYUNTAMIENTO DE DEBA POR EL QUE SE APRUEBA DEFINITIVAMENTE EL ESTUDIO DE DETALLE RELATIVO A LA ZONA 9 DE LAS NORMAS SUBSIDIARIAS DE PLANEAMIENTO MUNICIPAL DE DEBA, ASÍ COMO EL ACUERDO DEL CITADO AYUNTAMIENTO DE 24 DE ABRIL DE 2001 POR EL QUE SE DESESTIMA DE FORMA EXPRESA EL RECURSO DE REPOSICIÓN INTERPUESTO, Y; DEBEMOS:  PRIMERO.- DECLARAR LA DISCONFORMIDAD A DERECHO DE LOS ACTOS RECURRIDOS QUE CONSECUENTEMENTE ANULAMOS. SEGUNDO.- SIN IMPOSICIÓN DE LAS COSTAS. Notifíquese esta resolución a las partes, advirtiéndoles que contra la misma cabe interponer RECURSO DE CASACIÓN ante la Sala de lo Contencioso - administrativo del Tribunal Supremo, el cual, en su caso, se preparará ante esta Sala en el plazo de DIEZ DÍAS, contados desde el siguiente al de la notificación de esta resolución, mediante escrito en el que deberá manifestarse la intención de interponer el recurso, con sucinta exposición de la concurrencia de los requisitos exigidos. Así por esta nuestra Sentencia, de la que se llevará testimonio a los autos, lo pronunciamos, mandamos y firmamos. Publicación. Leída y publicada fue la anterior sentencia por el Ilustrísimo Señor Magistrado Ponente de la misma, estando celebrando audiencia pública la Sala de lo Contencioso Administrativo del Tribunal Superior de Justicia del País Vasco, en el día de su fecha, de lo que yo el/la Secretario doy fe en BILBAO a 7 de noviembre de 2003.</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>2017/213715</td>
+      <td>En virtud de lo expuesto, LA SALA ACUERDA :  Inadmitir el recurso de queja interpuesto por representación procesal de D.ª Lorenza y D.ª Marí Juana contra la providencia de fecha 26 de mayo de 2017, de la Audiencia Provincial de Toledo (Sección 2.ª), en el rollo 291/2014, debiendo ponerse esta resolución en conocimiento de la referida Audiencia para que conste en los autos.  La parte recurrente perderá el depósito constituido. Contra la presente resolución no cabe recurso alguno. Así lo acuerdan, mandan y firman los Excmos. Sres. Magistrados indicados al margen, de lo que como Secretario, certifico.</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>2004/46741</td>
+      <td>Que estimamos parcialmente el recurso contencioso-administrativo interpuesto por la Procuradora Dª AMAYA MARÍA GONZÁLEZ CELAYA, en representación de la entidad "Recreativos Cedeira, S.L.", contra acuerdo del TEAR de Galicia, adoptado en sesión de fecha 27 de septiembre de 2001, que estima en parte reclamación económico-administrativa formulada contra resolución de fecha 24 de mayo de 1999, de la Jefa de Servicio de Gestión Tributaria de la Delegación en A Coruña de la Consellería de Economía e Facenda de la Xunta de Galicia, por la que se estima parcialmente solicitud de devolución de ingresos indebidos correspondientes a la Tasa Fiscal sobre el Juego, ejercicios 1992 a 1996, y anulamos parcialmente dicho acuerdo, por contrario a Derecho, en el particular relativo a la denegación de la devolución de lo ingresado en el primer y segundo trimestres del año 1992 y en el primer trimestre del año 1995 en concepto de incremento anual de la cuota fija de la Tasa Fiscal sobre el Juego relativa a máquinas recreativas tipo "B", debiendo procederse a la devolución de lo ingresado por tal concepto y períodos, con los respectivos intereses, y confirmamos el acuerdo en lo demás; no hacemos especial imposición de costas. Notifíquese esta sentencia a las partes, haciéndoles saber que es firme, siendo solamente susceptible del recurso de casación en interés de la Ley, que podrá ser interpuesto dentro de los tres meses siguientes a su notificación, directamente ante la Sala de lo Contencioso-administrativo del Tribunal Supremo, a medio de escrito con los requisitos establecidos en el artículo 100 de la Ley 29/1998, de 13 de julio, reguladora de la Jurisdicción Contencioso-administrativa por las personas y entidades a que se refiere dicho precepto. En su momento, devuélvase el expediente administrativo al Centro de su procedencia, con certificación de esta resolución. Así lo pronunciamos, mandamos y firmamos. Francisco Javier D'Amorín Vieitez.- José Luis Costa Pillado.- Juan Carlos Fernández López.- María Blanca Fernández Conde.- Cristina Paz Eiroa.</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2016/282587</td>
+      <td>I.- ESTIMAR en parte el recurso de apelación formulado por la Procuradora de los Tribunales Dª ANA ROSA FRADE FUENTES, en nombre y representación de BANCO SANTANDER S.A., frente a la sentencia de 29 de julio de 2016 dictada por el Juzgado de 1ª Instancia nº 5 de Vitoria en el procedimiento ordinario nº 414/2016.  II.- REVOCAR en parte la misma, y en consecuencia, estimar sustancialmente la demanda interpuesta por la Procuradora de los Tribunales Dª MARTA PAÚL NÚÑEZ, en nombre y representación de D. Agapito y Dª Adolfina, frente a BANCO SANTANDER S.A., y por ello:  II.1.- Declarar la nulidad de la orden de suscripción que dio lugar a la adquisición el 25 de enero de 2007 de aportaciones financieras subordinadas Fagor, y el contrato de administración y depósito de valores suscritos por las partes. II.2.- Condenar a BANCO SANTANDER S.A. a restituir a D. Agapito y Dª Adolfina, la cantidad de 28.443,04 Eur. y su interés legal desde el 25 de enero de 2007 hasta el 29 de julio de 2016, los gastos y comisiones abonados desde el 25 de enero de 2007 e interés legal de estas últimas cantidades desde su abono hasta el 29 de julio de 2016, que se hará efectivo en el modo que se dispone en el apartado II.4.  II.3.- D. Agapito y Dª Adolfina restituirán los títulos de las citadas aportaciones financieras subordinadas de Fagor a Banco Santander S.A. y las cantidades percibidas como interés bruto por dichos títulos, más interés legal de estos intereses desde cada una de las percepciones hasta el 29 de julio de 2016, que se harán efectivas en el modo que dispone el siguiente apartado II.4.  II.4.- Banco Santander S.A. abonará a D. Agapito y Dª Adolfina, la cantidad que resulte de descontar a la cifra que alcance el anterior apartado II.2, la que proceda por el apartado II.3., y además, interés legal elevado en dos puntos del importe así obtenido, desde el 29 de julio de 2016 hasta la completa satisfacción de los demandantes.  II.5.- Banco Santander S.A. es condenado a abonar las costas del procedimiento en primera instancia. III.- DECRETAR la restitución al apelante del depósito consignado para recurrir.  IV.- NO HACER CONDENA al pagode las costas del recurso de apelación  MODO DE IMPUGNACION : Frente a la presente resolución cabe interponer recurso de casación por interés casacional así como recurso extraordinario por infracción procesal caso de caber el anterior, por escrito, en el caso de ambos en uno mismo, ante esta Audiencia Provincial y dentro del plazo de VEINTE DÍAS desde el día siguiente a la notificación de aquella, correspondiendo su conocimiento a la Sala Primera del Tribunal Supremo ( art. 479 LEC).  Para interponer los recursos será necesaria la constitución de un depósito de 50 euros por cada uno de ellos, sin cuyo requisito no serán admitidos a trámite. Los depósitos se constituirán consignando dicho importe en la Cuenta de Depósitos y Consignaciones que este Tribunal tiene abierta en el Banco de Santander con el número 0008.0000 seguido de la clave 06 (casación) y nº del procedimiento, y / o 0008.0000 seguido de la clave 04 (ext. por infracción procesal) y nº de procedimiento, consignaciones que deberán ser acreditadas al interponer el/los recursos ( DA 15ª de la LOPJ).  Con certificación de esta resolución y carta orden remítase los autos originales al Juzgado de procedencia para su conocimiento y ejecución. Así, por esta nuestra Sentencia, lo pronunciamos, mandamos y firmamos. PUBLICACIÓN.- Dada y pronunciada fue la anterior Sentencia por la Ilma. Sra. Presidenta y los Ilmos. Sres. Magistrados que la firman y leída por el Sr. ponente en el mismo día de su fecha, lo que yo la Letrada de la Administración de Justicia certifico.</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>1998/5948</td>
+      <td>Que debemos estimar y estimamos en parte los presentes recursos contenciosos-administrativos números 2039/94, 2040/94, 2041/94, 2042/94, 2043/94, 2044/94, 2045/94, 2046/94, 2047/94, 2048/94, 2049/94, 2050/94, 2051/94, 2052/94, 2053/94, 2054/94, 2055/94, 2056/94, 2057/94, 2058/94, 2059/94, 2060/94, 2061/94, 2062/94, 2063/94, 2064/94, 2065/94, 2066/94, 2067/94 y 2068/94 (todos ellos acumulados por auto de fecha 28 de septiembre de 1994) deducidos respectivamente por D. Serafín, D. Manuel, D. José, D. Esteban, D. Miguel, D. Andrés, D. Marcelino, D. Celso, D. Eladio, D. Jesús, D. Nemesio, D. Francisco, D. Indalecio, D. Macario, D. Basilio D. Blas, D. Joaquín, D. Avelino, D. José Ramón, D. Julián, D. Rafael, D. Vicente, D. Alberto, D. Ignacio, D. Eulogio, D. Rodolfo, D. Antonio, D. Emilio, D. Santiago y D. José María, contra la resolución desestimatoria presunta en virtud de silencio de sus peticiones efectuadas, en las fechas que en los, respectivos escritos se contienen, a la Consellería de Política Territorial, Obras Públicas y Vivienda de percepción de sus salarios y remuneraciones de toda especie en la cuantía mínima establecida para los trabajadores del Grupo V del Convenio Colectivo de la Xunta, con abono de las diferencias retributivas dejadas de percibir desde el 22 de febrero, fecha de su entrada en vigor; y debemos declarar y declaramos: a) la nulidad del acto presunto recurrido en cuanto deniega a los recurrentes el derecho a percibir las diferencias retributivas dejadas de percibir por el Grupo V, dentro de ese período de los cinco años anteriores a las respectivas fechas de su reclamación, conforme a la cuantía establecida en el mismo; b) el resto de la pretensión en lo que se aparte de particular precedente se desestima; sin hacer imposición de costas. Notifíquese esta sentencia a las partes con la advertencia de que es firme por no caber contra ella recurso ordinario alguno y devuélvase el expediente, con certificación de la misma al Centro de procedencia. Así lo pronunciamos, mandamos y firmamos.- Gonzalo de la Huerga Fidalgo.- Juan José Reigosa González.- Juan Bautista Quintas Rodríguez.</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Load a suitable variant of the GLiNER model</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gliner</span> <span class="kn">import</span> <span class="n">GLiNER</span>
+
+<span class="c1"># Initialize GLiNER with the base model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">GLiNER</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;urchade/gliner_multi-v2.1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/victorgallego/miniforge3/lib/python3.10/site-packages/transformers/convert_slow_tokenizer.py:550: UserWarning: The sentencepiece tokenizer that you are converting to a fast tokenizer uses the byte fallback option which is not implemented in the fast tokenizers. In practice this means that the fast version of the tokenizer can produce unknown tokens whereas the sentencepiece version would have converted these unknown tokens into a sequence of byte tokens matching the original piece of text.
+  warnings.warn(
+</pre></div>
+</div>
+</div>
+</div>
+<p>What are going to be the labels to extract?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Company&quot;</span><span class="p">,</span> <span class="s2">&quot;Person&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Process all the sentences with the model and display the results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">texts</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;fallo&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">texts</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_entities</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># flatten the list</span>
+<span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">results</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sublist</span><span class="p">]</span>
+
+<span class="n">df_entities</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_entities</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>start</th>
+      <th>end</th>
+      <th>text</th>
+      <th>label</th>
+      <th>score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>121</td>
+      <td>136</td>
+      <td>Nicanor Modesto</td>
+      <td>Person</td>
+      <td>0.929545</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>74</td>
+      <td>90</td>
+      <td>María Inmaculada</td>
+      <td>Person</td>
+      <td>0.585221</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>328</td>
+      <td>337</td>
+      <td>D. Manuel</td>
+      <td>Person</td>
+      <td>0.925554</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1420</td>
+      <td>1441</td>
+      <td>Doña María Inmaculada</td>
+      <td>Person</td>
+      <td>0.848120</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1781</td>
+      <td>1790</td>
+      <td>D. Manuel</td>
+      <td>Person</td>
+      <td>0.897005</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>513</th>
+      <td>466</td>
+      <td>488</td>
+      <td>Carles Viver Pi-Sunyer</td>
+      <td>Person</td>
+      <td>0.860278</td>
+    </tr>
+    <tr>
+      <th>514</th>
+      <td>491</td>
+      <td>511</td>
+      <td>Enrique Ruiz Vadillo</td>
+      <td>Person</td>
+      <td>0.895998</td>
+    </tr>
+    <tr>
+      <th>515</th>
+      <td>514</td>
+      <td>547</td>
+      <td>Manuel Jiménez de Parga y Cabrera</td>
+      <td>Person</td>
+      <td>0.916679</td>
+    </tr>
+    <tr>
+      <th>516</th>
+      <td>550</td>
+      <td>570</td>
+      <td>Tomás S. Vives Antón</td>
+      <td>Person</td>
+      <td>0.883622</td>
+    </tr>
+    <tr>
+      <th>517</th>
+      <td>573</td>
+      <td>593</td>
+      <td>Pablo García Manzano</td>
+      <td>Person</td>
+      <td>0.938818</td>
+    </tr>
+  </tbody>
+</table>
+<p>518 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>Which companies and persons are the most mentioned in the data?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_entities</span><span class="p">[</span><span class="n">df_entities</span><span class="o">.</span><span class="n">label</span> <span class="o">==</span> <span class="s2">&quot;Company&quot;</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BANCO SANTANDER S.A.                                                 3
+Telefónica de España S.A.                                            2
+Fagor                                                                2
+TODOLUZ MALAGA SL                                                    2
+TODOLUZ MADRID SL                                                    2
+GLOBAL MANUFACTURING &amp; TRADING COMPANY SL                            2
+M., S.A.                                                             2
+C., S.A.                                                             2
+HIPERDELUZ SL                                                        2
+H., S.A.                                                             2
+Banco Santander S.A.                                                 2
+Constructora T., S.A.                                                2
+Seguros B.                                                           2
+ILUNION CEE OUTSOURCING SAU                                          1
+Cámara de Comercio, Industria y Navegación del Campo de Gibraltar    1
+A., S.A.                                                             1
+INTERFAN SL                                                          1
+Televisión Española, S.A.                                            1
+SOCIEDAD ESTATAL DE CORREOS Y TELÉGRAFOS                             1
+AUTOMOVILES LUARCA SAU                                               1
+TRANSPORTES ACCESIBLES PENINSULARES SL                               1
+ASTURSERVICIOS LA PRODUCTORA SAL                                     1
+ILUNION OUTSOURCING SA                                               1
+BANCO SANTANDER CENTRAL HISPANO S.A.                                 1
+Madrileña Red de Gas SAU                                             1
+CONTRATACIÓN Y EJECUCIÓN DE OBRAS, S.L.                              1
+CEOSA                                                                1
+Seguros A., S.A.                                                     1
+Insular Aguas De Lanzarote SA.                                       1
+Empresa Endesa Energía S.A.U.                                        1
+Banco Santander Cental Hispano S.A.                                  1
+Comercial de Desarrollos E., S.A.                                    1
+Ediconsa S.L.                                                        1
+Construcciones Metálicas La Magdalena S.A.                           1
+EQUIPAMIENTOS DEPORTIVOS Y DE OCIO S.A.                              1
+Asoc. Balear Asesores Inmobiliarios                                  1
+Asoc. Murciana Asesores Inmobiliarios                                1
+Asoc. Valenciana Asesores Inmobiliarios                              1
+P 3 Seguridad Integral, S.L.                                         1
+ACCIONA INFRAESTRUCTURAS, S.A.                                       1
+CONTROL DE PLAGAS DE CADIZ, S.L.                                     1
+EURODEAL AGENCIA DE VALORES, S.A.                                    1
+Ambulancias Aste, S.L                                                1
+Deshidratadora A., S.A.                                              1
+Montajes Industriales M., S.A.                                       1
+MAQUINARIA ARTES GRÁFICAS HARTMANN, S.A                              1
+PLUS ULTRA SEGUROS, S. A. DE SEGUROS Y REASEGURO                     1
+EDICONSA S.L.                                                        1
+ERBIAL S.L.                                                          1
+ELECTRO HUECAR S.A.                                                  1
+NORBERT DENTRESSANGLE GERPOSA S.A.                                   1
+GENERALI ESPAÑA S.A.                                                 1
+Lluna Park S.L.                                                      1
+Seguros y Reaseguros A.                                              1
+Aseguradora Z., S.A.                                                 1
+Recreativos Cedeira, S.L.                                            1
+GESTURCAL, S.A.                                                      1
+AYUNTAMIENTO DE SALOBREÑA                                            1
+Ayuntamiento de Salobreña                                            1
+CA Islas Baleares                                                    1
+Name: text, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_entities</span><span class="p">[</span><span class="n">df_entities</span><span class="o">.</span><span class="n">label</span> <span class="o">==</span> <span class="s2">&quot;Person&quot;</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D. Manuel                   4
+D. José                     4
+D. Agapito y Dª Adolfina    4
+D. Andrés                   3
+Santos                      3
+                           ..
+Dª Camila                   1
+D. Pablo                    1
+Dª María                    1
+D. Arsenio                  1
+Pablo García Manzano        1
+Name: text, Length: 369, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2-customer-review-analysis">
+<h1>Exercise 2: Customer Review Analysis<a class="headerlink" href="#exercise-2-customer-review-analysis" title="Link to this heading">#</a></h1>
+<p>Now, we will analyze the reviews dataset from Disneyland theme parks.</p>
+<p>We would like to extract the attractions that are mentioned in the reviews, with their associated sentiment.</p>
+<p>As a starter, you can use the following code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;DisneylandReviews.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;iso-8859-1&#39;</span><span class="p">)[:</span><span class="mi">100</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">texts</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Review_Text&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple">
+<li><p>Use a suitable model to perform sentiment analysis and classify each review.</p></li>
+</ol>
+<p>Create a sentiments list that is the same length as the reviews list, with the sentiment of each review.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">pipeline</span>
+
+<span class="n">pipe</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;sentiment-analysis&quot;</span><span class="p">,</span> <span class="n">truncation</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">sentiments</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">texts</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">pipe</span><span class="p">(</span><span class="n">text</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;label&#39;</span><span class="p">]</span>
+    <span class="n">sentiments</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Define the label to extract the attractions of the reviews text:</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Attraction&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Apply the GLiNER model to the reviews and extract the attractions mentioned in the reviews.</p></li>
+</ol>
+<p>Also add the information of the corresponding sentiment to each entity extracted.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">sentiment</span><span class="p">,</span> <span class="n">text</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">sentiments</span><span class="p">,</span> <span class="n">texts</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_entities</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+        <span class="n">entity</span><span class="p">[</span><span class="s1">&#39;sentiment&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sentiment</span>
+    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;start&#39;: 51,
+  &#39;end&#39;: 67,
+  &#39;text&#39;: &#39;Disneyland Paris&#39;,
+  &#39;label&#39;: &#39;Attraction&#39;,
+  &#39;score&#39;: 0.6424593925476074,
+  &#39;sentiment&#39;: &#39;POSITIVE&#39;},
+ {&#39;start&#39;: 287,
+  &#39;end&#39;: 301,
+  &#39;text&#39;: &#39;Space Mountain&#39;,
+  &#39;label&#39;: &#39;Attraction&#39;,
+  &#39;score&#39;: 0.9413168430328369,
+  &#39;sentiment&#39;: &#39;POSITIVE&#39;}]
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Convert it to a dataframe and display the results.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># flatten the list</span>
+<span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">results</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sublist</span><span class="p">]</span>
+
+<span class="n">df_entities</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Compute the average sentiment between all the extracted attractions
+(Assume positive is 1 and negative is 0).</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_entities</span><span class="p">[</span><span class="s1">&#39;sentiment&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;POSITIVE&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;NEGATIVE&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_entities</span><span class="p">[</span><span class="s1">&#39;sentiment&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7291666666666666
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Compute the average sentiment, grouping by the attraction</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_entities</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">)[</span><span class="s1">&#39;sentiment&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;sentiment&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>text</th>
+      <th>sentiment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Adventure Land</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>Mickey   s Wondrous Book</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>69</th>
+      <td>Tomorrow land</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>68</th>
+      <td>The park</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>67</th>
+      <td>The lion king show</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>Winnie the Pooh</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>Walt Disney World</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Explorers lodge</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>Toy story land</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Disney castle</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>101 rows × 2 columns</p>
+</div></div></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Repeat a similar analysis, but extracting Food.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Food&quot;</span><span class="p">]</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">sentiment</span><span class="p">,</span> <span class="n">text</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">sentiments</span><span class="p">,</span> <span class="n">texts</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_entities</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+        <span class="n">entity</span><span class="p">[</span><span class="s1">&#39;sentiment&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sentiment</span>
+    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># flatten the list</span>
+<span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">results</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sublist</span><span class="p">]</span>
+
+<span class="n">df_entities</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+<span class="n">df_entities</span><span class="p">[</span><span class="s1">&#39;sentiment&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;POSITIVE&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;NEGATIVE&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_entities</span><span class="p">[</span><span class="s1">&#39;sentiment&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7073170731707317
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_entities</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">)[</span><span class="s1">&#39;sentiment&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;sentiment&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>text</th>
+      <th>sentiment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>16</th>
+      <td>caramel popcorn</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Vegetarian food</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>snacks</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>hire pram</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>halal foods</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>halal food</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>food options</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>drinks</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>disneyland</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>brilliant food</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>bottled water</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>average food</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>western restaurants</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Tahitian Terrace</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Food</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Disney theme sweets</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Pricey food</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Lovely food</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Standard Chinese food</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Honkers</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Food options</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>food</td>
+      <td>0.857143</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>vegie burger</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>vegetarian food</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>popcorn</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>pop corn</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Limited restaurants</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>food and drink</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>fast food</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>corn on the cob</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Children   s food</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Souvenirs</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>$60 steak</td>
+      <td>0.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./s26_zero-shot-named-entity-recognition"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="s26.1_gliner.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">GLiNER: Generalist and Lightweight Model for Named Entity Recognition</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Exercise 1: Legal Sentences Analysis</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-customer-review-analysis">Exercise 2: Customer Review Analysis</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Víctor Gallego
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

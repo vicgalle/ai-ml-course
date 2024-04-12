@@ -86,5 +86,9 @@ parts:
   - caption: 25. Exercises I
     chapters:
       - file: s25_applications_llms_streamlit/s25_exercises.ipynb
+  - caption: 26. Zero-Shot Named Entity Recognition
+    chapters:
+      - file: s26_zero-shot-named-entity-recognition/s26.1_gliner.ipynb
+      - file: s26_zero-shot-named-entity-recognition/s26.2_exercises.ipynb
   
   
