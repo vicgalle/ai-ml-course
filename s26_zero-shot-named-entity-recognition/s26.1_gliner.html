@@ -1,0 +1,1478 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GLiNER: Generalist and Lightweight Model for Named Entity Recognition &#8212; AI: ML &amp; Analytics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 's26_zero-shot-named-entity-recognition/s26.1_gliner';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Exercise 1: Legal Sentences Analysis" href="s26.2_exercises.html" />
+    <link rel="prev" title="Exercises 1: LLM models for information extraction in podcasts 🎙️" href="../s25_applications_llms_streamlit/s25_exercises.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-neon.png" class="logo__image only-light" alt="AI: ML & Analytics - Home"/>
+    <script>document.write(`<img src="../_static/logo-neon.png" class="logo__image only-dark" alt="AI: ML & Analytics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    <no title>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">1. Our first Generative AI application</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/example_genAI.html">Our first Generative AI application</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2. Matrix Algebra with NumPy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.1-numpy.html">Matrix operations with Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.2-numpy-exercises-solutions.html">Numpy exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_matrix_algebra_numpy/s02.3-image-blending.html">Working with images in Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Optimization and Automatic Differentiation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s03_optimization_automatic_differentiation/s03.1_notebook-solutions.html">Review of Optimization</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Review of Machine Learning with scikit-learn</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s04_review_ML_sklearn/s04.1-supervised-learning-sklearn-solutions.html">Scikit-learn</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../s04_review_ML_sklearn/s04.2-cost-benefit-analysis.html">Cost-Benefit Analysis of a ML classifier.</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">5. Unsupervised Learning with UMAP</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s05_unsupervised-learning-umap/s05.1-dimensionality-reduction.html">Dimensionality Reduction. UMAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s05_unsupervised-learning-umap/s05.2-text-analysis-solutions.html">Text Analysis with UMAP</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">6. Text Processing with scikit-learn</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s06_text-processing-sklearn/s06.1-text-classification-solved.html">Session 6: More on working with text data in scikit-learn</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">7. Intro to Deep Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s07_intro_deep_learning/s07.1-neural_network-solved.html">07: Introduction to Neural Networks</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">9. Deep Learning in Computer Vision</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.1-examples.html">Session 9. More on Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.2-examples-2.html">Introduction to Computer Vision with Deep Learning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.3-intro-to-convolutions_solved.html">Intro to convolutional neural networks (CNNs)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s09_intro_deep_learning_computer_vision/s09.4-convolutional-networks_solved.html">Convolutional Neural Networks (CNNs)</a></li>
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">11. Transfer Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s11_transfer_learning/s11.1-transfer-learning-examples.html">Transfer Learning</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">12. Zero-Shot Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s12_zero-shot-learning/s12.1_intro-zero-shot-classification.html">Zero-Shot Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">13. Semantic Search</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s13_semantic_search_and_biases/s13.1_semantic_search_solved.html">Semantic Search</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">14. Object Detection</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s14_more_vision_tasks_object_detection/s14.1-intro-object-detection.html">Object Detection</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../s14_more_vision_tasks_object_detection/s14.2-zero-shot_object_detection.html">Zero-shot object detection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">15. Exercises I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.1-text-classification-solved.html">Exercise 1: Hate Spech Detection in X (aka Twitter) 🤬</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.2-transfer-learning-solved.html">Exercise: Plant Disease App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s15_exercises_solved/s15.3-semantic-search-solved2.html">Exercise: Product Item Recommender 🧥</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">16. Exercises II</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s16_exercises_2_solved/s16.1-umap-solved.html">Exercise 1: Eurovision Song Lyrics Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s16_exercises_2_solved/s16.2-zero-shot-classification-solved.html">Exercise 2: Photo Sorting Application 📸</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">19. Intro to Transformers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s19_intro_to_transformers/s19.1_pipelines_solved.html">Introduction to the Transformers Library for NLP: pipelines</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s19_intro_to_transformers/s19.2_zero-shot-classification.html">Zero-Shot Classification in NLP</a></li>
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">20. Transformers Architecture &amp; Transfer Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.1_transformers_architecture.html">Fundamentals of the Transformer Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.2-transfer-intro.html">Transfer Learning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s20_transfer-learning-and-transformers-architecture/s20.3-transfer-learning-example.html">Transfer Learning example: Legal Text Classification</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">21. Fine-tuning with Transformers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s21_fine-tuning-trainer/s21.1-fine-tuning-example.html">Fine-tuning with transformers’ library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s21_fine-tuning-trainer/s21.2-fine-tuning-example-2.html">Intent Classification in Banking 🏦</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">22. Speech Recognition with Transformers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s22_automatic_speech_recognition/s22.1_whisper_model.html">Automatic Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s22_automatic_speech_recognition/s22.2_text_to_speech.html">Text to Speech</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s22_automatic_speech_recognition/s22.3_using_gpus.html">Using GPUs with transformers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">23. Instruction Tuning and the GPT API</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s23_instruction_tuning_and_gpt/s23.1_gpt_api.html">Instruction Tuning of Language Models</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s23_instruction_tuning_and_gpt/s23.2_chain_of_thought.html">Chain of Thought Advanced Prompting Examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">24. Retrieval Augmented Generation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s24_retrieval_augmented_generation_full/s24.1_into-to-llamaindex.html">Semantic Search for texts</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../s24_retrieval_augmented_generation_full/s24.2_multimodal-retrieval.html">Multi-modal Models with LlamaIndex</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">25. Exercises I</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../s25_applications_llms_streamlit/s25_exercises.html">Exercises 1: LLM models for information extraction in podcasts 🎙️</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/vicgalle/ai-ml-course" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/vicgalle/ai-ml-course/issues/new?title=Issue%20on%20page%20%2Fs26_zero-shot-named-entity-recognition/s26.1_gliner.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/s26_zero-shot-named-entity-recognition/s26.1_gliner.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>GLiNER: Generalist and Lightweight Model for Named Entity Recognition</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#available-models-on-hugging-face">🌟 Available Models on Hugging Face</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-english">🇬🇧 For English</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-other-languages">🌍 For Other Languages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-specific-models">🔬 Domain Specific Models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-use-case">Basic Use Case</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-job-offer-analysis">Example: Job Offer Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-literature-research">Example: Literature Research</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="gliner-generalist-and-lightweight-model-for-named-entity-recognition">
+<h1>GLiNER: Generalist and Lightweight Model for Named Entity Recognition<a class="headerlink" href="#gliner-generalist-and-lightweight-model-for-named-entity-recognition" title="Link to this heading">#</a></h1>
+<p>GLiNER is a Named Entity Recognition (NER) model capable of identifying any entity type using a transformer encoder (BERT-like). It provides a practical alternative to traditional NER models, which are limited to predefined entities, and Large Language Models (LLMs) that, despite their flexibility, are costly and large for resource-constrained scenarios.</p>
+<p><strong>Demo:</strong> 🤗 <a class="reference external" href="https://huggingface.co/spaces/urchade/gliner_mediumv2.1">Hugging Face</a></p>
+<section id="available-models-on-hugging-face">
+<h2>🌟 Available Models on Hugging Face<a class="headerlink" href="#available-models-on-hugging-face" title="Link to this heading">#</a></h2>
+<section id="for-english">
+<h3>🇬🇧 For English<a class="headerlink" href="#for-english" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>GLiNER Base</strong>: <code class="docutils literal notranslate"><span class="pre">urchade/gliner_base</span></code> <em>(CC BY NC 4.0)</em></p></li>
+<li><p><strong>GLiNER Small</strong>: <code class="docutils literal notranslate"><span class="pre">urchade/gliner_small</span></code> <em>(CC BY NC 4.0)</em></p></li>
+<li><p><strong>GLiNER Small v2</strong>: <code class="docutils literal notranslate"><span class="pre">urchade/gliner_small-v2</span></code> <em>(Apache 2.0)</em></p></li>
+<li><p><strong>GLiNER Small v2.1</strong>: <code class="docutils literal notranslate"><span class="pre">urchade/gliner_small-v2.1</span></code> <em>(Apache 2.0)</em></p></li>
+<li><p><strong>GLiNER Medium</strong>: <code class="docutils literal notranslate"><span class="pre">urchade/gliner_medium</span></code> <em>(CC BY NC 4.0)</em></p></li>
+<li><p><strong>GLiNER Medium v2</strong>: <code class="docutils literal notranslate"><span class="pre">urchade/gliner_medium-v2</span></code> <em>(Apache 2.0)</em></p></li>
+<li><p><strong>GLiNER Medium v2.1</strong>: <code class="docutils literal notranslate"><span class="pre">urchade/gliner_medium-v2.1</span></code> <em>(Apache 2.0)</em></p></li>
+<li><p><strong>GLiNER Large</strong>: <code class="docutils literal notranslate"><span class="pre">urchade/gliner_large</span></code> <em>(CC BY NC 4.0)</em></p></li>
+<li><p><strong>GLiNER Large v2</strong>: <code class="docutils literal notranslate"><span class="pre">urchade/gliner_large-v2</span></code> <em>(Apache 2.0)</em></p></li>
+</ul>
+</section>
+<section id="for-other-languages">
+<h3>🌍 For Other Languages<a class="headerlink" href="#for-other-languages" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Korean</strong>: 🇰🇷 <code class="docutils literal notranslate"><span class="pre">taeminlee/gliner_ko</span></code></p></li>
+<li><p><strong>Italian</strong>: 🇮🇹 <code class="docutils literal notranslate"><span class="pre">DeepMount00/universal_ner_ita</span></code></p></li>
+<li><p><strong>Multilingual</strong>: 🌐 <code class="docutils literal notranslate"><span class="pre">urchade/gliner_multi</span></code> <em>(CC BY NC 4.0)</em> and <code class="docutils literal notranslate"><span class="pre">urchade/gliner_multi-v2.1</span></code> <em>(Apache 2.0)</em></p></li>
+</ul>
+</section>
+<section id="domain-specific-models">
+<h3>🔬 Domain Specific Models<a class="headerlink" href="#domain-specific-models" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Biomedical</strong>: 🧬 <code class="docutils literal notranslate"><span class="pre">urchade/gliner_large_bio-v0.1</span></code> <em>(Apache 2.0)</em></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>gliner
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: gliner in /opt/homebrew/lib/python3.10/site-packages (0.1.7)
+Requirement already satisfied: huggingface-hub&gt;=0.21.4 in /opt/homebrew/lib/python3.10/site-packages (from gliner) (0.22.2)
+Requirement already satisfied: torch&gt;=2.0.0 in /opt/homebrew/lib/python3.10/site-packages (from gliner) (2.2.2)
+Requirement already satisfied: seqeval in /opt/homebrew/lib/python3.10/site-packages (from gliner) (1.2.2)
+Requirement already satisfied: flair==0.13.1 in /opt/homebrew/lib/python3.10/site-packages (from gliner) (0.13.1)
+Requirement already satisfied: tqdm in /opt/homebrew/lib/python3.10/site-packages (from gliner) (4.64.1)
+Requirement already satisfied: transformers&gt;=4.38.2 in /opt/homebrew/lib/python3.10/site-packages (from gliner) (4.39.3)
+Requirement already satisfied: bpemb&gt;=0.3.2 in /opt/homebrew/lib/python3.10/site-packages (from flair==0.13.1-&gt;gliner) (0.3.5)
+Requirement already satisfied: scikit-learn&gt;=1.0.2 in /opt/homebrew/lib/python3.10/site-packages (from flair==0.13.1-&gt;gliner) (1.4.0)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /opt/homebrew/lib/python3.10/site-packages (from flair==0.13.1-&gt;gliner) (2.8.2)
+Requirement already satisfied: deprecated&gt;=1.2.13 in /opt/homebrew/lib/python3.10/site-packages (from flair==0.13.1-&gt;gliner) (1.2.14)
+Requirement already satisfied: gdown&gt;=4.4.0 in /opt/homebrew/lib/python3.10/site-packages (from flair==0.13.1-&gt;gliner) (5.1.0)
+Requirement already satisfied: pptree&gt;=3.1 in /opt/homebrew/lib/python3.10/site-packages (from flair==0.13.1-&gt;gliner) (3.1)
+Requirement already satisfied: segtok&gt;=1.5.11 in /opt/homebrew/lib/python3.10/site-packages (from flair==0.13.1-&gt;gliner) (1.5.11)
+Requirement already satisfied: urllib3&lt;2.0.0,&gt;=1.0.0 in /opt/homebrew/lib/python3.10/site-packages (from flair==0.13.1-&gt;gliner) (1.26.18)
+Requirement already satisfied: langdetect&gt;=1.0.9 in /opt/homebrew/lib/python3.10/site-packages (from flair==0.13.1-&gt;gliner) (1.0.9)
+Requirement already satisfied: semver&lt;4.0.0,&gt;=3.0.0 in /opt/homebrew/lib/python3.10/site-packages (from flair==0.13.1-&gt;gliner) (3.0.2)
+Requirement already satisfied: regex&gt;=2022.1.18 in /opt/homebrew/lib/python3.10/site-packages (from flair==0.13.1-&gt;gliner) (2023.12.25)
+Requirement already satisfied: tabulate&gt;=0.8.10 in /opt/homebrew/lib/python3.10/site-packages (from flair==0.13.1-&gt;gliner) (0.9.0)
+Requirement already satisfied: conllu&gt;=4.0 in /opt/homebrew/lib/python3.10/site-packages (from flair==0.13.1-&gt;gliner) (4.5.3)
+Requirement already satisfied: transformer-smaller-training-vocab&gt;=0.2.3 in /opt/homebrew/lib/python3.10/site-packages (from flair==0.13.1-&gt;gliner) (0.4.0)
+Requirement already satisfied: ftfy&gt;=6.1.0 in /opt/homebrew/lib/python3.10/site-packages (from flair==0.13.1-&gt;gliner) (6.2.0)
+Requirement already satisfied: wikipedia-api&gt;=0.5.7 in /opt/homebrew/lib/python3.10/site-packages (from flair==0.13.1-&gt;gliner) (0.6.0)
+Requirement already satisfied: mpld3&gt;=0.3 in /opt/homebrew/lib/python3.10/site-packages (from flair==0.13.1-&gt;gliner) (0.5.10)
+Requirement already satisfied: lxml&gt;=4.8.0 in /opt/homebrew/lib/python3.10/site-packages (from flair==0.13.1-&gt;gliner) (5.2.1)
+Requirement already satisfied: sqlitedict&gt;=2.0.0 in /opt/homebrew/lib/python3.10/site-packages (from flair==0.13.1-&gt;gliner) (2.1.0)
+Requirement already satisfied: pytorch-revgrad&gt;=0.2.0 in /opt/homebrew/lib/python3.10/site-packages (from flair==0.13.1-&gt;gliner) (0.2.0)
+Requirement already satisfied: janome&gt;=0.4.2 in /opt/homebrew/lib/python3.10/site-packages (from flair==0.13.1-&gt;gliner) (0.5.0)
+Requirement already satisfied: more-itertools&gt;=8.13.0 in /opt/homebrew/lib/python3.10/site-packages (from flair==0.13.1-&gt;gliner) (10.2.0)
+Requirement already satisfied: matplotlib&gt;=2.2.3 in /opt/homebrew/lib/python3.10/site-packages (from flair==0.13.1-&gt;gliner) (3.6.3)
+Requirement already satisfied: boto3&gt;=1.20.27 in /opt/homebrew/lib/python3.10/site-packages (from flair==0.13.1-&gt;gliner) (1.34.83)
+Requirement already satisfied: gensim&gt;=4.2.0 in /opt/homebrew/lib/python3.10/site-packages (from flair==0.13.1-&gt;gliner) (4.3.2)
+Requirement already satisfied: filelock in /opt/homebrew/lib/python3.10/site-packages (from huggingface-hub&gt;=0.21.4-&gt;gliner) (3.13.1)
+Requirement already satisfied: packaging&gt;=20.9 in /opt/homebrew/lib/python3.10/site-packages (from huggingface-hub&gt;=0.21.4-&gt;gliner) (23.0)
+Requirement already satisfied: typing-extensions&gt;=3.7.4.3 in /opt/homebrew/lib/python3.10/site-packages (from huggingface-hub&gt;=0.21.4-&gt;gliner) (4.9.0)
+Requirement already satisfied: requests in /opt/homebrew/lib/python3.10/site-packages (from huggingface-hub&gt;=0.21.4-&gt;gliner) (2.31.0)
+Requirement already satisfied: pyyaml&gt;=5.1 in /opt/homebrew/lib/python3.10/site-packages (from huggingface-hub&gt;=0.21.4-&gt;gliner) (6.0.1)
+Requirement already satisfied: fsspec&gt;=2023.5.0 in /opt/homebrew/lib/python3.10/site-packages (from huggingface-hub&gt;=0.21.4-&gt;gliner) (2023.12.2)
+Requirement already satisfied: sympy in /opt/homebrew/lib/python3.10/site-packages (from torch&gt;=2.0.0-&gt;gliner) (1.12)
+Requirement already satisfied: jinja2 in /opt/homebrew/lib/python3.10/site-packages (from torch&gt;=2.0.0-&gt;gliner) (3.1.3)
+Requirement already satisfied: networkx in /opt/homebrew/lib/python3.10/site-packages (from torch&gt;=2.0.0-&gt;gliner) (3.2.1)
+Requirement already satisfied: safetensors&gt;=0.4.1 in /opt/homebrew/lib/python3.10/site-packages (from transformers&gt;=4.38.2-&gt;gliner) (0.4.2)
+Requirement already satisfied: numpy&gt;=1.17 in /opt/homebrew/lib/python3.10/site-packages (from transformers&gt;=4.38.2-&gt;gliner) (1.24.1)
+Requirement already satisfied: tokenizers&lt;0.19,&gt;=0.14 in /opt/homebrew/lib/python3.10/site-packages (from transformers&gt;=4.38.2-&gt;gliner) (0.15.2)
+Requirement already satisfied: botocore&lt;1.35.0,&gt;=1.34.83 in /opt/homebrew/lib/python3.10/site-packages (from boto3&gt;=1.20.27-&gt;flair==0.13.1-&gt;gliner) (1.34.83)
+Requirement already satisfied: jmespath&lt;2.0.0,&gt;=0.7.1 in /opt/homebrew/lib/python3.10/site-packages (from boto3&gt;=1.20.27-&gt;flair==0.13.1-&gt;gliner) (1.0.1)
+Requirement already satisfied: s3transfer&lt;0.11.0,&gt;=0.10.0 in /opt/homebrew/lib/python3.10/site-packages (from boto3&gt;=1.20.27-&gt;flair==0.13.1-&gt;gliner) (0.10.1)
+Requirement already satisfied: sentencepiece in /opt/homebrew/lib/python3.10/site-packages (from bpemb&gt;=0.3.2-&gt;flair==0.13.1-&gt;gliner) (0.2.0)
+Requirement already satisfied: wrapt&lt;2,&gt;=1.10 in /opt/homebrew/lib/python3.10/site-packages (from deprecated&gt;=1.2.13-&gt;flair==0.13.1-&gt;gliner) (1.16.0)
+Requirement already satisfied: wcwidth&lt;0.3.0,&gt;=0.2.12 in /opt/homebrew/lib/python3.10/site-packages (from ftfy&gt;=6.1.0-&gt;flair==0.13.1-&gt;gliner) (0.2.13)
+Requirement already satisfied: beautifulsoup4 in /opt/homebrew/lib/python3.10/site-packages (from gdown&gt;=4.4.0-&gt;flair==0.13.1-&gt;gliner) (4.12.3)
+Requirement already satisfied: smart-open&gt;=1.8.1 in /opt/homebrew/lib/python3.10/site-packages (from gensim&gt;=4.2.0-&gt;flair==0.13.1-&gt;gliner) (7.0.4)
+Requirement already satisfied: scipy&gt;=1.7.0 in /opt/homebrew/lib/python3.10/site-packages (from gensim&gt;=4.2.0-&gt;flair==0.13.1-&gt;gliner) (1.12.0)
+Requirement already satisfied: six in /opt/homebrew/lib/python3.10/site-packages (from langdetect&gt;=1.0.9-&gt;flair==0.13.1-&gt;gliner) (1.16.0)
+Requirement already satisfied: cycler&gt;=0.10 in /opt/homebrew/lib/python3.10/site-packages (from matplotlib&gt;=2.2.3-&gt;flair==0.13.1-&gt;gliner) (0.11.0)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /opt/homebrew/lib/python3.10/site-packages (from matplotlib&gt;=2.2.3-&gt;flair==0.13.1-&gt;gliner) (1.0.7)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/homebrew/lib/python3.10/site-packages (from matplotlib&gt;=2.2.3-&gt;flair==0.13.1-&gt;gliner) (1.4.4)
+Requirement already satisfied: pillow&gt;=6.2.0 in /opt/homebrew/lib/python3.10/site-packages (from matplotlib&gt;=2.2.3-&gt;flair==0.13.1-&gt;gliner) (10.2.0)
+Requirement already satisfied: pyparsing&gt;=2.2.1 in /opt/homebrew/lib/python3.10/site-packages (from matplotlib&gt;=2.2.3-&gt;flair==0.13.1-&gt;gliner) (3.0.9)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/homebrew/lib/python3.10/site-packages (from matplotlib&gt;=2.2.3-&gt;flair==0.13.1-&gt;gliner) (4.38.0)
+Requirement already satisfied: joblib&gt;=1.2.0 in /opt/homebrew/lib/python3.10/site-packages (from scikit-learn&gt;=1.0.2-&gt;flair==0.13.1-&gt;gliner) (1.3.2)
+Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /opt/homebrew/lib/python3.10/site-packages (from scikit-learn&gt;=1.0.2-&gt;flair==0.13.1-&gt;gliner) (3.2.0)
+Requirement already satisfied: protobuf in /opt/homebrew/lib/python3.10/site-packages (from transformers&gt;=4.38.2-&gt;gliner) (5.26.0)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/homebrew/lib/python3.10/site-packages (from jinja2-&gt;torch&gt;=2.0.0-&gt;gliner) (2.1.4)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/homebrew/lib/python3.10/site-packages (from requests-&gt;huggingface-hub&gt;=0.21.4-&gt;gliner) (3.6)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/homebrew/lib/python3.10/site-packages (from requests-&gt;huggingface-hub&gt;=0.21.4-&gt;gliner) (2023.11.17)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /opt/homebrew/lib/python3.10/site-packages (from requests-&gt;huggingface-hub&gt;=0.21.4-&gt;gliner) (3.3.2)
+Requirement already satisfied: mpmath&gt;=0.19 in /opt/homebrew/lib/python3.10/site-packages (from sympy-&gt;torch&gt;=2.0.0-&gt;gliner) (1.3.0)
+Requirement already satisfied: accelerate&gt;=0.21.0 in /opt/homebrew/lib/python3.10/site-packages (from transformers&gt;=4.38.2-&gt;gliner) (0.29.2)
+Requirement already satisfied: soupsieve&gt;1.2 in /opt/homebrew/lib/python3.10/site-packages (from beautifulsoup4-&gt;gdown&gt;=4.4.0-&gt;flair==0.13.1-&gt;gliner) (2.5)
+Requirement already satisfied: PySocks!=1.5.7,&gt;=1.5.6 in /opt/homebrew/lib/python3.10/site-packages (from requests-&gt;huggingface-hub&gt;=0.21.4-&gt;gliner) (1.7.1)
+Requirement already satisfied: psutil in /opt/homebrew/lib/python3.10/site-packages (from accelerate&gt;=0.21.0-&gt;transformers&gt;=4.38.2-&gt;gliner) (5.9.8)
+
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">24.0</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">python3.10 -m pip install --upgrade pip</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="basic-use-case">
+<h2>Basic Use Case<a class="headerlink" href="#basic-use-case" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gliner</span> <span class="kn">import</span> <span class="n">GLiNER</span>
+
+<span class="c1"># Initialize GLiNER with the base model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">GLiNER</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;urchade/gliner_medium-v2.1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/victorgallego/miniforge3/lib/python3.10/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+  from .autonotebook import tqdm as notebook_tqdm
+/Users/victorgallego/miniforge3/lib/python3.10/site-packages/transformers/convert_slow_tokenizer.py:550: UserWarning: The sentencepiece tokenizer that you are converting to a fast tokenizer uses the byte fallback option which is not implemented in the fast tokenizers. In practice this means that the fast version of the tokenizer can produce unknown tokens whereas the sentencepiece version would have converted these unknown tokens into a sequence of byte tokens matching the original piece of text.
+  warnings.warn(
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sample text for entity prediction</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Cristiano Ronaldo dos Santos Aveiro (Portuguese pronunciation: [kɾiʃˈtjɐnu ʁɔˈnaldu]; born 5 February 1985) is a Portuguese professional footballer who plays as a forward for and captains both Saudi Pro League club Al Nassr and the Portugal national team. Widely regarded as one of the greatest players of all time, Ronaldo has won five Ballon d&#39;Or awards,[note 3] a record three UEFA Men&#39;s Player of the Year Awards, and four European Golden Shoes, the most by a European player. He has won 33 trophies in his career, including seven league titles, five UEFA Champions Leagues, the UEFA European Championship and the UEFA Nations League. Ronaldo holds the records for most appearances (183), goals (140) and assists (42) in the Champions League, goals in the European Championship (14), international goals (128) and international appearances (205). He is one of the few players to have made over 1,200 professional career appearances, the most by an outfield player, and has scored over 850 official senior career goals for club and country, making him the top goalscorer of all time.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Labels for entity prediction</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Person&quot;</span><span class="p">,</span> <span class="s2">&quot;Award&quot;</span><span class="p">,</span> <span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="s2">&quot;Competitions&quot;</span><span class="p">,</span> <span class="s2">&quot;Teams&quot;</span><span class="p">]</span> <span class="c1"># use capital case for better performance</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Perform entity prediction</span>
+<span class="n">entities</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_entities</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display predicted entities and their labels</span>
+<span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="n">entities</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">entity</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">],</span> <span class="s2">&quot;=&gt;&quot;</span><span class="p">,</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cristiano Ronaldo dos Santos Aveiro =&gt; Person
+5 February 1985 =&gt; Date
+Portugal national team =&gt; Teams
+Ballon d&#39;Or =&gt; Award
+UEFA Men&#39;s Player of the Year Awards =&gt; Award
+European Golden Shoes =&gt; Award
+UEFA Champions Leagues =&gt; Competitions
+UEFA European Championship =&gt; Competitions
+UEFA Nations League =&gt; Competitions
+European Championship =&gt; Competitions
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">entities</span><span class="p">)</span>
+
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>start</th>
+      <th>end</th>
+      <th>text</th>
+      <th>label</th>
+      <th>score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>36</td>
+      <td>Cristiano Ronaldo dos Santos Aveiro</td>
+      <td>Person</td>
+      <td>0.864556</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>92</td>
+      <td>107</td>
+      <td>5 February 1985</td>
+      <td>Date</td>
+      <td>0.985105</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>233</td>
+      <td>255</td>
+      <td>Portugal national team</td>
+      <td>Teams</td>
+      <td>0.540601</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>338</td>
+      <td>349</td>
+      <td>Ballon d'Or</td>
+      <td>Award</td>
+      <td>0.604587</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>381</td>
+      <td>417</td>
+      <td>UEFA Men's Player of the Year Awards</td>
+      <td>Award</td>
+      <td>0.817369</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>428</td>
+      <td>449</td>
+      <td>European Golden Shoes</td>
+      <td>Award</td>
+      <td>0.809395</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>556</td>
+      <td>578</td>
+      <td>UEFA Champions Leagues</td>
+      <td>Competitions</td>
+      <td>0.836124</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>584</td>
+      <td>610</td>
+      <td>UEFA European Championship</td>
+      <td>Competitions</td>
+      <td>0.869951</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>619</td>
+      <td>638</td>
+      <td>UEFA Nations League</td>
+      <td>Competitions</td>
+      <td>0.924063</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>761</td>
+      <td>782</td>
+      <td>European Championship</td>
+      <td>Competitions</td>
+      <td>0.731239</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">entities</span><span class="p">)</span>
+
+<span class="n">unique_labels</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="n">label</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;background-color: rgba(</span><span class="si">{</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.4</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s1">)&#39;</span> 
+          <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">unique_labels</span><span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">color_rows</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">colors</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">],</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">row</span><span class="p">]</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">color_rows</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_1f537_row0_col0, #T_1f537_row0_col1, #T_1f537_row0_col2, #T_1f537_row0_col3, #T_1f537_row0_col4 {
+  background-color: rgba(116,178,250,0.14);
+}
+#T_1f537_row1_col0, #T_1f537_row1_col1, #T_1f537_row1_col2, #T_1f537_row1_col3, #T_1f537_row1_col4 {
+  background-color: rgba(244,193,172,0.38);
+}
+#T_1f537_row2_col0, #T_1f537_row2_col1, #T_1f537_row2_col2, #T_1f537_row2_col3, #T_1f537_row2_col4 {
+  background-color: rgba(247,248,161,0.28);
+}
+#T_1f537_row3_col0, #T_1f537_row3_col1, #T_1f537_row3_col2, #T_1f537_row3_col3, #T_1f537_row3_col4, #T_1f537_row4_col0, #T_1f537_row4_col1, #T_1f537_row4_col2, #T_1f537_row4_col3, #T_1f537_row4_col4, #T_1f537_row5_col0, #T_1f537_row5_col1, #T_1f537_row5_col2, #T_1f537_row5_col3, #T_1f537_row5_col4 {
+  background-color: rgba(207,15,208,0.39);
+}
+#T_1f537_row6_col0, #T_1f537_row6_col1, #T_1f537_row6_col2, #T_1f537_row6_col3, #T_1f537_row6_col4, #T_1f537_row7_col0, #T_1f537_row7_col1, #T_1f537_row7_col2, #T_1f537_row7_col3, #T_1f537_row7_col4, #T_1f537_row8_col0, #T_1f537_row8_col1, #T_1f537_row8_col2, #T_1f537_row8_col3, #T_1f537_row8_col4, #T_1f537_row9_col0, #T_1f537_row9_col1, #T_1f537_row9_col2, #T_1f537_row9_col3, #T_1f537_row9_col4 {
+  background-color: rgba(187,55,78,0.11);
+}
+</style>
+<table id="T_1f537">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_1f537_level0_col0" class="col_heading level0 col0" >start</th>
+      <th id="T_1f537_level0_col1" class="col_heading level0 col1" >end</th>
+      <th id="T_1f537_level0_col2" class="col_heading level0 col2" >text</th>
+      <th id="T_1f537_level0_col3" class="col_heading level0 col3" >label</th>
+      <th id="T_1f537_level0_col4" class="col_heading level0 col4" >score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_1f537_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_1f537_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_1f537_row0_col1" class="data row0 col1" >36</td>
+      <td id="T_1f537_row0_col2" class="data row0 col2" >Cristiano Ronaldo dos Santos Aveiro</td>
+      <td id="T_1f537_row0_col3" class="data row0 col3" >Person</td>
+      <td id="T_1f537_row0_col4" class="data row0 col4" >0.864556</td>
+    </tr>
+    <tr>
+      <th id="T_1f537_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_1f537_row1_col0" class="data row1 col0" >92</td>
+      <td id="T_1f537_row1_col1" class="data row1 col1" >107</td>
+      <td id="T_1f537_row1_col2" class="data row1 col2" >5 February 1985</td>
+      <td id="T_1f537_row1_col3" class="data row1 col3" >Date</td>
+      <td id="T_1f537_row1_col4" class="data row1 col4" >0.985105</td>
+    </tr>
+    <tr>
+      <th id="T_1f537_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_1f537_row2_col0" class="data row2 col0" >233</td>
+      <td id="T_1f537_row2_col1" class="data row2 col1" >255</td>
+      <td id="T_1f537_row2_col2" class="data row2 col2" >Portugal national team</td>
+      <td id="T_1f537_row2_col3" class="data row2 col3" >Teams</td>
+      <td id="T_1f537_row2_col4" class="data row2 col4" >0.540601</td>
+    </tr>
+    <tr>
+      <th id="T_1f537_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_1f537_row3_col0" class="data row3 col0" >338</td>
+      <td id="T_1f537_row3_col1" class="data row3 col1" >349</td>
+      <td id="T_1f537_row3_col2" class="data row3 col2" >Ballon d'Or</td>
+      <td id="T_1f537_row3_col3" class="data row3 col3" >Award</td>
+      <td id="T_1f537_row3_col4" class="data row3 col4" >0.604587</td>
+    </tr>
+    <tr>
+      <th id="T_1f537_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_1f537_row4_col0" class="data row4 col0" >381</td>
+      <td id="T_1f537_row4_col1" class="data row4 col1" >417</td>
+      <td id="T_1f537_row4_col2" class="data row4 col2" >UEFA Men's Player of the Year Awards</td>
+      <td id="T_1f537_row4_col3" class="data row4 col3" >Award</td>
+      <td id="T_1f537_row4_col4" class="data row4 col4" >0.817369</td>
+    </tr>
+    <tr>
+      <th id="T_1f537_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_1f537_row5_col0" class="data row5 col0" >428</td>
+      <td id="T_1f537_row5_col1" class="data row5 col1" >449</td>
+      <td id="T_1f537_row5_col2" class="data row5 col2" >European Golden Shoes</td>
+      <td id="T_1f537_row5_col3" class="data row5 col3" >Award</td>
+      <td id="T_1f537_row5_col4" class="data row5 col4" >0.809395</td>
+    </tr>
+    <tr>
+      <th id="T_1f537_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_1f537_row6_col0" class="data row6 col0" >556</td>
+      <td id="T_1f537_row6_col1" class="data row6 col1" >578</td>
+      <td id="T_1f537_row6_col2" class="data row6 col2" >UEFA Champions Leagues</td>
+      <td id="T_1f537_row6_col3" class="data row6 col3" >Competitions</td>
+      <td id="T_1f537_row6_col4" class="data row6 col4" >0.836124</td>
+    </tr>
+    <tr>
+      <th id="T_1f537_level0_row7" class="row_heading level0 row7" >7</th>
+      <td id="T_1f537_row7_col0" class="data row7 col0" >584</td>
+      <td id="T_1f537_row7_col1" class="data row7 col1" >610</td>
+      <td id="T_1f537_row7_col2" class="data row7 col2" >UEFA European Championship</td>
+      <td id="T_1f537_row7_col3" class="data row7 col3" >Competitions</td>
+      <td id="T_1f537_row7_col4" class="data row7 col4" >0.869951</td>
+    </tr>
+    <tr>
+      <th id="T_1f537_level0_row8" class="row_heading level0 row8" >8</th>
+      <td id="T_1f537_row8_col0" class="data row8 col0" >619</td>
+      <td id="T_1f537_row8_col1" class="data row8 col1" >638</td>
+      <td id="T_1f537_row8_col2" class="data row8 col2" >UEFA Nations League</td>
+      <td id="T_1f537_row8_col3" class="data row8 col3" >Competitions</td>
+      <td id="T_1f537_row8_col4" class="data row8 col4" >0.924063</td>
+    </tr>
+    <tr>
+      <th id="T_1f537_level0_row9" class="row_heading level0 row9" >9</th>
+      <td id="T_1f537_row9_col0" class="data row9 col0" >761</td>
+      <td id="T_1f537_row9_col1" class="data row9 col1" >782</td>
+      <td id="T_1f537_row9_col2" class="data row9 col2" >European Championship</td>
+      <td id="T_1f537_row9_col3" class="data row9 col3" >Competitions</td>
+      <td id="T_1f537_row9_col4" class="data row9 col4" >0.731239</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>What happens if we reduce the threshold?</p>
+<section id="example-job-offer-analysis">
+<h3>Example: Job Offer Analysis<a class="headerlink" href="#example-job-offer-analysis" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">* Data Scientist, Data Analyst, or Data Engineer with 1+ years of experience.</span>
+<span class="s2">* Experience with technologies such as Docker, Kubernetes, or Kubeflow</span>
+<span class="s2">* Machine Learning experience preferred</span>
+<span class="s2">* Experience with programming languages such as Python, C++, or SQL preferred</span>
+<span class="s2">* Experience with technologies such as Databricks, Qlik, TensorFlow, PyTorch, Python, Dash, Pandas, or NumPy preferred</span>
+<span class="s2">* BA or BS degree</span>
+<span class="s2">* Active Secret OR Active Top Secret or Active TS/SCI clearance</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;programing language&quot;</span><span class="p">,</span> <span class="s2">&quot;software tool&quot;</span><span class="p">,</span> <span class="s2">&quot;degree&quot;</span><span class="p">,</span> <span class="s2">&quot;job title&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">entities</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_entities</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">entities</span><span class="p">)</span>
+
+<span class="n">unique_labels</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="n">label</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;background-color: rgba(</span><span class="si">{</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.4</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s1">)&#39;</span> 
+          <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">unique_labels</span><span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">color_rows</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">colors</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">],</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">row</span><span class="p">]</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">color_rows</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_56268_row0_col0, #T_56268_row0_col1, #T_56268_row0_col2, #T_56268_row0_col3, #T_56268_row0_col4, #T_56268_row1_col0, #T_56268_row1_col1, #T_56268_row1_col2, #T_56268_row1_col3, #T_56268_row1_col4, #T_56268_row2_col0, #T_56268_row2_col1, #T_56268_row2_col2, #T_56268_row2_col3, #T_56268_row2_col4 {
+  background-color: rgba(39,229,214,0.23);
+}
+#T_56268_row3_col0, #T_56268_row3_col1, #T_56268_row3_col2, #T_56268_row3_col3, #T_56268_row3_col4, #T_56268_row7_col0, #T_56268_row7_col1, #T_56268_row7_col2, #T_56268_row7_col3, #T_56268_row7_col4, #T_56268_row8_col0, #T_56268_row8_col1, #T_56268_row8_col2, #T_56268_row8_col3, #T_56268_row8_col4, #T_56268_row9_col0, #T_56268_row9_col1, #T_56268_row9_col2, #T_56268_row9_col3, #T_56268_row9_col4, #T_56268_row12_col0, #T_56268_row12_col1, #T_56268_row12_col2, #T_56268_row12_col3, #T_56268_row12_col4 {
+  background-color: rgba(233,107,63,0.13);
+}
+#T_56268_row4_col0, #T_56268_row4_col1, #T_56268_row4_col2, #T_56268_row4_col3, #T_56268_row4_col4, #T_56268_row5_col0, #T_56268_row5_col1, #T_56268_row5_col2, #T_56268_row5_col3, #T_56268_row5_col4, #T_56268_row6_col0, #T_56268_row6_col1, #T_56268_row6_col2, #T_56268_row6_col3, #T_56268_row6_col4, #T_56268_row10_col0, #T_56268_row10_col1, #T_56268_row10_col2, #T_56268_row10_col3, #T_56268_row10_col4, #T_56268_row11_col0, #T_56268_row11_col1, #T_56268_row11_col2, #T_56268_row11_col3, #T_56268_row11_col4 {
+  background-color: rgba(134,146,11,0.12);
+}
+#T_56268_row13_col0, #T_56268_row13_col1, #T_56268_row13_col2, #T_56268_row13_col3, #T_56268_row13_col4, #T_56268_row14_col0, #T_56268_row14_col1, #T_56268_row14_col2, #T_56268_row14_col3, #T_56268_row14_col4 {
+  background-color: rgba(34,85,196,0.19);
+}
+</style>
+<table id="T_56268">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_56268_level0_col0" class="col_heading level0 col0" >start</th>
+      <th id="T_56268_level0_col1" class="col_heading level0 col1" >end</th>
+      <th id="T_56268_level0_col2" class="col_heading level0 col2" >text</th>
+      <th id="T_56268_level0_col3" class="col_heading level0 col3" >label</th>
+      <th id="T_56268_level0_col4" class="col_heading level0 col4" >score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_56268_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_56268_row0_col0" class="data row0 col0" >3</td>
+      <td id="T_56268_row0_col1" class="data row0 col1" >17</td>
+      <td id="T_56268_row0_col2" class="data row0 col2" >Data Scientist</td>
+      <td id="T_56268_row0_col3" class="data row0 col3" >job title</td>
+      <td id="T_56268_row0_col4" class="data row0 col4" >0.877562</td>
+    </tr>
+    <tr>
+      <th id="T_56268_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_56268_row1_col0" class="data row1 col0" >19</td>
+      <td id="T_56268_row1_col1" class="data row1 col1" >31</td>
+      <td id="T_56268_row1_col2" class="data row1 col2" >Data Analyst</td>
+      <td id="T_56268_row1_col3" class="data row1 col3" >job title</td>
+      <td id="T_56268_row1_col4" class="data row1 col4" >0.829869</td>
+    </tr>
+    <tr>
+      <th id="T_56268_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_56268_row2_col0" class="data row2 col0" >36</td>
+      <td id="T_56268_row2_col1" class="data row2 col1" >49</td>
+      <td id="T_56268_row2_col2" class="data row2 col2" >Data Engineer</td>
+      <td id="T_56268_row2_col3" class="data row2 col3" >job title</td>
+      <td id="T_56268_row2_col4" class="data row2 col4" >0.811564</td>
+    </tr>
+    <tr>
+      <th id="T_56268_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_56268_row3_col0" class="data row3 col0" >141</td>
+      <td id="T_56268_row3_col1" class="data row3 col1" >149</td>
+      <td id="T_56268_row3_col2" class="data row3 col2" >Kubeflow</td>
+      <td id="T_56268_row3_col3" class="data row3 col3" >software tool</td>
+      <td id="T_56268_row3_col4" class="data row3 col4" >0.668544</td>
+    </tr>
+    <tr>
+      <th id="T_56268_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_56268_row4_col0" class="data row4 col0" >238</td>
+      <td id="T_56268_row4_col1" class="data row4 col1" >244</td>
+      <td id="T_56268_row4_col2" class="data row4 col2" >Python</td>
+      <td id="T_56268_row4_col3" class="data row4 col3" >programing language</td>
+      <td id="T_56268_row4_col4" class="data row4 col4" >0.988815</td>
+    </tr>
+    <tr>
+      <th id="T_56268_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_56268_row5_col0" class="data row5 col0" >246</td>
+      <td id="T_56268_row5_col1" class="data row5 col1" >249</td>
+      <td id="T_56268_row5_col2" class="data row5 col2" >C++</td>
+      <td id="T_56268_row5_col3" class="data row5 col3" >programing language</td>
+      <td id="T_56268_row5_col4" class="data row5 col4" >0.920541</td>
+    </tr>
+    <tr>
+      <th id="T_56268_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_56268_row6_col0" class="data row6 col0" >254</td>
+      <td id="T_56268_row6_col1" class="data row6 col1" >257</td>
+      <td id="T_56268_row6_col2" class="data row6 col2" >SQL</td>
+      <td id="T_56268_row6_col3" class="data row6 col3" >programing language</td>
+      <td id="T_56268_row6_col4" class="data row6 col4" >0.783584</td>
+    </tr>
+    <tr>
+      <th id="T_56268_level0_row7" class="row_heading level0 row7" >7</th>
+      <td id="T_56268_row7_col0" class="data row7 col0" >307</td>
+      <td id="T_56268_row7_col1" class="data row7 col1" >317</td>
+      <td id="T_56268_row7_col2" class="data row7 col2" >Databricks</td>
+      <td id="T_56268_row7_col3" class="data row7 col3" >software tool</td>
+      <td id="T_56268_row7_col4" class="data row7 col4" >0.850532</td>
+    </tr>
+    <tr>
+      <th id="T_56268_level0_row8" class="row_heading level0 row8" >8</th>
+      <td id="T_56268_row8_col0" class="data row8 col0" >319</td>
+      <td id="T_56268_row8_col1" class="data row8 col1" >323</td>
+      <td id="T_56268_row8_col2" class="data row8 col2" >Qlik</td>
+      <td id="T_56268_row8_col3" class="data row8 col3" >software tool</td>
+      <td id="T_56268_row8_col4" class="data row8 col4" >0.674751</td>
+    </tr>
+    <tr>
+      <th id="T_56268_level0_row9" class="row_heading level0 row9" >9</th>
+      <td id="T_56268_row9_col0" class="data row9 col0" >325</td>
+      <td id="T_56268_row9_col1" class="data row9 col1" >335</td>
+      <td id="T_56268_row9_col2" class="data row9 col2" >TensorFlow</td>
+      <td id="T_56268_row9_col3" class="data row9 col3" >software tool</td>
+      <td id="T_56268_row9_col4" class="data row9 col4" >0.929136</td>
+    </tr>
+    <tr>
+      <th id="T_56268_level0_row10" class="row_heading level0 row10" >10</th>
+      <td id="T_56268_row10_col0" class="data row10 col0" >337</td>
+      <td id="T_56268_row10_col1" class="data row10 col1" >344</td>
+      <td id="T_56268_row10_col2" class="data row10 col2" >PyTorch</td>
+      <td id="T_56268_row10_col3" class="data row10 col3" >programing language</td>
+      <td id="T_56268_row10_col4" class="data row10 col4" >0.620552</td>
+    </tr>
+    <tr>
+      <th id="T_56268_level0_row11" class="row_heading level0 row11" >11</th>
+      <td id="T_56268_row11_col0" class="data row11 col0" >346</td>
+      <td id="T_56268_row11_col1" class="data row11 col1" >352</td>
+      <td id="T_56268_row11_col2" class="data row11 col2" >Python</td>
+      <td id="T_56268_row11_col3" class="data row11 col3" >programing language</td>
+      <td id="T_56268_row11_col4" class="data row11 col4" >0.985091</td>
+    </tr>
+    <tr>
+      <th id="T_56268_level0_row12" class="row_heading level0 row12" >12</th>
+      <td id="T_56268_row12_col0" class="data row12 col0" >354</td>
+      <td id="T_56268_row12_col1" class="data row12 col1" >358</td>
+      <td id="T_56268_row12_col2" class="data row12 col2" >Dash</td>
+      <td id="T_56268_row12_col3" class="data row12 col3" >software tool</td>
+      <td id="T_56268_row12_col4" class="data row12 col4" >0.748522</td>
+    </tr>
+    <tr>
+      <th id="T_56268_level0_row13" class="row_heading level0 row13" >13</th>
+      <td id="T_56268_row13_col0" class="data row13 col0" >389</td>
+      <td id="T_56268_row13_col1" class="data row13 col1" >391</td>
+      <td id="T_56268_row13_col2" class="data row13 col2" >BA</td>
+      <td id="T_56268_row13_col3" class="data row13 col3" >degree</td>
+      <td id="T_56268_row13_col4" class="data row13 col4" >0.914484</td>
+    </tr>
+    <tr>
+      <th id="T_56268_level0_row14" class="row_heading level0 row14" >14</th>
+      <td id="T_56268_row14_col0" class="data row14 col0" >395</td>
+      <td id="T_56268_row14_col1" class="data row14 col1" >397</td>
+      <td id="T_56268_row14_col2" class="data row14 col2" >BS</td>
+      <td id="T_56268_row14_col3" class="data row14 col3" >degree</td>
+      <td id="T_56268_row14_col4" class="data row14 col4" >0.966724</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="example-literature-research">
+<h3>Example: Literature Research<a class="headerlink" href="#example-literature-research" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Libretto by Marius Petipa, based on the 1822 novella ``Trilby, ou Le Lutin d&#39;Argail`` by Charles Nodier, first presented by the Ballet of the Moscow Imperial Bolshoi Theatre on January 25/February 6 (Julian/Gregorian calendar dates), 1870, in Moscow with Polina Karpakova as Trilby and Ludiia Geiten as Miranda and restaged by Petipa for the Imperial Ballet at the Imperial Bolshoi Kamenny Theatre on January 17–29, 1871 in St. Petersburg with Adèle Grantzow as Trilby and Lev Ivanov as Count Leopold.&quot;&quot;&quot;</span>
+
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;person&quot;</span><span class="p">,</span> <span class="s2">&quot;book&quot;</span><span class="p">,</span> <span class="s2">&quot;location&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;actor&quot;</span><span class="p">,</span> <span class="s2">&quot;character&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">entities</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_entities</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">entities</span><span class="p">)</span>
+
+<span class="n">unique_labels</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="n">label</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;background-color: rgba(</span><span class="si">{</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.4</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s1">)&#39;</span> 
+          <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">unique_labels</span><span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">color_rows</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">colors</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">],</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">row</span><span class="p">]</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">color_rows</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_6a562_row0_col0, #T_6a562_row0_col1, #T_6a562_row0_col2, #T_6a562_row0_col3, #T_6a562_row0_col4, #T_6a562_row6_col0, #T_6a562_row6_col1, #T_6a562_row6_col2, #T_6a562_row6_col3, #T_6a562_row6_col4, #T_6a562_row8_col0, #T_6a562_row8_col1, #T_6a562_row8_col2, #T_6a562_row8_col3, #T_6a562_row8_col4, #T_6a562_row12_col0, #T_6a562_row12_col1, #T_6a562_row12_col2, #T_6a562_row12_col3, #T_6a562_row12_col4, #T_6a562_row14_col0, #T_6a562_row14_col1, #T_6a562_row14_col2, #T_6a562_row14_col3, #T_6a562_row14_col4 {
+  background-color: rgba(50,188,185,0.35);
+}
+#T_6a562_row1_col0, #T_6a562_row1_col1, #T_6a562_row1_col2, #T_6a562_row1_col3, #T_6a562_row1_col4, #T_6a562_row4_col0, #T_6a562_row4_col1, #T_6a562_row4_col2, #T_6a562_row4_col3, #T_6a562_row4_col4, #T_6a562_row10_col0, #T_6a562_row10_col1, #T_6a562_row10_col2, #T_6a562_row10_col3, #T_6a562_row10_col4 {
+  background-color: rgba(104,92,75,0.2);
+}
+#T_6a562_row2_col0, #T_6a562_row2_col1, #T_6a562_row2_col2, #T_6a562_row2_col3, #T_6a562_row2_col4, #T_6a562_row3_col0, #T_6a562_row3_col1, #T_6a562_row3_col2, #T_6a562_row3_col3, #T_6a562_row3_col4, #T_6a562_row9_col0, #T_6a562_row9_col1, #T_6a562_row9_col2, #T_6a562_row9_col3, #T_6a562_row9_col4 {
+  background-color: rgba(229,202,8,0.22);
+}
+#T_6a562_row5_col0, #T_6a562_row5_col1, #T_6a562_row5_col2, #T_6a562_row5_col3, #T_6a562_row5_col4, #T_6a562_row7_col0, #T_6a562_row7_col1, #T_6a562_row7_col2, #T_6a562_row7_col3, #T_6a562_row7_col4, #T_6a562_row11_col0, #T_6a562_row11_col1, #T_6a562_row11_col2, #T_6a562_row11_col3, #T_6a562_row11_col4, #T_6a562_row13_col0, #T_6a562_row13_col1, #T_6a562_row13_col2, #T_6a562_row13_col3, #T_6a562_row13_col4 {
+  background-color: rgba(218,2,100,0.11);
+}
+</style>
+<table id="T_6a562">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_6a562_level0_col0" class="col_heading level0 col0" >start</th>
+      <th id="T_6a562_level0_col1" class="col_heading level0 col1" >end</th>
+      <th id="T_6a562_level0_col2" class="col_heading level0 col2" >text</th>
+      <th id="T_6a562_level0_col3" class="col_heading level0 col3" >label</th>
+      <th id="T_6a562_level0_col4" class="col_heading level0 col4" >score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_6a562_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_6a562_row0_col0" class="data row0 col0" >55</td>
+      <td id="T_6a562_row0_col1" class="data row0 col1" >61</td>
+      <td id="T_6a562_row0_col2" class="data row0 col2" >Trilby</td>
+      <td id="T_6a562_row0_col3" class="data row0 col3" >character</td>
+      <td id="T_6a562_row0_col4" class="data row0 col4" >0.974547</td>
+    </tr>
+    <tr>
+      <th id="T_6a562_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_6a562_row1_col0" class="data row1 col0" >142</td>
+      <td id="T_6a562_row1_col1" class="data row1 col1" >148</td>
+      <td id="T_6a562_row1_col2" class="data row1 col2" >Moscow</td>
+      <td id="T_6a562_row1_col3" class="data row1 col3" >location</td>
+      <td id="T_6a562_row1_col4" class="data row1 col4" >0.911368</td>
+    </tr>
+    <tr>
+      <th id="T_6a562_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_6a562_row2_col0" class="data row2 col0" >177</td>
+      <td id="T_6a562_row2_col1" class="data row2 col1" >198</td>
+      <td id="T_6a562_row2_col2" class="data row2 col2" >January 25/February 6</td>
+      <td id="T_6a562_row2_col3" class="data row2 col3" >date</td>
+      <td id="T_6a562_row2_col4" class="data row2 col4" >0.739128</td>
+    </tr>
+    <tr>
+      <th id="T_6a562_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_6a562_row3_col0" class="data row3 col0" >234</td>
+      <td id="T_6a562_row3_col1" class="data row3 col1" >238</td>
+      <td id="T_6a562_row3_col2" class="data row3 col2" >1870</td>
+      <td id="T_6a562_row3_col3" class="data row3 col3" >date</td>
+      <td id="T_6a562_row3_col4" class="data row3 col4" >0.565082</td>
+    </tr>
+    <tr>
+      <th id="T_6a562_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_6a562_row4_col0" class="data row4 col0" >243</td>
+      <td id="T_6a562_row4_col1" class="data row4 col1" >249</td>
+      <td id="T_6a562_row4_col2" class="data row4 col2" >Moscow</td>
+      <td id="T_6a562_row4_col3" class="data row4 col3" >location</td>
+      <td id="T_6a562_row4_col4" class="data row4 col4" >0.924236</td>
+    </tr>
+    <tr>
+      <th id="T_6a562_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_6a562_row5_col0" class="data row5 col0" >255</td>
+      <td id="T_6a562_row5_col1" class="data row5 col1" >271</td>
+      <td id="T_6a562_row5_col2" class="data row5 col2" >Polina Karpakova</td>
+      <td id="T_6a562_row5_col3" class="data row5 col3" >actor</td>
+      <td id="T_6a562_row5_col4" class="data row5 col4" >0.926855</td>
+    </tr>
+    <tr>
+      <th id="T_6a562_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_6a562_row6_col0" class="data row6 col0" >275</td>
+      <td id="T_6a562_row6_col1" class="data row6 col1" >281</td>
+      <td id="T_6a562_row6_col2" class="data row6 col2" >Trilby</td>
+      <td id="T_6a562_row6_col3" class="data row6 col3" >character</td>
+      <td id="T_6a562_row6_col4" class="data row6 col4" >0.986574</td>
+    </tr>
+    <tr>
+      <th id="T_6a562_level0_row7" class="row_heading level0 row7" >7</th>
+      <td id="T_6a562_row7_col0" class="data row7 col0" >286</td>
+      <td id="T_6a562_row7_col1" class="data row7 col1" >299</td>
+      <td id="T_6a562_row7_col2" class="data row7 col2" >Ludiia Geiten</td>
+      <td id="T_6a562_row7_col3" class="data row7 col3" >actor</td>
+      <td id="T_6a562_row7_col4" class="data row7 col4" >0.897300</td>
+    </tr>
+    <tr>
+      <th id="T_6a562_level0_row8" class="row_heading level0 row8" >8</th>
+      <td id="T_6a562_row8_col0" class="data row8 col0" >303</td>
+      <td id="T_6a562_row8_col1" class="data row8 col1" >310</td>
+      <td id="T_6a562_row8_col2" class="data row8 col2" >Miranda</td>
+      <td id="T_6a562_row8_col3" class="data row8 col3" >character</td>
+      <td id="T_6a562_row8_col4" class="data row8 col4" >0.798976</td>
+    </tr>
+    <tr>
+      <th id="T_6a562_level0_row9" class="row_heading level0 row9" >9</th>
+      <td id="T_6a562_row9_col0" class="data row9 col0" >401</td>
+      <td id="T_6a562_row9_col1" class="data row9 col1" >420</td>
+      <td id="T_6a562_row9_col2" class="data row9 col2" >January 17–29, 1871</td>
+      <td id="T_6a562_row9_col3" class="data row9 col3" >date</td>
+      <td id="T_6a562_row9_col4" class="data row9 col4" >0.906363</td>
+    </tr>
+    <tr>
+      <th id="T_6a562_level0_row10" class="row_heading level0 row10" >10</th>
+      <td id="T_6a562_row10_col0" class="data row10 col0" >424</td>
+      <td id="T_6a562_row10_col1" class="data row10 col1" >438</td>
+      <td id="T_6a562_row10_col2" class="data row10 col2" >St. Petersburg</td>
+      <td id="T_6a562_row10_col3" class="data row10 col3" >location</td>
+      <td id="T_6a562_row10_col4" class="data row10 col4" >0.915059</td>
+    </tr>
+    <tr>
+      <th id="T_6a562_level0_row11" class="row_heading level0 row11" >11</th>
+      <td id="T_6a562_row11_col0" class="data row11 col0" >444</td>
+      <td id="T_6a562_row11_col1" class="data row11 col1" >458</td>
+      <td id="T_6a562_row11_col2" class="data row11 col2" >Adèle Grantzow</td>
+      <td id="T_6a562_row11_col3" class="data row11 col3" >actor</td>
+      <td id="T_6a562_row11_col4" class="data row11 col4" >0.933230</td>
+    </tr>
+    <tr>
+      <th id="T_6a562_level0_row12" class="row_heading level0 row12" >12</th>
+      <td id="T_6a562_row12_col0" class="data row12 col0" >462</td>
+      <td id="T_6a562_row12_col1" class="data row12 col1" >468</td>
+      <td id="T_6a562_row12_col2" class="data row12 col2" >Trilby</td>
+      <td id="T_6a562_row12_col3" class="data row12 col3" >character</td>
+      <td id="T_6a562_row12_col4" class="data row12 col4" >0.990543</td>
+    </tr>
+    <tr>
+      <th id="T_6a562_level0_row13" class="row_heading level0 row13" >13</th>
+      <td id="T_6a562_row13_col0" class="data row13 col0" >473</td>
+      <td id="T_6a562_row13_col1" class="data row13 col1" >483</td>
+      <td id="T_6a562_row13_col2" class="data row13 col2" >Lev Ivanov</td>
+      <td id="T_6a562_row13_col3" class="data row13 col3" >actor</td>
+      <td id="T_6a562_row13_col4" class="data row13 col4" >0.934771</td>
+    </tr>
+    <tr>
+      <th id="T_6a562_level0_row14" class="row_heading level0 row14" >14</th>
+      <td id="T_6a562_row14_col0" class="data row14 col0" >487</td>
+      <td id="T_6a562_row14_col1" class="data row14 col1" >500</td>
+      <td id="T_6a562_row14_col2" class="data row14 col2" >Count Leopold</td>
+      <td id="T_6a562_row14_col3" class="data row14 col3" >character</td>
+      <td id="T_6a562_row14_col4" class="data row14 col4" >0.854538</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./s26_zero-shot-named-entity-recognition"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../s25_applications_llms_streamlit/s25_exercises.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exercises 1: LLM models for information extraction in podcasts 🎙️</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="s26.2_exercises.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercise 1: Legal Sentences Analysis</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#available-models-on-hugging-face">🌟 Available Models on Hugging Face</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-english">🇬🇧 For English</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-other-languages">🌍 For Other Languages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-specific-models">🔬 Domain Specific Models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-use-case">Basic Use Case</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-job-offer-analysis">Example: Job Offer Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-literature-research">Example: Literature Research</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Víctor Gallego
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
